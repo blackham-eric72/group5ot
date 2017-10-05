@@ -29,6 +29,35 @@ public enum Character {
 
     }  
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Point getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(Point coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    @Override
+    public String toString() {
+        return "Character{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
+    }
+
 
 }
 
