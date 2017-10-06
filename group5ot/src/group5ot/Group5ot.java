@@ -5,8 +5,14 @@
  */
 package group5ot;
 
+import CIT260.Group5ot.model.Barrel;
 import CIT260.Group5ot.model.Player;
 import CIT260.Group5ot.model.Character;
+import CIT260.Group5ot.model.Health;
+import CIT260.Group5ot.model.InventoryItem;
+import CIT260.Group5ot.model.Question;
+import CIT260.Group5ot.model.QuestionScene;
+import CIT260.Group5ot.model.Wagon;
 
 
 /**
@@ -19,7 +25,9 @@ public class Group5ot {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         Player playerOne = new Player();
+        
         playerOne.setName("Michael Jordan");
         playerOne.setBestTime(8.00);
         
@@ -28,15 +36,88 @@ public class Group5ot {
         
         System.out.println(playerOne.toString());
         
-       Character.Father.getName();
-       Character.Father.getDescription();
+        
+        Character.Father.getName();
+        Character.Father.getDescription();
        
-       
-       
-       
-       System.out.println(Character.Father.getName() + " , " + Character.Father.getDescription());
-             
+        System.out.println(Character.Father.getName() + " , " + Character.Father.getDescription());
+         
+        
+        Health healthOne = new Health();
+        
+        healthOne.setLevel(10);
+        healthOne.setStatus("sick");
+        
+        int healthOneLevel = healthOne.getLevel();
+        String healthOneStatus = healthOne.getStatus();
+        
+        System.out.println("Health = " + healthOneLevel + ", Status = " + healthOneStatus);
+        
+        
+        Wagon wagonOne = new Wagon();
+        
+        wagonOne.setTotalWeight(550.75);
+        wagonOne.setSupplyItem("flour, dutch oven, can of grease");
+        
+        double wagonOneTotalWeight = wagonOne.getTotalWeight();
+        String wagonOneSupplyItem = wagonOne.getSupplyItem();
+        
+        System.out.println("Total weight = " + wagonOneTotalWeight + ", Supplies = " + wagonOneSupplyItem);
+        
+        
+        
+        InventoryItem inventoryItemOne = new InventoryItem();
+        
+        inventoryItemOne.setInventoryType("food");
+        inventoryItemOne.setQuantityInStock(435);
+        inventoryItemOne.setRequiredAmount(350);
+        
+        String inventoryItemOneInventoryType = inventoryItemOne.getInventoryType();
+        int inventoryItemOneQuantityInStock = inventoryItemOne.getQuantityInStock();
+        int inventoryItemOneRequiredAmount = inventoryItemOne.getRequiredAmount();
+        
+        System.out.println("Inventory type = " + inventoryItemOneInventoryType + ", Quantity in stock = " + inventoryItemOneQuantityInStock + ", Required amount = " + inventoryItemOneRequiredAmount);
+        
+        Barrel barrelOne = new Barrel();
+        
+        barrelOne.setHeight(42.25);
+        barrelOne.setDiameter(18.5);
+        barrelOne.setVolume(47);
+        barrelOne.setMaxWeight(200);
+        
+        double barrelOneHeight = barrelOne.getHeight();
+        double barrelOneDiameter = barrelOne.getDiameter();
+        double barrelOneVolume = barrelOne.getVolume();
+        double barrelOneMaxWeight = barrelOne.getMaxWeight();
+        
+        System.out.println("Height = " + barrelOneHeight + ", Diameter = " + barrelOneDiameter + ", Volume = " + barrelOneVolume + ", Max weight = " + barrelOneMaxWeight);
+        
+        
+        QuestionScene sceneOne = new QuestionScene();
+        
+        sceneOne.setNoToAnswer("I don't know what this means");
+        sceneOne.setBonus("You get 25 pounds of elk meat");
+        
+        String sceneOneNoToAnswer = sceneOne.getNoToAnswer();
+        String sceneOneBonus = sceneOne.getBonus();
+        
+        System.out.println("Answer = " + sceneOneNoToAnswer + ", Bonus = " + sceneOneBonus);
+        
+        
+        Question firstQuestion = new Question();
+        
+        firstQuestion.setQuestion("How much water can the barrel hold?");
+        firstQuestion.setAnswer("47 gallons");
+        
+        String firstQuestionQuestion = firstQuestion.getQuestion();
+        String firstQuestionAnswer = firstQuestion.getAnswer();
+        
+        System.out.println("First question is " + firstQuestionQuestion + ", The answer is " + firstQuestionAnswer);
+        
+        
     }
+    
+    
     
    
    
