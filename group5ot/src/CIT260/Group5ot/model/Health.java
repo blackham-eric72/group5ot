@@ -17,6 +17,7 @@ public class Health implements Serializable{
     //class instance variables
     private int level;
     private String status;
+    private Player player;
 
     public Health() {
     }     
@@ -36,6 +37,16 @@ public class Health implements Serializable{
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+    
 
     @Override
     public int hashCode() {

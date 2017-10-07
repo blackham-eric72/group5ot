@@ -18,6 +18,7 @@ public class InventoryItem implements Serializable{
     private String inventoryType;
     private int quantityInStock;
     private int requiredAmount;
+    private Barrel barrel;
 
     public InventoryItem() {
     }
@@ -46,6 +47,16 @@ public class InventoryItem implements Serializable{
     public void setRequiredAmount(int requiredAmount) {
         this.requiredAmount = requiredAmount;
     }
+
+    public Barrel getBarrel() {
+        return barrel;
+    }
+
+    public void setBarrel(Barrel barrel) {
+        this.barrel = barrel;
+    }
+    
+    
 
     @Override
     public int hashCode() {

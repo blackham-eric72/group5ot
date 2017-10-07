@@ -17,6 +17,7 @@ public class Wagon implements Serializable{
     //class instance variabels
     private double totalWeight;
     private String supplyItem;
+    private Player player;
 
     public Wagon() {
     }
@@ -37,6 +38,16 @@ public class Wagon implements Serializable{
     public void setSupplyItem(String supplyItem) {
         this.supplyItem = supplyItem;
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+    
+    
 
     @Override
     public int hashCode() {

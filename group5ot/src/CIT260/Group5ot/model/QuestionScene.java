@@ -17,6 +17,8 @@ public class QuestionScene implements Serializable{
     //class instance variables
    private String noToAnswer;
    private String bonus;
+   private QuestionScene[] questionScene1 = new QuestionScene[3];
+   private Question question;
 
     public QuestionScene() {
     }
@@ -38,6 +40,16 @@ public class QuestionScene implements Serializable{
     public void setBonus(String bonus) {
         this.bonus = bonus;
     }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+    
+    
 
     @Override
     public int hashCode() {

@@ -19,7 +19,9 @@ public class Player implements Serializable {
     private String name;
     private double bestTime;
     private ArrayList<Game> games = new ArrayList<Game>();
-    
+    private Health health;
+    private Wagon wagon;
+    private InventoryItem inventoryItem;
 
     public Player() {
     }
@@ -47,6 +49,39 @@ public class Player implements Serializable {
     public void setGames(ArrayList<Game> games) {
         this.games = games;
     }
+
+    public Health getHealth() {
+        return health;
+    }
+
+    public void setHealth(Health health) {
+        this.health = health;
+    }
+
+    public Wagon getWagon() {
+        return wagon;
+    }
+
+    public void setWagon(Wagon wagon) {
+        this.wagon = wagon;
+    }
+
+    public InventoryItem getInventoryItem() {
+        return inventoryItem;
+    }
+
+    public void setInventoryItem(InventoryItem inventoryItem) {
+        this.inventoryItem = inventoryItem;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 
