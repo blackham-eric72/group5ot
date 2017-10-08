@@ -6,12 +6,15 @@
 package group5ot;
 
 import CIT260.Group5ot.model.Barrel;
+import CIT260.Group5ot.model.Campsite;
 import CIT260.Group5ot.model.Player;
 import CIT260.Group5ot.model.Character;
 import CIT260.Group5ot.model.Health;
 import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Question;
 import CIT260.Group5ot.model.QuestionScene;
+import CIT260.Group5ot.model.RiverCrossing;
+import CIT260.Group5ot.model.Trail;
 import CIT260.Group5ot.model.Wagon;
 
 //Ken's classes to import...
@@ -174,6 +177,25 @@ public class Group5ot {
         winningGameSceneVar.setRecordedTime(46);
         
         System.out.println(winningGameSceneVar.toString());
+
+       
+        Trail initialTrail  = new Trail();
+        
+              initialTrail.setCondition("fair");
+        
+        String  initialTrailCondition = initialTrail.getCondition();
+        
+        System.out.println("The condition of the trail is " + initialTrailCondition);
+        
+        
+        
+        RiverCrossing initialRiver = new RiverCrossing();
+        
+        initialRiver.setDifficulty("easy");
+        initialRiver.setWaterLevel("low");
+        
+        String initalRiverDifficulty = initialRiver.getDifficulty();
+        String initialRiverWaterLevel = initialRiver.getWaterLevel();
         
     }
     

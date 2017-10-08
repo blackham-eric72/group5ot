@@ -19,6 +19,7 @@ public class Game implements Serializable  {
    private Player player;
    private Map map;
    private EndScene endscene;
+   private Menu menu;
    
     public Game() {
     }
@@ -56,9 +57,15 @@ public class Game implements Serializable  {
         }
         return true;
     }
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }     
    
-    
-    
     public double getTotalTime() {
         return totalTime;
     }
