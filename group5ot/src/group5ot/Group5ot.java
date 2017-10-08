@@ -14,6 +14,12 @@ import CIT260.Group5ot.model.Question;
 import CIT260.Group5ot.model.QuestionScene;
 import CIT260.Group5ot.model.Wagon;
 
+//Ken's classes to import...
+import CIT260.Group5ot.model.Map;
+import CIT260.Group5ot.model.Location;
+import CIT260.Group5ot.model.EndScene;
+import CIT260.Group5ot.model.LosingGameScene;
+import CIT260.Group5ot.model.WinningGameScene;
 
 /**
  *
@@ -114,15 +120,61 @@ public class Group5ot {
         
         System.out.println("First question is " + firstQuestionQuestion + ", The answer is " + firstQuestionAnswer);
         
+        //Ken's class tests...
+        //****************Map class****************
+        //This brings an actual instance of Map to life (as "map")
+        Map map = new Map();
+        
+        //This sets values for my variables
+        map.setDescription("I\'m the map!");
+        /* The below variables were no longer needed once we set constants.
+        map.setRowCount(20);
+        map.setColumnCount(35);
+        */
+        
+        //This creates new, usable variables and assigns them values using above variables
+        /*
+        String mapDescription = map.getDescription();
+        int mapRowCountCurrent = map.getROWCOUNT();
+        int mapColumnCountCurrent = map.getCOLUMNCOUNT();
+        */
+        
+        //This will use my new, usable variables
+        //System.out.println("The map says: " + mapDescription + " I have " + mapRowCountCurrent + " rows and " + mapColumnCountCurrent + " columns. Thanks for stopping by.");
+        System.out.println(map.toString());
+        
+        //****************Location class****************
+        Location location = new Location();
+        
+        location.setRow(13);
+        location.setColumn(20);
+        location.setVisited(false); //location.isVisited();
+        location.setAmountRemaining(8);
+        
+        System.out.println(location.toString());
+        
+        //****************EndScene****************
+        EndScene endScene = new EndScene();
+        
+        endScene.setEndStatus(true);
+        
+        System.out.println(endScene.toString());
+        
+        //****************LosingGameScene****************
+        LosingGameScene losingGameSceneVar = new LosingGameScene();
+        
+        losingGameSceneVar.setPlayerName(playerOne.getName());
+        
+        System.out.println(losingGameSceneVar.toString());
+        
+        //****************WinningGameScene****************
+        WinningGameScene winningGameSceneVar = new WinningGameScene();
+        
+        winningGameSceneVar.setPlayerName(losingGameSceneVar.getPlayerName()); //Trying things. :)
+        winningGameSceneVar.setRecordedTime(46);
+        
+        System.out.println(winningGameSceneVar.toString());
         
     }
-    
-    
-    
-   
-   
-   
-    
-    
     
 }

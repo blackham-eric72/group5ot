@@ -17,10 +17,10 @@ public class Map implements Serializable {
     
     //class instance variables
     private String description;
-    private int rowCount;
-    private int columnCount;
+    private int ROWCOUNT = 50;
+    private int COLUMNCOUNT = 85;
     private ArrayList<Game> games = new ArrayList<Game>();
-    private Location[] locations = new Location[25];
+    private Location[] locations = new Location[27];
 
     //default constructor
     public Map() {
@@ -35,21 +35,22 @@ public class Map implements Serializable {
         this.description = description;
     }
 
-    public int getRowCount() {
-        return rowCount;
+    public int getROWCOUNT() {
+        return ROWCOUNT;
+    }
+    //Is this needed?  We have a static value.
+    public void setROWCOUNT(int ROWCOUNT) {
+        this.ROWCOUNT = ROWCOUNT;
     }
 
-    public void setRowCount(int rowCount) {
-        this.rowCount = rowCount;
+    public int getCOLUMNCOUNT() {
+        return COLUMNCOUNT;
+    }
+    //Is this needed?  We have a static value.
+    public void setCOLUMNCOUNT(int COLUMNCOUNT) {
+        this.COLUMNCOUNT = COLUMNCOUNT;
     }
 
-    public int getColumnCount() {
-        return columnCount;
-    }
-
-    public void setColumnCount(int columnCount) {
-        this.columnCount = columnCount;
-    }
 
     public ArrayList<Game> getGames() {
         return games;
@@ -65,8 +66,8 @@ public class Map implements Serializable {
     public int hashCode() {
         int hash = 3;
         hash = 89 * hash + Objects.hashCode(this.description);
-        hash = 89 * hash + this.rowCount;
-        hash = 89 * hash + this.columnCount;
+        hash = 89 * hash + this.ROWCOUNT;
+        hash = 89 * hash + this.COLUMNCOUNT;
         return hash;
     }
 
@@ -82,10 +83,10 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (this.rowCount != other.rowCount) {
+        if (this.ROWCOUNT != other.ROWCOUNT) {
             return false;
         }
-        if (this.columnCount != other.columnCount) {
+        if (this.COLUMNCOUNT != other.COLUMNCOUNT) {
             return false;
         }
         if (!Objects.equals(this.description, other.description)) {
@@ -96,7 +97,7 @@ public class Map implements Serializable {
 
     @Override
     public String toString() {
-        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + '}';
+        return "Map{" + "description=" + description + ", ROWCOUNT=" + ROWCOUNT + ", COLUMNCOUNT=" + COLUMNCOUNT + '}';
     }
     
     

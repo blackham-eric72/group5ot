@@ -16,7 +16,7 @@ public class LosingGameScene implements Serializable{
     
     //class instance variables
     private String playerName; //Can and should we reference the Player class?
-    private EndScene endscene;
+    private EndScene endScene;
     
     //constructor
 
@@ -33,12 +33,12 @@ public class LosingGameScene implements Serializable{
         this.playerName = playerName;
     }
 
-    public EndScene getEndscene() {
-        return endscene;
+    public EndScene getEndScene() {
+        return endScene;
     }
 
-    public void setEndscene(EndScene endscene) {
-        this.endscene = endscene;
+    public void setEndScene(EndScene endScene) {
+        this.endScene = endScene;
     }
     
     //tostring, hash and equals
