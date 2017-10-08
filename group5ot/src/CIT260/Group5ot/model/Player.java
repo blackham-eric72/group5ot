@@ -22,8 +22,17 @@ public class Player implements Serializable {
     private Health health;
     private Wagon wagon;
     private InventoryItem inventoryItem;
+    private Menu menu;
 
     public Player() {
+    }
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
     }
     
      public String getName() {

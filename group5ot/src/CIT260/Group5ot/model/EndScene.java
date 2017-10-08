@@ -16,7 +16,7 @@ public class EndScene implements Serializable {
     
     //class instance variables
     private boolean endStatus;
-    private ArrayList<Game> games = new ArrayList<Game>();
+    private ArrayList<Game> games = new ArrayList<>();
     
     //constructor
     public EndScene() {
