@@ -24,6 +24,15 @@ import CIT260.Group5ot.model.EndScene;
 import CIT260.Group5ot.model.LosingGameScene;
 import CIT260.Group5ot.model.WinningGameScene;
 
+//Eric's Classes to import...
+import CIT260.Group5ot.model.HuntingScene;
+import CIT260.Group5ot.model.FoodSource;
+import CIT260.Group5ot.model.RegularSceneType;
+import CIT260.Group5ot.model.TradingPost;
+import CIT260.Group5ot.model.ResourceScene;
+import CIT260.Group5ot.model.WaterSource;
+                
+
 /**
  *
  * @author erict.blackham
@@ -34,7 +43,7 @@ public class Group5ot {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+       
         Player playerOne = new Player();
         
         playerOne.setName("Michael Jordan");
@@ -144,6 +153,9 @@ public class Group5ot {
         
         //This will use my new, usable variables
         //System.out.println("The map says: " + mapDescription + " I have " + mapRowCountCurrent + " rows and " + mapColumnCountCurrent + " columns. Thanks for stopping by.");
+       
+       
+        
         System.out.println(map.toString());
         
         //****************Location class****************
@@ -196,6 +208,32 @@ public class Group5ot {
         
         String initalRiverDifficulty = initialRiver.getDifficulty();
         String initialRiverWaterLevel = initialRiver.getWaterLevel();
+        
+       
+        //Eric's Tests
+       
+        HuntingScene huntSceneOne = new HuntingScene();
+        
+        huntSceneOne.setAmmunitionLvl(5);
+        huntSceneOne.setAnimalType("buffalo");
+        huntSceneOne.setDifficultyLvl("Easy");
+        
+        double partOneAmmuntion = huntSceneOne.getAmmunitionLvl();
+        String partOneAnimal = huntSceneOne.getAnimalType();
+        String partOneDifficulty = huntSceneOne.getDifficultyLvl();
+        
+        System.out.println(huntSceneOne.toString());
+       
+        
+        FoodSource foodStuff = new FoodSource();
+        
+        foodStuff.setFoodLvl("High");
+        foodStuff.setFoodNeeded("Wheat");
+        
+        String foodOneLvl = foodStuff.getFoodLvl();
+        String foodOneNeeds = foodStuff.getFoodNeeded();
+        
+        System.out.println(foodStuff.toString());
         
     }
     
