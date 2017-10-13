@@ -84,15 +84,6 @@ public class Player implements Serializable {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
     @Override
     public int hashCode() {
