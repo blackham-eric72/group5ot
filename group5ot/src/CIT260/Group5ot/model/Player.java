@@ -93,12 +93,12 @@ public class Player implements Serializable {
         return hash;
     }
 
+    
+
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", bestTime=" + bestTime + '}';
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + ", games=" + games + ", health=" + health + ", wagon=" + wagon + ", inventoryItem=" + inventoryItem + ", menu=" + menu + '}';
     }
-    
-    
 
     @Override
     public boolean equals(Object obj) {

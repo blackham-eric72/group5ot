@@ -32,11 +32,13 @@ public class Game implements Serializable  {
         return hash;
     }
 
+   
+    
     @Override
     public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + '}';
+        return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + ", player=" + player + ", map=" + map + ", endscene=" + endscene + ", menu=" + menu + '}';
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
