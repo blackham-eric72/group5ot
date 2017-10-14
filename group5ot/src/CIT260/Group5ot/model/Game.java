@@ -20,6 +20,9 @@ public class Game implements Serializable  {
    private Map map;
    private EndScene endscene;
    private Menu menu;
+   private BarrelVolume barrelVolume;
+   private MeatShare meatShare;
+   private Trading trading;
    
     public Game() {
     }
@@ -106,6 +109,30 @@ public class Game implements Serializable  {
 
     public void setEndscene(EndScene endscene) {
         this.endscene = endscene;
+    }
+
+    public BarrelVolume getBarrelVolume() {
+        return barrelVolume;
+    }
+
+    public void setBarrelVolume(BarrelVolume barrelVolume) {
+        this.barrelVolume = barrelVolume;
+    }
+
+    public MeatShare getMeatShare() {
+        return meatShare;
+    }
+
+    public void setMeatShare(MeatShare meatShare) {
+        this.meatShare = meatShare;
+    }
+
+    public Trading getTrading() {
+        return trading;
+    }
+
+    public void setTrading(Trading trading) {
+        this.trading = trading;
     }
     
     

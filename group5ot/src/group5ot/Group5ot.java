@@ -11,8 +11,7 @@ import CIT260.Group5ot.model.Player;
 import CIT260.Group5ot.model.Character;
 import CIT260.Group5ot.model.Health;
 import CIT260.Group5ot.model.InventoryItem;
-import CIT260.Group5ot.model.Question;
-import CIT260.Group5ot.model.QuestionScene;
+
 import CIT260.Group5ot.model.RiverCrossing;
 import CIT260.Group5ot.model.Trail;
 import CIT260.Group5ot.model.Wagon;
@@ -111,26 +110,7 @@ public class Group5ot {
         System.out.println("Height = " + barrelOneHeight + ", Diameter = " + barrelOneDiameter + ", Volume = " + barrelOneVolume + ", Max weight = " + barrelOneMaxWeight);
         
         
-        QuestionScene sceneOne = new QuestionScene();
         
-        sceneOne.setNoToAnswer("I don't know what this means");
-        sceneOne.setBonus("You get 25 pounds of elk meat");
-        
-        String sceneOneNoToAnswer = sceneOne.getNoToAnswer();
-        String sceneOneBonus = sceneOne.getBonus();
-        
-        System.out.println("Answer = " + sceneOneNoToAnswer + ", Bonus = " + sceneOneBonus);
-        
-        
-        Question firstQuestion = new Question();
-        
-        firstQuestion.setQuestion("How much water can the barrel hold?");
-        firstQuestion.setAnswer("47 gallons");
-        
-        String firstQuestionQuestion = firstQuestion.getQuestion();
-        String firstQuestionAnswer = firstQuestion.getAnswer();
-        
-        System.out.println("First question is " + firstQuestionQuestion + ", The answer is " + firstQuestionAnswer);
         
         //Ken's class tests...
         //****************Map class****************
