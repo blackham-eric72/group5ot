@@ -146,7 +146,7 @@ public class BarrelVolumeControlTest {
         //test to see if the result returned equals the expected result
         assertEquals(expResult, result, 0.0001);  
         
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
     
 }
