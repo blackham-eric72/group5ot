@@ -35,10 +35,10 @@ public class BarrelVolumeControlTest {
         System.out.println("\tTest case 1");
         
         // define the input variables
-        double height = 12;
-        double radius = 36;
+        double height = 36;
+        double radius = 12;
         
-        double expResult = 9.42; // expected result 
+        double expResult = 9.4247; // expected result 
         
         //create instance of BarrelVolumeControl
         BarrelVolumeControl instance = new BarrelVolumeControl(); 
@@ -51,13 +51,13 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 2 ---
-        System.out.println("\tTest case 1");
+        System.out.println("\tTest case 2");
         
         // define the input variables
         height = 36;
         radius = -1;
         
-        expResult = 0.07; // expected result        
+        expResult = -1; // expected result        
                 
         // call the method
         result = instance.calcBarrelVolume(height, radius);
@@ -68,13 +68,13 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 3 ---
-        System.out.println("\tTest case 1");
+        System.out.println("\tTest case 3");
         
         // define the input variables
         height = -36;
         radius = 12;
         
-        expResult = -9.42; // expected result 
+        expResult = -1; // expected result 
         
         // call the method
         result = instance.calcBarrelVolume(height, radius);
@@ -84,13 +84,13 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 4 ---
-        System.out.println("\tTest case 1");
+        System.out.println("\tTest case 4");
         
         // define the input variables
         height = 36;
         radius = 100;
         
-        expResult = 654.50; // expected result 
+        expResult = -1; // expected result 
         
         // call the method
         result = instance.calcBarrelVolume(height, radius);
@@ -100,7 +100,7 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 5 ---
-        System.out.println("\tTest case 1");
+        System.out.println("\tTest case 5");
         
         // define the input variables
         height = 0;
@@ -116,7 +116,7 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 6 ---
-        System.out.println("\tTest case 1");
+        System.out.println("\tTest case 6");
         
         // define the input variables
         height = 60;
@@ -132,13 +132,13 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 7 ---
-        System.out.println("\tTest case 1");
+        System.out.println("\tTest case 7");
         
         // define the input variables
         height = 60;
         radius = 18;
         
-        expResult = 35.34; // expected result 
+        expResult = 35.3429; // expected result 
         
         // call the method
         result = instance.calcBarrelVolume(height, radius);
