@@ -13,15 +13,15 @@ public class MeatShareControl {
     
     public double calcShares(double meatWeight, double numAdults, double numChildren){
         
-        if (meatWeight < 0 || meatWeight > 300){
+        if (meatWeight <= 0 || meatWeight > 300){
             return -1;
         }
     
-        if (numAdults < 0 || numAdults > 30) {
+        if (numAdults < 0 || numAdults > 2) {
             return -1;
         }
         
-        if (numChildren < 0 || numChildren > 30) {
+        if (numChildren < 0 || numChildren > 3) {
             return -1;
         }
         

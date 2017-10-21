@@ -34,7 +34,7 @@ public class HealthControlTest {
     /**
      * Test of calcHealthDecrease method, of class HealthControl.
      */
-    /**@Test
+    @Test
     public void testCalcHealthDecrease() {
    
         //Test Case 1
@@ -107,7 +107,7 @@ public class HealthControlTest {
         result = instance.calcHealthDecrease(healthLevel);
         
         assertEquals(expResult, result, 0); 
-    }**/
+    }
 
     
        /**
@@ -131,7 +131,7 @@ public class HealthControlTest {
         
         assertEquals(expResult, result, 0);
         
-        /**
+        
         //Test Case 2
         
         System.out.println("\t calcHealthIncrease Test case 2");
@@ -185,14 +185,14 @@ public class HealthControlTest {
                
         result = instance.calcHealthIncrease(healthLevel);
         
-        assertEquals(expResult, result, 0); **/
+        assertEquals(expResult, result, 0); 
     }
     
     
     /**
      * Test of calcStatus method, of class HealthControl.
      */
-    /** @Test
+    @Test
     public void testCalcStatus() {
         
          //Test Case 1
@@ -274,6 +274,6 @@ public class HealthControlTest {
         
         assertEquals(expResult, result);
 
-    }**/
+    }
     
 }

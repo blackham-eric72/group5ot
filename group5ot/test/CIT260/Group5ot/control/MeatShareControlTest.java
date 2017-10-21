@@ -26,16 +26,16 @@ public class MeatShareControlTest {
         
         //input variables
         double meatWeight = 150.00;
-        double numAdults = 12.00;
-        double numChildren = 8.00;
+        double numAdults = 1.00;
+        double numChildren = 2.00;
         
-        double expResult = 4.69;
+        double expResult = 37.50;
         
         MeatShareControl instance = new MeatShareControl();
         
         double result = instance.calcShares(meatWeight, numAdults, numChildren);
         
-        assertEquals(expResult, result, 0.00);
+        assertEquals(expResult, result, 0.01);
     
         
         //Test Case 2
@@ -44,14 +44,14 @@ public class MeatShareControlTest {
         
         //input variables
         meatWeight = -1.00;
-        numAdults = 12.00;
-        numChildren = 8.00;
+        numAdults = 1.00;
+        numChildren = 2.00;
         
         expResult = -1;
              
         result = instance.calcShares(meatWeight, numAdults, numChildren);
         
-        assertEquals(expResult, result, 0.00);
+        assertEquals(expResult, result, 0.01);
         
         
         //Test Case 3
@@ -61,13 +61,13 @@ public class MeatShareControlTest {
         //input variables
         meatWeight = 150.00;
         numAdults = -12.00;
-        numChildren = 8.00;
+        numChildren = 2.00;
         
         expResult = -1;
               
         result = instance.calcShares(meatWeight, numAdults, numChildren);
         
-        assertEquals(expResult, result, 0.00);
+        assertEquals(expResult, result, 0.01);
         
         
         //Test Case 4
@@ -76,14 +76,14 @@ public class MeatShareControlTest {
         
         //input variables
         meatWeight = 150.00;
-        numAdults = 12.00;
+        numAdults = 1.00;
         numChildren = -8.00;
         
         expResult = -1;
                
         result = instance.calcShares(meatWeight, numAdults, numChildren);
         
-        assertEquals(expResult, result, 0.00);
+        assertEquals(expResult, result, 0.01);
         
         
         //Test Case 5
@@ -93,13 +93,13 @@ public class MeatShareControlTest {
         //input variables
         meatWeight = 150.00;
         numAdults = 34.00;
-        numChildren = 8.00;
+        numChildren = 2.00;
         
         expResult = -1;
                
         result = instance.calcShares(meatWeight, numAdults, numChildren);
         
-        assertEquals(expResult, result, 0.00);
+        assertEquals(expResult, result, 0.01);
     
                 
         //Test Case 6
@@ -107,15 +107,15 @@ public class MeatShareControlTest {
         System.out.println("\tTest case 6");
         
         //input variables
-        meatWeight = 0.00;
-        numAdults = -12.00;
+        meatWeight = 150.00;
+        numAdults = 1.00;
         numChildren = 8.00;
         
         expResult = -1;
                
         result = instance.calcShares(meatWeight, numAdults, numChildren);
         
-        assertEquals(expResult, result, 0.00);
+        assertEquals(expResult, result, 0.01);
        
                 
         //Test Case 7
@@ -123,15 +123,15 @@ public class MeatShareControlTest {
         System.out.println("\tTest case 7");
         
         //input variables
-        meatWeight = 0.00;
-        numAdults = 0.00;
-        numChildren = 8.00;
+        meatWeight = 350.00;
+        numAdults = 1.00;
+        numChildren = 2.00;
         
         expResult = -1;
                
         result = instance.calcShares(meatWeight, numAdults, numChildren);
         
-        assertEquals(expResult, result, 0.00);
+        assertEquals(expResult, result, 0.01);
         
                 
         //Test Case 8
@@ -139,15 +139,15 @@ public class MeatShareControlTest {
         System.out.println("\tTest case 8");
         
         //input variables
-        meatWeight = 150.00;
-        numAdults = 0.00;
-        numChildren = 0.00;
+        meatWeight = 1.00;
+        numAdults = 1.00;
+        numChildren = 1.00;
         
-        expResult = -1;
+        expResult = .33;
                
         result = instance.calcShares(meatWeight, numAdults, numChildren);
         
-        assertEquals(expResult, result, 0.00);
+        assertEquals(expResult, result, 0.01);
         
         
         //Test Case 9
@@ -155,15 +155,15 @@ public class MeatShareControlTest {
         System.out.println("\tTest case 9");
         
         //input variables
-        meatWeight = 275.00;
-        numAdults = 34.00;
-        numChildren = 14.00;
+        meatWeight = 300.00;
+        numAdults = 2.00;
+        numChildren = 3.00;
         
-        expResult = -1;
+        expResult = 42.86;
                
         result = instance.calcShares(meatWeight, numAdults, numChildren);
         
-        assertEquals(expResult, result, 0.00);
+        assertEquals(expResult, result, 0.01);
     }
     
 }

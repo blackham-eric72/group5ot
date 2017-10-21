@@ -60,7 +60,7 @@ public class HealthControl {
             status = "dead";
         }
         
-        if(healthLevel <= 25){
+        if(healthLevel >0 && healthLevel <= 25){
             status = "dying";
         }
         
