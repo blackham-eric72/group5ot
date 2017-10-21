@@ -15,19 +15,19 @@ import java.util.Objects;
 public class Health implements Serializable{
     
     //class instance variables
-    private int level;
+    private int healthLevel;
     private String status;
     private Player player;
 
     public Health() {
     }     
 
-    public int getLevel() {
-        return level;
+    public int getHealthLevel() {
+        return healthLevel;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void setHealthLevel(int healthlevel) {
+        this.healthLevel = healthLevel;
     }
 
     public String getStatus() {
@@ -51,14 +51,14 @@ public class Health implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 71 * hash + this.level;
+        hash = 71 * hash + this.healthLevel;
         hash = 71 * hash + Objects.hashCode(this.status);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Health{" + "level=" + level + ", status=" + status + '}';
+        return "Health{" + "healthlevel=" + healthLevel + ", status=" + status + '}';
     }
     
 
@@ -74,7 +74,7 @@ public class Health implements Serializable{
             return false;
         }
         final Health other = (Health) obj;
-        if (this.level != other.level) {
+        if (this.healthLevel != other.healthLevel) {
             return false;
         }
         if (!Objects.equals(this.status, other.status)) {
