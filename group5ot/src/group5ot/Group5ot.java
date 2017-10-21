@@ -62,10 +62,10 @@ public class Group5ot {
         
         Health healthOne = new Health();
         
-        healthOne.setLevel(10);
+        healthOne.setHealthLevel(10);
         healthOne.setStatus("sick");
         
-        int healthOneLevel = healthOne.getLevel();
+        int healthOneLevel = healthOne.getHealthLevel();
         String healthOneStatus = healthOne.getStatus();
         
         System.out.println("Health = " + healthOneLevel + ", Status = " + healthOneStatus);
