@@ -16,6 +16,7 @@ public class TradingPost implements Serializable {
     private String suppliesForSale;
     private double costOfSupplies;
     
+    
     //constructor 
 
     public TradingPost() {
