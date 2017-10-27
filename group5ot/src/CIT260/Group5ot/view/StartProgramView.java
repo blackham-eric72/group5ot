@@ -5,6 +5,8 @@
  */
 package CIT260.Group5ot.view;
 
+import CIT260.Group5ot.control.GameControl;
+import CIT260.Group5ot.model.Player;
 import java.util.Scanner;
 
 /**
@@ -19,32 +21,29 @@ public class StartProgramView {
             
             this.promptMessage = "\nPlease enter your name: ";
             // display the banner when view is created
-            this.displayBanner();
-            
-         
+            this.displayBanner();         
         }
 
-        public void displayBanner() {
-        
+        public void displayBanner() {        
         
             System.out.println(
                "\n**********************************************          *"
-                +"\n*It is 1848 and you are preparing to set off "
-                + "\n*on a journey along the Oregon trail. The trail "
-                + "\n*will be treacherous, but a land of promise and "
-                + "\n*opportunity awaits. You must make it to Oregon "
-                + "\n*by October 31 or winter weather will overwhelm you."
-                +"\n*                                                     *"
-                + "\n*You are the wagon leader for your team and will be "
-                + "\n*tasked with the job of purchasing supplies for your "
-                + "\n*team and making decisions about your travels. "
-                + "\n*Throughout the journey you will be set upon by many "
-                + "\n*challenges and some from your team will not make it."
+                + "\n* It is 1848 and you are preparing to set off "
+                + "\n* on a journey along the Oregon trail. The trail "
+                + "\n* will be treacherous, but a land of promise and "
+                + "\n* opportunity awaits. You must make it to Oregon "
+                + "\n* by October 31 or winter weather will overwhelm you."
+                + "\n*                                                     *"
+                + "\n* You are the wagon leader for your team and will be "
+                + "\n* tasked with the job of purchasing supplies for your "
+                + "\n* team and making decisions about your travels. "
+                + "\n* Throughout the journey you will be set upon by many "
+                + "\n* challenges and some from your team will not make it."
             );
         }
 
         public void displayStartProgramView() {
-            
+                       
             boolean done = false;
             do {
                 // Prompt for and get the input value
@@ -119,10 +118,43 @@ public class StartProgramView {
         display mainMenuView
         return true
         */
+        if  (playersName.length() < 2) {
+            System.out.println("\nInvalid players name: "
+                    + "The name must be greater than one character in length");
+            return false;
+        }
         
+        Player player = GameControl.createPlayer(playersName);
         
-        System.out.println("\n *** doAction() called ****");
-        return true;
+        if (player == null) { //if unsuccessful
+            System.out.println("\nError creating the player.");
+            return false;
+        }
+         
+        // display next view
+        this.displayNextView(player);
+        
+        return true;  //success!
     }
+
+    private void displayNextView(Player player) {
+        System.out.println("\n=============================================="
+                            + "\n Welcome to the game "  + player.getName()
+                            + "\n Prepare yourself for the treacherous trek"
+                            + "\n to the west - to a land of Opportunity,"
+                            + "\n Gold, and Glory. "
+                            + "\n Will you Survive the journey?"
+                            + "\n Let’s find out…" 
+                            + "\n==========================================="
+                            );
+        
+        //Create MainMenuView object
+        MainMenuView mainMenuView = new MainMenuView();
+                
+        // Display the main menu view
+        mainMenuView.displayMainMenuView();
+    }
+
+    
 }
 

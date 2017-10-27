@@ -26,6 +26,7 @@ import CIT260.Group5ot.model.WinningGameScene;
 //Eric's Classes to import...
 import CIT260.Group5ot.model.HuntingScene;
 import CIT260.Group5ot.model.FoodSource;
+import CIT260.Group5ot.model.Game;
 import CIT260.Group5ot.model.RegularSceneType;
 import CIT260.Group5ot.model.TradingPost;
 import CIT260.Group5ot.model.ResourceScene;
@@ -38,14 +39,33 @@ import CIT260.Group5ot.view.StartProgramView;
  * @author erict.blackham
  */
 public class Group5ot {
+    
+    private static Game currentGame = null;
+    private static Player player = null;
 
-    /**
-     * @param args the command line arguments
-     */
+  
+
+   
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }    
+    
+    public static void setPlayer(Player player) {
+        Group5ot.player = player;
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        Group5ot.currentGame = currentGame;
     }
     
 }
