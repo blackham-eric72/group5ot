@@ -5,6 +5,8 @@
  */
 package CIT260.Group5ot.view;
 
+import CIT260.Group5ot.control.GameControl;
+import group5ot.Group5ot;
 import java.util.Scanner;
 
 /**
@@ -107,7 +109,12 @@ public class MainMenuView {
     }    
 
     private void startNewGame() {
-        System.out.println("*** startNewGame() function called ***");
+                // create a new game
+        GameControl.createNewGame(Group5ot.getPlayer());
+        
+        // display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
