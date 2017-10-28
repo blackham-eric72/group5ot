@@ -56,7 +56,18 @@ public class MainMenuView {
 
     private String getMenuOption() {
         
-        this.promptMessage = "Enter a menu option";
+        this.promptMessage = 
+                        "\n"
+                        + "\n--------------------------"
+                        + "\n| Main Menu              |"
+                        + "\n--------------------------"
+                        + "\nB - Begin New Game"
+                        + "\nL - Load Saved Game"
+                        + "\nH - Help"                 
+                        + "\nG - Game Menu"
+                        + "\nS - Save game"
+                        + "\nX - Quit"
+                        + "\n--------------------------";;
                
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
@@ -122,7 +133,11 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu() function called ***");
+        //Create HELP menu object
+        HelpMenuView helpMenuView = new HelpMenuView();
+                
+        // Display the main menu view
+        helpMenuView.displayHelpMenuView();
     }
 
     private void displayGameMenu() {

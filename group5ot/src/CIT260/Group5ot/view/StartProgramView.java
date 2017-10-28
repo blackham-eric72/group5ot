@@ -27,18 +27,21 @@ public class StartProgramView {
         public void displayBanner() {        
         
             System.out.println(
-               "\n**********************************************          *"
-                + "\n* It is 1848 and you are preparing to set off "
-                + "\n* on a journey along the Oregon trail. The trail "
-                + "\n* will be treacherous, but a land of promise and "
-                + "\n* opportunity awaits. You must make it to Oregon "
-                + "\n* by October 31 or winter weather will overwhelm you."
-                + "\n*                                                     *"
-                + "\n* You are the wagon leader for your team and will be "
-                + "\n* tasked with the job of purchasing supplies for your "
-                + "\n* team and making decisions about your travels. "
-                + "\n* Throughout the journey you will be set upon by many "
-                + "\n* challenges and some from your team will not make it."
+                  "\n|*|------------------------------------------------|*|"
+                + "\n|*|   It is 1848 and you are preparing to set off  |*|"
+                + "\n|*| on a journey along the Oregon trail. The trail |*|"
+                + "\n|*| will be treacherous, but a land of promise and |*|"
+                + "\n|*| opportunity awaits. You must make it to Oregon |*|"
+                + "\n|*| by October 31 or winter weather will overwhelm |*|"
+                + "\n|*| you.                                           |*|"
+                + "\n|*|                                                |*|"
+                + "\n|*|    You are the wagon leader for your team and  |*|"
+                + "\n|*| will betasked with the job of purchasing       |*|"
+                + "\n|*| supplies for yourteam and making decisions     |*|"
+                + "\n|*| aboutyour travels. Throughout the journey you  |*|"
+                + "\n|*| will be set upon by many challenges; some    |*|"
+                + "\n|*| from your team will not make it.               |*|"
+                + "\n|*|------------------------------------------------|*|" 
             );
         }
 
@@ -138,14 +141,15 @@ public class StartProgramView {
     }
 
     private void displayNextView(Player player) {
-        System.out.println("\n=============================================="
-                            + "\n Welcome to the game "  + player.getName()
-                            + "\n Prepare yourself for the treacherous trek"
-                            + "\n to the west - to a land of Opportunity,"
-                            + "\n Gold, and Glory. "
-                            + "\n Will you Survive the journey?"
-                            + "\n Let’s find out…" 
-                            + "\n==========================================="
+        System.out.println(
+                              "\n|======================================================|"
+                            + "\n| Welcome to the game "  + player.getName() + ".       |"
+                            + "\n| Prepare yourself for the treacherous trek            |"
+                            + "\n| to the west - to a land of Opportunity,              |"
+                            + "\n| Gold, and Glory.                                     | "
+                            + "\n| Will you Survive the journey?                        |"
+                            + "\n| Let’s find out…                                     |" 
+                            + "\n|======================================================|"
                             );
         
         //Create MainMenuView object
