@@ -71,7 +71,7 @@ public class HelpMenuView {
             System.out.println("\n" + this.promptMessage);
             
             value = keyboard.nextLine(); // get next line typed on keyboard 
-            value = value.trim(); //trim off leading and trailing blanks
+            value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
             
             if ("D".equals(value) || "R".equals(value) || "B".equals(value) ) { //value is blank
                break; 
