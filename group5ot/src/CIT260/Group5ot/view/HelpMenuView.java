@@ -29,7 +29,7 @@ public class HelpMenuView {
                         + "\n|*| ------------------------------------ |*|"
                         + "\n|*| D        - Display Game Description  |*|"
                         + "\n|*| R        - Display Game rules        |*|"
-                        + "\n|*| SpaceBar - Return to game/main menu  |*|"                 
+                        + "\n|*| B        - Return to game/main menu  |*|"                 
                         + "\n|*| ------------------------------------ |*|";
         }
    
