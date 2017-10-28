@@ -143,12 +143,12 @@ public class StartProgramView {
     private void displayNextView(Player player) {
         System.out.println(
                               "\n|======================================================|"
-                            + "\n| Welcome to the game "  + player.getName() + ".       |"
-                            + "\n| Prepare yourself for the treacherous trek            |"
-                            + "\n| to the west - to a land of Opportunity,              |"
+                            + "\n| Welcome to the game, "  + player.getName() + ". " + String.format("%-" + (30 - player.getName().length()) + "s", " ") + "|"
+                            + "\n| Prepare yourself for the treacherous trek            |" //The string above ensures that the right "|" character lines up
+                            + "\n| to the west - to a land of Opportunity,              |" //regardless of the length of the users's name.
                             + "\n| Gold, and Glory.                                     | "
                             + "\n| Will you Survive the journey?                        |"
-                            + "\n| Let’s find out…                                     |" 
+                            + "\n| Let’s find out...                                    |" 
                             + "\n|======================================================|"
                             );
         
