@@ -9,6 +9,7 @@ import CIT260.Group5ot.control.GameControl;
 import group5ot.Group5ot;
 import java.util.Scanner;
 
+
 /**
  *
  * @author crims
@@ -33,6 +34,7 @@ public class MainMenuView {
                         + "\nH - Help"                 
                         + "\nG - Game Menu"
                         + "\nS - Save game"
+                        + "\nM - View Map"
                         + "\nX - Quit"
                         + "\n--------------------------";
         }
@@ -66,6 +68,8 @@ public class MainMenuView {
                         + "\nH - Help"                 
                         + "\nG - Game Menu"
                         + "\nS - Save game"
+                        + "\nM - View Map"
+                        + "\nCBV - Calculate Barrel Volume " 
                         + "\nX - Quit"
                         + "\n--------------------------";;
                
@@ -111,6 +115,12 @@ public class MainMenuView {
             case "S": // save the current game
                 this.saveGame();
                 break;
+            case "M": // display the map view
+                this.displayMapView();
+                break;
+            case "CBV": // display the map view
+                this.displayBarrelVolumeCalcView();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -146,5 +156,21 @@ public class MainMenuView {
 
     private void saveGame() {
         System.out.println("*** saveGame() function called ***");
+    }
+    //go to the map view
+    private void displayMapView() {
+        //Create map view object
+        MapView mapView = new MapView();
+                
+        // Display the map view
+        mapView.displayMapView();
+    }
+    //display the barrelvolumecalcview
+    private void displayBarrelVolumeCalcView() {
+        //Create map view object
+        BarrelVolumeCalcView calcBarrel = new BarrelVolumeCalcView();
+                
+        // Display the map view
+        calcBarrel.displayBarrelVolumeCalcView();
     }
 }
