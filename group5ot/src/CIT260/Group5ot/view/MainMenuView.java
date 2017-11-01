@@ -9,7 +9,6 @@ import CIT260.Group5ot.control.GameControl;
 import group5ot.Group5ot;
 import java.util.Scanner;
 
-
 /**
  *
  * @author crims
