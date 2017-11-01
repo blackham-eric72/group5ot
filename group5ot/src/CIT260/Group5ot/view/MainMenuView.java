@@ -30,7 +30,7 @@ public class MainMenuView {
                         + "\n--------------------------"
                         + "\nB - Begin New Game"
                         + "\nL - Load Saved Game"
-                        + "\nH - Help"                 
+                        + "\nH - Help Menu"                 
                         + "\nG - Game Menu"
                         + "\nS - Save game"
                         + "\nM - View Map"
@@ -58,13 +58,14 @@ public class MainMenuView {
     private String getMenuOption() {
         
         this.promptMessage = 
-                        "\n"
+                        "\n************ Enter a menu option ************"
+                       
                         + "\n--------------------------"
                         + "\n| Main Menu              |"
                         + "\n--------------------------"
                         + "\nB - Begin New Game"
                         + "\nL - Load Saved Game"
-                        + "\nH - Help"                 
+                        + "\nH - Help Menu"                 
                         + "\nG - Game Menu"
                         + "\nS - Save game"
                         + "\nM - View Map"
@@ -129,12 +130,14 @@ public class MainMenuView {
     }    
 
     private void startNewGame() {
-                // create a new game
-        GameControl.createNewGame(Group5ot.getPlayer());
+                
+
+// create a new game
+        //GameControl.createNewGame(Group5ot.getPlayer());
         
         // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        //GameMenuView gameMenu = new GameMenuView();
+        //gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
@@ -145,14 +148,17 @@ public class MainMenuView {
         //Create HELP menu object
         HelpMenuView helpMenuView = new HelpMenuView();
                 
-        // Display the main menu view
+        // Display the help menu view
         helpMenuView.displayHelpMenuView();
     }
 
     private void displayGameMenu() {
-        System.out.println("*** displayGameMenu() function called ***");
+        //Create Game menu object
+        GameMenuView gameMenuView = new GameMenuView();
+                
+        // Display the Game menu view
+        gameMenuView.displayGameMenuView();
     }
-
     private void saveGame() {
         System.out.println("*** saveGame() function called ***");
     }

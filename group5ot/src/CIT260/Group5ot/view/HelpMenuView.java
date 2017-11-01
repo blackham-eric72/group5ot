@@ -40,7 +40,7 @@ public class HelpMenuView {
         do {
             //Prompt for help menu input
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals(" ")) // user wants to return to game menu
+            if (menuOption.toUpperCase().equals("B")) // user wants to return to previous menu
                 return; // return to the game?
             
             // do the requested action and display the next view
@@ -53,14 +53,15 @@ public class HelpMenuView {
     private String getMenuOption() {
         
         this.promptMessage = 
-                          "************ Enter a menu option ************"
-                        + "\n|*| ------------------------------------ |*|"
-                        + "\n|*| Help Menu                            |*|"
-                        + "\n|*| ------------------------------------ |*|"
-                        + "\n|*| D - Display Game Description         |*|"
-                        + "\n|*| R - Display Game rules               |*|"
-                        + "\n|*| B - Return to game/main menu         |*|"                 
-                        + "\n|*| ------------------------------------ |*|";
+            "************ Enter a menu option ************"
+            + "\n" + menu;
+          /*+ "\n|*| ------------------------------------ |*|"
+          + "\n|*| Help Menu                            |*|"
+          + "\n|*| ------------------------------------ |*|"
+          + "\n|*| D - Display Game Description         |*|"
+          + "\n|*| R - Display Game rules               |*|"
+          + "\n|*| B - Return to game/main menu         |*|"                 
+          + "\n|*| ------------------------------------ |*|";*/
                
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
@@ -73,7 +74,7 @@ public class HelpMenuView {
             value = keyboard.nextLine(); // get next line typed on keyboard 
             value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
             
-            if ("D".equals(value) || "R".equals(value) || "B".equals(value) ) { //value is blank
+            if ("D".equals(value) || "R".equals(value) || "B".equals(value) ) { //check for valid values
                break; 
             }
             else {
@@ -126,7 +127,7 @@ public class HelpMenuView {
                 + "\n|*| will be set upon by manychallenges and some    |*|"
                 + "\n|*| from your team will not make it.               |*|"
                 + "\n|*|------------------------------------------------|*|" 
-        ); //To change body of generated methods, choose Tools | Templates.
+        );
     }
 
     private void displayGameRules() {
@@ -148,6 +149,6 @@ public class HelpMenuView {
     }
 
     private void returnToPreviousScreen() {
-        System.out.println("Chuck Norris says, 'This function has been called'"); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Chuck Norris says, 'The returnToPreviousScreen function has been called'"); //To change body of generated methods, choose Tools | Templates.
     }
 }

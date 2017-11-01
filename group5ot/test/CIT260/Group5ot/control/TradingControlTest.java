@@ -37,7 +37,7 @@ public class TradingControlTest {
         /******************************
          *  Test case #1
          *****************************/
-        System.out.println("\tTest case #1");        
+        System.out.println("\tTest case #1");        //tests valid inputs
         
         double itemAmountA = 15.0;
         double itemAmountB = 30.0;
@@ -50,7 +50,7 @@ public class TradingControlTest {
         double expResult = 9.30;    //expected output returned value
         
         //call function to run test
-        double result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX,itemPriceY);
+        double result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
         
         //compare expected result return value with actual value returned
         assertEquals(expResult, result, 0.0001);       
@@ -58,7 +58,7 @@ public class TradingControlTest {
         /******************************
          *  Test case #2
          *****************************/
-        System.out.println("\tTest case #2");        
+        System.out.println("\tTest case #2");        //tests too low input for 1st parameter
         
         itemAmountA = -15.0;
         itemAmountB = 30.0;
@@ -68,7 +68,7 @@ public class TradingControlTest {
         expResult = -1;    //expected output returned value
         
         //call function to run test
-        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX,itemPriceY);
+        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
         
         //compare expected result return value with actual value returned
         assertEquals(expResult, result, 0.0001); 
@@ -76,7 +76,7 @@ public class TradingControlTest {
         /******************************
          *  Test case #3
          *****************************/
-        System.out.println("\tTest case #3");        
+        System.out.println("\tTest case #3");        //tests too low input for 2nd parameter
         
         itemAmountA = 15.0;
         itemAmountB = -30.0;
@@ -86,7 +86,7 @@ public class TradingControlTest {
         expResult = -1;    //expected output returned value
         
         //call function to run test
-        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX,itemPriceY);
+        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
         
         //compare expected result return value with actual value returned
         assertEquals(expResult, result, 0.0001); 
@@ -94,7 +94,7 @@ public class TradingControlTest {
         /******************************
          *  Test case #4
          *****************************/
-        System.out.println("\tTest case #4");
+        System.out.println("\tTest case #4");       //tests too high input 3rd parameter
         
         itemAmountA = 15.0;
         itemAmountB = 30.0;
@@ -104,7 +104,7 @@ public class TradingControlTest {
         expResult = -1;    //expected output returned value
         
         //call function to run test
-        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX,itemPriceY);
+        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
         
         //compare expected result return value with actual value returned
         assertEquals(expResult, result, 0.0001); 
@@ -112,7 +112,7 @@ public class TradingControlTest {
         /******************************
          *  Test case #5
          *****************************/
-        System.out.println("\tTest case #5");
+        System.out.println("\tTest case #5");       //tests too high input 4th parameter
         
         itemAmountA = 15.0;
         itemAmountB = 30.0;
@@ -122,7 +122,7 @@ public class TradingControlTest {
         expResult = -1;    //expected output returned value
         
         //call function to run test
-        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX,itemPriceY);
+        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
         
         //compare expected result return value with actual value returned
         assertEquals(expResult, result, 0.0001); 
@@ -130,7 +130,7 @@ public class TradingControlTest {
         /******************************
          *  Test case #6
          *****************************/
-        System.out.println("\tTest case #6");
+        System.out.println("\tTest case #6");       //tests too low input for parameters 1 & 2
         
         
         itemAmountA = 0.0;
@@ -141,7 +141,7 @@ public class TradingControlTest {
         expResult = -1;    //expected output returned value
         
         //call function to run test
-        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX,itemPriceY);
+        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
         
         //compare expected result return value with actual value returned
         assertEquals(expResult, result, 0.0001); 
@@ -149,7 +149,7 @@ public class TradingControlTest {
         /******************************
          *  Test case #7
          *****************************/
-        System.out.println("\tTest case #7");
+        System.out.println("\tTest case #7");       //tests upper boundary 
         
         itemAmountA = 100.0;
         itemAmountB = 30.0;
@@ -159,7 +159,7 @@ public class TradingControlTest {
         expResult = -1;    //expected output returned value
         
         //call function to run test
-        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX,itemPriceY);
+        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
         
         //compare expected result return value with actual value returned
         assertEquals(expResult, result, 0.0001); 
@@ -167,7 +167,7 @@ public class TradingControlTest {
         /******************************
          *  Test case #8
          *****************************/
-        System.out.println("\tTest case #8");
+        System.out.println("\tTest case #8");       //tests upper boundary of first part of equation
         
         itemAmountA = 150.0;
         itemAmountB = 30.0;
@@ -177,7 +177,7 @@ public class TradingControlTest {
         expResult = -1;    //expected output returned value
         
         //call function to run test
-        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX,itemPriceY);
+        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
         
         //compare expected result return value with actual value returned
         assertEquals(expResult, result, 0.0001); 
@@ -185,7 +185,7 @@ public class TradingControlTest {
         /******************************
          *  Test case #9
          *****************************/
-        System.out.println("\tTest case #9");
+        System.out.println("\tTest case #9");       //tests lower boundary
         
         itemAmountA = 100.0;
         itemAmountB = 30.0;
@@ -195,7 +195,7 @@ public class TradingControlTest {
         expResult = -1;    //expected output returned value
         
         //call function to run test
-        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX,itemPriceY);
+        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
         
         //compare expected result return value with actual value returned
         assertEquals(expResult, result, 0.0001); 
@@ -203,7 +203,7 @@ public class TradingControlTest {
         /******************************
          *  Test case #10
          *****************************/
-        System.out.println("\tTest case #10");
+        System.out.println("\tTest case #10");      //test valid boundaries
         
         itemAmountA = 20.0;
         itemAmountB = 45.0;
@@ -213,7 +213,7 @@ public class TradingControlTest {
         expResult = 13.15;    //expected output returned value
         
         //call function to run test
-        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX,itemPriceY);
+        result = instance.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
         
         //compare expected result return value with actual value returned
         assertEquals(expResult, result, 0.0001); 
