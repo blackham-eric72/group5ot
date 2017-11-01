@@ -11,24 +11,7 @@ package CIT260.Group5ot.control;
  */
 public class TradingControl {
     
-  /*  public static String checkListInput(String[] tradeList, String testValue){
-    
-       
-        for(int i=0; i< tradeList.length; i++){
-           
-           if (tradeList[i] == testValue){         
-               return "valid item";
-           }
-           
-            if (tradeList[i] != testValue){
-                return "invalid item";
-            }  
-            
-        }    
-        
-        return testValue;
-    }
-    */
+ 
     
     public double calcTotal(double itemAmountA, double itemAmountB, double itemPriceX, double itemPriceY ){        
        
@@ -61,3 +44,24 @@ public class TradingControl {
     }
        
 }
+
+
+
+ /*  public static String checkListInput(String[] tradeList, String testValue){
+    
+       
+        for(int i=0; i< tradeList.length; i++){
+           
+           if (tradeList[i] == testValue){         
+               return "valid item";
+           }
+           
+            if (tradeList[i] != testValue){
+                return "invalid item";
+            }  
+            
+        }    
+        
+        return testValue;
+    }
+    */
