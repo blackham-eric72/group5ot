@@ -52,17 +52,17 @@ public class TestMenuView {
     private String getMenuOption() {
         
         this.promptMessage = 
-                        "\n************ Enter a menu option ************"
-                        + "\n--------------------------"
-                        + "\n| Test Menu              |"
-                        + "\n--------------------------"
+                        "\n*** Enter a menu option "
+                        + "\n------------------------------"
+                        + "\n| Test Menu                  |"
+                        + "\n------------------------------"
                         + "\nGM - Game Menu"
                         + "\nBVC - Calculate Barrel Volume"
                         + "\nH - Test Hunt Menu"                 
                         + "\nS - Save game"
                         + "\nM - View Map"
                         + "\nQ - Quit to Main Menu"
-                        + "\n--------------------------";
+                        + "\n------------------------------";
                
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
