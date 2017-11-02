@@ -5,41 +5,35 @@
  */
 package CIT260.Group5ot.view;
 
-import CIT260.Group5ot.control.GameControl;
-import group5ot.Group5ot;
 import java.util.Scanner;
 
 /**
  *
- * @author crims
+ * @author erict.blackham
  */
-public class MainMenuView {
-
+public class TestMenuView {
     
-    
-    /*public class MainMenuView
-    {*/
-        private String menu;
+     private String menu;
         private String promptMessage;
                 
 
-        public MainMenuView() {
+        public TestMenuView() {
             this.menu = "\n"
                         + "\n--------------------------"
-                        + "\n| Main Menu              |"
+                        + "\n| Test Menu              |"
                         + "\n--------------------------"
-                        + "\nB - Begin New Game"
-                        + "\nL - Load Saved Game"
-                        + "\nH - Help Menu"                 
-                        + "\nG - Game Menu"
+                        + "\nM - Map"
+                        + "\nC - Calculate Barrel Volume"
+                        + "\nH - Hunt"                 
+                        + "\n - Game Menu"
                         + "\nS - Save game"
-                        + "\nT - Test Menu"
+                        + "\nM - View Map"
                         + "\nX - Quit"
                         + "\n--------------------------";
         }
    
     
-    public void displayMainMenuView() {
+    public void displayTestMenuView() {
        
         boolean done = false; // set flag to not done
         do {
@@ -59,18 +53,16 @@ public class MainMenuView {
         
         this.promptMessage = 
                         "\n************ Enter a menu option ************"
-                       
                         + "\n--------------------------"
-                        + "\n| Main Menu              |"
+                        + "\n| Test Menu              |"
                         + "\n--------------------------"
-                        + "\nB - Begin New Game"
-                        + "\nL - Load Saved Game"
-                        + "\nH - Help Menu"                 
-                        + "\nG - Game Menu"
+                        + "\nGM - Game Menu"
+                        + "\nBVC - Calculate Barrel Volume"
+                        + "\nH - Test Hunt Menu"                 
                         + "\nS - Save game"
-                        + "\nT - Test Menu"
-                        + "\nX - Quit"
-                        + "\n--------------------------";;
+                        + "\nM - View Map"
+                        + "\nR - Return to Main Menu"
+                        + "\n--------------------------";
                
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
@@ -99,24 +91,30 @@ public class MainMenuView {
         choice = choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-            case "B": // create and start new game
-                this.startNewGame();
-                break;
-            case "L": // get and start an existing game
-                this.startExistingGame();
-                break;
-            case "H": // display the help menu
-                this.displayHelpMenu();
-                break;
-            case "G": // display the Game menu
+             case "GM": // display Game menu
                 this.displayGameMenu();
                 break;
-            case "S": // save the current game
+              case "S": // Save game
                 this.saveGame();
                 break;
-            case "T": // display the map view
-                this.displayTestMenu();
-                break;                
+            case "H": // display the HUNT menu
+                this.displayHuntView();
+                break;
+            case "CHECK": // display the Game menu
+                this.displayCheckpointView();
+                break;
+            /*case "T": // trading post view
+                this.tradingPostView();
+                break;*/
+            case "M": // display the map view
+                this.displayMapView();
+                break;
+            case "BVC": // display calc barrel volume view
+                this.displayBarrelVolumeCalcView();
+                break;
+            case "R": // display calc barrel volume view
+                this.displayMainMenu();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -125,27 +123,20 @@ public class MainMenuView {
         return false;
     }    
 
-    private void startNewGame() {
-                
+   
 
-// create a new game
-        //GameControl.createNewGame(Group5ot.getPlayer());
+    private void displayHuntView() {
+        ToHuntOrNotToHuntView huntView = new ToHuntOrNotToHuntView();
         
-        // display the game menu
-        //GameMenuView gameMenu = new GameMenuView();
-        //gameMenu.displayMenu();
+        huntView.displayToHuntOrNotToHuntView();
     }
 
-    private void startExistingGame() {
-        System.out.println("*** startExistingGame() function called ***");
-    }
-
-    private void displayHelpMenu() {
+    private void displayCheckpointView(){
         //Create HELP menu object
-        HelpMenuView helpMenuView = new HelpMenuView();
-                
+        CheckpointView checkpointView = new CheckpointView();
+                       
         // Display the help menu view
-        helpMenuView.displayHelpMenuView();
+        checkpointView.displayCheckpointView() ;
     }
 
     private void displayGameMenu() {
@@ -175,10 +166,17 @@ public class MainMenuView {
         calcBarrel.displayBarrelVolumeCalcView();
     }
     
-    //display the test menu
-   private void displayTestMenu(){
-       TestMenuView testMenuView = new TestMenuView();
-       
-       testMenuView.displayTestMenuView();
-   }
+   /* private void tradingPostView() {
+        TradingPostView tradingPostView = new TradingPostView();
+        
+        tradingPostView.tradingPostView();
+    }*/
+    
+    private void displayMainMenu(){
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        mainMenuView.displayMainMenuView();
+    }
+    
+    
 }

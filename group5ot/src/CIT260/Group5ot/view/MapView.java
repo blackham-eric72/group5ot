@@ -45,9 +45,11 @@ public void displayMapView() {
 private String getMenuOption() {
         
         this.promptMessage = 
-                          "Would you like to:"
-                + "\nA - See a map of the trail? "
-                + "\nR - Return to the previous screen?"
+                  "\n|| *******      MAP MENU      ******* ||"
+                + "\n|| Would you like to:                 ||"
+                + "\n|| A - See a map of the trail?        ||"
+                + "\n|| R - Return to the previous screen? ||"
+                + "\n|| ********************************** ||"
                 
                         ;
                
@@ -103,8 +105,14 @@ public boolean doAction(String choice) {
     }
  
  private void displayPreviousScreen() {
-        System.out.println("Chuck Norris says, 'This function has been called'"); //To change body of generated methods, choose Tools | Templates.
-    }
+        System.out.println("Chuck Norris says, 'Welcome back to the test Menu'"); //To change body of generated methods, choose Tools | Templates.
+    displayTestMenu();
+ }
+ private void displayTestMenu(){
+       TestMenuView testMenuView = new TestMenuView();
+       
+       testMenuView.displayTestMenuView();
+   }
 
 }
 

@@ -116,7 +116,15 @@ public boolean doAction(String choice) {
  
  private void displaySuccessMessage() {
         System.out.println("Chuck Norris says, 'You are correct'"); //To change body of generated methods, choose Tools | Templates.
-    }
+ displayTestMenu();   
+ }
+ 
+ 
+ private void displayTestMenu(){
+       TestMenuView testMenuView = new TestMenuView();
+       
+       testMenuView.displayTestMenuView();
+   }
 
 }
 
