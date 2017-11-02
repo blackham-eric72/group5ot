@@ -61,7 +61,7 @@ public class TestMenuView {
                         + "\nH - Test Hunt Menu"                 
                         + "\nS - Save game"
                         + "\nM - View Map"
-                        + "\nR - Return to Main Menu"
+                        + "\nQ - Quit to Main Menu"
                         + "\n--------------------------";
                
         
@@ -112,7 +112,7 @@ public class TestMenuView {
             case "BVC": // display calc barrel volume view
                 this.displayBarrelVolumeCalcView();
                 break;
-            case "R": // display calc barrel volume view
+            case "Q": // return to the main menu
                 this.displayMainMenu();
                 break;
             default:

@@ -25,11 +25,11 @@ public class HelpMenuView {
         public HelpMenuView() {
             this.menu = 
                           "\n|*| ------------------------------------ |*|"
-                        + "\n|*| Help Menu                            |*|"
+                        + "\n|*| *******       Help Menu      ******* |*|"
                         + "\n|*| ------------------------------------ |*|"
-                        + "\n|*| D        - Display Game Description  |*|"
-                        + "\n|*| R        - Display Game rules        |*|"
-                        + "\n|*| B        - Return to game/main menu  |*|"                 
+                        + "\n|*| D - Display Game Description         |*|"
+                        + "\n|*| R - Display Game rules               |*|"
+                        + "\n|*| Q - Return to game/main menu         |*|"                 
                         + "\n|*| ------------------------------------ |*|";
         }
    
@@ -60,7 +60,7 @@ public class HelpMenuView {
           + "\n|*| ------------------------------------ |*|"
           + "\n|*| D - Display Game Description         |*|"
           + "\n|*| R - Display Game rules               |*|"
-          + "\n|*| B - Return to game/main menu         |*|"                 
+          + "\n|*| Q - Return to game/main menu         |*|"                 
           + "\n|*| ------------------------------------ |*|";*/
                
         
@@ -74,11 +74,11 @@ public class HelpMenuView {
             value = keyboard.nextLine(); // get next line typed on keyboard 
             value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
             
-            if ("D".equals(value) || "R".equals(value) || "B".equals(value) ) { //check for valid values
+            if ("D".equals(value) || "R".equals(value) || "Q".equals(value) ) { //check for valid values
                break; 
             }
             else {
-                 System.out.println("\nInvalid value: Must input D, R, or B");
+                 System.out.println("\nInvalid value: Must input D, R, or Q");
             }
                     
         }
@@ -97,9 +97,10 @@ public class HelpMenuView {
             case "R": // display game rules
                 this.displayGameRules();
                 break;
-            case "B": // return to game or main menu
-                this.returnToPreviousScreen();
+            case "Q": // quits, or returns to main menu
+                this.displayMainMenu();
                 break;
+            
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -132,7 +133,7 @@ public class HelpMenuView {
 
     private void displayGameRules() {
         System.out.println(
-         "************<<<<<------GAME RULES------>>>>>************"
+         "\n|**********<<<<<------GAME RULES------>>>>>***********|"
        + "\n|*---------------------------------------------------*|"
        + "\n|*| Press enter to move forward along the trail.    |*|"
        + "\n|*| At each checkpoint you will be allowed to       |*|"
@@ -145,10 +146,13 @@ public class HelpMenuView {
        + "\n|*| You must get to Oregon in time                  |*|"
        + "\n|*|                                                 |*|"
        + "\n|*| Press space to return to the game/main menu     |*|"
-    + "\n|*---------------------------------------------------*|"); //To change body of generated methods, choose Tools | Templates.
+       + "\n|*---------------------------------------------------*|"); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private void returnToPreviousScreen() {
-        System.out.println("Chuck Norris says, 'The returnToPreviousScreen function has been called'"); //To change body of generated methods, choose Tools | Templates.
+    
+      private void displayMainMenu(){
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        mainMenuView.displayMainMenuView();
     }
-}
+    }

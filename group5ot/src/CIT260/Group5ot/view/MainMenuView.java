@@ -25,17 +25,17 @@ public class MainMenuView {
 
         public MainMenuView() {
             this.menu = "\n"
-                        + "\n--------------------------"
-                        + "\n| Main Menu              |"
-                        + "\n--------------------------"
-                        + "\nB - Begin New Game"
-                        + "\nL - Load Saved Game"
-                        + "\nH - Help Menu"                 
-                        + "\nG - Game Menu"
-                        + "\nS - Save game"
-                        + "\nT - Test Menu"
-                        + "\nX - Quit"
-                        + "\n--------------------------";
+                        + "\n|*| ------------------------- |*|"
+                        + "\n|*| ****    Main Menu    **** |*|"
+                        + "\n|*| ------------------------- |*|"
+                        + "\n|*| B - Begin New Game        |*|"
+                        + "\n|*| L - Load Saved Game       |*|"
+                        + "\n|*| H - Help Menu             |*|"                 
+                        + "\n|*| G - Game Menu             |*|"
+                        + "\n|*| S - Save game             |*|"
+                        + "\n|*| T - Test Menu             |*|"
+                        + "\n|*| X - Quit                  |*|"
+                        + "\n|*| ------------------------- |*|";
         }
    
     
@@ -58,9 +58,9 @@ public class MainMenuView {
     private String getMenuOption() {
         
         this.promptMessage = 
-                        "\n************ Enter a menu option ************"
-                       
-                        + "\n--------------------------"
+                        "\n ******** Enter a menu option:"
+                       + "\n" + menu;
+                     /*   + "\n--------------------------"
                         + "\n| Main Menu              |"
                         + "\n--------------------------"
                         + "\nB - Begin New Game"
@@ -70,7 +70,7 @@ public class MainMenuView {
                         + "\nS - Save game"
                         + "\nT - Test Menu"
                         + "\nX - Quit"
-                        + "\n--------------------------";;
+                        + "\n--------------------------";*/
                
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
