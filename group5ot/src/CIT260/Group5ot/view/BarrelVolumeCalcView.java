@@ -46,8 +46,8 @@ private String getUserAnswer() {
         
         this.promptMessage = 
                   "\n**********   Calculate the volume of a barrel    **********"
-                + "\n||In order to proceed to the nex step, you must first solve ||"
-                + "\n|| a complex math question.... DUM DUM DUM!!!!              ||"
+                + "\n|| In order to proceed to the nex step, you must first      ||"
+                + "\n|| solve a complex math question.... DUM DUM DUM!!!!        ||"
                 + "\n|| You must calculate the volume of a barrel!               ||"
                 + "\n|| ---------------------------------------------------------||"
                 + "\n|| Given that the Height is equal to 55 inches, and the     ||"
