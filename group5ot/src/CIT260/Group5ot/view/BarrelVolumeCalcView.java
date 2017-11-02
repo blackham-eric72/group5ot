@@ -5,7 +5,9 @@
  */
 package CIT260.Group5ot.view;
 
+import CIT260.Group5ot.control.BarrelVolumeControl;
 import java.util.Scanner;
+import static jdk.nashorn.internal.objects.NativeMath.round;
 
 /**
  *
@@ -14,14 +16,18 @@ import java.util.Scanner;
  * Week 7 Individual Assignment (VIEW 2)
  */
 public class BarrelVolumeCalcView {
-     private String menu;
+     private String menu; 
         private String promptMessage;
 
 
 public BarrelVolumeCalcView(){
 
-this.promptMessage = "ENTER YOUR ANSWERS HERE"
-+ "n/ and it is going to be awesome";
+this.menu =               "\n|*| ------------------------------------ |*|"
+                        + "\n|*| ***  Barrel Volume Calculation  **** |*|"
+                        + "\n|*| ------------------------------------ |*|"
+                        + "\n|*| P - Caclulate volume                 |*|"
+                        + "\n|*| Q - Return to game/main menu         |*|"                 
+                        + "\n|*| ------------------------------------ |*|";
 
 }
 
@@ -30,7 +36,7 @@ public void displayBarrelVolumeCalcView() {
   boolean done = false; // set flag to not done
         do {
             //Prompt for input
-            String menuOption = this.getUserAnswer();
+            String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals(" ")) // user wants to return to game menu
                 return; // return to the game?
             
@@ -40,28 +46,12 @@ public void displayBarrelVolumeCalcView() {
         } while (!done);
         
     }
-
-
-private String getUserAnswer() {
+private String getMenuOption() {
         
         this.promptMessage = 
-                  "\n**********   Calculate the volume of a barrel    **********"
-                + "\n|| In order to proceed to the nex step, you must first      ||"
-                + "\n|| solve a complex math question.... DUM DUM DUM!!!!        ||"
-                + "\n|| You must calculate the volume of a barrel!               ||"
-                + "\n|| ---------------------------------------------------------||"
-                + "\n|| Given that the Height is equal to 55 inches, and the     ||"
-                + "\n|| radius is equal to 12 inches.....                        ||"
-                + "\n|| what is the volume of the barrel?                        ||"
-                + "\n||    A) - 14.4 inches cubed                                ||"
-                + "\n||    B) - 15.4 inches cubed                                ||"
-                + "\n||    C) - 28.8 inches cubed                                ||"
-                + "\n||    D) - 14.8 inches cubed                                ||"
-                + "\n|| ---------------------------------------------------------||"
-                + "\n|| --Enter Your Answer Below:                               ||"
-                + "\n|| ---------------------------------------------------------||"
-        ;
-               
+            "************ Enter a menu option ************"
+            + "\n" + menu;
+                        
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; // value to be returned
@@ -73,11 +63,11 @@ private String getUserAnswer() {
             value = keyboard.nextLine(); // get next line typed on keyboard 
             value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
             
-            if ("A".equals(value) || "B".equals(value) || "C".equals(value) || "D".equals(value) ) { //value is blank
+            if ("P".equals(value) || "Q".equals(value) ) { //check for valid values
                break; 
             }
             else {
-                 System.out.println("\nInvalid value: Must input A,or R");
+                 System.out.println("\nInvalid value: Must input P or Q");
             }
                     
         }
@@ -85,17 +75,77 @@ private String getUserAnswer() {
         return value; // return the value entered
     }
 
+public void barrelVolumeCalculation(){
+//Here I am going to bring in the CalcBarrel Function
+// Declares the variable and assigns a new object.
+BarrelVolumeControl calcBarrelFunction = new BarrelVolumeControl(); 
+//get height from user
+System.out.println(
+                  "\n|--12INCHES-|"
+                + "\n(((((((((((())))))))))))"
+                + "\n|                 ^    |"
+                + "\n|                 |    |"
+                + "\n|                 |    |"
+                + "\n|                 |    |"
+                + "\n|            55 Inches |"
+                + "\n|                 |    |"
+                + "\n|                 |    |"
+                + "\n|                 v    |"
+                + "\n(((((((((((())))))))))))"
+);
+
+System.out.println("please enter the height of the barrel:");
+
+Scanner inputHeight = new Scanner(System.in);
+//store it in a variable called height
+double height = inputHeight.nextDouble();
+
+System.out.println("You entered " + height);
+//get radius from user
+System.out.println("please enter the radius of the barrel:");
+Scanner inputRadius = new Scanner(System.in);
+double radius = inputRadius.nextDouble();
+
+System.out.println("You entered " + radius);
+
+double barrelVolume = calcBarrelFunction.calcBarrelVolume(height, radius);
+System.out.println(
+                  "\n||***********   Calculate the volume of a barrel    ***********||"
+                + "\n|| In order to proceed to the next step, you must first         ||"
+                + "\n|| solve a complex math question.... DUM DUM DUM!!!!           ||"
+                + "\n|| You must calculate the volume of a barrel!                  ||"
+                + "\n|| ---------------------------------------------------------   ||"
+                + "\n|| According to the Formula, V = PI * (r*r) * h, what is the   ||"
+                + "\n|| volume of the barrel in inches? (round to 2 decimal places) ||"
+                + "\n|| hint: Assume PI = 3.14                                      ||");
+Scanner userAnswer = new Scanner(System.in);
+double answer = userAnswer.nextDouble();
+
+System.out.println("\nYou entered " + answer);
+System.out.println("\nThe correct answer was " + barrelVolume);
+
+if (answer == barrelVolume) {
+    System.out.println("\nThat is Correct, please proceed");
+    //go back to the barrel menu
+    this.displayBarrelVolumeCalcView();
+    
+}
+else{ System.out.println("\nFailure. Please try again");
+    //player must start again from the beginning
+    this.barrelVolumeCalculation();
+}
+}
 
 public boolean doAction(String choice) {
         
         choice = choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-            case "A": // Display Map 
-                this.displaySuccessMessage();
+            case "P": // Display Map 
+                this.barrelVolumeCalculation();
                 break;
-            case "B": // return to the previous screen
-                this.displayFailMessage();
+            case "Q": // return to the previous screen
+                this.displayTestMenu();
                 break;
             case "C": // return to the previous screen
                 this.displayFailMessage();

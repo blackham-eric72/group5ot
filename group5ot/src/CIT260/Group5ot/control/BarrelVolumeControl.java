@@ -5,13 +5,15 @@
  */
 package CIT260.Group5ot.control;
 
+import static jdk.nashorn.internal.objects.NativeMath.round;
+
 /**
  *
  * @author crims
  */
 public class BarrelVolumeControl {
     
-    double calcBarrelVolume(double height, double radius){
+   public double calcBarrelVolume(double height, double radius){
         
         if(height < 0 || height > 60){
             return -1;
@@ -21,8 +23,8 @@ public class BarrelVolumeControl {
             return -1;
         }
         
-        double volume = (Math.PI * Math.pow(radius, 2)* height) / 1728;
-        
+        double volume = (3.14 * Math.pow(radius, 2)* height) / 1728;
+        volume = Math.floor(volume * 100) / 100;
         return volume;
     
     }
