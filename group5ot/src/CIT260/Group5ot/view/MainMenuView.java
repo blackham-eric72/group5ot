@@ -46,7 +46,7 @@ public class MainMenuView {
             // prompt for and get players name
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("X")) // user wants to quit
-                System.exit(0); // exit the game
+                System.exit(0); // exit the game and terminate the program
             
             // do the requested action and display the next view
             done = this.doAction(menuOption);
@@ -60,17 +60,7 @@ public class MainMenuView {
         this.promptMessage = 
                         "\n ******** Enter a menu option:"
                        + "\n" + menu;
-                     /*   + "\n--------------------------"
-                        + "\n| Main Menu              |"
-                        + "\n--------------------------"
-                        + "\nB - Begin New Game"
-                        + "\nL - Load Saved Game"
-                        + "\nH - Help Menu"                 
-                        + "\nG - Game Menu"
-                        + "\nS - Save game"
-                        + "\nT - Test Menu"
-                        + "\nX - Quit"
-                        + "\n--------------------------";*/
+                     
                
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
