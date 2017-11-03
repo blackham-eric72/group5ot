@@ -27,7 +27,7 @@ public class MeatShareControl {
         
         double totalShares = (numAdults * 2) + numChildren;
         double weightPerShare = meatWeight/totalShares;
-        
-        return weightPerShare;
+        double roundedWeightPerShare = Math.floor(weightPerShare * 100) / 100;
+        return roundedWeightPerShare;
     }    
 }

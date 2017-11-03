@@ -16,8 +16,8 @@ import static jdk.nashorn.internal.objects.NativeMath.round;
  * Week 7 Individual Assignment (VIEW 2)
  */
 public class BarrelVolumeCalcView {
-     private String menu; 
-        private String promptMessage;
+    private String menu; 
+    private String promptMessage;
 
 
 public BarrelVolumeCalcView(){
