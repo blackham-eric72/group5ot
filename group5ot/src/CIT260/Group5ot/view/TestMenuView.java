@@ -103,9 +103,9 @@ public class TestMenuView {
             case "CHECK": // display the Game menu
                 this.displayCheckpointView();
                 break;
-            /*case "T": // trading post view
-                this.tradingPostView();
-                break;*/
+            case "T": // trading post view
+                this.displayTradingpostMenuView();
+                break;
             case "M": // display the map view
                 this.displayMapView();
                 break;
@@ -166,11 +166,11 @@ public class TestMenuView {
         calcBarrel.displayBarrelVolumeCalcView();
     }
     
-   /* private void tradingPostView() {
-        TradingPostView tradingPostView = new TradingPostView();
+   private void displayTradingpostMenuView() {
+        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
         
-        tradingPostView.tradingPostView();
-    }*/
+        tradingpostMenuView.displayTradingpostMenuView();
+    }
     
     private void displayMainMenu(){
         MainMenuView mainMenuView = new MainMenuView();
