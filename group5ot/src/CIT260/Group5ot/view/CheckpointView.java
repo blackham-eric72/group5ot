@@ -93,7 +93,7 @@ public class CheckpointView {
                 this.rest();
                 break;
             case "C": // display the Game menu
-                this.continueGame();
+                this.displayMoveView();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -104,8 +104,10 @@ public class CheckpointView {
     }    
 
     private void lookAround() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        LookAroundCheckpointView lookAroundCheckpointView = new LookAroundCheckpointView();
+                
+        // Display the help menu view
+        lookAroundCheckpointView.displayLookAroundCheckpointView();    }
 
     private void hunt() {
         //Create ToHuntOrNotToHuntView object
@@ -115,15 +117,25 @@ public class CheckpointView {
         toHuntOrNotToHuntView.displayToHuntOrNotToHuntView();    }
 
     private void buySupplies() {
-        System.out.println("Chuck Norris says, 'The buySupplies() function has been called'"); 
+        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
+                
+        // Display the help menu view
+        tradingpostMenuView.displayTradingpostMenuView();
     }
 
     private void rest() {
-        System.out.println("Chuck Norris says, 'The rest() function has been called'"); 
+        RestView restView = new RestView();
+                
+        // Display the help menu view
+        restView.displayRestView();    
     }
 
-    private void continueGame() {
-        System.out.println("Chuck Norris says, 'The continueGame() function has been called'");
+    private void displayMoveView() {
+        //Create move object
+        MoveView moveView = new MoveView();
+        
+        //display move view
+        moveView.displayMoveView();    
     }
 
  

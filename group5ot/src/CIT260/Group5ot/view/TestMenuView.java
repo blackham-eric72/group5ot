@@ -21,15 +21,16 @@ public class TestMenuView {
             this.menu = "\n"
                         + "\n--------------------------"
                         + "\n| Test Menu              |"
-                        + "\n--------------------------"
-                        + "\nM - Map"
-                        + "\nC - Calculate Barrel Volume"
-                        + "\nH - Hunt"                 
-                        + "\n - Game Menu"
+                        + "\n------------------------------"
+                        + "\nGM - Game Menu"
+                        + "\nBVC - Calculate Barrel Volume"
+                        + "\nH - Test Hunt Menu"                 
                         + "\nS - Save game"
                         + "\nM - View Map"
-                        + "\nX - Quit"
-                        + "\n--------------------------";
+                        + "\nC - Test Checkpoint Menu"
+                        + "\nMEAT - Test Calculate MeatShares"
+                        + "\nQ - Quit to Main Menu"
+                        + "\n------------------------------";;
         }
    
     
@@ -53,17 +54,7 @@ public class TestMenuView {
         
         this.promptMessage = 
                         "\n*** Enter a menu option "
-                        + "\n------------------------------"
-                        + "\n| Test Menu                  |"
-                        + "\n------------------------------"
-                        + "\nGM - Game Menu"
-                        + "\nBVC - Calculate Barrel Volume"
-                        + "\nH - Test Hunt Menu"                 
-                        + "\nS - Save game"
-                        + "\nM - View Map"
-                        + "\nQ - Quit to Main Menu"
-                        + "\n------------------------------";
-               
+                        + "\n" + menu;             
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; // value to be returned
@@ -100,7 +91,7 @@ public class TestMenuView {
             case "H": // display the HUNT menu
                 this.displayHuntView();
                 break;
-            case "CHECK": // display the Game menu
+            case "C": // display the Game menu
                 this.displayCheckpointView();
                 break;
             case "T": // trading post view
@@ -114,6 +105,9 @@ public class TestMenuView {
                 break;
             case "Q": // return to the main menu
                 this.displayMainMenu();
+                break;
+            case "MEAT": // return to the main menu
+                this.displayMeatSharesCalcView();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -132,10 +126,10 @@ public class TestMenuView {
     }
 
     private void displayCheckpointView(){
-        //Create HELP menu object
+        //Create checkpoint menu object
         CheckpointView checkpointView = new CheckpointView();
                        
-        // Display the help menu view
+        // Display the checkpoint menu view
         checkpointView.displayCheckpointView() ;
     }
 
@@ -177,6 +171,11 @@ public class TestMenuView {
         
         mainMenuView.displayMainMenuView();
     }
+
+    private void displayMeatSharesCalcView() {
+        MeatShareCalcView meatShareCalcView = new MeatShareCalcView();
+        
+        meatShareCalcView.displayMeatShareCalcView();    }
     
     
 }

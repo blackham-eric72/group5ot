@@ -24,17 +24,18 @@ public class GameMenuView {
                 
 
         public GameMenuView() {
-            this.menu = "\n"
+            this.menu = 
+                          "\n************ Enter a menu option ************"
                         + "\n--------------------------"
-                        + "\n| Game Menu              |"
+                        + "\n| Game Menu               |"
                         + "\n--------------------------"
                         + "\nC - Continue Game "
                         + "\nM - View Map"
                         + "\nH - Help Menu"                 
                         + "\nI - View Inventory"
                         + "\nV - View Health"
-                        + "\nS - Save and Exit Game"
-                        + "\nX - Exit Game"
+                        + "\nS - Save game and return to main menu"
+                        + "\nX - Quit Game and return to main menu"
                         + "\n--------------------------";
         }
    
@@ -57,8 +58,8 @@ public class GameMenuView {
 
     private String getMenuOption() {
         
-        this.promptMessage =
-                          "\n************ Enter a menu option ************"
+        this.promptMessage ="\n" + menu;
+                          /*"\n************ Enter a menu option ************"
                         + "\n--------------------------"
                         + "\n| Game Menu               |"
                         + "\n--------------------------"
@@ -67,9 +68,9 @@ public class GameMenuView {
                         + "\nH - Help Menu"                 
                         + "\nI - View Inventory"
                         + "\nV - View Health"
-                        + "\nS - Save and Exit Game"
-                        + "\nX - Exit Game"
-                        + "\n--------------------------";
+                        + "\nS - Save game and return to main menu"
+                        + "\nX - Quit Game and return to main menu"
+                        + "\n--------------------------";*/
                
         
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
@@ -82,7 +83,7 @@ public class GameMenuView {
             value = keyboard.nextLine(); // get next line typed on keyboard 
             value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
             
-            if ("C".equals(value) || "M".equals(value) || "I".equals(value) || "H".equals(value) || "V".equals(value) || "S".equals(value) || "X".equals(value) || "P".equals(value) ) { //value is blank
+            if ("C".equals(value) || "M".equals(value) || "I".equals(value) || "H".equals(value) || "V".equals(value) || "S".equals(value) || "X".equals(value) ) { //value is blank
                break; 
             }
             else {
@@ -120,9 +121,6 @@ public class GameMenuView {
             case "X": // save the current game
                 this.exitGame();
                 break;
-            case "P": // Go to checkpoint menu for testing purposes
-                this.checkpoint();
-                break; 
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -160,19 +158,14 @@ public class GameMenuView {
     }
 
     private void exitGame() {
-        System.out.println("*** exitGame() function called ***");    
+        MainMenuView mainMenuView = new MainMenuView();
+                
+        // Display the main menu view
+        mainMenuView.displayMainMenuView();    
     }
 
     void displayMenu() {
         System.out.println("*** displayMenu() function called ***");    
     }
-
-    private void checkpoint() {
-        //Create checkpoint object
-        CheckpointView checkpointView = new CheckpointView();
-                
-        // Display the checkpoint view
-        checkpointView.displayCheckpointView();    }
-
 
 }

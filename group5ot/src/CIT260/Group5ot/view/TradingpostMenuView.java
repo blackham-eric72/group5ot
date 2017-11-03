@@ -44,7 +44,6 @@ public class TradingpostMenuView {
                         + "\n------------------------"
                         + "\nL - Look around"
                         + "\nB - Buy supplies"
-                        + "\nR - Rest"
                         + "\nM - Continue moving forward"
                         + "\nH - Trading Post help"
                         + "\nG - Game menu"
@@ -83,9 +82,6 @@ public class TradingpostMenuView {
             case "B": // buy supplies
                 this.displayBuySupplies();
                 break;
-            case "R":  // rest
-                this.displayRestView();
-                break;
             case "M":  //continue moving forward
                 this.displayMoveView();
                 break;
@@ -119,14 +115,6 @@ public class TradingpostMenuView {
         //display buy supplies view
         buySuppliesView.displayBuySuppliesView();
        
-    }
-
-    private void displayRestView() {
-        //Create rest object
-        RestView restView = new RestView();
-        
-        //display rest view
-        restView.displayRestView();
     }
 
     private void displayMoveView() {

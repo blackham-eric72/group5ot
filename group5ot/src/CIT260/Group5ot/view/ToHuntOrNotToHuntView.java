@@ -14,29 +14,29 @@ import java.util.Scanner;
 public class ToHuntOrNotToHuntView {
     
     private String promptMessage;
-    /*
-    public void displayHelpMenuView() {
+    
+    public void displayToHuntOrNotToHuntView() {
         boolean done = false; // set flag to not done
         do {
             //Prompt for input
             String huntOption = this.getInput();
-            if (menuOption.toUpperCase().equals("N")) // user wants to return to previous menu
+            if (huntOption.toUpperCase().equals("N")) // user wants to return to previous menu
                 return; // return to the game?
             
             // do the requested action and display the next view
-            done = this.doAction(menuOption);
+            done = this.doAction(huntOption);
             
-        } while (!done);*/
+        } while (!done);
     
-    
+    }
     private String getInput(){    
         
-        this.promptMessage = "/n"
+        this.promptMessage = "\n"
                 //eventually this will get the animal type from the animal
                 //hunted control class and give an option. For now, it is 
                 //a tatonka only.
-                + "/n You see a buffalo ."
-                + "/n Do you want to continue with the hunt? Y/N";
+                + "\n You see a buffalo."
+                + "\n Do you want to continue with the hunt? Y/N";
 
         Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; // value to be returned
@@ -68,10 +68,7 @@ public class ToHuntOrNotToHuntView {
 
             switch (choice) {
                 case "Y": // Display Game Description
-                    this.huntingScene();
-                    break;
-                case "N": // display game rules
-                    this.continueGame();
+                    this.huntingSceneView();
                     break;
                 default:
                     System.out.println("\n*** Invalid selection *** Try again");
@@ -81,15 +78,9 @@ public class ToHuntOrNotToHuntView {
          
         }
 
-    private void huntingScene() {
-        System.out.println("Chuck Norris says, 'The HuntingScene function has been called'"); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void continueGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void displayToHuntOrNotToHuntView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    private void huntingSceneView() {
+        HuntingSceneView huntingSceneView = new HuntingSceneView();
+                
+        // Display the main menu view
+        huntingSceneView.displayHuntingSceneView();    }
 }

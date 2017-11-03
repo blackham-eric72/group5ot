@@ -29,7 +29,7 @@ public class HelpMenuView {
                         + "\n|*| ------------------------------------ |*|"
                         + "\n|*| D - Display Game Description         |*|"
                         + "\n|*| R - Display Game rules               |*|"
-                        + "\n|*| Q - Return to game/main menu         |*|"                 
+                        + "\n|*| Q - Close Menu                       |*|"                 
                         + "\n|*| ------------------------------------ |*|";
         }
    
@@ -60,7 +60,7 @@ public class HelpMenuView {
           + "\n|*| ------------------------------------ |*|"
           + "\n|*| D - Display Game Description         |*|"
           + "\n|*| R - Display Game rules               |*|"
-          + "\n|*| Q - Return to game/main menu         |*|"                 
+          + "\n|*| Q - Close Menu                       |*|"                 
           + "\n|*| ------------------------------------ |*|";*/
                
         
@@ -98,7 +98,7 @@ public class HelpMenuView {
                 this.displayGameRules();
                 break;
             case "Q": // quits, or returns to main menu
-                this.displayMainMenu();
+                this.closeMenu();
                 break;
             
             default:
@@ -149,10 +149,7 @@ public class HelpMenuView {
        + "\n|*---------------------------------------------------*|"); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
-      private void displayMainMenu(){
-        MainMenuView mainMenuView = new MainMenuView();
-        
-        mainMenuView.displayMainMenuView();
+    private void closeMenu() {
+        System.out.println("*** closeMenu() function called ***");
     }
-    }
+}
