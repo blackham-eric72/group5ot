@@ -147,12 +147,6 @@ public boolean doAction(String choice) {
             case "Q": // return to the previous screen
                 this.displayTestMenu();
                 break;
-            case "C": // return to the previous screen
-                this.displayFailMessage();
-                break;
-            case "D": // return to the previous screen
-                this.displayFailMessage();
-                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;

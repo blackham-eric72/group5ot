@@ -38,7 +38,7 @@ public class BarrelVolumeControlTest {
         double height = 36;
         double radius = 12;
         
-        double expResult = 9.4247; // expected result 
+        double expResult = 9.42; // expected result 
         
         //create instance of BarrelVolumeControl
         BarrelVolumeControl instance = new BarrelVolumeControl(); 
@@ -138,7 +138,7 @@ public class BarrelVolumeControlTest {
         height = 60;
         radius = 18;
         
-        expResult = 35.3429; // expected result 
+        expResult = 35.32; // expected result 
         
         // call the method
         result = instance.calcBarrelVolume(height, radius);
