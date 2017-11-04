@@ -135,8 +135,13 @@ public class BuySuppliesView {
 
             //create memory location for itemName1
             String itemName1 = inputItemName1.next();
+            if ("Food".equals(itemName1) || "Ox".equals(itemName1) || "Ammo".equals(itemName1) || "Medicine".equals(itemName1) ) {
             System.out.println("You entered: " + itemName1);
-
+            }
+            else {
+                System.out.println("\n\n*****Invalid Entry, please start over and try again*****");
+                return;
+            }
             //get itemAmountA
             System.out.println("Please enter quantity:");
             Scanner inputItemAmountA = new Scanner(System.in);
@@ -170,6 +175,13 @@ public class BuySuppliesView {
 
             //create memory location for itemName1
             String itemName2 = inputItemName2.next();
+            if ("Food".equals(itemName2) || "Ox".equals(itemName2) || "Ammo".equals(itemName2) || "Medicine".equals(itemName2) ) {
+            System.out.println("You entered: " + itemName2);
+            }
+            else {
+                System.out.println("\n\n*****Invalid Entry, please start over and try again*****");
+                return;
+            }
             System.out.println("You entered: " + itemName2);
 
             //get itemAmountB

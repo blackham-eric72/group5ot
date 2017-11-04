@@ -29,6 +29,7 @@ public class TestMenuView {
                         + "\nM - View Map"
                         + "\nC - Test Checkpoint Menu"
                         + "\nMEAT - Test Calculate MeatShares"
+                        + "\nT - Trading Post Menu"
                         + "\nQ - Quit to Main Menu"
                         + "\n------------------------------";;
         }
