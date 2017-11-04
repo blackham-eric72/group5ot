@@ -53,7 +53,7 @@ public class BuySuppliesView {
             do {
                 // Prompt for menu option input
                 String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals(" ")) // user wants to return to game menu
+            if (menuOption.toUpperCase().equals("Q")) // user wants to return to game menu
                 return; // return to the game?
             
             // do the requested action and display the next view
