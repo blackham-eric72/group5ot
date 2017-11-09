@@ -12,34 +12,14 @@ import java.util.Scanner;
  *
  * @author crims
  */
-public class TradingpostMenuView {
+public class TradingpostMenuView extends View {
     
-        private String menu;
+       // private String menu;
         private String promptMessage;
 
         public TradingpostMenuView( ){
-         
-        }
-    
-    public void displayTradingpostMenuView() {
-        boolean done = false;  //set flag to not done
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("X"))  //user wants to quit
-                return;  //exit the game
-            
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        
-        this.promptMessage = 
-                        "\n*************Enter a menu option ****************"
-                         + "\n------------------------"
+                    super("\n*************Enter a menu option ****************"
+                        + "\n------------------------"
                         + "\n| Trading Post Menu     |"
                         + "\n------------------------"
                         + "\nL - Look around"
@@ -48,30 +28,11 @@ public class TradingpostMenuView {
                         + "\nH - Trading Post help"
                         + "\nG - Game menu"
                         + "\nX - Quit"
-                        + "\n------------------------";
-        
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; //initilaize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard 
-            value = value.trim(); //trim off leading and trailing blanks
-            
-            if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            
-            break; //end the loop
+                        + "\n------------------------");
         }
-        
-        return value;  // return the value entered
-    }
-
-    private boolean doAction(String choice) {
+                
+   @Override        
+    public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();  //convert choice to upper case
         
@@ -113,7 +74,7 @@ public class TradingpostMenuView {
         BuySuppliesView buySuppliesView = new BuySuppliesView();
         
         //display buy supplies view
-        buySuppliesView.displayBuySuppliesView();
+        buySuppliesView.display();
        
     }
 

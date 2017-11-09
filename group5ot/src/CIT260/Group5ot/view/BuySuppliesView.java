@@ -12,89 +12,52 @@ import CIT260.Group5ot.control.TradingControl;
  *
  * @author crims
  */
-public class BuySuppliesView {
-    
-        /*display welcome message and instructions
-        display merchandise and price list
-        get input(itemName1, itemAmountA, itemPriceX, itemName2, itemAmountB, itemPriceZ)
-        calculate total
-        print purchase invoice
-        display end message
-        return to ???
-        */
+public class BuySuppliesView extends View {
+       
+       private String promptMessage; 
         
-        private String displayMessage;   
-        private String menu;
-        private String promptMessage;
+//        Bro. Wright: it isn't clear that I have to buy 2 items when shopping;
+//        there is no way to say I'm done shopping.  Also, the items have to be
+//        spelled out, with the correct case.  You should improve the input and
+//        add a loop here, and keep adding items, maybe giving a subtotal of 
+//        cost, so the user will know when they should stop buying. 
+        
     
         public BuySuppliesView() {
-            
-                    //display a welcome message and instructions
-                this.displayMessage = "\nWelcome to the Trading Post. "
-                                      +"\nEnter the item name, amount and price"
-                                      +"\nin the blanks"
-                        ;
-                    //display a list of merchandise and prices                  
-                this.menu =   "\n|---------------------------------------|"
-                            + "\n|              Buy Supplies             |"
-                            + "\n|-------------------------------------- |"
-                            + "\n|  S - Shop                             |"
-                            + "\n|  Q - Return                           |"
-                            + "\n|---------------------------------------|";
+                    //display a welcome message and instructions and menu
+            super( "\nWelcome to the Trading Post. "
+                  +"\nEnter the item name, amount and price"
+                  +"\n "
+                  + "\n|---------------------------------------|"
+                  + "\n|              Buy Supplies             |"
+                  + "\n|-------------------------------------- |"
+                  + "\n|  S - Shop                             |"
+                  + "\n|  Q - Return                           |"
+                  + "\n|---------------------------------------|");
         }
         
-       
-        
-
-        public void displayBuySuppliesView() {
-        
-        //Needs instructions, and a function to enter purchase items and prices with selection statement 
-             boolean done = false;
-            do {
-                // Prompt for menu option input
-                String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals(" ")) // user wants to return to game menu
-                return; // return to the game?
+    @Override
+     public boolean doAction(String choice) {
+         
+            choice = choice.toUpperCase(); // convert to upper case
             
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-                
-            } while (!done);
-            
-            
+            switch (choice) {
+                case "S": // display buy supplies menu
+                    this.orderTotalCalculation();
+                    break;
+                case "Q": // return to previous screen
+                    this.displayTestMenu();
+                    break;
+                default:
+                   System.out.println("\n*** Invalid selection *** Try Again");
+                   break;
         }
-
-    private String getMenuOption() {
-        
-        this.promptMessage = "Enter a menu option" + "\n" + menu;
-        
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; //initilaize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
+            return false;
             
-            value = keyboard.nextLine(); // get next line typed on keyboard 
-            value = value.toUpperCase().trim(); //trim off leading and trailing blanks and convert case
-            
-            if ("S".equals(value) || "Q".equals(value) ) { //check for valid values
-                break;
-            }
-                
-            else {
-                System.out.println("\nInvalid value: value must be B or Q");
-                
-            }
-            
-        }
+     }
         
-        return value;  //return the value entered
         
-    }
-    
-     public void orderTotalCalculation() {
-
+     public void orderTotalCalculation(){
         //This will run the calcTotal funcion
         
         TradingControl calcTotalFunction = new TradingControl();
@@ -111,31 +74,18 @@ public class BuySuppliesView {
                 + "\n|         Medicine                   $1.00/10 doses    |"
                 + "\n|------------------------------------------------------|"
             ); 
-            /*Scanner keyboard = new Scanner(System.in);
-            String value = ""; //value entered
-            boolean valid = false; //initialize to not valid
+            //String value;
             
-            while (!valid) {
-               value = keyboard.nextLine(); //get next line typed on keyboard
-               value = value.trim(); //trim spaces
-               
-               if ("Food".equals(value) || "Ox".equals(value) || "Ammo".equals(value) || "Medicine".equals(value) ) { //check for valid values
-                   break;
-               }
-               
-               else {
-                   System.out.println("\n*** Invalid entry. Try again ***");
-               }
-            }
-            */
-            //first item name input
-            System.out.println("please enter the item name:");            
             Scanner inputItemName1 = new Scanner(System.in);
-           
-
+            
+            //while(true){            
+             System.out.println("please enter the item name:");            
+             //value = inputItemName1.next();
+             
             //create memory location for itemName1
-            String itemName1 = inputItemName1.next();
-            if ("Food".equals(itemName1) || "Ox".equals(itemName1) || "Ammo".equals(itemName1) || "Medicine".equals(itemName1) ) {
+            String itemName1 = inputItemName1.next().toUpperCase();
+            
+            if ("FOOD".equals(itemName1) || "OX".equals(itemName1) || "AMMO".equals(itemName1) || "MEDICINE".equals(itemName1) ) {
             System.out.println("You entered: " + itemName1);
             }
             else {
@@ -159,23 +109,18 @@ public class BuySuppliesView {
             //Second item name input
             System.out.println("please enter another item name:");            
             Scanner inputItemName2 = new Scanner(System.in);
+            
+           // System.out.println("Would you like to purchase another item?  Enter Y or N");
+          //  Scanner String answer = new Scanner(System.in);
+            //if ("Y".equals(answer)){
+                
+            
                        
-            /*while (!valid) {
-               value = inputItemName2.nextLine(); //get next line typed on keyboard
-               value = value.trim(); //trim spaces
-               
-               if ("Food".equals(value) || "Ox".equals(value) || "Ammo".equals(value) || "Medicine".equals(value) ) { //check for valid values
-                   break;
-               }
-               
-               else {
-                   System.out.println("\n*** Invalid entry. Try again ***");
-               } 
-            } */
+       
 
-            //create memory location for itemName1
-            String itemName2 = inputItemName2.next();
-            if ("Food".equals(itemName2) || "Ox".equals(itemName2) || "Ammo".equals(itemName2) || "Medicine".equals(itemName2) ) {
+            //create memory location for itemName2
+            String itemName2 = inputItemName2.next().toUpperCase();
+            if ("FOOD".equals(itemName2) || "OX".equals(itemName2) || "AMMO".equals(itemName2) || "MEDICINE".equals(itemName2) ) {
             System.out.println("You entered: " + itemName2);
             }
             else {
@@ -213,29 +158,7 @@ public class BuySuppliesView {
                             + "\n--------------------------------------------------");
           
         }            
-     
-
-     
-     public boolean doAction(String choice) {
          
-            choice = choice.toUpperCase(); // convert to upper case
-            
-            switch (choice) {
-                case "S": // display buy supplies menu
-                    this.orderTotalCalculation();
-                    break;
-                case "Q": // return to previous screen
-                    this.displayTestMenu();
-                    break;
-                default:
-                   System.out.println("\n*** Invalid selection *** Try Again");
-                   break;
-        }
-            return false;
-            
-     }
-         
-        
 
     private void displayTestMenu() {
         TestMenuView testMenuView = new TestMenuView();

@@ -120,7 +120,7 @@ public class CheckpointView {
         TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
                 
         // Display the help menu view
-        tradingpostMenuView.displayTradingpostMenuView();
+        tradingpostMenuView.display();
     }
 
     private void rest() {

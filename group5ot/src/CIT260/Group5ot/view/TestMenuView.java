@@ -164,7 +164,7 @@ public class TestMenuView {
    private void displayTradingpostMenuView() {
         TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
         
-        tradingpostMenuView.displayTradingpostMenuView();
+        tradingpostMenuView.display();
     }
     
     private void displayMainMenu(){
