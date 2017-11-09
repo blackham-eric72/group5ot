@@ -22,7 +22,6 @@ public class GunControl {
         }
         
         double total = subtotal + (subtotal * tax);
-        //total = Math.floor(total * 100) / 100;
         return total;
     
     }

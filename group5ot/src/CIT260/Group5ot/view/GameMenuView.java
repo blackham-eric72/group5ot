@@ -161,7 +161,7 @@ public class GameMenuView {
         MainMenuView mainMenuView = new MainMenuView();
                 
         // Display the main menu view
-        mainMenuView.displayMainMenuView();    
+        mainMenuView.display();    
     }
 
     void displayMenu() {

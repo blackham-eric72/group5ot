@@ -63,7 +63,7 @@ private String getMenuOption() {
             value = keyboard.nextLine(); // get next line typed on keyboard 
             value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
             
-            if ("P".equals(value) || "Q".equals(value) ) { //check for valid values
+            if ("P".equals(value) || "Q".equals(value) || "X".equals(value)) { //check for valid values
                break; 
             }
             else {

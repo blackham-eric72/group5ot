@@ -170,7 +170,7 @@ public class TestMenuView {
     private void displayMainMenu(){
         MainMenuView mainMenuView = new MainMenuView();
         
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
     }
 
     private void displayMeatSharesCalcView() {

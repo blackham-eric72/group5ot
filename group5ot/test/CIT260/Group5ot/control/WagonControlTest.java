@@ -69,7 +69,7 @@ public class WagonControlTest {
 
         // call function to run test
         result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, waterWeight);
-        
+
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0);       
         
