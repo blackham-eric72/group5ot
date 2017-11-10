@@ -12,71 +12,24 @@ import java.util.Scanner;
  *
  * @author erict.blackham
  */
-public class MapView {
+public class MapView extends View {
     
-        private String menu;
+    
         private String promptMessage;
 
 
 public MapView(){
 
-this.menu = "SOME HOW I AM GOING TO GET A PICTURE OF A MAP IN HERE"
-+ "n/ and it is going to be awesome";
+        super( "\n|| *******      MAP MENU      ******* ||"
+                + "\n|| Would you like to:                 ||"
+                + "\n|| A - See a map of the trail         ||"
+                + "\n|| R - Go to the test menu            ||"
+                + "\n|| ********************************** ||");
 
 }
 
-public void displayMapView() {
 
-  boolean done = false; // set flag to not done
-        do {
-            //Prompt for help menu input
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals(" ")) // user wants to return to game menu
-                return; // return to the game?
-            
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    }
-
-
-private String getMenuOption() {
-        
-        this.promptMessage = 
-                  "\n|| *******      MAP MENU      ******* ||"
-                + "\n|| Would you like to:                 ||"
-                + "\n|| A - See a map of the trail?        ||"
-                + "\n|| R - Return to the previous screen? ||"
-                + "\n|| ********************************** ||"
-                
-                        ;
-               
-        
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; //initilaize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard 
-            value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
-            
-            if ("A".equals(value) || "R".equals(value) ) { //value is blank
-               break; 
-            }
-            else {
-                 System.out.println("\nInvalid value: Must input A,or R");
-            }
-                    
-        }
-        
-        return value; // return the value entered
-    }
-
-
+@Override
 public boolean doAction(String choice) {
         
         choice = choice.toUpperCase(); // convert choice to upper case
@@ -111,7 +64,7 @@ public boolean doAction(String choice) {
  private void displayTestMenu(){
        TestMenuView testMenuView = new TestMenuView();
        
-       testMenuView.displayTestMenuView();
+       testMenuView.display();
    }
 
 }

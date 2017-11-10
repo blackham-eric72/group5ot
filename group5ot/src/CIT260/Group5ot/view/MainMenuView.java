@@ -135,7 +135,7 @@ public class MainMenuView extends View {
         HelpMenuView helpMenuView = new HelpMenuView();
                 
         // Display the help menu view
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
 
     private void displayGameMenu() {
@@ -154,7 +154,7 @@ public class MainMenuView extends View {
         MapView mapView = new MapView();
                 
         // Display the map view
-        mapView.displayMapView();
+        mapView.display();
     }
     //display the barrelvolumecalcview
     private void displayBarrelVolumeCalcView() {
@@ -162,13 +162,13 @@ public class MainMenuView extends View {
         BarrelVolumeCalcView calcBarrel = new BarrelVolumeCalcView();
                 
         // Display the map view
-        calcBarrel.displayBarrelVolumeCalcView();
+        calcBarrel.display();
     }
     
     //display the test menu
    private void displayTestMenu(){
        TestMenuView testMenuView = new TestMenuView();
        
-       testMenuView.displayTestMenuView();
+       testMenuView.display();
    }
 }

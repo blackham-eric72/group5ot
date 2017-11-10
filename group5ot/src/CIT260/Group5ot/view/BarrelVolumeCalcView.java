@@ -15,65 +15,23 @@ import static jdk.nashorn.internal.objects.NativeMath.round;
  * 
  * Week 7 Individual Assignment (VIEW 2)
  */
-public class BarrelVolumeCalcView {
-    private String menu; 
+public class BarrelVolumeCalcView extends View {
+   
     private String promptMessage;
 
 
 public BarrelVolumeCalcView(){
 
-this.menu =               "\n|*| ------------------------------------ |*|"
+                       super("\n|*| ------------------------------------ |*|"
                         + "\n|*| ***  Barrel Volume Calculation  **** |*|"
                         + "\n|*| ------------------------------------ |*|"
                         + "\n|*| P - Caclulate volume                 |*|"
                         + "\n|*| Q - Return to game/main menu         |*|"                 
-                        + "\n|*| ------------------------------------ |*|";
+                        + "\n|*| ------------------------------------ |*|");
 
 }
 
-public void displayBarrelVolumeCalcView() {
 
-  boolean done = false; // set flag to not done
-        do {
-            //Prompt for input
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals(" ")) // user wants to return to game menu
-                return; // return to the game?
-            
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        
-    }
-private String getMenuOption() {
-        
-        this.promptMessage = 
-            "************ Enter a menu option ************"
-            + "\n" + menu;
-                        
-        
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; //initilaize to not valid
-        
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard 
-            value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
-            
-            if ("P".equals(value) || "Q".equals(value) || "X".equals(value)) { //check for valid values
-               break; 
-            }
-            else {
-                 System.out.println("\nInvalid value: Must input P or Q");
-            }
-                    
-        }
-        
-        return value; // return the value entered
-    }
 
 public void barrelVolumeCalculation(){
 //Here I am going to bring in the CalcBarrel Function
@@ -125,17 +83,17 @@ System.out.println("\nYou entered " + answer);
 System.out.println("\nThe correct answer was " + barrelVolume);
 
 if (answer == barrelVolume) {
-    System.out.println("\nThat is Correct, please proceed");
+    displaySuccessMessage();
     //go back to the barrel menu
-    this.displayBarrelVolumeCalcView();
+    this.display();
     
 }
-else{ System.out.println("\nFailure. Please try again");
+else {displayFailMessage();
     //player must start again from the beginning
     this.barrelVolumeCalculation();
 }
 }
-
+@Override
 public boolean doAction(String choice) {
         
         choice = choice.toUpperCase(); // convert choice to upper case
@@ -159,7 +117,7 @@ public boolean doAction(String choice) {
     }
  
  private void displaySuccessMessage() {
-        System.out.println("Chuck Norris says, 'You are correct'"); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\nChuck Norris says, 'You are correct'"); //To change body of generated methods, choose Tools | Templates.
  displayTestMenu();   
  }
  
@@ -167,7 +125,7 @@ public boolean doAction(String choice) {
  private void displayTestMenu(){
        TestMenuView testMenuView = new TestMenuView();
        
-       testMenuView.displayTestMenuView();
+       testMenuView.display();
    }
 
 }

@@ -163,7 +163,7 @@ public class BuySuppliesView extends View {
     private void displayTestMenu() {
         TestMenuView testMenuView = new TestMenuView();
        
-       testMenuView.displayTestMenuView();
+       testMenuView.display();
     }
            
 }
