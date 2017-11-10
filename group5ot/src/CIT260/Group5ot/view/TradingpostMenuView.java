@@ -66,7 +66,7 @@ public class TradingpostMenuView extends View {
         LookAroundView lookAroundView = new LookAroundView();
         
         //display lookAround view
-        lookAroundView.displayLookAroundView();
+        lookAroundView.display();
     }
 
     private void displayBuySupplies() {

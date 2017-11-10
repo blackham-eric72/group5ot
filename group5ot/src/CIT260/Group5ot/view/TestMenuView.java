@@ -27,6 +27,7 @@ public class TestMenuView extends View {
                         + "\n|*| H    - Test Hunt Menu            |*|"                 
                         + "\n|*| S    - Save game                 |*|"
                         + "\n|*| M    - View Map                  |*|"
+                        + "\n|*| L    - Look Around               |*|"                    
                         + "\n|*| C    - Test Checkpoint Menu      |*|"
                         + "\n|*| MEAT - Test Calculate MeatShares |*|"
                         + "\n|*| T    - Trading Post Menu         |*|"
@@ -59,6 +60,9 @@ public class TestMenuView extends View {
             case "M": // display the map view
                 this.displayMapView();
                 break;
+            case "L": // display the map view
+                this.displayLookAroundView();
+                break;                
             case "BVC": // display calc barrel volume view
                 this.displayBarrelVolumeCalcView();
                 break;
@@ -110,6 +114,14 @@ public class TestMenuView extends View {
         // Display the map view
         mapView.display();
     }
+    //go to the look around view
+    private void displayLookAroundView() {
+        //Create map view object
+        LookAroundView lookAroundView = new LookAroundView();
+                
+        // Display the map view
+        lookAroundView.display();
+    }    
     //display the barrelvolumecalcview
     private void displayBarrelVolumeCalcView() {
         //Create map view object
