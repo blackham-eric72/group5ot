@@ -99,7 +99,7 @@ public class TradingpostMenuView extends View {
         GameMenuView gameMenuView = new GameMenuView();
                 
         // Display the Game menu view
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
         
     }
     
