@@ -106,7 +106,10 @@ public class MainMenuView extends View {
                 break;
             case "T": // display the map view
                 this.displayTestMenu();
-                break;                
+                break;  
+            case "X": // display the map view
+                System.exit(0);
+                break; 
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;

@@ -16,18 +16,17 @@ public class BuySuppliesView extends View {
        
        private String promptMessage; 
         
-//        Bro. Wright: it isn't clear that I have to buy 2 items when shopping;
-//        there is no way to say I'm done shopping.  Also, the items have to be
-//        spelled out, with the correct case.  You should improve the input and
-//        add a loop here, and keep adding items, maybe giving a subtotal of 
-//        cost, so the user will know when they should stop buying. 
+
+        //Add end shopping option
+        //Add loop to allow any number of items
+        //Add subtotal after each purchase decision
         
     
         public BuySuppliesView() {
                     //display a welcome message and instructions and menu
             super( "\nWelcome to the Trading Post. "
-                  +"\nEnter the item name, amount and price"
-                  +"\n "
+                  +"\nEnter the item name, amount and price."
+                  +"\nAt the current time, you must buy 2 items. "
                   + "\n|---------------------------------------|"
                   + "\n|              Buy Supplies             |"
                   + "\n|-------------------------------------- |"
