@@ -119,7 +119,7 @@ public class CheckpointView extends View {
         ToHuntOrNotToHuntView toHuntOrNotToHuntView = new ToHuntOrNotToHuntView();
                 
         // Display the help menu view
-        toHuntOrNotToHuntView.displayToHuntOrNotToHuntView();    }
+        toHuntOrNotToHuntView.display();    }
 
     private void buySupplies() {
         TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();

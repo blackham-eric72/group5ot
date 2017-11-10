@@ -81,7 +81,7 @@ public class TestMenuView extends View {
     private void displayHuntView() {
         ToHuntOrNotToHuntView huntView = new ToHuntOrNotToHuntView();
         
-        huntView.displayToHuntOrNotToHuntView();
+        huntView.display();
     }
 
     private void displayCheckpointView(){
