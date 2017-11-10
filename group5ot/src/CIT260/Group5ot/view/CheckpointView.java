@@ -112,7 +112,7 @@ public class CheckpointView extends View {
         LookAroundCheckpointView lookAroundCheckpointView = new LookAroundCheckpointView();
                 
         // Display the help menu view
-        lookAroundCheckpointView.displayLookAroundCheckpointView();    }
+        lookAroundCheckpointView.display();    }
 
     private void hunt() {
         //Create ToHuntOrNotToHuntView object

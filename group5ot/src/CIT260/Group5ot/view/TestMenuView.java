@@ -31,6 +31,8 @@ public class TestMenuView extends View {
                         + "\n|*| C    - Test Checkpoint Menu      |*|"
                         + "\n|*| MEAT - Test Calculate MeatShares |*|"
                         + "\n|*| T    - Trading Post Menu         |*|"
+                        + "\n|*| TP   - Look around Trading Post  |*|"
+                        + "\n|*| E    - Eating View               |*|"
                         + "\n|*| Q    - Quit to Main Menu         |*|"
                         + "\n|*| -----------------------------------");
         }
@@ -71,6 +73,12 @@ public class TestMenuView extends View {
                 break;
             case "MEAT": // return to the main menu
                 this.displayMeatSharesCalcView();
+                break;
+            case "TP": // return to the main menu
+                this.displayLookAroundTradingPost();
+                break;
+            case "E": // return to the main menu
+                this.displayEatingView();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -146,7 +154,20 @@ public class TestMenuView extends View {
     private void displayMeatSharesCalcView() {
         MeatShareCalcView meatShareCalcView = new MeatShareCalcView();
         
-        meatShareCalcView.display();    }
+        meatShareCalcView.display();    
+    }
+
+    private void displayLookAroundTradingPost() {
+        LookAroundView lookAroundView = new LookAroundView();
+        
+        lookAroundView.display();    
+    }
+
+    private void displayEatingView() {
+        EatingView eatingView = new EatingView();
+        
+        eatingView.display();    
+    }
     
     
 }
