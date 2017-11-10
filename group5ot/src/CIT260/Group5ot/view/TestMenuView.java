@@ -89,7 +89,7 @@ public class TestMenuView extends View {
         CheckpointView checkpointView = new CheckpointView();
                        
         // Display the checkpoint menu view
-        checkpointView.displayCheckpointView() ;
+        checkpointView.display() ;
     }
 
     private void displayGameMenu() {
@@ -97,7 +97,7 @@ public class TestMenuView extends View {
         GameMenuView gameMenuView = new GameMenuView();
                 
         // Display the Game menu view
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
     private void saveGame() {
         System.out.println("*** saveGame() function called ***");
@@ -134,7 +134,7 @@ public class TestMenuView extends View {
     private void displayMeatSharesCalcView() {
         MeatShareCalcView meatShareCalcView = new MeatShareCalcView();
         
-        meatShareCalcView.displayMeatShareCalcView();    }
+        meatShareCalcView.display();    }
     
     
 }

@@ -146,7 +146,7 @@ public class MainMenuView extends View {
         GameMenuView gameMenuView = new GameMenuView();
                 
         // Display the Game menu view
-        gameMenuView.displayGameMenuView();
+        gameMenuView.display();
     }
     private void saveGame() {
         System.out.println("*** saveGame() function called ***");
