@@ -14,21 +14,18 @@ import java.util.Scanner;
  */
 public class TradingpostMenuView extends View {
     
-       // private String menu;
-        private String promptMessage;
-
         public TradingpostMenuView( ){
-                    super("\n*************Enter a menu option ****************"
-                        + "\n------------------------"
-                        + "\n| Trading Post Menu     |"
-                        + "\n------------------------"
-                        + "\nL - Look around"
-                        + "\nB - Buy supplies"
-                        + "\nM - Continue moving forward"
-                        + "\nH - Trading Post help"
-                        + "\nG - Game menu"
-                        + "\nX - Quit"
-                        + "\n------------------------");
+            super("\n*************Enter a menu option ****************"
+                + "\n------------------------"
+                + "\n| Trading Post Menu     |"
+                + "\n------------------------"
+                + "\nL - Look around"
+                + "\nB - Buy supplies"
+                + "\nM - Continue moving forward"
+                + "\nH - Trading Post help"
+                + "\nG - Game menu"
+                + "\nX - Leave Trading Post"
+                + "\n------------------------");
         }
                 
    @Override        
@@ -81,7 +78,7 @@ public class TradingpostMenuView extends View {
     private void displayMoveView() {
         //Create move object
         MoveView moveView = new MoveView();
-        
+                        
         //display move view
         moveView.displayMoveView();
     }
@@ -91,7 +88,7 @@ public class TradingpostMenuView extends View {
         TradingpostHelpView tradingpostHelpView = new TradingpostHelpView();
         
         // Display the tradingpost help view
-        tradingpostHelpView.displayTradingpostHelpView();
+        tradingpostHelpView.display();
     }
 
     private void displayGameMenu() {

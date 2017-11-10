@@ -45,7 +45,7 @@ public class BuySuppliesView extends View {
                     this.orderTotalCalculation();
                     break;
                 case "Q": // return to previous screen
-                    this.displayTestMenu();
+                    this.displayTradingpostMenuView();
                     break;
                 default:
                    System.out.println("\n*** Invalid selection *** Try Again");
@@ -159,10 +159,10 @@ public class BuySuppliesView extends View {
         }            
          
 
-    private void displayTestMenu() {
-        TestMenuView testMenuView = new TestMenuView();
+    private void displayTradingpostMenuView() {
+        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
        
-       testMenuView.display();
+        tradingpostMenuView.display();
     }
            
 }
