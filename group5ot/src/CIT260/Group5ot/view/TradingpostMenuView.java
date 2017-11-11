@@ -80,7 +80,7 @@ public class TradingpostMenuView extends View {
         MoveView moveView = new MoveView();
                         
         //display move view
-        moveView.displayMoveView();
+        moveView.display();
     }
 
     private void displayTradingpostHelp() {

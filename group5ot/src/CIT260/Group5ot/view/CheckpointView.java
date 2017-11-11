@@ -140,7 +140,7 @@ public class CheckpointView extends View {
         MoveView moveView = new MoveView();
         
         //display move view
-        moveView.displayMoveView();    
+        moveView.display();    
     }
 
     private void displayGameMenu() {

@@ -24,17 +24,16 @@ public class GameMenuView extends View {
 
         public GameMenuView() {
             super   ("\n************ Enter a menu option ************"
-                    + "\n--------------------------"
-                    + "\n| Game Menu               |"
-                    + "\n--------------------------"
-                    + "\nC - Continue Game "
-                    + "\nM - View Map"
+                    + "\n------------------------------------"
+                    + "\n|            Game Menu             |"
+                    + "\n------------------------------------"
+                    + "\nD - Drive On to Next Location "
                     + "\nH - Help Menu"                 
                     + "\nI - View Inventory"
                     + "\nV - View Health"
                     + "\nS - Save game and return to main menu"
-                    + "\nX - Quit Game and return to main menu"
-                    + "\n--------------------------");
+                    + "\nQ - Quit Game and return to main menu"
+                    + "\n-------------------------------------");
         }
    
 //    Moved to "View.java" class  
@@ -87,26 +86,23 @@ public class GameMenuView extends View {
         choice = choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-            case "C": // create and start new game
-                this.continueGame();
-                break;
-            case "M": // get and start an existing game
-                this.viewMap();
+            case "D": // create and start new game
+                this.displayMoveView();
                 break;
             case "H": // display the help menu
                 this.displayHelpMenu();
                 break;
             case "I": // display the Game menu
-                this.viewInventory();
+                this.displayInventoryView();
                 break;
             case "V": // save the current game
-                this.viewHealth();
+                this.displayHealthView();
                 break;
             case "S": // save the current game
                 this.saveGameExit();
                 break;
-            case "X": // save the current game
-                this.exitGame();
+            case "Q": // return to main menu
+                this.displayMainMenuView();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -124,19 +120,18 @@ public class GameMenuView extends View {
         helpMenuView.display();
     }
 
-    private void continueGame() {
-        System.out.println("*** continueGame() function called ***");    
+    private void displayMoveView() {
+        
+        MoveView moveView = new MoveView();
+        
+        moveView.display();
     }
 
-    private void viewMap() {
-        System.out.println("*** viewMap() function called ***");    
-    }
-
-    private void viewInventory() {
+    private void displayInventoryView() {
         System.out.println("*** viewInventory() function called ***");    
     }
 
-    private void viewHealth() {
+    private void displayHealthView() {
         System.out.println("*** viewHealth() function called ***");    
     }
 
@@ -144,7 +139,7 @@ public class GameMenuView extends View {
         System.out.println("*** saveGameExit() function called ***");    
     }
 
-    private void exitGame() {
+    private void displayMainMenuView() {
         MainMenuView mainMenuView = new MainMenuView();
                 
         // Display the main menu view

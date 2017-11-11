@@ -33,7 +33,7 @@ public class MainMenuView extends View {
                         + "\n|*| G - Game Menu             |*|"
                         + "\n|*| S - Save game             |*|"
                         + "\n|*| T - Test Menu             |*|"
-                        + "\n|*| X - Quit                  |*|"
+                        + "\n|*| Q - Quit                  |*|"
                         + "\n|*| ------------------------- |*|");
         }
    
@@ -107,7 +107,7 @@ public class MainMenuView extends View {
             case "T": // display the map view
                 this.displayTestMenu();
                 break;  
-            case "X": // display the map view
+            case "Q": // end the game
                 System.exit(0);
                 break; 
             default:
@@ -152,13 +152,13 @@ public class MainMenuView extends View {
         System.out.println("*** saveGame() function called ***");
     }
     //go to the map view
-    private void displayMapView() {
-        //Create map view object
-        MapView mapView = new MapView();
-                
-        // Display the map view
-        mapView.display();
-    }
+//    private void displayMapView() {
+//        //Create map view object
+//        MapView mapView = new MapView();
+//                
+//        // Display the map view
+//        mapView.display();
+//    }
     //display the barrelvolumecalcview
     private void displayBarrelVolumeCalcView() {
         //Create map view object
