@@ -33,6 +33,7 @@ public class TestMenuView extends View {
                         + "\n|*| T    - Trading Post Menu         |*|"
                         + "\n|*| TP   - Look around Trading Post  |*|"
                         + "\n|*| E    - Eating View               |*|"
+                        + "\n|*| R    - Rest View                 |*|"
                         + "\n|*| Q    - Quit to Main Menu         |*|"
                         + "\n|*| -----------------------------------");
         }
@@ -79,6 +80,9 @@ public class TestMenuView extends View {
                 break;
             case "E": // return to the main menu
                 this.displayEatingView();
+                break;
+            case "R": // rest view
+                this.displayRestView();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -167,6 +171,13 @@ public class TestMenuView extends View {
         EatingView eatingView = new EatingView();
         
         eatingView.display();    
+    }
+    
+        private void displayRestView() {
+        RestView restView = new RestView();
+                
+        // Display the rest menu
+        restView.display();    
     }
     
     

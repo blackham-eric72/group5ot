@@ -132,7 +132,7 @@ public class CheckpointView extends View {
         RestView restView = new RestView();
                 
         // Display the help menu view
-        restView.displayRestView();    
+        restView.display();    
     }
 
     private void displayMoveView() {
