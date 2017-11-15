@@ -6,6 +6,7 @@
 package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
+import CIT260.Group5ot.control.MapControl;
 import group5ot.Group5ot;
 import java.util.Scanner;
 
@@ -37,52 +38,6 @@ public class MainMenuView extends View {
                         + "\n|*| ------------------------- |*|");
         }
    
-////////Moved to "View.java" class    
-//    public void displayMainMenuView() {
-//       
-//        boolean done = false; // set flag to not done
-//        do {
-//            // prompt for and get players name
-//            String menuOption = this.getMenuOption();
-//            if (menuOption.toUpperCase().equals("X")) // user wants to quit
-//                System.exit(0); // exit the game and terminate the program
-//            
-//            // do the requested action and display the next view
-//            done = this.doAction(menuOption);
-//            
-//        } while (!done);
-//        
-//    }
-
-//    private String getMenuOption() {
-//        
-//        this.promptMessage = 
-//                        "\n ******** Enter a menu option:"
-//                       + "\n" + menu;
-//                     
-//               
-//        
-//        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-//        String value = ""; // value to be returned
-//        boolean valid = false; //initilaize to not valid
-//        
-//        while (!valid) { // loop while an invalid value is entered
-//            System.out.println("\n" + this.promptMessage);
-//            
-//            value = keyboard.nextLine(); // get next line typed on keyboard 
-//            value = value.trim(); //trim off leading and trailing blanks
-//            
-//            if (value.length() < 1) { //value is blank
-//                System.out.println("\nInvalid value: value cannot be blank");
-//                continue;
-//            }
-//            
-//            break; //end the loop
-//        }
-//        
-//        return value; // return the value entered
-//    }
-
     @Override
     public boolean doAction(String choice) {
         
@@ -121,12 +76,16 @@ public class MainMenuView extends View {
     private void startNewGame() {
                 
 
-// create a new game
-        //GameControl.createNewGame(Group5ot.getPlayer());
+        // create a new game
+        GameControl.createNewGame(Group5ot.getPlayer());
         
-        // display the game menu
-        //GameMenuView gameMenu = new GameMenuView();
-        //gameMenu.displayMenu();
+        // create items
+        GameControl gameControl = new GameControl();
+        gameControl.createItems();
+        
+        //create map
+        MapControl mapControl = new MapControl();
+        mapControl.createMap();    
     }
 
     private void startExistingGame() {

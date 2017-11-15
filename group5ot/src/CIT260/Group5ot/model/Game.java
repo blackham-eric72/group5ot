@@ -23,6 +23,9 @@ public class Game implements Serializable  {
    private BarrelVolume barrelVolume;
    private MeatShare meatShare;
    private Trading trading;
+   private InventoryItem[] inventory;
+
+
    
     public Game() {
     }
@@ -135,7 +138,13 @@ public class Game implements Serializable  {
         this.trading = trading;
     }
     
-    
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    }
     
    
     
