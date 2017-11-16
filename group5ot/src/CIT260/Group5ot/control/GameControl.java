@@ -10,6 +10,7 @@ import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Map;
 import CIT260.Group5ot.model.Player;
 import group5ot.Group5ot;
+import CIT260.Group5ot.enums.itemType;
 
 /**
  *
@@ -122,17 +123,24 @@ public class GameControl {
     
     public static InventoryItem[] createItems(){
         
-        String[] items = new String[7];
+        InventoryItem gun = new InventoryItem();
+        gun.setInventoryType("gun");
+        gun.setQuantityInStock(0);
+        gun.setRequiredAmount(0);
         
-        items[0] = "gun";
-        items[1] = "ox";
-        items[2] = "water";
-        items[3] = "meat";
-        items[4] = "wheat";
-        items[5] = "ammo";
-        items[6] = "medicine";
+       // inventoryItem[ItemType.gun.ordinal()] = gun;
         
-        System.out.println("I Like delicious sandwiches that were created  by the createItem Function.");
+//        String[] items = new String[7];
+//        
+//        items[0] = "gun";
+//        items[1] = "ox";
+//        items[2] = "water";
+//        items[3] = "meat";
+//        items[4] = "wheat";
+//        items[5] = "ammo";
+//        items[6] = "medicine";
+//        
+//        System.out.println("I Like delicious sandwiches that were created  by the createItem Function.");
         return null;
     }
     
