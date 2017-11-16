@@ -7,13 +7,25 @@ package CIT260.Group5ot.control;
 
 import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Player;
+import CIT260.Group5ot.model.Character;
+import static CIT260.Group5ot.model.Character.Daughter1;
+import static CIT260.Group5ot.model.Character.Daughter2;
+import static CIT260.Group5ot.model.Character.Father;
+import static CIT260.Group5ot.model.Character.Mother;
+import static CIT260.Group5ot.model.Character.Son1;
+import static CIT260.Group5ot.model.Character.Trader;
+import static CIT260.Group5ot.model.CharacterType.TraderJoe;
+        
 import group5ot.Group5ot;
+import java.util.ArrayList;
 
 /**
  *
  * @author crims
  */
 public class GameControl {
+    
+
 
     public static Player createPlayer(String name) {
     
@@ -56,19 +68,18 @@ public class GameControl {
         return null;
     }
     
-    public static Character[] createCharacter(){
+    public static void createCharacter(){
+      //String characters[] = {Father.getName(), Father.getDescription(),};
+        //Character obadiah = Character.valueOf("Father");     
+        ArrayList<Character> actors = new ArrayList<>();
+        actors.add(Father);
+        actors.add(Mother);
+        actors.add(Son1);
+        actors.add(Daughter1);
+        actors.add(Daughter2);
+        actors.add(Trader);
         
-        Character obadiah = new Character();
-        obadiah.setName("Obadiah");
-        obadiah.setDescription("He is the leader of the family");
-        obadiah.setCoordinates( new Point(1,1));
-        
-        Character LilyAnne = new Character();
-        lilyAnne.setName("LilyAnne");
-        lilyAnne.setDescription("She is the mother(real leader) of the family");
-        lilyAnne.setCoordinates( new Point(0,1));
-        
-        //return Character[0];
+      System.out.println(actors);           
     }
     
         
