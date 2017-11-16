@@ -3,17 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CIT260.Group5ot.model;
+package CIT260.Group5ot.enums;
 
 /**
  *
- * @author Flores Family
+ * @author crims
  */
-public enum CharacterType {
-   Obadiah,
-   LilyAnne,
-   Ephraim,
-   Gertrude,
-   Myrtle,
-   TraderJoe;
+public enum itemType {
+    gun,
+    ox,
+    water,
+    meat,
+    wheat,
+    ammo,
+    medicine;
 }

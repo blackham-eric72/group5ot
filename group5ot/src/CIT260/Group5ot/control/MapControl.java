@@ -13,6 +13,7 @@ import CIT260.Group5ot.model.Map;
  */
 public class MapControl {
     public static Map createMap(){
+               
         System.out.println("I Like delicious sandwiches that were created  by the createMap Function.");
         return null;
     }
