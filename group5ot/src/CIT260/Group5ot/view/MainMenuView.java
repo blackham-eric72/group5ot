@@ -9,6 +9,7 @@ import CIT260.Group5ot.control.GameControl;
 import CIT260.Group5ot.control.MapControl;
 import group5ot.Group5ot;
 import java.util.Scanner;
+import CIT260.Group5ot.model.Character;
 
 /**
  *
@@ -16,7 +17,7 @@ import java.util.Scanner;
  */
 public class MainMenuView extends View {
 
-    
+    Character ch;
     
     /*public class MainMenuView
     {*/
@@ -86,6 +87,10 @@ public class MainMenuView extends View {
         //create map
         MapControl mapControl = new MapControl();
         mapControl.createMap();    
+        
+        //create characters
+       gameControl.createCharacter();
+       
     }
 
     private void startExistingGame() {
