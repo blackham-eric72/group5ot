@@ -20,6 +20,7 @@ import static CIT260.Group5ot.model.Character.Father;
 import static CIT260.Group5ot.model.Character.Mother;
 import static CIT260.Group5ot.model.Character.Son1;
 import static CIT260.Group5ot.model.Character.Trader;
+import java.util.ArrayList;
 
 
 /**
@@ -135,27 +136,51 @@ public class GameControl {
 //        RETURN items
 //        }
     
-    public static InventoryItem[] createItems(){
+    public ArrayList<InventoryItem> createItems(){
+        
+        ArrayList<InventoryItem> inventory = new ArrayList<>();
         
         InventoryItem gun = new InventoryItem();
         gun.setInventoryType("gun");
-        gun.setQuantityInStock(0);
+        gun.setQuantityInStock(3);
         gun.setRequiredAmount(0);
         
-       // inventoryItem[ItemType.gun.ordinal()] = gun;
+        InventoryItem ox = new InventoryItem();
+        ox.setInventoryType("ox");
+        ox.setQuantityInStock(2);
+        ox.setRequiredAmount(0);
         
-//        String[] items = new String[7];
-//        
-//        items[0] = "gun";
-//        items[1] = "ox";
-//        items[2] = "water";
-//        items[3] = "meat";
-//        items[4] = "wheat";
-//        items[5] = "ammo";
-//        items[6] = "medicine";
-//        
-//        System.out.println("I Like delicious sandwiches that were created  by the createItem Function.");
-        return null;
+        InventoryItem water = new InventoryItem();
+        water.setInventoryType("water");
+        water.setQuantityInStock(30);
+        water.setRequiredAmount(0);
+        
+        InventoryItem meat = new InventoryItem();
+        meat.setInventoryType("meat");
+        meat.setQuantityInStock(20);
+        meat.setRequiredAmount(0);
+          
+        InventoryItem wheat = new InventoryItem();
+        wheat.setInventoryType("wheat");
+        wheat.setQuantityInStock(50);
+        wheat.setRequiredAmount(0);
+        
+        InventoryItem ammo = new InventoryItem();
+        ammo.setInventoryType("ammo");
+        ammo.setQuantityInStock(50);
+        ammo.setRequiredAmount(0);
+        
+        InventoryItem medicine = new InventoryItem();
+        medicine.setInventoryType("medicine");
+        medicine.setQuantityInStock(20);
+        medicine.setRequiredAmount(0);
+        
+        
+        
+        
+        
+        System.out.println("I Like delicious sandwiches that were created  by the createItem Function.");
+        return  inventory;
     }
     
    
@@ -229,10 +254,7 @@ public class GameControl {
     //RETURN 1 // indicates success
     }
       
-    public static InventoryItem[] createItems(){
-        System.out.println("I Like delicious sandwiches that were created  by the createItem Function.");
-        return null;
-    }
+    
     
     public static void Character createCharacter(){
       //String characters[] = {Father.getName(), Father.getDescription(),};
