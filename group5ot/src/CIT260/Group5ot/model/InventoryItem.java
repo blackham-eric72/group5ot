@@ -23,6 +23,12 @@ public class InventoryItem implements Serializable{
     public InventoryItem() {
     }
     
+    public InventoryItem(String inventoryType, int quantityInStock, int requiredAmount) {
+    
+        this.inventoryType = inventoryType;
+        this.quantityInStock = quantityInStock;
+        this.requiredAmount = requiredAmount;
+    }
     
     public String getInventoryType() {
         return inventoryType;

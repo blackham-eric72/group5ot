@@ -10,16 +10,8 @@ import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Map;
 import CIT260.Group5ot.model.Player;
 import group5ot.Group5ot;
-import CIT260.Group5ot.enums.itemType;
-import CIT260.Group5ot.model.InventoryItem;
-import CIT260.Group5ot.model.Player;
+//import CIT260.Group5ot.enums.itemType;
 import CIT260.Group5ot.model.Character;
-import static CIT260.Group5ot.model.Character.Daughter1;
-import static CIT260.Group5ot.model.Character.Daughter2;
-import static CIT260.Group5ot.model.Character.Father;
-import static CIT260.Group5ot.model.Character.Mother;
-import static CIT260.Group5ot.model.Character.Son1;
-import static CIT260.Group5ot.model.Character.Trader;
 import java.util.ArrayList;
 
 
@@ -89,113 +81,88 @@ public class GameControl {
     }
     
     
-//            public static Actor[] createActors() {
-//            actors = create an array Actor objects
-//            actor1 = new Actor object
-//            Assign values to each attribute in the Actor object
-//            Assign actor1 to the next position in the actors array
-//            actor2 = new Actor object
-//            Assign values to each attribute in the Actor object
-//            Assign actor2 to the next position in the actors array
-//            …
-//            …
-//            RETURN items
-//            }
     
+     public ArrayList<Character> createCharacter(){
+         
+        ArrayList<Character> character = new ArrayList<>(); 
+               
+        Character obadiah = new Character("Obadiah", "He is the leader of the family");
+        Character lilyAnne = new Character("LilyAnne", "She is the mother(real leader) of the family");
+        Character ephraim = new Character("Ephraim", "First born son");
+        Character gertrude = new Character("Gertrude", "First born daughter, who has a fiesty attitude");
+        Character myrtle = new Character("Myrtle", "Last born child - only a baby");
+        Character traderJoe = new Character("Trader-Joe", "He is the owner of the trading post");
+        
+        
+        character.add(0, obadiah);
+        character.add(1, lilyAnne);
+        character.add(2, ephraim);
+        character.add(3, gertrude);
+        character.add(4, myrtle);
+        character.add(5, traderJoe);
+        
+        return character;
+    }
     
-//     public static Character[] createCharacter(){
-//         
-//               
-//        Character obadiah = new Character();
-//        obadiah.setName("Obadiah");
-//        obadiah.setDescription("He is the leader of the family");
-//        obadiah.setCoordinates( new Point(1,1));
-//        
-//        Character LilyAnne = new Character();
-//        lilyAnne.setName("LilyAnne");
-//        lilyAnne.setDescription("She is the mother(real leader) of the family");
-//        lilyAnne.setCoordinates( new Point(0,1));
-//        
-//        //return Character[0];
-//    }
-    
- 
-    
-    
-    
-//        Xpublic static InventoryItem createItems() {
-//        Xitems = create an array InventoryItem objects
-//        Xitem1 = new InventoryItem object
-//        ?Assign values to each attribute in the InventoryItem object
-//        Assign items1 to a position in the items array
-//        item2 = new InventoryItem object
-//        Assign values to each attribute in the InventoryItem object
-//        Assign items2 to a position in the items array
-//        …
-//        …
-//        RETURN items
-//        }
-    
+     
     public ArrayList<InventoryItem> createItems(){
         
         ArrayList<InventoryItem> inventory = new ArrayList<>();
         
-        InventoryItem gun = new InventoryItem();
-        gun.setInventoryType("gun");
-        gun.setQuantityInStock(3);
-        gun.setRequiredAmount(0);
+        InventoryItem gun = new InventoryItem("Weapon", 3, 1);
+        InventoryItem ox = new InventoryItem("Locomotion", 2, 2);
+        InventoryItem water = new InventoryItem("Water", 30, 10);
+        InventoryItem meat = new InventoryItem("Food", 20, 10);
+        InventoryItem wheat = new InventoryItem("Food", 50, 25);
+        InventoryItem ammo = new InventoryItem("Weapon", 50, 20);
+        InventoryItem medicine = new InventoryItem("Medicine", 20, 10);
         
-        InventoryItem ox = new InventoryItem();
-        ox.setInventoryType("ox");
-        ox.setQuantityInStock(2);
-        ox.setRequiredAmount(0);
-        
-        InventoryItem water = new InventoryItem();
-        water.setInventoryType("water");
-        water.setQuantityInStock(30);
-        water.setRequiredAmount(0);
-        
-        InventoryItem meat = new InventoryItem();
-        meat.setInventoryType("meat");
-        meat.setQuantityInStock(20);
-        meat.setRequiredAmount(0);
-          
-        InventoryItem wheat = new InventoryItem();
-        wheat.setInventoryType("wheat");
-        wheat.setQuantityInStock(50);
-        wheat.setRequiredAmount(0);
-        
-        InventoryItem ammo = new InventoryItem();
-        ammo.setInventoryType("ammo");
-        ammo.setQuantityInStock(50);
-        ammo.setRequiredAmount(0);
-        
-        InventoryItem medicine = new InventoryItem();
-        medicine.setInventoryType("medicine");
-        medicine.setQuantityInStock(20);
-        medicine.setRequiredAmount(0);
-        
-        
+        inventory.add(0, gun);
+        inventory.add(1, ox);
+        inventory.add(2, water);
+        inventory.add(3, meat);
+        inventory.add(4, wheat);
+        inventory.add(5, ammo);
+        inventory.add(6, medicine);
         
         
         
         System.out.println("I Like delicious sandwiches that were created  by the createItem Function.");
-        return  inventory;
+        return inventory;
     }
     
-   
-    public static Map createMap(int noOfRows, int noOfColumns){
+// public static Map createMap( int noOfRows,
+// int noOfColumns,
+// InventoryItem[] items) {
+// if noOfRows < 0 OR numOfColumns < 0
+// return null
+// endif
+// if items is null OR its length is < 1
+// RETURN null
+// endif
+//Map map = new Map object
+//save the noOfRows in the map
+//save the noOfColumns in the map
+//locations = createLocations(noOfRows, noOfColumns)
+//Assign the locations array to the map
+//scenes = createScenes()
+//questions = createQuestions()
+//assignQuestionsToScenes()
+//assignItemsToScenes() 
+//   
+    
+//    public static Map createMap(int noOfRows, int noOfColumns){
         
 //        Map map = new createMap(noOfRows, noOfColumns);
 //        
 //        if (map == null) {
 //           return -1; 
 //        }
-
-        
-        System.out.println("We like tacos but we don't have any. This message brought to you by the createMap() function");
-        return null ;
-    }
+//
+//        
+//        System.out.println("We like tacos but we don't have any. This message brought to you by the createMap() function");
+//        return null ;
+//   }
         
 
 /*
@@ -252,23 +219,11 @@ public class GameControl {
     //ENDIF
     //Assign the map to the game
     //RETURN 1 // indicates success
-    }
+//    }
       
     
     
-    public static void Character createCharacter(){
-      //String characters[] = {Father.getName(), Father.getDescription(),};
-        //Character obadiah = Character.valueOf("Father");     
-        ArrayList<Character> actors = new ArrayList<>();
-        actors.add(Father);
-        actors.add(Mother);
-        actors.add(Son1);
-        actors.add(Daughter1);
-        actors.add(Daughter2);
-        actors.add(Trader);
+  
         
-      System.out.println(actors);           
-    }
     
-        
 }
