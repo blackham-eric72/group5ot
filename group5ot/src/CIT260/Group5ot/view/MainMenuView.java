@@ -75,8 +75,11 @@ public class MainMenuView extends View {
     }    
 
     private void startNewGame() {
-                
-
+         
+        int returnValue = GameControl.createNewGame(Group5ot.getPlayer());
+        if (returnValue < 0 ){
+            System.out.println("ERROR - Failed to create new game");
+        }
         // create a new game
         GameControl.createNewGame(Group5ot.getPlayer());
         
@@ -89,7 +92,7 @@ public class MainMenuView extends View {
         mapControl.createMap();    
         
         //create characters
-       gameControl.createCharacter();
+       gameControl.createNewCharacter(Character character);
        
     }
 

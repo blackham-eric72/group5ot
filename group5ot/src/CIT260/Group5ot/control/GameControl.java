@@ -20,6 +20,7 @@ import static CIT260.Group5ot.model.Character.Father;
 import static CIT260.Group5ot.model.Character.Mother;
 import static CIT260.Group5ot.model.Character.Son1;
 import static CIT260.Group5ot.model.Character.Trader;
+import java.util.ArrayList;
 
 
 /**
@@ -51,8 +52,8 @@ public class GameControl {
     public static int createNewGame(Player player) {
         
 //        Xpublic static int createNewGame(Player player) {
-//        Xif (player == null)
-//        Xreturn -1
+//        Xif (player == null){
+//        Xreturn -1}
 //        Xgame = create a new Game object
 //        XSave a reference to the Player object in the game
 //        XSave a reference to the game in the main class
@@ -168,73 +169,21 @@ public class GameControl {
 //        }
 
         
-        System.out.println("We like tacos but we don't have any. This message brought to you by the createMap() function");
+        System.out.println("We like tacos but we don't have any." + "\nThis message brought to you by the createMap() function");
         return null ;
     }
         
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-//package CIT260.Group5ot.control;
-//
 
-//        
-//import group5ot.Group5ot;
-//import java.util.ArrayList;
-//
-///**
-// *
-// * @author crims
-// */
-//public class GameControl {
     
 
 
-//    public static Player createPlayer(String name) {
-//    
-//        if (name == null) {
-//            return null;
-//        }
-//        
-//        Player player = new Player();
-//        player.setName(name);
-//        
-//        Group5ot.setPlayer(player); // save the player
-//        
-//        return player;
-//        
-//        
+//    public static InventoryItem[] createItems(){
+//        System.out.println("I Like delicious sandwiches that were created  by the createItem Function.");
+//        return null;
 //    }
-
-      //public static int createNewGame(Player player) {
-        //return 0;
-    //if (player == null)
-    //return -1
-    //game = create a new Game object
-    //Save a reference to the Player object in the game
-    //Save a reference to the game in the main class
-    //actors = createActors()
-    //Save the list of actors in the Game object
-    //Assign an actor to the player
-    //items = createItems()
-    //Save the list of items in the game
-    //map = createMap(noOfRows, noOfColumns)
-    //IF map == null THEN
-    //RETURN -1
-    //ENDIF
-    //Assign the map to the game
-    //RETURN 1 // indicates success
-    }
-      
-    public static InventoryItem[] createItems(){
-        System.out.println("I Like delicious sandwiches that were created  by the createItem Function.");
-        return null;
-    }
     
-    public static void Character createCharacter(){
+    public static Character createNewCharacter(Character character){
       //String characters[] = {Father.getName(), Father.getDescription(),};
         //Character obadiah = Character.valueOf("Father");     
         ArrayList<Character> actors = new ArrayList<>();
@@ -245,8 +194,11 @@ public class GameControl {
         actors.add(Daughter2);
         actors.add(Trader);
         
-      System.out.println(actors);           
+        
+      
+      return character;
     }
-    
+
+   
         
 }
