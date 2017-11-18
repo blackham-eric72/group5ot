@@ -183,7 +183,7 @@ public class GameControl {
 //        return null;
 //    }
     
-    public static Character createNewCharacter(Character character){
+   /* public static Character createNewCharacter(Character character){
       //String characters[] = {Father.getName(), Father.getDescription(),};
         //Character obadiah = Character.valueOf("Father");     
         ArrayList<Character> actors = new ArrayList<>();
@@ -194,10 +194,11 @@ public class GameControl {
         actors.add(Daughter2);
         actors.add(Trader);
         
-        
+        character = actors;
       
       return character;
     }
+*/
 
    
         
