@@ -89,7 +89,7 @@ public class MainMenuView extends View {
         mapControl.createMap();    
         
         //create characters
-       gameControl.createCharacter();
+        gameControl.createCharacter();
        
     }
 
