@@ -6,6 +6,7 @@
 package CIT260.Group5ot.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -24,6 +25,24 @@ public class Game implements Serializable  {
    private MeatShare meatShare;
    private Trading trading;
    private InventoryItem[] inventory;
+   private ArrayList<Character> characters;
+   private ArrayList<InventoryItem> items;
+
+    public ArrayList<InventoryItem> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<InventoryItem> items) {
+        this.items = items;
+    }
+
+    public ArrayList<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(ArrayList<Character> characters) {
+        this.characters = characters;
+    }
 
 
    

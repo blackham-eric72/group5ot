@@ -22,56 +22,81 @@ import java.util.ArrayList;
 public class MapControl {
     
     
-    public static Map createMap(int noOfRows, int noOfColumns, ArrayList<InventoryItem> items){
-        
-          Map map = new Map();
+   public static Map createMap(int noOfRows, int noOfColumns, ArrayList<InventoryItem> items){
+           if (noOfRows <0) {
+         return null;
+     }   
+     if (noOfColumns <0) {
+         return null;
+     }   
+     if (items == null) {
+         return null;
+     }
+     if (items.size() > 1 ){
+         return null;
+     }
+         Map map = new Map();
         
             if (map == null) {
                return null; 
             }
+         noOfRows = 2;  
+         noOfColumns = 13;
+//         
+         Location[][] location = createLocations(noOfRows, noOfColumns);
+         
+         Scenes[] scenes = createScenes();
+                 
         
-        System.out.println("We like tacos but we don't have any. This message brought to you by the createMap() function");
-        return null ;
+         assignItemsToScenes(items, scenes);
+         assignScenesToLocations(scenes, location);
+         
+         return map;
+         
+  
+    
+
+    
     } 
     
     
-    private static Location[][] createLocations(int rows, int columns) {
-        System.out.println("I want fish tacos because they are delicious. brought to you by createLocations() function.");
+     public static Location[][] createLocations(int rows, int columns) {
+                
+        if(rows < 1) {
         return null;
     }
+        if(columns < 1) {
+            return null;
+        }
+       Location[][] locations = new Location[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j< columns; j++){ 
+                 Location location = new Location();
+                  location.setVisited(false);
+                  locations[i][j] = location;
+                  }     
+        }
+        return locations;
+     }
     
     
-    private static SceneType[] createScenes() {
-        SceneType[] scenes = new SceneType[8];
+    private static Scenes[] createScenes() {
+        Scenes[] scenes = new Scenes[8];
         
-        SceneType tradingPost = scenes[0];
-        SceneType checkpoint = scenes[1];
-        SceneType huntingScene = scenes[2];
-        SceneType trail = scenes[3];
-        SceneType eating = scenes[4];
-        SceneType waterSource = scenes[5];
-        SceneType foodSource = scenes[6];
-        SceneType losingGame = scenes[7];
+        Scenes tradingPost = scenes[0];
+        Scenes checkpoint = scenes[1];
+        Scenes huntingScene = scenes[2];
+        Scenes trail = scenes[3];
+        Scenes eating = scenes[4];
+        Scenes waterSource = scenes[5];
+        Scenes foodSource = scenes[6];
+        Scenes losingGame = scenes[7];
         
         return scenes;
     }
     
     
-    public static BarrelVolume createBarrelVolumeQuestion(double barrelRadius, double barrelDiameter) {
-        BarrelVolume barrelVolume = new BarrelVolume();
-        
-        barrelVolume.createBarrelVolume();
-        return null;
-    }    
-        
-    public static MeatShare createMeatShareQuestion(double meatWeight, int numAdults, int numChildren) {    
-        
-       System.out.println("Rubio's is too far away to get good fish tacos. Brought to you by createQuestions().");
-       return null;
-    }    
-    
-    
-    private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
+    private static void assignQuestionsToScenes(Questions[] questions, Scene[] scenes) {
         System.out.println("Maybe chinese food will have to do. Brought to you by assignQuestionsToScenes().");
     }
     
@@ -84,8 +109,30 @@ public class MapControl {
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations) {
         System.out.println("Teriyaki is Japanese, but they have it at Chinese restaurants. Brought to you by assignScenesToLocations() PS- I'm getting hungry");
     }       
-     
-    return map;
+
+      
+    
+    
+   private static void assignQuestionsToScenes(Questions[] questions, Scenes[] scenes) {
+        System.out.println("Maybe chinese food will have to do. Brought to you by assignQuestionsToScenes().");
+    
+    }
+    
+    
+    private static void assignItemsToScenes(ArrayList<InventoryItem> items, Scenes[] scenes){
+        System.out.println("Teriyaki sounds good right now. Brought to you by assignItemsToScenes().");
+    }
+
+    
+    private static void assignScenesToLocations(Scenes[] scenes, 
+                    Location[][] location) {
+        System.out.println("Teriyaki is Japanese, but they have it at Chinese restaurants. Brought to you by assignScenesToLocations() PS- I'm getting hungry");
+       
+    }
+
+   
+
+  
 }
 
 

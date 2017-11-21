@@ -10,5 +10,5 @@ package CIT260.Group5ot.model;
  * @author Flores Family
  */
 public class Scene {
-    //Here will be a superclass when I figure out how to make one.
+  
 }

@@ -51,6 +51,7 @@ public class Group5ot {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
     }
+    
 
     public static Player getPlayer() {
         return player;

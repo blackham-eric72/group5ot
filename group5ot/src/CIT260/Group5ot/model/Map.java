@@ -17,10 +17,10 @@ public class Map implements Serializable {
     
     //class instance variables
     private String description;
-    private int ROWCOUNT = 50;
-    private int COLUMNCOUNT = 85;
+    private int ROWCOUNT = 3;
+    private int COLUMNCOUNT = 27;
     private ArrayList<Game> games = new ArrayList<Game>();
-    private Location[] locations = new Location[27];
+    private Location[][] locations = new Location[ROWCOUNT][COLUMNCOUNT];
 
     //default constructor
     public Map() {

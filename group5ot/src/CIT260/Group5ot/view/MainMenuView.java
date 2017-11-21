@@ -88,14 +88,10 @@ public class MainMenuView extends View {
         // create items
         GameControl gameControl = new GameControl();
         gameControl.createItems();
-        ArrayList<InventoryItem> items = null;
-        
-        //create map
-        MapControl.createMap( 2, 27, items);    
         
         //create characters
 
-        gameControl.createCharacter();
+        gameControl.createCharacters();
 
        
     }
