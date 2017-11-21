@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.control;
 
+import CIT260.Group5ot.enums.ItemType;
 import CIT260.Group5ot.model.Game;
 import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Map;

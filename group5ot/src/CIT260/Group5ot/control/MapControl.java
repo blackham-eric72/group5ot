@@ -5,9 +5,12 @@
  */
 package CIT260.Group5ot.control;
 
+import CIT260.Group5ot.enums.QuestionType;
+import CIT260.Group5ot.model.BarrelVolume;
 import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Location;
 import CIT260.Group5ot.model.Map;
+import CIT260.Group5ot.model.MeatShare;
 import java.util.ArrayList;
 
 /**
@@ -38,11 +41,21 @@ public class MapControl {
     
     private static Scene[] createScenes() {
         System.out.println("Tortilla chips and guacamole are yummy with fish tacos. Brought to you by createScenes().");
+        return null;
     }
     
     
-    private static Question[] createQuestions() {
-        System.out.println("Rubio's is too far away to get good fish tacos. Brought to you by createQuestions().");
+    public static BarrelVolume createBarrelVolumeQuestion(double barrelRadius, double barrelDiameter) {
+        BarrelVolume barrelVolume = new BarrelVolume();
+        
+        barrelVolume.createBarrelVolume();
+        return null;
+    }    
+        
+    public static MeatShare createMeatShareQuestion(double meatWeight, int numAdults, int numChildren) {    
+        
+       System.out.println("Rubio's is too far away to get good fish tacos. Brought to you by createQuestions().");
+       return null;
     }    
     
     
