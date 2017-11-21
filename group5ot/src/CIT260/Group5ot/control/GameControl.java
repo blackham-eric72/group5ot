@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package CIT260.Group5ot.control;
 
 import CIT260.Group5ot.model.Game;
@@ -14,13 +10,31 @@ import CIT260.Group5ot.enums.itemType;
 import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Player;
 import CIT260.Group5ot.model.Character;
-import static CIT260.Group5ot.model.Character.Daughter1;
-import static CIT260.Group5ot.model.Character.Daughter2;
-import static CIT260.Group5ot.model.Character.Father;
-import static CIT260.Group5ot.model.Character.Mother;
-import static CIT260.Group5ot.model.Character.Son1;
-import static CIT260.Group5ot.model.Character.Trader;
+
 import java.util.ArrayList;
+
+
+
+   /* public static Character createNewCharacter(Character character){
+      //String characters[] = {Father.getName(), Father.getDescription(),};
+        //Character obadiah = Character.valueOf("Father");     
+        ArrayList<Character> actors = new ArrayList<>();
+        actors.add(Father);
+        actors.add(Mother);
+        actors.add(Son1);
+        actors.add(Daughter1);
+        actors.add(Daughter2);
+        actors.add(Trader);
+        
+        character = actors;
+      
+      return character;
+    }
+*/
+
+   
+        
+
 
 
 /**
@@ -51,25 +65,6 @@ public class GameControl {
 
     public static int createNewGame(Player player) {
         
-//        Xpublic static int createNewGame(Player player) {
-//        Xif (player == null){
-//        Xreturn -1}
-//        Xgame = create a new Game object
-//        XSave a reference to the Player object in the game
-//        XSave a reference to the game in the main class
-//        ?actors = createActors()
-//        ?Save the list of actors in the Game object
-//        ?Assign an actor to the player
-//        ?items = createItems()
-//        ?Save the list of items in the game
-//        Xmap = createMap(noOfRows, noOfColumns)
-//        XIF map == null THEN
-//         RETURN -1
-//        ENDIF
-//        Assign the map to the game
-//        RETURN 1 // indicates success
-//        }
-        
         //create new game       
        if (player == null) {
            return -1;
@@ -89,117 +84,53 @@ public class GameControl {
     }
     
     
-//            public static Actor[] createActors() {
-//            actors = create an array Actor objects
-//            actor1 = new Actor object
-//            Assign values to each attribute in the Actor object
-//            Assign actor1 to the next position in the actors array
-//            actor2 = new Actor object
-//            Assign values to each attribute in the Actor object
-//            Assign actor2 to the next position in the actors array
-//            …
-//            …
-//            RETURN items
-//            }
     
-    
-//     public static Character[] createCharacter(){
-//         
-//               
-//        Character obadiah = new Character();
-//        obadiah.setName("Obadiah");
-//        obadiah.setDescription("He is the leader of the family");
-//        obadiah.setCoordinates( new Point(1,1));
-//        
-//        Character LilyAnne = new Character();
-//        lilyAnne.setName("LilyAnne");
-//        lilyAnne.setDescription("She is the mother(real leader) of the family");
-//        lilyAnne.setCoordinates( new Point(0,1));
-//        
-//        //return Character[0];
-//    }
-    
- 
-    
-    
-    
-//        Xpublic static InventoryItem createItems() {
-//        Xitems = create an array InventoryItem objects
-//        Xitem1 = new InventoryItem object
-//        ?Assign values to each attribute in the InventoryItem object
-//        Assign items1 to a position in the items array
-//        item2 = new InventoryItem object
-//        Assign values to each attribute in the InventoryItem object
-//        Assign items2 to a position in the items array
-//        …
-//        …
-//        RETURN items
-//        }
-    
-    public static InventoryItem[] createItems(){
+     public ArrayList<Character> createCharacter(){
+         
+        ArrayList<Character> character = new ArrayList<>(); 
+               
+        Character obadiah = new Character("Obadiah", "He is the leader of the family");
+        Character lilyAnne = new Character("LilyAnne", "She is the mother(real leader) of the family");
+        Character ephraim = new Character("Ephraim", "First born son");
+        Character gertrude = new Character("Gertrude", "First born daughter, who has a fiesty attitude");
+        Character myrtle = new Character("Myrtle", "Last born child - only a baby");
+        Character traderJoe = new Character("Trader-Joe", "He is the owner of the trading post");
         
-        InventoryItem gun = new InventoryItem();
-        gun.setInventoryType("gun");
-        gun.setQuantityInStock(0);
-        gun.setRequiredAmount(0);
         
-       // inventoryItem[ItemType.gun.ordinal()] = gun;
+        character.add(0, obadiah);
+        character.add(1, lilyAnne);
+        character.add(2, ephraim);
+        character.add(3, gertrude);
+        character.add(4, myrtle);
+        character.add(5, traderJoe);
         
-//        String[] items = new String[7];
-//        
-//        items[0] = "gun";
-//        items[1] = "ox";
-//        items[2] = "water";
-//        items[3] = "meat";
-//        items[4] = "wheat";
-//        items[5] = "ammo";
-//        items[6] = "medicine";
-//        
-//        System.out.println("I Like delicious sandwiches that were created  by the createItem Function.");
-        return null;
+        return character;
     }
     
-   
-    public static Map createMap(int noOfRows, int noOfColumns){
+     
+    public ArrayList<InventoryItem> createItems(){
         
-//        Map map = new createMap(noOfRows, noOfColumns);
-//        
-//        if (map == null) {
-//           return -1; 
-//        }
-
+        ArrayList<InventoryItem> inventory = new ArrayList<>();
         
-        System.out.println("We like tacos but we don't have any." + "\nThis message brought to you by the createMap() function");
-        return null ;
+        InventoryItem gun = new InventoryItem("Weapon", 3, 1);
+        InventoryItem ox = new InventoryItem("Locomotion", 2, 2);
+        InventoryItem water = new InventoryItem("Water", 30, 10);
+        InventoryItem meat = new InventoryItem("Food", 20, 10);
+        InventoryItem wheat = new InventoryItem("Food", 50, 25);
+        InventoryItem ammo = new InventoryItem("Weapon", 50, 20);
+        InventoryItem medicine = new InventoryItem("Medicine", 20, 10);
+        
+        inventory.add(0, gun);
+        inventory.add(1, ox);
+        inventory.add(2, water);
+        inventory.add(3, meat);
+        inventory.add(4, wheat);
+        inventory.add(5, ammo);
+        inventory.add(6, medicine);
+        
+        return inventory;
     }
         
-
-
     
-
-
-//    public static InventoryItem[] createItems(){
-//        System.out.println("I Like delicious sandwiches that were created  by the createItem Function.");
-//        return null;
-//    }
-    
-   /* public static Character createNewCharacter(Character character){
-      //String characters[] = {Father.getName(), Father.getDescription(),};
-        //Character obadiah = Character.valueOf("Father");     
-        ArrayList<Character> actors = new ArrayList<>();
-        actors.add(Father);
-        actors.add(Mother);
-        actors.add(Son1);
-        actors.add(Daughter1);
-        actors.add(Daughter2);
-        actors.add(Trader);
-        
-        character = actors;
-      
-      return character;
-    }
-*/
-
-   
-        
 }
+

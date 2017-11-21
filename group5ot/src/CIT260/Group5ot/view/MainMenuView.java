@@ -10,6 +10,8 @@ import CIT260.Group5ot.control.MapControl;
 import group5ot.Group5ot;
 import java.util.Scanner;
 import CIT260.Group5ot.model.Character;
+import CIT260.Group5ot.model.InventoryItem;
+import java.util.ArrayList;
 
 /**
  *
@@ -86,13 +88,15 @@ public class MainMenuView extends View {
         // create items
         GameControl gameControl = new GameControl();
         gameControl.createItems();
+        ArrayList<InventoryItem> items = null;
         
         //create map
-        MapControl mapControl = new MapControl();
-        mapControl.createMap();    
+        MapControl.createMap( 2, 27, items);    
         
         //create characters
-      // gameControl.createNewCharacter(Character character);
+
+        gameControl.createCharacter();
+
        
     }
 
