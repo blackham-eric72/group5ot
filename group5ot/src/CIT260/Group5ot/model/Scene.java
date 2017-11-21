@@ -3,20 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CIT260.Group5ot.enums;
-
-import java.io.Serializable;
+package CIT260.Group5ot.model;
 
 /**
  *
- * @author crims
+ * @author Flores Family
  */
-public enum ItemType implements Serializable{
-    gun,
-    ox,
-    water,
-    meat,
-    wheat,
-    ammo,
-    medicine;
+public class Scene {
+    //Here will be a superclass when I figure out how to make one.
 }
