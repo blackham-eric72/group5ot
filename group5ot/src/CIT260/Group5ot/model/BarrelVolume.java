@@ -14,12 +14,18 @@ import java.io.Serializable;
 public class BarrelVolume implements Serializable {
     
     //class instance variables
-    private double barrelRadius;
-    private double barrelHeight;
-
+    private double barrelRadius = 12;
+    private double barrelHeight = 55;
+    
     public BarrelVolume() {
     }
 
+    public BarrelVolume(double barrelRadius, double barrelDiameter) {       
+        
+        this.barrelRadius = barrelRadius;        
+        this.barrelHeight = barrelHeight;
+    }
+    
     
     
     public double getBarrelRadius() {

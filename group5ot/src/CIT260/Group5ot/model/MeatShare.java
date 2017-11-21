@@ -18,8 +18,10 @@ public class MeatShare implements Serializable{
     private double meatWeight;
     private int numAdults;
     private int numChildren;
+    
+    
 
-    public MeatShare() {
+    public MeatShare(double meatWeight, int numAdults, int numChildren) {
     }
     
     
