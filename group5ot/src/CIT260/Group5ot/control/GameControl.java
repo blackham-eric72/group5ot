@@ -11,7 +11,6 @@ import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Map;
 import CIT260.Group5ot.model.Player;
 import group5ot.Group5ot;
-//import CIT260.Group5ot.enums.itemType;
 import CIT260.Group5ot.model.Character;
 import java.util.ArrayList;
 
