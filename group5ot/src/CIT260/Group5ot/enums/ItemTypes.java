@@ -11,8 +11,13 @@ import java.io.Serializable;
  *
  * @author crims
  */
-public enum QuestionType implements Serializable{
-    meatShareQuestion,
-    barrelVolumeQuestion;
+public enum ItemTypes implements Serializable {
+    gun,
+    ox,
+    water, 
+    meat,
+    wheat,
+    ammo,
+    medicine;
     
 }
