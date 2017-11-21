@@ -91,13 +91,13 @@ public class GameControl {
         
         ArrayList<InventoryItem> inventory = new ArrayList<>();
         
-        InventoryItem gun = new InventoryItem("Weapon", 3, 1);
-        InventoryItem ox = new InventoryItem("Locomotion", 2, 2);
-        InventoryItem water = new InventoryItem("Water", 30, 10);
-        InventoryItem meat = new InventoryItem("Food", 20, 10);
-        InventoryItem wheat = new InventoryItem("Food", 50, 25);
-        InventoryItem ammo = new InventoryItem("Weapon", 50, 20);
-        InventoryItem medicine = new InventoryItem("Medicine", 20, 10);
+        InventoryItem gun = new InventoryItem(3, 1);
+        InventoryItem ox = new InventoryItem(2, 2);
+        InventoryItem water = new InventoryItem(30, 10);
+        InventoryItem meat = new InventoryItem(20, 10);
+        InventoryItem wheat = new InventoryItem(50, 25);
+        InventoryItem ammo = new InventoryItem(50, 20);
+        InventoryItem medicine = new InventoryItem(20, 10);
         
         inventory.add(0, gun);
         inventory.add(1, ox);

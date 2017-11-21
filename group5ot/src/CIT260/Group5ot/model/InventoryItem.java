@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.model;
 
+import CIT260.Group5ot.enums.ItemType;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -23,20 +24,14 @@ public class InventoryItem implements Serializable{
     public InventoryItem() {
     }
     
-    public InventoryItem(String inventoryType, int quantityInStock, int requiredAmount) {
+    public InventoryItem(ItemType itemType, int quantityInStock, int requiredAmount) {
     
-        this.inventoryType = inventoryType;
+       
         this.quantityInStock = quantityInStock;
         this.requiredAmount = requiredAmount;
     }
     
-    public String getInventoryType() {
-        return inventoryType;
-    }
-
-    public void setInventoryType(String inventoryType) {
-        this.inventoryType = inventoryType;
-    }
+    
 
     public int getQuantityInStock() {
         return quantityInStock;

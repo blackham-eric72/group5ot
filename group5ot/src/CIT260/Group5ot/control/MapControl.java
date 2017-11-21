@@ -42,27 +42,7 @@ public class MapControl {
     private static Scene[] createScenes() {
         System.out.println("Tortilla chips and guacamole are yummy with fish tacos. Brought to you by createScenes().");
         return null;
-    }
-    
-    
-    public static BarrelVolume createBarrelVolumeQuestion(double barrelRadius, double barrelDiameter) {
-        BarrelVolume barrelVolume = new BarrelVolume();
         
-        barrelVolume.createBarrelVolume();
-        return null;
-    }    
-        
-    public static MeatShare createMeatShareQuestion(double meatWeight, int numAdults, int numChildren) {    
-        
-       System.out.println("Rubio's is too far away to get good fish tacos. Brought to you by createQuestions().");
-       return null;
-    }    
-    
-    
-    private static void assignQuestionsToScenes(Question[] questions, Scene[] scenes) {
-        System.out.println("Maybe chinese food will have to do. Brought to you by assignQuestionsToScenes().");
-    }
-    
     
     private static void assignItemsToScenes(ArrayList<InventoryItem> items, Scene[] scenes){
         System.out.println("Teriyaki sounds good right now. Brought to you by assignItemsToScenes().");
