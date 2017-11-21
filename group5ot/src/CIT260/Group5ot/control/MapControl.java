@@ -6,11 +6,13 @@
 package CIT260.Group5ot.control;
 
 import CIT260.Group5ot.enums.QuestionType;
+import CIT260.Group5ot.enums.SceneType;
 import CIT260.Group5ot.model.BarrelVolume;
 import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Location;
 import CIT260.Group5ot.model.Map;
 import CIT260.Group5ot.model.MeatShare;
+import CIT260.Group5ot.model.Scene;
 import java.util.ArrayList;
 
 /**
@@ -39,9 +41,24 @@ public class MapControl {
     }
     
     
-    private static Scene[] createScenes() {
-        System.out.println("Tortilla chips and guacamole are yummy with fish tacos. Brought to you by createScenes().");
-        return null;
+    private static SceneType[] createScenes() {
+        SceneType[] scenes = new SceneType[8];
+        
+        SceneType tradingPost = scenes[0];
+        SceneType checkpoint = scenes[1];
+        SceneType huntingScene = scenes[2];
+        SceneType trail = scenes[3];
+        SceneType eating = scenes[4];
+        SceneType waterSource = scenes[5];
+        SceneType foodSource = scenes[6];
+        SceneType losingGame = scenes[7];
+        
+        return scenes;
+    }
+    
+    
+    public static BarrelVolume createBarrelVolumeQuestion(double barrelRadius, double barrelDiameter) {
+        BarrelVolume barrelVolume = new BarrelVolume();
         
     
     private static void assignItemsToScenes(ArrayList<InventoryItem> items, Scene[] scenes){
@@ -51,10 +68,75 @@ public class MapControl {
     
     private static void assignScenesToLocations(Scene[] scenes, Location[][] locations) {
         System.out.println("Teriyaki is Japanese, but they have it at Chinese restaurants. Brought to you by assignScenesToLocations() PS- I'm getting hungry");
-    }
+    }       
+     
+    return map;
+}
+
+
     
                
      
+             
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
+        
+               
+     
     
-    return map;
-}
+    

@@ -17,7 +17,7 @@ public class Location implements Serializable {
     private int row;
     private int column;
     private boolean visited;
-    private int amountRemaining;
+   // private int amountRemaining;
     private Map map;
 
     //constructor
@@ -49,13 +49,13 @@ public class Location implements Serializable {
         this.visited = visited;
     }
 
-    public int getAmountRemaining() {
-        return amountRemaining;
-    }
-
-    public void setAmountRemaining(int amountRemaining) {
-        this.amountRemaining = amountRemaining;
-    }
+//    public int getAmountRemaining() {
+//        return amountRemaining;
+//    }
+//
+//    public void setAmountRemaining(int amountRemaining) {
+//        this.amountRemaining = amountRemaining;
+//    }
 
     public Map getMap() {
         return map;
@@ -72,7 +72,7 @@ public class Location implements Serializable {
         hash = 41 * hash + this.row;
         hash = 41 * hash + this.column;
         hash = 41 * hash + (this.visited ? 1 : 0);
-        hash = 41 * hash + this.amountRemaining;
+      //  hash = 41 * hash + this.amountRemaining;
         return hash;
     }
 
@@ -97,15 +97,15 @@ public class Location implements Serializable {
         if (this.visited != other.visited) {
             return false;
         }
-        if (this.amountRemaining != other.amountRemaining) {
-            return false;
-        }
+        //if (this.amountRemaining != other.amountRemaining) {
+          //  return false;
+        //}
         return true;
     }
 
     @Override
     public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + amountRemaining + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", amountRemaining=" + /*amountRemaining +*/ '}';
     }
     
     
