@@ -5,16 +5,19 @@
  */
 package CIT260.Group5ot.enums;
 
+import java.io.Serializable;
+
 /**
  *
  * @author crims
  */
-public enum itemType {
+public enum ItemTypes implements Serializable {
     gun,
     ox,
-    water,
+    water, 
     meat,
     wheat,
     ammo,
     medicine;
+    
 }

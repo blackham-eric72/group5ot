@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.control;
 
+import CIT260.Group5ot.enums.ItemTypes;
 import CIT260.Group5ot.enums.QuestionType;
 import CIT260.Group5ot.enums.SceneType;
 import CIT260.Group5ot.model.BarrelVolume;
@@ -59,10 +60,12 @@ public class MapControl {
     
     public static BarrelVolume createBarrelVolumeQuestion(double barrelRadius, double barrelDiameter) {
         BarrelVolume barrelVolume = new BarrelVolume();
-        
+        return null;
+    }    
     
-    private static void assignItemsToScenes(ArrayList<InventoryItem> items, Scene[] scenes){
+    private static void assignItemsToScenes(ArrayList<ItemTypes> items, Scene[] scenes){
         System.out.println("Teriyaki sounds good right now. Brought to you by assignItemsToScenes().");
+        
     }
 
     
