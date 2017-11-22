@@ -5,7 +5,7 @@
  */
 package CIT260.Group5ot.control;
 
-import CIT260.Group5ot.enums.QuestionType;
+//import CIT260.Group5ot.enums.QuestionType;
 import CIT260.Group5ot.enums.SceneType;
 import CIT260.Group5ot.model.BarrelVolume;
 import CIT260.Group5ot.model.InventoryItem;
@@ -45,11 +45,13 @@ public class MapControl {
 //         
          Location[][] location = createLocations(noOfRows, noOfColumns);
          
-         Scenes[] scenes = createScenes();
+         //dgw start
+         //Scene[] scenes = createScenes();
                  
-        
-         assignItemsToScenes(items, scenes);
-         assignScenesToLocations(scenes, location);
+         // If you are assigning items to scenes, you will need Items objects inside
+         // the scene object, or each Item will have to have a scene object inside it.
+         //assignItemsToScenes(items, scenes);
+         assignScenesToLocations(location);
          
          return map;
          
@@ -79,26 +81,10 @@ public class MapControl {
         return locations;
      }
     
-    
-    private static Scenes[] createScenes() {
-        Scenes[] scenes = new Scenes[8];
-        
-        Scenes tradingPost = scenes[0];
-        Scenes checkpoint = scenes[1];
-        Scenes huntingScene = scenes[2];
-        Scenes trail = scenes[3];
-        Scenes eating = scenes[4];
-        Scenes waterSource = scenes[5];
-        Scenes foodSource = scenes[6];
-        Scenes losingGame = scenes[7];
-        
-        return scenes;
-    }
-    
-    
-    private static void assignQuestionsToScenes(Questions[] questions, Scene[] scenes) {
-        System.out.println("Maybe chinese food will have to do. Brought to you by assignQuestionsToScenes().");
-    }
+  
+    //private static void assignQuestionsToScenes(Questions[] questions, Scene[] scenes) {
+   //     System.out.println("Maybe chinese food will have to do. Brought to you by assignQuestionsToScenes().");
+    //}
     
     
     private static void assignItemsToScenes(ArrayList<InventoryItem> items, Scene[] scenes){
@@ -113,21 +99,33 @@ public class MapControl {
       
     
     
-   private static void assignQuestionsToScenes(Questions[] questions, Scenes[] scenes) {
-        System.out.println("Maybe chinese food will have to do. Brought to you by assignQuestionsToScenes().");
+//   private static void assignQuestionsToScenes(Questions[] questions, Scene[] scene) {
+//        System.out.println("Maybe chinese food will have to do. Brought to you by assignQuestionsToScenes().");
+//    
+//    }
     
-    }
-    
-    
-    private static void assignItemsToScenes(ArrayList<InventoryItem> items, Scenes[] scenes){
-        System.out.println("Teriyaki sounds good right now. Brought to you by assignItemsToScenes().");
-    }
-
-    
-    private static void assignScenesToLocations(Scenes[] scenes, 
-                    Location[][] location) {
+      
+    private static void assignScenesToLocations(Location[][] location) {
         System.out.println("Teriyaki is Japanese, but they have it at Chinese restaurants. Brought to you by assignScenesToLocations() PS- I'm getting hungry");
-       
+       //dgw start
+        
+        // Here Scene objects are created, and "assigned" to specific locations in the 2D array
+        // The  "symbol" in Scene should be used by the map to display the scene on the map
+        Scene tradingPostScene = new Scene(SceneType.TradingPost);
+        tradingPostScene.setSymbol("P");
+        location[0][0].setScene(tradingPostScene);
+        Scene trailScene = new Scene(SceneType.Trail);
+        trailScene.setSymbol("T");
+        location[0][1].setScene(trailScene);
+        location[0][2].setScene(trailScene);  // Maybe there are 2 trail scenes next to each other??
+        
+        Scene huntingScene = new Scene(SceneType.HuntingScene);
+        huntingScene.setSymbol("H");
+        location[0][3].setScene(huntingScene);
+        // ....
+        
+        //dgw end
+
     }
 
    

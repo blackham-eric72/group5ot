@@ -2,6 +2,7 @@
 package CIT260.Group5ot.control;
 
 import static CIT260.Group5ot.control.MapControl.createMap;
+import CIT260.Group5ot.enums.ItemTypes;
 import CIT260.Group5ot.model.Game;
 import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Map;
@@ -85,8 +86,10 @@ public class GameControl {
         ArrayList<InventoryItem> items = createItems();
        currentGame.setItems(items);
         
+       //dgw start
+       //dgw not sure why items are passed to createMap???  
         Map map = createMap(2, 27, items);
-    
+        
         int returnValue = GameControl.createNewGame(Group5ot.getPlayer());
         if (returnValue < 0) {
             System.out.println("ERROR - Failed to create new game");
@@ -123,13 +126,15 @@ public class GameControl {
         
         ArrayList<InventoryItem> inventory = new ArrayList<>();
         
-        InventoryItem gun = new InventoryItem("Weapon", 3, 1);
-        InventoryItem ox = new InventoryItem("Locomotion", 2, 2);
-        InventoryItem water = new InventoryItem("Water", 30, 10);
-        InventoryItem meat = new InventoryItem("Food", 20, 10);
-        InventoryItem wheat = new InventoryItem("Food", 50, 25);
-        InventoryItem ammo = new InventoryItem("Weapon", 50, 20);
-        InventoryItem medicine = new InventoryItem("Medicine", 20, 10);
+        //dgw - fixed errors start
+        InventoryItem gun = new InventoryItem(ItemTypes.gun, 3, 1);
+        InventoryItem ox = new InventoryItem(ItemTypes.ox, 2, 2);
+        InventoryItem water = new InventoryItem(ItemTypes.water, 30, 10);
+        InventoryItem meat = new InventoryItem(ItemTypes.meat, 20, 10);
+        InventoryItem wheat = new InventoryItem(ItemTypes.wheat, 50, 25);
+        InventoryItem ammo = new InventoryItem(ItemTypes.ammo, 50, 20);
+        InventoryItem medicine = new InventoryItem(ItemTypes.medicine, 20, 10);
+        //dgw - fixed errors end
         
         inventory.add(0, gun);
         inventory.add(1, ox);

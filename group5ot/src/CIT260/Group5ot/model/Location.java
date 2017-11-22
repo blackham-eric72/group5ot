@@ -18,14 +18,14 @@ public class Location implements Serializable {
 //    private int row;
 //    private int column;
     private boolean visited;
-    private Scene sceneType;
+    private Scene scene = null;
 
-    public Scene getSceneType() {
-        return sceneType;
+    public Scene getScene() {
+        return scene;
     }
 
-    public void setSceneType(Scene sceneType) {
-        this.sceneType = sceneType;
+   public void setScene(Scene scene) {
+        this.scene = scene;
     }
     
     
@@ -103,7 +103,7 @@ public class Location implements Serializable {
         if (this.visited != other.visited) {
             return false;
         }
-        if (!Objects.equals(this.sceneType, other.sceneType)) {
+        if (!Objects.equals(this.scene, other.scene)) {
             return false;
         }
         return true;
@@ -111,7 +111,7 @@ public class Location implements Serializable {
     
     @Override
     public String toString() {
-        return "Location{" + "visited=" + visited + ", sceneType=" + sceneType + '}';
+        return "Location{" + "visited=" + visited + ", scene=" + scene + '}';
     }
 
     

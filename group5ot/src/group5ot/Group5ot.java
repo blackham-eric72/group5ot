@@ -12,7 +12,7 @@ import CIT260.Group5ot.model.Character;
 import CIT260.Group5ot.model.Health;
 import CIT260.Group5ot.model.InventoryItem;
 
-import CIT260.Group5ot.model.RiverCrossing;
+
 import CIT260.Group5ot.model.Trail;
 import CIT260.Group5ot.model.Wagon;
 
@@ -29,7 +29,6 @@ import CIT260.Group5ot.model.FoodSource;
 import CIT260.Group5ot.model.Game;
 import CIT260.Group5ot.model.RegularSceneType;
 import CIT260.Group5ot.model.TradingPost;
-import CIT260.Group5ot.model.ResourceScene;
 import CIT260.Group5ot.model.WaterSource;
 import CIT260.Group5ot.view.StartProgramView;
                 
