@@ -5,10 +5,12 @@
  */
 package CIT260.Group5ot.view;
 
+import CIT260.Group5ot.control.ShoppingControl;
 import java.util.Scanner;
 import CIT260.Group5ot.control.TradingControl;
 import CIT260.Group5ot.enums.ShoppingListEnum;
 import CIT260.Group5ot.model.ShoppingList;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 
 /**
@@ -60,8 +62,9 @@ public class BuySuppliesView extends View {
         
         
      public void orderTotalCalculation(){
-        //This will run the calcTotal funcion
-        
+        //Bring in ShoppingControl thingy. I don't know if I did this right.
+        ShoppingControl createListFunction = new ShoppingControl(); 
+                
         TradingControl calcTotalFunction = new TradingControl();
             //get purchase choices from user
             System.out.println("\n"
@@ -72,97 +75,56 @@ public class BuySuppliesView extends View {
                 + "\n|------------------------------------------------------|"
                 + "\n|         Food                       $1.00 per pound   |"
                 + "\n|         Ox                         $50.00            |"
-                + "\n|         Ammo                       $2.00/50 rounds   |" 
-                + "\n|         Medicine                   $1.00/10 doses    |"
+                + "\n|         Ammo                       $0.05/round       |" 
+                + "\n|         Medicine                   $0.05/dose        |"
                 + "\n|------------------------------------------------------|"
             ); 
-            //String value;
+
+        //get food quantity
+        Scanner food = new Scanner(System.in);
+
+        System.out.println("Enter desired pounds of food. (0 if no food is needed)");
+
+        //create memory location for food
+        int foodQuantity = parseInt(food.next());
+        
+        
+        //get Ox quantity
+        Scanner ox = new Scanner(System.in);
+
+        System.out.println("Enter desired number of oxen. (0 if no oxen are needed)");
+
+        //create memory location for ox
+        int oxQuantity = parseInt(ox.next());
+        
+        
+        //get Ammo quantity
+        Scanner ammo = new Scanner(System.in);
+
+        System.out.println("Enter desired number of rounds of ammo. (0 if no ammo is needed)");
+
+        //create memory location for ammo
+        int ammoQuantity = parseInt(ammo.next());
+        
+        
+        //get medicine quantity
+        Scanner medicine = new Scanner(System.in);
+
+        System.out.println("Enter desired number of doses of medicine. (0 if no medicine is needed)");
+
+        //create memory location for ammo
+        int medicineQuantity = parseInt(medicine.next());
+
+        //here I would pass the variables I got up above to my control function which would then 
+        //create the array and calculate the total cost with a for loop and the array. 
+        //I don't think I did this right
+        ShoppingList passFood = new ShoppingList("food", foodquantity, 1);
+        ShoppingList passOx = new ShoppingList("ox", oxQuantity, 50);
+        ShoppingList passAmmo = new ShoppingList("ammo", ammoQuantity, .05);
+        ShoppingList passMedicine = new ShoppingList("medicine", medicineQuantity, .05);
+    }
             
-    public static ArrayList<ShoppingList> createList(){
-                
-                ArrayList<ShoppingListEnum> list = new ArrayList<>();
-                String userChoice; 
-                int i = 0;
-
-                do{
-                    Scanner inputItemName = new Scanner(System.in);
-
-                    //while(true){            
-                     System.out.println("please enter the item name:");            
-                     //value = inputItemName1.next();
-
-                    //create memory location for itemName
-                    String itemName = inputItemName.next().toUpperCase();
-
-                        if ("FOOD".equals(itemName) || "OX".equals(itemName) || "AMMO".equals(itemName) || "MEDICINE".equals(itemName) ) {
-                        System.out.println("You entered: " + itemName);
-                        }
-                        else {
-                            System.out.println("\n*****Invalid Entry, please start over and try again*****");
-                            return;
-                        }
-                    //get itemAmount
-                    System.out.println("Please enter quantity:");
-                    Scanner inputItemAmount = new Scanner(System.in);
-
-                    double itemAmount = inputItemAmount.nextDouble();
-                    System.out.println("Quantity is " + itemAmount);
-
-                    //get itemPrice
-                    System.out.println("Please enter price:");
-                    Scanner inputItemPrice = new Scanner(System.in);
-
-                    double itemPrice = inputItemPrice.nextDouble();
-                    System.out.println("Price is $ " + itemPrice);
-
-                     if ("FOOD".equals(itemName)) {
-                    
-                    ShoppingList food = new ShoppingList(food, itemAmount, itemPrice);
-                     }
-                    System.out.println("Do you want to continue shopping? Y/N");
-
-                } while(userChoice="Y");
             
-            }
-            
-            //Second item name input
-            System.out.println("please enter another item name:");            
-            Scanner inputItemName2 = new Scanner(System.in);
-            
-           // System.out.println("Would you like to purchase another item?  Enter Y or N");
-          //  Scanner String answer = new Scanner(System.in);
-            //if ("Y".equals(answer)){
-                
-            
-                       
-       
-
-            //create memory location for itemName2
-            String itemName2 = inputItemName2.next().toUpperCase();
-            if ("FOOD".equals(itemName2) || "OX".equals(itemName2) || "AMMO".equals(itemName2) || "MEDICINE".equals(itemName2) ) {
-            System.out.println("You entered: " + itemName2);
-            }
-            else {
-                System.out.println("\n\n*****Invalid Entry, please start over and try again*****");
-                return;
-            }
-            System.out.println("You entered: " + itemName2);
-
-            //get itemAmountB
-            System.out.println("Please enter quantity:");
-            Scanner inputItemAmountB = new Scanner(System.in);
-
-            double itemAmountB = inputItemAmountB.nextDouble();
-            System.out.println("Quantity is " + itemAmountB);
-
-            //get itemPriceY
-            System.out.println("Please enter price:");
-            Scanner inputItemPriceY = new Scanner(System.in);
-
-            double itemPriceY = inputItemPriceY.nextDouble();
-            System.out.println("Price is $ " + itemPriceY);
-            
-            //******************************************
             
             double total = calcTotalFunction.calcTotal(itemAmountA, itemAmountB, itemPriceX, itemPriceY);
            System.out.println(
@@ -175,9 +137,9 @@ public class BuySuppliesView extends View {
                             + "\n                                                  "        
                             + "\n Thank you for shopping at TrailMart. Come Again! "       
                             + "\n--------------------------------------------------");
-          
-        }            
-         
+                      
+         }
+
 
     private void displayTradingpostMenuView() {
         TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
@@ -185,6 +147,5 @@ public class BuySuppliesView extends View {
         tradingpostMenuView.display();
     }
            
-}
 
     
