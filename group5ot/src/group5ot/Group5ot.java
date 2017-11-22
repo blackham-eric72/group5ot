@@ -6,7 +6,6 @@
 package group5ot;
 
 import CIT260.Group5ot.model.Barrel;
-import CIT260.Group5ot.model.Campsite;
 import CIT260.Group5ot.model.Player;
 import CIT260.Group5ot.model.Character;
 import CIT260.Group5ot.model.Health;
@@ -27,7 +26,6 @@ import CIT260.Group5ot.model.WinningGameScene;
 import CIT260.Group5ot.model.HuntingScene;
 import CIT260.Group5ot.model.FoodSource;
 import CIT260.Group5ot.model.Game;
-import CIT260.Group5ot.model.RegularSceneType;
 import CIT260.Group5ot.model.TradingPost;
 import CIT260.Group5ot.model.WaterSource;
 import CIT260.Group5ot.view.StartProgramView;

@@ -119,7 +119,7 @@ public class MeatShareCalcView extends View {
     if (answer == weightPerShare) {
         System.out.println("\nThat is Correct, please proceed");
         //go back to the checkpoint menu
-        this.displayCheckpointView();
+        this.nextView();
 
     }
     else{ System.out.println("\nFailure. Please try again");
@@ -141,12 +141,8 @@ public class MeatShareCalcView extends View {
             return false;
      }
 
-    private void displayCheckpointView() {
-        //Create checkpoint menu object
-        CheckpointView checkpointView = new CheckpointView();
-    
-        // Display the checkpoint menu view
-        checkpointView.display() ;
-        }
+    private void nextView() {
+        System.out.println("\n*** Chuck Norris has a vacation home on the sun. Brought to you by the NextView().");
+    }
 
 }

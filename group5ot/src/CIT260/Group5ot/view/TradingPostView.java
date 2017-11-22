@@ -9,27 +9,29 @@ package CIT260.Group5ot.view;
  *
  * @author Flores Family
  */
-public class EatingView extends View {
+public class TradingPostView extends View{
     
-    public EatingView(){
-        super ("\n"
-                + "\n|*| ------------------------------------ |*| "       
-                + "\n|*|  Would you like to stop and eat?     |*| "
-                + "\n|*|  Y - Yes                             |*| "
-                + "\n|*|  N - No I'd like to conserve my food.|*| "
-                + "\n|*|  G - Display Game Menu               |*| " );
-    }
+    public TradingPostView() {
+       super( "\n You see a trading post. "
+            + "\nPress T to go inside."
+            + "\nPress C to keep moving forward."
+            + "\nPress G to display the Game Menu.");
+
+   }
+   
+
+//    }
 
     @Override
     public boolean doAction(String choice) {
-
+        
         choice = choice.toUpperCase(); // convert choice to upper case
-
+        
         switch (choice) {
-            case "Y": 
-                this.eat();
+            case "T":
+                this.displayTradingPostMenuView();
                 break;
-            case "N": 
+            case "C":
                 this.nextView();
                 break;
             case "G": // return to previous screen
@@ -39,24 +41,23 @@ public class EatingView extends View {
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        
+        return false;
+    }    
 
-            return false;
+    private void displayTradingPostMenuView() {
+        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
+       
+        tradingpostMenuView.display();    
     }
 
-    private void eat() {
-        System.out.println("\n"
-    + "\nYou ate food. Your supply of food has"
-    + "\n decreased and your health has increased.");
-        //health control and inventory will change
-        }
-
     private void nextView() {
-        System.out.println("\n*** Chuck Norris's bloodtype is AK-47. Brought to you by the NextView().");
+        System.out.println("\n*** Chuck Norris has been to Mars. That's why there are no signs of life. Brought to you by the NextView().");
     }
 
     private void displayGameMenuView() {
         GameMenuView gameMenuView = new GameMenuView();
        
-        gameMenuView.display(); 
+        gameMenuView.display();    
     }
 }

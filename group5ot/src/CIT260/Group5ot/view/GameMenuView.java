@@ -27,7 +27,7 @@ public class GameMenuView extends View {
                     + "\n------------------------------------"
                     + "\n|            Game Menu             |"
                     + "\n------------------------------------"
-                    + "\nD - Drive On to Next Location "
+                    + "\nR - Return To Game "
                     + "\nH - Help Menu"                 
                     + "\nI - View Inventory"
                     + "\nV - View Health"
@@ -86,8 +86,8 @@ public class GameMenuView extends View {
         choice = choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-            case "D": // create and start new game
-                this.displayMoveView();
+            case "R": // display the help menu
+                this.returnToGame();
                 break;
             case "H": // display the help menu
                 this.displayHelpMenu();
@@ -120,13 +120,6 @@ public class GameMenuView extends View {
         helpMenuView.display();
     }
 
-    private void displayMoveView() {
-        
-        MoveView moveView = new MoveView();
-        
-        moveView.display();
-    }
-
     private void displayInventoryView() {
         System.out.println("*** viewInventory() function called ***");    
     }
@@ -148,6 +141,10 @@ public class GameMenuView extends View {
 
     void displayMenu() {
         System.out.println("*** displayMenu() function called ***");    
+    }
+
+    private void returnToGame() {
+        System.out.println("\n*** Chuck Norris' calendar goes straight from March 31st to April 2nd. No one fools Chuck Norris.Brought to you by returnToGame().");
     }
 
 }

@@ -7,6 +7,9 @@ package CIT260.Group5ot.view;
 
 import java.util.Scanner;
 import CIT260.Group5ot.control.TradingControl;
+import CIT260.Group5ot.enums.ShoppingListEnum;
+import CIT260.Group5ot.model.ShoppingList;
+import java.util.ArrayList;
 
 /**
  *
@@ -75,35 +78,52 @@ public class BuySuppliesView extends View {
             ); 
             //String value;
             
-            Scanner inputItemName1 = new Scanner(System.in);
+    public static ArrayList<ShoppingList> createList(){
+                
+                ArrayList<ShoppingListEnum> list = new ArrayList<>();
+                String userChoice; 
+                int i = 0;
+
+                do{
+                    Scanner inputItemName = new Scanner(System.in);
+
+                    //while(true){            
+                     System.out.println("please enter the item name:");            
+                     //value = inputItemName1.next();
+
+                    //create memory location for itemName
+                    String itemName = inputItemName.next().toUpperCase();
+
+                        if ("FOOD".equals(itemName) || "OX".equals(itemName) || "AMMO".equals(itemName) || "MEDICINE".equals(itemName) ) {
+                        System.out.println("You entered: " + itemName);
+                        }
+                        else {
+                            System.out.println("\n*****Invalid Entry, please start over and try again*****");
+                            return;
+                        }
+                    //get itemAmount
+                    System.out.println("Please enter quantity:");
+                    Scanner inputItemAmount = new Scanner(System.in);
+
+                    double itemAmount = inputItemAmount.nextDouble();
+                    System.out.println("Quantity is " + itemAmount);
+
+                    //get itemPrice
+                    System.out.println("Please enter price:");
+                    Scanner inputItemPrice = new Scanner(System.in);
+
+                    double itemPrice = inputItemPrice.nextDouble();
+                    System.out.println("Price is $ " + itemPrice);
+
+                     if ("FOOD".equals(itemName)) {
+                    
+                    ShoppingList food = new ShoppingList(food, itemAmount, itemPrice);
+                     }
+                    System.out.println("Do you want to continue shopping? Y/N");
+
+                } while(userChoice="Y");
             
-            //while(true){            
-             System.out.println("please enter the item name:");            
-             //value = inputItemName1.next();
-             
-            //create memory location for itemName1
-            String itemName1 = inputItemName1.next().toUpperCase();
-            
-            if ("FOOD".equals(itemName1) || "OX".equals(itemName1) || "AMMO".equals(itemName1) || "MEDICINE".equals(itemName1) ) {
-            System.out.println("You entered: " + itemName1);
             }
-            else {
-                System.out.println("\n\n*****Invalid Entry, please start over and try again*****");
-                return;
-            }
-            //get itemAmountA
-            System.out.println("Please enter quantity:");
-            Scanner inputItemAmountA = new Scanner(System.in);
-
-            double itemAmountA = inputItemAmountA.nextDouble();
-            System.out.println("Quantity is " + itemAmountA);
-
-            //get itemPriceX
-            System.out.println("Please enter price:");
-            Scanner inputItemPriceX = new Scanner(System.in);
-
-            double itemPriceX = inputItemPriceX.nextDouble();
-            System.out.println("Price is $ " + itemPriceX);
             
             //Second item name input
             System.out.println("please enter another item name:");            

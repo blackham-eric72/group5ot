@@ -41,7 +41,7 @@ public class TradingpostMenuView extends View {
                 this.displayBuySupplies();
                 break;
             case "M":  //continue moving forward
-                this.displayMoveView();
+                this.nextView();
                 break;
             case "H": // Trading post help
                 this.displayTradingpostHelp();
@@ -75,14 +75,6 @@ public class TradingpostMenuView extends View {
        
     }
 
-    private void displayMoveView() {
-        //Create move object
-        MoveView moveView = new MoveView();
-                        
-        //display move view
-        moveView.display();
-    }
-
     private void displayTradingpostHelp() {
         //Create Tradingpost Help object
         TradingpostHelpView tradingpostHelpView = new TradingpostHelpView();
@@ -98,6 +90,11 @@ public class TradingpostMenuView extends View {
         // Display the Game menu view
         gameMenuView.display();
         
+    }
+
+    private void nextView() {
+        System.out.println("\n*** There is no 'ctrl' button on Chuck Norris's computer. Chuck Norris is always in control. Brought to you by the nextview() function." +
+"Brought to you by the NextView().");
     }
     
 }

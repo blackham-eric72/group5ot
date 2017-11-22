@@ -13,18 +13,17 @@ public class RestView extends View{
     private String displayMessage;
     
     public RestView() {
-     super(                   "\n"
-                            + "\n|--------------------------------------|"       
-                            + "\n|           **** Rest ****             |"
-                            + "\n|--------------------------------------|"
-                            + "\n|Rest is necessary for good health, but|" 
-                            + "\n|don't rest too long or you'll run into|"
-                            + "\n|winter weather.                       |"
-                            + "\n|---------------OPTIONS----------------|"
-                            + "\n|R - Rest for another day              |"
-                            + "\n|C - Continue on your journey          |"
-                            + "\n|Q - Main Menu                         |"
-                            + "\n|--------------------------------------|");
+     super(   "\n"
+            + "\n|--------------------------------------|"       
+            + "\n|           **** Rest ****             |"
+            + "\n|--------------------------------------|"
+            + "\n|There is a nice place to rest. "
+            + "\n|Would you like to stop and rest?"
+            + "\n|---------------OPTIONS----------------|"
+            + "\n|R - Rest for a day                    |"
+            + "\n|C - Continue on your journey          |"
+            + "\n|G - Display Game Menu                 |"
+            + "\n|--------------------------------------|");
         
     }
 
@@ -38,10 +37,10 @@ public class RestView extends View{
                     this.dayOfRest();
                     break;
                 case "C": // return to previous screen
-                    this.continueJourney();
+                    this.nextView();
                     break;
-                case "Q": // return to previous screen
-                    this.displayMainMenu();
+                case "G": // return to previous screen
+                    this.displayGameMenu();
                     break;
                 
                 default:
@@ -51,18 +50,18 @@ public class RestView extends View{
             return false;
    }
     
-        private void dayOfRest() {
+    private void dayOfRest() {
         System.out.println("Chuck Norris says 'day of rest() has been called'");
     }
-    
-        private void continueJourney(){
-            System.out.println("continue Journey function has been called");
-        }
-        
-    private void displayMainMenu() {
-        MainMenuView mainMenu = new MainMenuView();
-        
-        mainMenu.display();
+         
+    private void nextView() {
+        System.out.println("\n*** When Chuck Norris crosses the street, the cars have to look both ways. Brought to you by the NextView().");
+    }
+
+    private void displayGameMenu() {
+        GameMenuView gameMenuView = new GameMenuView();
+       
+        gameMenuView.display();      
     }
 }
 

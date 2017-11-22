@@ -18,7 +18,7 @@ public class Map implements Serializable {
     //class instance variables
     private String description;
     private int ROWCOUNT = 3;
-    private int COLUMNCOUNT = 27;
+    private int COLUMNCOUNT = 20;
     private ArrayList<Game> games = new ArrayList<Game>();
     private Location[][] locations = new Location[ROWCOUNT][COLUMNCOUNT];
 

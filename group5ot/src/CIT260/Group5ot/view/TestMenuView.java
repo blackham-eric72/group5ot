@@ -54,9 +54,6 @@ public class TestMenuView extends View {
             case "H": // display the HUNT menu
                 this.displayHuntView();
                 break;
-            case "C": // display the Game menu
-                this.displayCheckpointView();
-                break;
             case "T": // trading post view
                 this.displayTradingpostMenuView();
                 break;
@@ -98,14 +95,6 @@ public class TestMenuView extends View {
         ToHuntOrNotToHuntView huntView = new ToHuntOrNotToHuntView();
         
         huntView.display();
-    }
-
-    private void displayCheckpointView(){
-        //Create checkpoint menu object
-        CheckpointView checkpointView = new CheckpointView();
-                       
-        // Display the checkpoint menu view
-        checkpointView.display() ;
     }
 
     private void displayGameMenu() {
