@@ -2,7 +2,7 @@ package CIT260.Group5ot.control;
 
 import CIT260.Group5ot.model.Animal; //Brings in my enum for later array creation.
 import java.util.ArrayList; //Allows array creation.
-import CIT260.Group5ot.model.InventoryItem;
+//import CIT260.Group5ot.model.InventoryItem;
 
 /**
  *
