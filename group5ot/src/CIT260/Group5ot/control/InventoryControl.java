@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package CIT260.Group5ot.control;
-
+import java.util.ArrayList; 
+import CIT260.Group5ot.model.InventoryItem;
 /**
  *
  * @author erict.blackham
@@ -42,4 +43,16 @@ public class InventoryControl {
         
         return itemQuantity;
         }
+    public void sortInventoryItems(ArrayList<InventoryItem> inventory) {
+
+        for (InventoryItem item : inventory) {
+
+            // ItemTypes itemTypes = itemTypes.get(i);
+            System.out.println("\n\tItem: " + item.getItemTypes().name() + 
+                               "\n\tQuantity: " + item.getQuantityInStock());
+        }
+
+
+
+    }    
 }

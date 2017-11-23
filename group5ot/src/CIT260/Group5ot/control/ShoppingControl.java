@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package CIT260.Group5ot.control;
+
 import CIT260.Group5ot.enums.ShoppingListEnum;
+import CIT260.Group5ot.model.ShoppingList;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -18,23 +22,35 @@ public class ShoppingControl {
 //ENDFOR
 //RETURN total
 //END
-    
-       public double calculateTotalCost(double quantity, double price){
-           double totalCost = 0;
-           
-            for (int i=0; i<4; i++) {
-                if(quantity < 0){
-                    return -1;
-                }
-
-                if(price < 0){
-                    return -1;
-                }
-
-                double cost = quantity * price;
-                totalCost += cost;
+     
+    public static ArrayList<ShoppingListEnum> createList(){
                 
-            }
-            return totalCost;
-       }
+        ArrayList<ShoppingListEnum> list = new ArrayList<>();
+        
+        return list;
+                    
+    }
+    //for each item in the array of possible items they could purchase
+    //calculate the cost then add those together to get the total cost.
+    //How do I create my array and pass it to this function? the values
+    //are coming from buysuppliesview.
+    
+    public double calculateTotalCost(double quantity, double price){
+        double totalCost = 0;
+
+//        for (/*what do I put in here?*/) {
+//            if(quantity < 0){
+//                return -1;
+//            }
+//
+//            if(price < 0){
+//                return -1;
+//            }
+//
+//            double cost = quantity * price;
+//            totalCost += cost;
+//
+//        }
+        return totalCost;
+    }
 }
