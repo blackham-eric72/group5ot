@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package CIT260.Group5ot.control;
+import CIT260.Group5ot.enums.ShoppingListEnum;
 
 /**
  *
@@ -21,7 +22,7 @@ public class ShoppingControl {
        public double calculateTotalCost(double quantity, double price){
            double totalCost = 0;
            
-            for (int i=0 i<) {
+            for (int i=0; i<4; i++) {
                 if(quantity < 0){
                     return -1;
                 }
