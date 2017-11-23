@@ -40,7 +40,7 @@ public class AnimalHuntedControl {
         return tacoMeat;
     }
       
-    //Try to use "tacoMeat" array above to get animal with most meat.
+    //Try to use "tacoMeat" array above to get animal with most meat. (could not figure that out...went for displaying "for loop" instead)
     public void findMostMeatyAnimal(ArrayList<Animal> tacoMeat) {
         
         for (int i = 0; i < tacoMeat.size(); i++) {

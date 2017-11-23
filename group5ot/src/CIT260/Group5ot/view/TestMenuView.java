@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.view;
 
+import CIT260.Group5ot.control.AnimalHuntedControl;
 import java.util.Scanner;
 
 /**
@@ -24,6 +25,7 @@ public class TestMenuView extends View {
                         + "\n|*| -------------------------------- |*|"
                         + "\n|*| GM   - Game Menu                 |*|"
                         + "\n|*| BVC  - Calculate Barrel Volume   |*|"
+                        + "\n|*| A    - Test Animal List          |*|"                       
                         + "\n|*| H    - Test Hunt Menu            |*|"                 
                         + "\n|*| S    - Save game                 |*|"
                         + "\n|*| M    - View Map                  |*|"
@@ -45,12 +47,15 @@ public class TestMenuView extends View {
         choice = choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-             case "GM": // display Game menu
+            case "GM": // display Game menu
                 this.displayGameMenu();
                 break;
-              case "S": // Save game
+            case "S": // Save game
                 this.saveGame();
                 break;
+            case "A": // display the Animals menu
+                this.displayAnimalsArrayTest();
+                break;                
             case "H": // display the HUNT menu
                 this.displayHuntView();
                 break;
@@ -89,7 +94,10 @@ public class TestMenuView extends View {
         return false;
     }    
 
-   
+    private void displayAnimalsArrayTest() {
+//        System.out.println("*** displayAnimalsArrayTest() function called ***");
+        System.out.println(AnimalHuntedControl.createAnimals());
+    }   
 
     private void displayHuntView() {
         ToHuntOrNotToHuntView huntView = new ToHuntOrNotToHuntView();

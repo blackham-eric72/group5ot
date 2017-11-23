@@ -38,19 +38,19 @@ public class ShoppingControl {
     public double calculateTotalCost(double quantity, double price){
         double totalCost = 0;
 
-        for (/*what do I put in here?*/) {
-            if(quantity < 0){
-                return -1;
-            }
-
-            if(price < 0){
-                return -1;
-            }
-
-            double cost = quantity * price;
-            totalCost += cost;
-
-        }
+//        for (/*what do I put in here?*/) {
+//            if(quantity < 0){
+//                return -1;
+//            }
+//
+//            if(price < 0){
+//                return -1;
+//            }
+//
+//            double cost = quantity * price;
+//            totalCost += cost;
+//
+//        }
         return totalCost;
     }
 }
