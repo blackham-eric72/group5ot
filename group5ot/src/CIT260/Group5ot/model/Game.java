@@ -27,6 +27,15 @@ public class Game implements Serializable  {
    private InventoryItem[] inventory;
    private ArrayList<Character> characters;
    private ArrayList<InventoryItem> items;
+   private ArrayList<Barrel> barrels;
+
+    public ArrayList<Barrel> getBarrels() {
+        return barrels;
+    }
+
+    public void setBarrels(ArrayList<Barrel> barrels) {
+        this.barrels = barrels;
+    }
 
     public ArrayList<InventoryItem> getItems() {
         return items;

@@ -5,15 +5,21 @@
  */
 package CIT260.Group5ot.enums;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Flores Family
  */
-public enum CharacterType {
+public enum CharacterType implements Serializable {
    Obadiah,
    LilyAnne,
    Ephraim,
    Gertrude,
    Myrtle,
    TraderJoe;
+
+    public String getCharacterType() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

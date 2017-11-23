@@ -3,6 +3,7 @@ package CIT260.Group5ot.control;
 
 import static CIT260.Group5ot.control.MapControl.createMap;
 import CIT260.Group5ot.enums.ItemTypes;
+import CIT260.Group5ot.model.Barrel;
 import CIT260.Group5ot.model.Game;
 import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Map;
@@ -11,7 +12,7 @@ import group5ot.Group5ot;
 import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Player;
 import CIT260.Group5ot.model.Character;
-
+import java.awt.Point;
 import java.util.ArrayList;
 
 
@@ -85,6 +86,9 @@ public class GameControl {
         
         ArrayList<InventoryItem> items = createItems();
        currentGame.setItems(items);
+       
+       ArrayList<Barrel> barrels = createBarrels();
+       currentGame.setBarrels(barrels);
         
        //dgw start
        //dgw not sure why items are passed to createMap???  
@@ -98,17 +102,33 @@ public class GameControl {
     }
     
     
-    
+    public static ArrayList<Barrel> createBarrels(){
+        ArrayList<Barrel> barrelSizes = new ArrayList<>();
+        
+        Barrel extraLarge = new Barrel(18, 60);
+        Barrel large = new Barrel(14, 55);
+        Barrel medium = new Barrel(12, 50);
+        Barrel small = new Barrel(10, 40);
+        
+        barrelSizes.add(0, extraLarge);
+        barrelSizes.add(1, large);
+        barrelSizes.add(2, medium);
+        barrelSizes.add(3, small);
+       
+        
+        return barrelSizes;
+        
+    }
      public static ArrayList<Character> createCharacters(){
          
         ArrayList<Character> character = new ArrayList<>(); 
                
-        Character obadiah = new Character("Obadiah", "He is the leader of the family");
-        Character lilyAnne = new Character("LilyAnne", "She is the mother(real leader) of the family");
-        Character ephraim = new Character("Ephraim", "First born son");
-        Character gertrude = new Character("Gertrude", "First born daughter, who has a fiesty attitude");
-        Character myrtle = new Character("Myrtle", "Last born child - only a baby");
-        Character traderJoe = new Character("Trader-Joe", "He is the owner of the trading post");
+        Character obadiah = new Character("Obadiah", "He is the leader of the family", 10);
+        Character lilyAnne = new Character("LilyAnne", "She is the mother(real leader) of the family", 10);
+        Character ephraim = new Character("Ephraim", "First born son", 10);
+        Character gertrude = new Character("Gertrude", "First born daughter, who has a fiesty attitude", 10);
+        Character myrtle = new Character("Myrtle", "Last born child - only a baby", 10);
+        Character traderJoe = new Character("Trader-Joe", "He is the owner of the trading post", 10);
         
         
         character.add(0, obadiah);

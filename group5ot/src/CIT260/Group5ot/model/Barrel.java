@@ -16,12 +16,11 @@ public class Barrel implements Serializable{
     //class instance variables
     private double height;
     private double diameter;
-    private double volume;
-    private double maxWeight;
 
-    public Barrel() {
+    public Barrel(double height, double diameter) {
+        this.height = height;
+        this.diameter = diameter;
     }
-    
     
 
     public double getHeight() {
@@ -40,38 +39,13 @@ public class Barrel implements Serializable{
         this.diameter = diameter;
     }
 
-    public double getVolume() {
-        return volume;
-    }
-
-    public void setVolume(double volume) {
-        this.volume = volume;
-    }
-
-    public double getMaxWeight() {
-        return maxWeight;
-    }
-
-    public void setMaxWeight(double maxWeight) {
-        this.maxWeight = maxWeight;
-    }
-
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.height) ^ (Double.doubleToLongBits(this.height) >>> 32));
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.diameter) ^ (Double.doubleToLongBits(this.diameter) >>> 32));
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.volume) ^ (Double.doubleToLongBits(this.volume) >>> 32));
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.maxWeight) ^ (Double.doubleToLongBits(this.maxWeight) >>> 32));
+        int hash = 3;
+        hash = 61 * hash + (int) (Double.doubleToLongBits(this.height) ^ (Double.doubleToLongBits(this.height) >>> 32));
+        hash = 61 * hash + (int) (Double.doubleToLongBits(this.diameter) ^ (Double.doubleToLongBits(this.diameter) >>> 32));
         return hash;
     }
-
-    @Override
-    public String toString() {
-        return "Barrel{" + "height=" + height + ", diameter=" + diameter + ", volume=" + volume + ", maxWeight=" + maxWeight + '}';
-    }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -91,14 +65,21 @@ public class Barrel implements Serializable{
         if (Double.doubleToLongBits(this.diameter) != Double.doubleToLongBits(other.diameter)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.volume) != Double.doubleToLongBits(other.volume)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.maxWeight) != Double.doubleToLongBits(other.maxWeight)) {
-            return false;
-        }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Barrel{" + "height=" + height + ", diameter=" + diameter + '}';
+    }
+
+   
+
+    
+   
+    
+
+   
     
     
     

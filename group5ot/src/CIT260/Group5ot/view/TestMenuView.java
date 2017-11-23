@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.view;
 
+import CIT260.Group5ot.control.HealthControl;
 import java.util.Scanner;
 
 /**
@@ -34,6 +35,7 @@ public class TestMenuView extends View {
                         + "\n|*| TP   - Look around Trading Post  |*|"
                         + "\n|*| E    - Eating View               |*|"
                         + "\n|*| R    - Rest View                 |*|"
+                        + "\n|*| CH   - calculate health          |*|"
                         + "\n|*| Q    - Quit to Main Menu         |*|"
                         + "\n|*| -----------------------------------");
         }
@@ -80,6 +82,9 @@ public class TestMenuView extends View {
                 break;
             case "R": // rest view
                 this.displayRestView();
+                break;
+                case "CH": // rest view
+                this.displayCalculateHealth();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -168,6 +173,10 @@ public class TestMenuView extends View {
         // Display the rest menu
         restView.display();    
     }
-    
+    private void displayCalculateHealth(){
+        HealthControl health = new HealthControl();
+        
+        health.calcAverageHealth();
+    }
     
 }

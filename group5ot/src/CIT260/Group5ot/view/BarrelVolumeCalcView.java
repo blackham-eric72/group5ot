@@ -22,7 +22,7 @@ public class BarrelVolumeCalcView extends View {
 
 public BarrelVolumeCalcView(){
 
-                       super("\n|*| ------------------------------------ |*|"
+                    super("\n|*| ------------------------------------ |*|"
                         + "\n|*| ***  Barrel Volume Calculation  **** |*|"
                         + "\n|*| ------------------------------------ |*|"
                         + "\n|*| P - Caclulate volume                 |*|"
