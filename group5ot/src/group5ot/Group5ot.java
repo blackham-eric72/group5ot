@@ -39,17 +39,19 @@ public class Group5ot {
     
     private static Game currentGame = null;
     private static Player player = null;
-
-  
-
    
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
+        try {
         startProgramView.displayStartProgramView();
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.displayStartProgramView();
+        }
     }
-    
-
+   
     public static Player getPlayer() {
         return player;
     }    

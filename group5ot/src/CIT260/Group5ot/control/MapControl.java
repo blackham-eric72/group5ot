@@ -18,8 +18,8 @@ public class MapControl {
     
     
    public static Map createMap(int noOfRows, int noOfColumns, ArrayList<InventoryItem> items){
-           if (noOfRows <0) {
-         return null;
+     if (noOfRows <0) {
+        return null;
      }   
      if (noOfColumns <0) {
          return null;
@@ -56,21 +56,21 @@ public class MapControl {
      public static Location[][] createLocations(int rows, int columns) {
                 
         if(rows < 1) {
-        return null;
-    }
+            return null;
+        }
         if(columns < 1) {
             return null;
         }
-       Location[][] locations = new Location[rows][columns];
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j< columns; j++){ 
-                 Location location = new Location();
-                  location.setVisited(false);
-                  locations[i][j] = location;
-                  }     
-        }
+        Location[][] locations = new Location[rows][columns];
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j< columns; j++){ 
+                    Location location = new Location();
+                    location.setVisited(false);
+                    locations[i][j] = location;
+                }     
+            }
         return locations;
-     }
+    }
     
     private static void assignItemsToScenes(ArrayList<InventoryItem> items, Scene[] scenes){
         System.out.println("Teriyaki sounds good right now. Brought to you by assignItemsToScenes().");
@@ -139,5 +139,21 @@ public class MapControl {
         location[1][12].setScene(foodScene);
 
     }
+    
+    
+//    public static int moveWagonToLocation(Character character, Point coordinates) {
+//        
+//        Map map = Group5ot.getCurrentGame().getMap();
+//        int newRow = coordinates.x-1;
+//        int newColumn = coordinates.y-1;
+//        
+//        if (newRow < 0 || newRow >= map.getNoOfRows() ||
+//            newColumn < 0 || newColumn <= map.getNoOfColumns{}) {
+//            return -1;
+//            }
+//            else { 
+//                return 0;
+//            }    
+//    }
  
 }

@@ -6,7 +6,10 @@
 package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.MeatShareControl;
+import CIT260.Group5ot.exceptions.MeatShareException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -65,81 +68,86 @@ public class MeatShareCalcView extends View {
     //        return value; // return the value entered
     //    }
 
-    public void MeatShareCalculation(){
-    //Here I am going to bring in the CalcBarrel Function
-    // Declares the variable and assigns a new object.
-    MeatShareControl calcWeightShares = new MeatShareControl(); 
-    //get weight from user
-    System.out.println(
-                      "Weight of meat: 150 lbs."
-                    + "\n Number of Children: 3"
-                    + "\n Number of Adults: 2"
-    );
+    public void MeatShareCalculation() throws MeatShareException{
+        //Here I am going to bring in the CalcBarrel Function
+        // Declares the variable and assigns a new object.
+        MeatShareControl calcWeightShares = new MeatShareControl(); 
+        //get weight from user
+        System.out.println(
+                          "Weight of meat: 150 lbs."
+                        + "\n Number of Children: 3"
+                        + "\n Number of Adults: 2"
+        );
 
-    System.out.println("Please enter the weight of meat:");
+        System.out.println("Please enter the weight of meat:");
 
-    Scanner inputWeight = new Scanner(System.in);
-    //store it in a variable called weight
-    double weight = inputWeight.nextDouble();
-    System.out.println("You entered " + weight);
+        Scanner inputWeight = new Scanner(System.in);
+        //store it in a variable called weight
+        double weight = inputWeight.nextDouble();
+        System.out.println("You entered " + weight);
 
-    //get number of children from user
-    System.out.println("Please enter the number of children:");
+        //get number of children from user
+        System.out.println("Please enter the number of children:");
 
-    Scanner inputChildren = new Scanner(System.in);
-    double children = inputChildren.nextDouble();
+        Scanner inputChildren = new Scanner(System.in);
+        double children = inputChildren.nextDouble();
 
-    System.out.println("You entered " + children +" children.");
+        System.out.println("You entered " + children +" children.");
 
-    //get number of adults from user
-    System.out.println("Please enter the number of adults:");
-    Scanner inputAdults = new Scanner(System.in);
-    double adults = inputAdults.nextDouble();
+        //get number of adults from user
+        System.out.println("Please enter the number of adults:");
+        Scanner inputAdults = new Scanner(System.in);
+        double adults = inputAdults.nextDouble();
 
-    System.out.println("You entered " + adults +" adults.");
+        System.out.println("You entered " + adults +" adults.");
 
-    double weightPerShare = calcWeightShares.calcShares(weight, adults, children);
-    System.out.println(
-                      "\n||********          Calculate shares of meat           ********||"
-                    + "\n|| In order to proceed to the next step, you must first        ||"
-                    + "\n|| determine how much a share of meat from your hunt weighs.   ||"
-                    + "\n|| ---------------------------------------------------------   ||"
-                    + "\n|| An adult gets 2 shares and a child gets one share.          ||"
-                    + "\n|| You will need to determine how many shares there are in     ||"
-                    + "\n|| your group by adding the number of children plus the number ||"
-                    + "\n|| of adults times 2. Then you will divide the weight by the   ||"
-                    + "\n|| the number of shares. Your answer should be to 2 decimal    ||"
-                    + "points. Good luck!                                               ||");
-    Scanner userAnswer = new Scanner(System.in);
-    double answer = userAnswer.nextDouble();
+        double weightPerShare = calcWeightShares.calcShares(weight, adults, children);
+        System.out.println(
+                          "\n||********          Calculate shares of meat           ********||"
+                        + "\n|| In order to proceed to the next step, you must first        ||"
+                        + "\n|| determine how much a share of meat from your hunt weighs.   ||"
+                        + "\n|| ---------------------------------------------------------   ||"
+                        + "\n|| An adult gets 2 shares and a child gets one share.          ||"
+                        + "\n|| You will need to determine how many shares there are in     ||"
+                        + "\n|| your group by adding the number of children plus the number ||"
+                        + "\n|| of adults times 2. Then you will divide the weight by the   ||"
+                        + "\n|| the number of shares. Your answer should be to 2 decimal    ||"
+                        + "points. Good luck!                                               ||");
+        Scanner userAnswer = new Scanner(System.in);
+        double answer = userAnswer.nextDouble();
 
-    System.out.println("\nYou entered " + answer);
-    System.out.println("\nThe correct answer was " + weightPerShare);
+        System.out.println("\nYou entered " + answer);
+        System.out.println("\nThe correct answer was " + weightPerShare);
 
-    if (answer == weightPerShare) {
-        System.out.println("\nThat is Correct, please proceed");
-        //go back to the checkpoint menu
-        this.nextView();
+        if (answer == weightPerShare) {
+            System.out.println("\nThat is Correct, please proceed");
+            //go back to the checkpoint menu
+            this.nextView();
 
+        }
+        else{ System.out.println("\nFailure. Please try again");
+            //player must start again from the beginning
+            this.MeatShareCalculation();
+        }
     }
-    else{ System.out.println("\nFailure. Please try again");
-        //player must start again from the beginning
-        this.MeatShareCalculation();
-    }
-    }
 
+    @Override
     public boolean doAction(String choice) {
 
         choice = choice.toUpperCase(); // convert choice to upper case
 
         if ("C".equals(choice)) {
-            this.MeatShareCalculation();
+            try {
+                this.MeatShareCalculation();
+            } catch (MeatShareException ex) {
+                System.out.println(ex.getMessage());
+            }
         }    
         else{
             System.out.println("\n*** Invalid selection *** Try again");
         }
             return false;
-     }
+    }
 
     private void nextView() {
         System.out.println("\n*** Chuck Norris has a vacation home on the sun. Brought to you by the NextView().");

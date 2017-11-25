@@ -18,11 +18,12 @@ public class Wagon implements Serializable{
     private double totalWeight;
     private String supplyItem;
     private Player player;
+    private Location location;
 
     public Wagon() {
     }
     
-    
+   
     public double getTotalWeight() {
         return totalWeight;
     }
