@@ -2,7 +2,6 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.ShoppingControl;
 import java.util.Scanner;
-import CIT260.Group5ot.control.TradingControl;
 import CIT260.Group5ot.enums.ShoppingListEnum;
 import CIT260.Group5ot.model.ShoppingList;
 import static java.lang.Integer.parseInt;
@@ -60,7 +59,6 @@ public class BuySuppliesView extends View {
         //Bring in ShoppingControl thingy. I don't know if I did this right.
         ShoppingControl createListFunction = new ShoppingControl(); 
                 
-        TradingControl calcTotalFunction = new TradingControl();
             //get purchase choices from user
             System.out.println("\n"
                 + "\n|------------------------------------------------------|"       
