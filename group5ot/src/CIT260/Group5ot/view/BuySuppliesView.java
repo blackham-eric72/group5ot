@@ -80,8 +80,14 @@ public class BuySuppliesView extends View {
 
         System.out.println("Enter desired pounds of food. (0 if no food is needed)");
 
-        //create memory location for food
-        int foodQuantity = parseInt(food.next());
+        //create memory location for food ,set to 0, try to create int from input, catch exception.
+        int foodQuantity = 0;
+        try {
+            foodQuantity = parseInt(food.next());
+        } catch (NumberFormatException nf) {
+            System.out.println("Please enter a valid number."
+                    + "\n Try again or enter Q to quit.");
+        }
         
         
         //get Ox quantity
@@ -90,7 +96,13 @@ public class BuySuppliesView extends View {
         System.out.println("Enter desired number of oxen. (0 if no oxen are needed)");
 
         //create memory location for ox
-        int oxQuantity = parseInt(ox.next());
+        int oxQuantity = 0;
+        try {
+            oxQuantity = parseInt(ox.next());
+        } catch (NumberFormatException nf) {
+            System.out.println("Please enter a valid number."
+                    + "\n Try again or enter Q to quit.");
+        }
         
         
         //get Ammo quantity
@@ -99,7 +111,13 @@ public class BuySuppliesView extends View {
         System.out.println("Enter desired number of rounds of ammo. (0 if no ammo is needed)");
 
         //create memory location for ammo
-        int ammoQuantity = parseInt(ammo.next());
+        int ammoQuantity = 0;
+        try {
+            ammoQuantity = parseInt(ammo.next());
+        } catch (NumberFormatException nf) {
+            System.out.println("Please enter a valid number."
+                    + "\n Try again or enter Q to quit.");
+        }
         
         
         //get medicine quantity
@@ -108,7 +126,13 @@ public class BuySuppliesView extends View {
         System.out.println("Enter desired number of doses of medicine. (0 if no medicine is needed)");
 
         //create memory location for ammo
-        int medicineQuantity = parseInt(medicine.next());
+        int medicineQuantity = 0;
+        try {
+            medicineQuantity = parseInt(medicine.next());
+        } catch (NumberFormatException nf) {
+            System.out.println("Please enter a valid number."
+                    + "\n Try again or enter Q to quit.");
+        }
 
 
         ShoppingList passFood = new ShoppingList(ShoppingListEnum.food, foodQuantity, 1);
