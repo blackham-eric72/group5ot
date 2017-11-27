@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.control;
 
+import CIT260.Group5ot.exceptions.WagonControlException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -29,9 +30,10 @@ public class WagonControlTest {
 
     /**
      * Test of calcWagonCargoWeight method, of class WagonControl.
+     * @throws CIT260.Group5ot.exceptions.WagonControlException
      */
     @Test
-    public void testCalcWagonCargoWeight() {
+    public void testCalcWagonCargoWeight() throws WagonControlException {
         System.out.println("calcWagonCargoWeight");
         
         // ---Test Case 1 ---
