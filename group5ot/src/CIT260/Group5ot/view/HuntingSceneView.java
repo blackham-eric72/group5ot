@@ -36,7 +36,7 @@ public class HuntingSceneView extends View {
         
         switch (choice) {
             case "H":
-                this.displayToHuntOrNotToHuntView();
+                this.displayHuntView();
                 break;
             case "C":
                 this.nextView();
@@ -52,9 +52,13 @@ public class HuntingSceneView extends View {
         return false;
     }    
 
-    private void displayToHuntOrNotToHuntView() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void displayHuntView() {
+
+        HuntView huntView = new HuntView();
+        
+        huntView.display();
     }
+
 
     private void nextView() {
         System.out.println("\n*** Chuck Norris doesn't have an esc key on his computer. Brought to you by the NextView().");

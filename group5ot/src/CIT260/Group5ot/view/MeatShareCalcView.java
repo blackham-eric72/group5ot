@@ -28,46 +28,6 @@ public class MeatShareCalcView extends View {
 
     }
 
-    //Moved to "View.java" class  
-    //public void displayMeatShareCalcView() {
-    //
-    //  boolean done = false; // set flag to not done
-    //        do {
-    //            //Prompt for input
-    //            String despuesDeBlessedMeat = this.onward();
-    //            if (despuesDeBlessedMeat.toUpperCase().equals(" ")) // user wants to return to game menu
-    //                return; // return to the game?
-    //            
-    //            // do the requested action and display the next view
-    //            done = this.doAction(despuesDeBlessedMeat);
-    //            
-    //        } while (!done);
-    //        
-    //    }
-    //private String onward() {                     
-    //        
-    //        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-    //        String value = ""; // value to be returned
-    //        boolean valid = false; //initilaize to not valid
-    //        
-    //        while (!valid) { // loop while an invalid value is entered
-    //            System.out.println("\n" + this.blessedMeatMessage);
-    //            
-    //            value = keyboard.nextLine(); // get next line typed on keyboard 
-    //            value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
-    //            
-    //            if ( !"C".equals(value) ) { //check for valid values
-    //               System.out.println("\nInvalid value: Please enter C");
-    //                continue;
-    //            }
-    //            
-    //            break; //end the loop
-    //                    
-    //        }
-    //        
-    //        return value; // return the value entered
-    //    }
-
     public void MeatShareCalculation() throws MeatShareException{
         //Here I am going to bring in the CalcBarrel Function
         // Declares the variable and assigns a new object.
