@@ -1,7 +1,10 @@
 package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.BarrelVolumeControl;
+import CIT260.Group5ot.exceptions.BarrelVolumeCalcException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static jdk.nashorn.internal.objects.NativeMath.round;
 
 /**
@@ -28,7 +31,7 @@ public BarrelVolumeCalcView(){
 
 
 
-public void barrelVolumeCalculation(){
+public void barrelVolumeCalculation() throws BarrelVolumeCalcException{
 //Here I am going to bring in the CalcBarrel Function
 // Declares the variable and assigns a new object.
 BarrelVolumeControl calcBarrelFunction = new BarrelVolumeControl(); 
@@ -62,6 +65,7 @@ double radius = inputRadius.nextDouble();
 System.out.println("You entered " + radius);
 
 double barrelVolume = calcBarrelFunction.calcBarrelVolume(height, radius);
+
 System.out.println(
                   "\n||***********   Calculate the volume of a barrel    ***********||"
                 + "\n|| In order to proceed to the next step, you must first         ||"
@@ -94,8 +98,15 @@ public boolean doAction(String choice) {
         choice = choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-            case "P": // Display Map 
+            case "P": {
+            try {
+                // Display Map
                 this.barrelVolumeCalculation();
+            } catch (BarrelVolumeCalcException ex) {
+               System.out.println(ex.getMessage());
+             
+            }
+        }
                 break;
             case "Q": // return to the previous screen
                 this.displayTestMenu();
