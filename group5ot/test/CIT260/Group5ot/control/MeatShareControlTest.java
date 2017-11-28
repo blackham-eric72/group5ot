@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.control;
 
+import CIT260.Group5ot.exceptions.MeatShareException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -18,7 +19,7 @@ public class MeatShareControlTest {
     }
 
     @Test
-    public void testCalcShares() {
+    public void testCalcShares() throws MeatShareException {
         
         //Test Case 1
         

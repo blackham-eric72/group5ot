@@ -15,8 +15,8 @@ import java.util.Scanner;
  */
 public class TestMenuView extends View {
     
-     private String menu;
-        private String promptMessage;
+    private String menu;
+    private String promptMessage;
                 
 
         public TestMenuView() {

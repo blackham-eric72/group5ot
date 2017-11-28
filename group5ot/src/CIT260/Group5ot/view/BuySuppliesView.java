@@ -3,9 +3,12 @@ package CIT260.Group5ot.view;
 import CIT260.Group5ot.control.ShoppingControl;
 import java.util.Scanner;
 import CIT260.Group5ot.enums.ShoppingListEnum;
+import CIT260.Group5ot.exceptions.ShoppingControlException;
 import CIT260.Group5ot.model.ShoppingList;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -24,8 +27,6 @@ public class BuySuppliesView extends View {
         public BuySuppliesView() {
                     //display a welcome message and instructions and menu
             super( "\nWelcome to the Trading Post. "
-                  +"\nEnter the item name, amount and price."
-                  +"\nAt the current time, you must buy 2 items. "
                   + "\n|---------------------------------------|"
                   + "\n|              Buy Supplies             |"
                   + "\n|-------------------------------------- |"
@@ -39,9 +40,15 @@ public class BuySuppliesView extends View {
          
             choice = choice.toUpperCase(); // convert to upper case
             
-            switch (choice) {
-                case "S": // display buy supplies menu
+            switch (choice) {      
+                case "S": {
+                try {
+                    // display buy supplies menu
                     this.orderTotalCalculation();
+                } catch (ShoppingControlException ex) {
+                    Logger.getLogger(BuySuppliesView.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
                     break;
                 case "Q": // return to previous screen
                     this.displayTradingpostMenuView();
@@ -55,8 +62,7 @@ public class BuySuppliesView extends View {
      }
         
         
-     public void orderTotalCalculation(){
-        //Bring in ShoppingControl thingy. I don't know if I did this right.
+     public void orderTotalCalculation() throws ShoppingControlException {
         ShoppingControl createListFunction = new ShoppingControl(); 
                 
             //get purchase choices from user
@@ -149,18 +155,24 @@ public class BuySuppliesView extends View {
 		
 		double totalCost = createListFunction.calculateTotalCost(myList);           
      
-//                System.out.println(
-//                              "\n--------------------------------------------------"
-//                            + "\n                Trading Post Receipt              "
-//                            + "\n--------------------------------------------------"
-//                            + "\n " + itemName1 + "     Qty.  " + itemAmountA + "  "          
-//                            + "\n " + itemName2 + "     Qty.  " + itemAmountB + "  "
-//                            + "\n Total = " + total + "                            " 
-//                            + "\n                                                  "        
-//                            + "\n Thank you for shopping at TrailMart. Come Again! "       
-//                            + "\n--------------------------------------------------");
-    } 
-    
+                              
+                System.out.println(   "\n--------------------------------------------------"
+                                    + "\n                Trading Post Receipt              "
+                                    + "\n--------------------------------------------------"
+                                    + "\n" + "Food Quantity:  " + foodQuantity + ""            
+                                    + "\n" + "Ox Quantity:  " + oxQuantity +     "" 
+                                    + "\n" + "Ammo Quantity:  " + ammoQuantity + ""
+                                    + "\n" + "Medicine Quantity:  " + oxQuantity + "" 
+                                    + "\nTotal = $" + totalCost + "                        " 
+                                    + "\n                                                  "        
+                                    + "\n Thank you for shopping at TrailMart. Come Again! "       
+                                    + "\n--------------------------------------------------");
+        
+        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
+       
+        tradingpostMenuView.display();  
+     } 
+            
      private void displayTradingpostMenuView() {
         TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
        
