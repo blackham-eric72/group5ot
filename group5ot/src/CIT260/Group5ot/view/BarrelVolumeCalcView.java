@@ -2,6 +2,7 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.BarrelVolumeControl;
 import CIT260.Group5ot.exceptions.BarrelVolumeCalcException;
+import static java.lang.Integer.parseInt;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,13 +55,36 @@ System.out.println("please enter the height of the barrel:");
 
 Scanner inputHeight = new Scanner(System.in);
 //store it in a variable called height
-double height = inputHeight.nextDouble();
+double height = 0;
+double radius = 0;
+
+ try {
+            height = parseInt(inputHeight.next());
+        } catch (NumberFormatException nf) {
+            System.out.println(
+                      "\n************************************************************************"
+                    + "\nError: Please enter a valid number for the height. "
+                    + "\nYou will enter the radius, and then you will be instructed to try again."
+                    + "\n************************************************************************"
+                    );
+        }
+
 
 System.out.println("You entered " + height);
 //get radius from user
 System.out.println("please enter the radius of the barrel:");
 Scanner inputRadius = new Scanner(System.in);
-double radius = inputRadius.nextDouble();
+ try {
+            radius = parseInt(inputRadius.next());
+        } catch (NumberFormatException nf) {
+            System.out.println(
+                      "\n************************************************************************"
+                    + "\nError: Please enter a valid number for the Radius. "
+                    + "\nYou will now start this process over."
+                    + "\n************************************************************************"
+                    );
+        }
+
 
 System.out.println("You entered " + radius);
 
@@ -119,11 +143,18 @@ public boolean doAction(String choice) {
         return false;
  }
  private void displayFailMessage() {
-         System.out.println("\nYoda Says 'Failure, you are... Try again, you must!'") ;
+         System.out.println(
+                  "******************************************************"
+                 +"\nYoda Says 'Failure, you are... Try again, you must!'"
+                 +"\n******************************************************"
+                 ) ;
     }
  
  private void displaySuccessMessage() {
-        System.out.println("\nChuck Norris says, 'You are correct'"); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(
+                  "***************************************************************"
+                 +"\nSUCCESS!! Yoda Says 'Much Wisdom you have, for one so young!'"
+                 +"\n*************************************************************"); //To change body of generated methods, choose Tools | Templates.
  displayTestMenu();   
  }
  
