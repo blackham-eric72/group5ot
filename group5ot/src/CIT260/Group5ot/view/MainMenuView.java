@@ -78,13 +78,10 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
          
-        int returnValue = GameControl.createNewGame(Group5ot.getPlayer());
-        if (returnValue < 0 ){
-            System.out.println("ERROR - Failed to create new game");
-        }
+       
         // create a new game
         GameControl.createNewGame(Group5ot.getPlayer());
-        
+
         // create items
         GameControl gameControl = new GameControl();
         gameControl.createItems();

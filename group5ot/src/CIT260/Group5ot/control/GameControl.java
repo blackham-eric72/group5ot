@@ -3,6 +3,7 @@ package CIT260.Group5ot.control;
 
 import static CIT260.Group5ot.control.MapControl.createMap;
 import CIT260.Group5ot.enums.ItemTypes;
+import CIT260.Group5ot.exceptions.GameControlException;
 import CIT260.Group5ot.model.Barrel;
 import CIT260.Group5ot.model.Game;
 import CIT260.Group5ot.model.InventoryItem;
@@ -67,11 +68,11 @@ public class GameControl {
         
     }
 
-    public static int createNewGame(Player player) {
+    public static void createNewGame(Player player) throws GameControlException {
         
         //create new game       
        if (player == null) {
-           return -1;
+           throw new GameControlException("Player name cannot be blank.");
        }
         
        Game currentGame = new Game();
@@ -94,11 +95,7 @@ public class GameControl {
        //dgw not sure why items are passed to createMap???  
         Map map = createMap(2, 27, items);
         
-        int returnValue = GameControl.createNewGame(Group5ot.getPlayer());
-        if (returnValue < 0) {
-            System.out.println("ERROR - Failed to create new game");
-        }
-        return 0;
+
     }
     
     
