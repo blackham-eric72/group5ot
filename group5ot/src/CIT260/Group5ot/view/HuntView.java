@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package CIT260.Group5ot.view;
-
+import CIT260.Group5ot.exceptions.GunControlException;
 import CIT260.Group5ot.control.GunControl;
 import java.util.Scanner;
 
@@ -14,8 +14,8 @@ import java.util.Scanner;
  * 
  */
 public class HuntView extends View {
-    private String menu; 
-    private String promptMessage;
+//    private String menu; 
+//    private String promptMessage;
 
 
     public HuntView(){
@@ -42,36 +42,6 @@ public class HuntView extends View {
         huntSceneView.display();
     }
 
-    
-//    private String getMenuOption() {
-//
-//        this.promptMessage = 
-//            "************ Enter a menu option ************"
-//            + "\n" + menu;
-//
-//
-//        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-//        String value = ""; // value to be returned
-//        boolean valid = false; //initilaize to not valid
-//
-//        while (!valid) { // loop while an invalid value is entered
-//            System.out.println("\n" + this.promptMessage);
-//
-//            value = keyboard.nextLine(); // get next line typed on keyboard 
-//            value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
-//
-//            if ("S".equals(value) || "Q".equals(value) ) { //check for valid values
-//                break; 
-//            }
-//            else {
-//                System.out.println("\nInvalid value: Must input S or Q");
-//            }
-//
-//        }
-//
-//        return value; // return the value entered
-//    }
-
     public void gunControlTaxCalculation(){
         //Here I am going to bring in the gunControl class
         // Declares the variable and assigns a new object.
@@ -95,36 +65,42 @@ public class HuntView extends View {
 
         System.out.println("You entered tax as: " + tax);
 
-        double bulletPrice = calcGunControl.calcTaxProblem(subtotal, tax);
-        System.out.println(
-                          "\n||********   Calculate the price of bullets with tax   ********||"
-                        + "\n|| In order to fire the gun, you must first calculate          ||"
-                        + "\n|| the price of bullets including tax.                         ||"
-                        + "\n|| ---------------------------------------------------------   ||"
-                        + "\n|| To figure out the total cost of something, you must         ||"
-                        + "\n|| follow two steps.  First, multiply the subtotal amount of   ||"
-                        + "\n|| " + subtotal + " by the tax rate which was " + tax + " to get the tax amount. ||"
-                        + "\n|| Second, add that amount to the subtotal.                    ||"
-                        + "\n||***************************************************************"
-                        + "\n\n"
-                        + "Now, how much were your bullets plus tax?"
-        );
-        Scanner userAnswer = new Scanner(System.in);
-        double answer = userAnswer.nextDouble();
+        try {
+            double bulletPrice = calcGunControl.calcTaxProblem(subtotal, tax);
+       
+        
+            System.out.println(
+                              "\n||********   Calculate the price of bullets with tax   ********||"
+                            + "\n|| In order to fire the gun, you must first calculate          ||"
+                            + "\n|| the price of bullets including tax.                         ||"
+                            + "\n|| ---------------------------------------------------------   ||"
+                            + "\n|| To figure out the total cost of something, you must         ||"
+                            + "\n|| follow two steps.  First, multiply the subtotal amount of   ||"
+                            + "\n|| " + subtotal + " by the tax rate which was " + tax + " to get the tax amount. ||"
+                            + "\n|| Second, add that amount to the subtotal.                    ||"
+                            + "\n||***************************************************************"
+                            + "\n\n"
+                            + "Now, how much were your bullets plus tax?"
+            );
+            Scanner userAnswer = new Scanner(System.in);
+            double answer = userAnswer.nextDouble();
 
-        System.out.println("\nYou entered " + answer);
-        System.out.println("\nThe correct answer was " + bulletPrice);
+            System.out.println("\nYou entered " + answer);
+            System.out.println("\nThe correct answer was " + bulletPrice);
 
-        if (answer == bulletPrice) {
-            System.out.println("\nThat is correct, you shot a tatanka!");
-            //go back to the hunting menu
-            this.displayHuntingSceneView();
+            if (answer == bulletPrice) {
+                System.out.println("\nThat is correct, you shot a tatanka!");
+                //go back to the hunting menu
+                this.displayHuntingSceneView();
 
-        }
-        else{ System.out.println("\nSorry, please try again");
-            //player must start again from the beginning
-            this.gunControlTaxCalculation();
-        }
+            }
+            else{ System.out.println("\nSorry, please try again");
+                //player must start again from the beginning
+                this.gunControlTaxCalculation();
+            }
+        }   catch (GunControlException gc) {
+                    System.out.println(gc.getMessage());
+        }        
     }
     
     @Override

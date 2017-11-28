@@ -15,8 +15,8 @@ import java.util.Scanner;
  */
 public class TestMenuView extends View {
     
-     private String menu;
-        private String promptMessage;
+    private String menu;
+    private String promptMessage;
                 
 
         public TestMenuView() {
@@ -105,9 +105,9 @@ public class TestMenuView extends View {
     }   
 
     private void displayHuntView() {
-        ToHuntOrNotToHuntView huntView = new ToHuntOrNotToHuntView();
+        HuntingSceneView huntSceneView = new HuntingSceneView();
         
-        huntView.display();
+        huntSceneView.display();
     }
 
     private void displayGameMenu() {

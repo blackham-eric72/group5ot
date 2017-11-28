@@ -7,6 +7,7 @@ package CIT260.Group5ot.control;
 
 import static CIT260.Group5ot.control.GameControl.createCharacters;
 import CIT260.Group5ot.enums.CharacterType;
+import CIT260.Group5ot.exceptions.HealthControlException;
 import java.util.ArrayList;
 
 /**
@@ -17,11 +18,11 @@ public class HealthControl {
     
     //calculate the decrease in health
     
-    public double calcHealthDecrease(double healthLevel) {
+    public double calcHealthDecrease(double healthLevel) throws HealthControlException{
         
         //check the parameters
         if (healthLevel <= 0 || healthLevel > 100){
-            return -1;
+            throw new HealthControlException("Health must be greater than 0 and less than 100");
         }
         if(healthLevel < 5){
             return 0;
@@ -36,11 +37,11 @@ public class HealthControl {
     
         //calculate the increase in health
     
-    public double calcHealthIncrease(double healthLevel) {
+    public double calcHealthIncrease(double healthLevel) throws HealthControlException{
         
         //check the parameters
         if (healthLevel <= 0 || healthLevel > 100){
-           return -1;
+           throw new HealthControlException("Health must be greater than 0 and less than 100");
         }
         if(healthLevel >= 96){
            return 100;
@@ -55,11 +56,8 @@ public class HealthControl {
     
     public String calcStatus(double healthLevel){
         
-        String status = "error";
+        String status = null;
         
-        if (healthLevel < 0 || healthLevel > 100){
-            return status;
-        }
         if(healthLevel == 0){
             status = "dead";
         }
@@ -113,11 +111,7 @@ public class HealthControl {
            }
          int average = sum / character.size();
          System.out.println("Average Health Level: " + average);
-       
-       
-       
-   
-       
+         
         
     }
 }

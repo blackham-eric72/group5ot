@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.control;
 
+import CIT260.Group5ot.exceptions.HealthControlException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,7 +36,7 @@ public class HealthControlTest {
      * Test of calcHealthDecrease method, of class HealthControl.
      */
     @Test
-    public void testCalcHealthDecrease() {
+    public void testCalcHealthDecrease() throws HealthControlException {
    
         //Test Case 1
         
@@ -115,7 +116,7 @@ public class HealthControlTest {
      */
     
     @Test
-    public void testCalcHealthIncrease() {
+    public void testCalcHealthIncrease() throws HealthControlException {
         //Test Case 1
         
         System.out.println("\t calcHealthIncrease Test case 1");
