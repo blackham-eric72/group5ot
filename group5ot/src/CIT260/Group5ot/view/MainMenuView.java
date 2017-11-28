@@ -7,7 +7,6 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
 import CIT260.Group5ot.control.MapControl;
-import CIT260.Group5ot.exceptions.GameControlException;
 import group5ot.Group5ot;
 import java.util.Scanner;
 import CIT260.Group5ot.model.Character;
@@ -79,12 +78,10 @@ public class MainMenuView extends View {
 
     private void startNewGame() {
          
-        try {
+       
         // create a new game
         GameControl.createNewGame(Group5ot.getPlayer());
-        } catch (GameControlException ge) {
-            System.out.println(ge.getMessage());
-        }
+
         // create items
         GameControl gameControl = new GameControl();
         gameControl.createItems();

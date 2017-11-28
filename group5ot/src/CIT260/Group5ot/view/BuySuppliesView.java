@@ -161,6 +161,8 @@ public class BuySuppliesView extends View {
 //                            + "\n--------------------------------------------------");
     } 
     
+    
+     
      private void displayTradingpostMenuView() {
         TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
        
