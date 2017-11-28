@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.control;
 
+import CIT260.Group5ot.exceptions.WagonControlException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -29,9 +30,10 @@ public class WagonControlTest {
 
     /**
      * Test of calcWagonCargoWeight method, of class WagonControl.
+     * @throws CIT260.Group5ot.exceptions.WagonControlException
      */
     @Test
-    public void testCalcWagonCargoWeight() {
+    public void testCalcWagonCargoWeight() throws WagonControlException {
         System.out.println("calcWagonCargoWeight");
         
         // ---Test Case 1 ---
@@ -42,14 +44,15 @@ public class WagonControlTest {
         long numChildren = 2;
         double foodWeight = 34;
         double waterWeight = 80;
+        double meatWeight = 140;
         
-        double expResult = 514; // expected output returned value
+        double expResult = 654; // expected output returned value
         
         // create instance of WagonControl class
         WagonControl instance = new WagonControl();
 
         // call function to run test
-        double result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, waterWeight);
+        double result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, meatWeight, waterWeight);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0);
@@ -64,11 +67,12 @@ public class WagonControlTest {
         numChildren = 4;
         foodWeight = -9;
         waterWeight = 56;
+        meatWeight = 140;
         
         expResult = -1; // expected output returned value
 
         // call function to run test
-        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, waterWeight);
+        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, meatWeight, waterWeight);
 
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0);       
@@ -83,11 +87,12 @@ public class WagonControlTest {
         numChildren = 5;
         foodWeight = 150;
         waterWeight = -8;
+        meatWeight = 140;
         
         expResult = -1; // expected output returned value
 
         // call function to run test
-        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, waterWeight);
+        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, meatWeight, waterWeight);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0);    
@@ -102,11 +107,12 @@ public class WagonControlTest {
         numChildren = -6;
         foodWeight = 150;
         waterWeight = 34;
+        meatWeight = 140;
         
         expResult = -1; // expected output returned value
 
         // call function to run test
-        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, waterWeight);
+        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, meatWeight, waterWeight);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0); 
@@ -121,11 +127,12 @@ public class WagonControlTest {
         numChildren = 4;
         foodWeight = 0;
         waterWeight = 350;
+        meatWeight = 140;
         
-        expResult = 550; // expected output returned value
+        expResult = 690; // expected output returned value
 
         // call function to run test
-        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, waterWeight);
+        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, meatWeight, waterWeight);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0);    
@@ -140,11 +147,12 @@ public class WagonControlTest {
         numChildren = 0;
         foodWeight = 200;
         waterWeight = 0;
+        meatWeight = 0;
         
         expResult = 800; // expected output returned value
 
         // call function to run test
-        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, waterWeight);
+        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, meatWeight, waterWeight);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0); 
@@ -159,11 +167,12 @@ public class WagonControlTest {
         numChildren = 4;
         foodWeight = 200;
         waterWeight = 350;
+        meatWeight = 250;
         
-        expResult = 1350; // expected output returned value
+        expResult = 1600; // expected output returned value
 
         // call function to run test
-        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, waterWeight);
+        result = instance.calcWagonCargoWeight(numAdults, numChildren, foodWeight, meatWeight, waterWeight);
         
         // compare expected return value with actual value returned
         assertEquals(expResult, result, 0.0); 
