@@ -105,9 +105,9 @@ public class TestMenuView extends View {
     }   
 
     private void displayHuntView() {
-        ToHuntOrNotToHuntView huntView = new ToHuntOrNotToHuntView();
+        HuntingSceneView huntSceneView = new HuntingSceneView();
         
-        huntView.display();
+        huntSceneView.display();
     }
 
     private void displayGameMenu() {
