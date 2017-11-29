@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package CIT260.Group5ot.control;
-
 import CIT260.Group5ot.exceptions.WagonControlException;
 
 /**
@@ -13,9 +12,9 @@ import CIT260.Group5ot.exceptions.WagonControlException;
  */
 public class WagonControl {
     
-    double calcWagonCargoWeight(long numAdults, long numChildren, double supplyWeight, double meatWeight, double waterWeight) throws WagonControlException {
+    public double calcWagonCargoWeight(int numAdults, int numChildren, double supplyWeight, double meatWeight, double waterWeight) throws WagonControlException {
     
-        if (numAdults < 0 || numAdults > 4) {
+        if (numAdults < 0 || numAdults > 3) {
             throw new WagonControlException("Number of adults must be be more than zero and less than five.");
         }
         
@@ -42,6 +41,10 @@ public class WagonControl {
         double totalWagonCargoWeight = ((numAdults * 150) + (numChildren * 50) + (supplyWeight) + (waterWeight)) ;
         
         return totalWagonCargoWeight;
+    }
+
+    double calcWagonCargoWeight(long numAdults, long numChildren, double foodWeight, double meatWeight, double waterWeight) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 						
 						

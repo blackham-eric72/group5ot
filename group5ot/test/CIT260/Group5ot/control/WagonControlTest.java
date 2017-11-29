@@ -40,8 +40,8 @@ public class WagonControlTest {
         System.out.println("\tTest case 1");
         
         // input values for test case 1
-        long numAdults = 2;
-        long numChildren = 2;
+        int numAdults = 2;
+        int numChildren = 2;
         double foodWeight = 34;
         double waterWeight = 80;
         double meatWeight = 140;
