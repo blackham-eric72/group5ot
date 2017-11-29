@@ -43,6 +43,10 @@ public class WagonControl {
         
         return totalWagonCargoWeight;
     }
+
+    double calcWagonCargoWeight(long numAdults, long numChildren, double foodWeight, double meatWeight, double waterWeight) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 						
 						
 }
