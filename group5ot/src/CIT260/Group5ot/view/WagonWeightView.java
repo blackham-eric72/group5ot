@@ -61,21 +61,23 @@ public class WagonWeightView extends View{
         
             System.out.println("Enter the number of adults");
             
-            int adults = numAdults.nextInt();
+            String adultStr = numAdults.nextLine();
+            int adults = 0;
             try {
-                adults = parseInt(numAdults.next());
+                adults = parseInt(adultStr);
             } catch (NumberFormatException nf) {
                 System.out.println("Please enter a valid number. Adults must be 1 or 2.");
             }
         
             
-            Scanner numChildren = new Scanner(System.in);
+            //Scanner numChildren = new Scanner(System.in);
             
             System.out.println("Enter the number of children");
             
-            int children = numChildren.nextInt();
+            String childrenStr = numAdults.nextLine();
+            int children = 0;
             try {
-                children = parseInt(numChildren.next());
+                children = parseInt(childrenStr);
             } catch (NumberFormatException nf) {
                 System.out.println("Please enter a valid number. Children must be between 1 and 4.");
             }
@@ -94,11 +96,7 @@ public class WagonWeightView extends View{
                               + "\n" + "Meat weight: " + meatWeight + " "
                               + "\n" + "Water weight: " + waterWeight); 
             
-            //create test menu object
-        TestMenuView testMenuView = new TestMenuView();
-        
-        //display the test menu
-        testMenuView.display();
+            
         }    
             
            

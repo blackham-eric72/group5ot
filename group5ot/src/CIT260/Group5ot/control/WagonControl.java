@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package CIT260.Group5ot.control;
-
 import CIT260.Group5ot.exceptions.WagonControlException;
 
 /**
@@ -15,7 +14,7 @@ public class WagonControl {
     
     public double calcWagonCargoWeight(int numAdults, int numChildren, double supplyWeight, double meatWeight, double waterWeight) throws WagonControlException {
     
-        if (numAdults < 0 || numAdults > 4) {
+        if (numAdults < 0 || numAdults > 3) {
             throw new WagonControlException("Number of adults must be be more than zero and less than five.");
         }
         
