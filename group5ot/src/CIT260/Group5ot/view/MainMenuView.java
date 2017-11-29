@@ -7,11 +7,14 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
 import CIT260.Group5ot.control.MapControl;
+import CIT260.Group5ot.exceptions.GameControlException;
 import group5ot.Group5ot;
 import java.util.Scanner;
 import CIT260.Group5ot.model.Character;
 import CIT260.Group5ot.model.InventoryItem;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -47,8 +50,14 @@ public class MainMenuView extends View {
         choice = choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-            case "B": // create and start new game
-                this.startNewGame();
+            case "B": {
+            try {
+                // create and start new game
+              this.startNewGame();
+            } catch (GameControlException ex) {
+                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case "L": // get and start an existing game
                 this.startExistingGame();
@@ -76,7 +85,7 @@ public class MainMenuView extends View {
         return false;
     }    
 
-    private void startNewGame() {
+    private void startNewGame() throws GameControlException {
          
        
         // create a new game

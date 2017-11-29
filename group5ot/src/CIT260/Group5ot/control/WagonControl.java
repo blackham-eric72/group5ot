@@ -13,7 +13,7 @@ import CIT260.Group5ot.exceptions.WagonControlException;
  */
 public class WagonControl {
     
-    double calcWagonCargoWeight(long numAdults, long numChildren, double supplyWeight, double meatWeight, double waterWeight) throws WagonControlException {
+    public double calcWagonCargoWeight(int numAdults, int numChildren, double supplyWeight, double meatWeight, double waterWeight) throws WagonControlException {
     
         if (numAdults < 0 || numAdults > 4) {
             throw new WagonControlException("Number of adults must be be more than zero and less than five.");

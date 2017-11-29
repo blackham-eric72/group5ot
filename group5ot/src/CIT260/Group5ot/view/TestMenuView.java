@@ -38,6 +38,7 @@ public class TestMenuView extends View {
                         + "\n|*| E    - Eating View               |*|"
                         + "\n|*| R    - Rest View                 |*|"
                         + "\n|*| CH   - calculate health          |*|"
+                        + "\n|*| W    - Test Wagon Cargo Weight   |*|"
                         + "\n|*| Q    - Quit to Main Menu         |*|"
                         + "\n|*| -----------------------------------");
         }
@@ -90,6 +91,9 @@ public class TestMenuView extends View {
                 break;
                 case "CH": // rest view
                 this.displayCalculateHealth();
+                break;
+            case "W":  // test calcWagonCargoWeight()
+                this.displayWagonWeightView();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -185,6 +189,12 @@ public class TestMenuView extends View {
         HealthControl health = new HealthControl();
         
         health.calcAverageHealth();
+    }
+
+    private void displayWagonWeightView() {
+        WagonWeightView wagonWeight = new WagonWeightView();
+        
+        wagonWeight.display();
     }
     
 }
