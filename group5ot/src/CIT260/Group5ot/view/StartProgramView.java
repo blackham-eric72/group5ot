@@ -7,7 +7,12 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
 import CIT260.Group5ot.model.Player;
-import java.util.Scanner;
+import group5ot.Group5ot;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,6 +21,8 @@ import java.util.Scanner;
 public class StartProgramView {
          
         private String promptMessage;
+        protected final BufferedReader keyboard = Group5ot.getInFile();
+        protected final PrintWriter console = Group5ot.getOutFile();
         
         public StartProgramView(){
             
@@ -39,7 +46,7 @@ public class StartProgramView {
                 + "\n|*| will betasked with the job of purchasing       |*|"
                 + "\n|*| supplies for yourteam and making decisions     |*|"
                 + "\n|*| aboutyour travels. Throughout the journey you  |*|"
-                + "\n|*| will be set upon by many challenges; some    |*|"
+                + "\n|*| will be set upon by many challenges; some      |*|"
                 + "\n|*| from your team will not make it.               |*|"
                 + "\n|*|------------------------------------------------|*|" 
             );
@@ -63,14 +70,16 @@ public class StartProgramView {
 
     private String getPlayersName() {
         
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; //initilaize to not valid
         
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
+        while (!valid) { try {
+            // loop while an invalid value is entered
             
-            value = keyboard.nextLine(); // get next line typed on keyboard 
+            value = this.keyboard.readLine(); // get next line typed on keyboard 
+            } catch (IOException ex) {
+                Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim(); //trim off leading and trailing blanks
             
             if (value.length() < 1) { //value is blank
@@ -87,22 +96,7 @@ public class StartProgramView {
         
         
         
-        /*WHILE a valid value has not been entered
-            DISPLAY a message prompting the user to enter a value
-            GET the value entered from keyboard
-            Trim front and trailing blanks off of the value
-        
-            IF the length of the value is blank THEN
-                DISPLAY “Invalid value: The value cannot be blank”
-                CONTINUE
-            ENDIF
-        
-            BREAK
-        
-        ENDWHILE
-        RETURN value
-*/
-    
+ 
 
     private boolean doAction(String playersName) {
         

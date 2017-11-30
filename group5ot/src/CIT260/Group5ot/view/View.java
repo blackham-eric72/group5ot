@@ -5,7 +5,12 @@
  */
 package CIT260.Group5ot.view;
 
-import java.util.Scanner;
+import group5ot.Group5ot;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -13,6 +18,9 @@ import java.util.Scanner;
  */
 public abstract class View implements ViewInterface{
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = Group5ot.getInFile();
+    protected final PrintWriter console = Group5ot.getOutFile();
     
     public View() {
         
@@ -39,14 +47,18 @@ public abstract class View implements ViewInterface{
     }
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
+         //get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; //initilaize to not valid
         
         while (!valid) { // loop while an invalid value is entered
             System.out.println("\n" + this.displayMessage);
             
-            value = keyboard.nextLine(); // get next line typed on keyboard 
+            try {
+                value = this.keyboard.readLine(); // get next line typed on keyboard 
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim(); //trim off leading and trailing blanks
             
             if (value.length() < 1) { //value is blank
