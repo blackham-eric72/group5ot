@@ -36,50 +36,6 @@ public class GameMenuView extends View {
                     + "\n-------------------------------------");
         }
    
-//    Moved to "View.java" class  
-//    public void displayGameMenuView() {
-//       
-//        boolean done = false; // set flag to not done
-//        do {
-//            // prompt for and get players name
-//            String menuOption = this.getMenuOption();
-//            if (menuOption.toUpperCase().equals("X")) // user wants to quit
-//                return; // exit the game
-//            
-//            // do the requested action and display the next view
-//            done = this.doAction(menuOption);
-//            
-//        } while (!done);
-//        
-//    }
-//
-//    private String getMenuOption() {
-//        
-//        this.promptMessage ="\n" + menu;
-//               
-//        
-//        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-//        String value = ""; // value to be returned
-//        boolean valid = false; //initilaize to not valid
-//        
-//        while (!valid) { // loop while an invalid value is entered
-//            System.out.println("\n" + this.promptMessage);
-//            
-//            value = keyboard.nextLine(); // get next line typed on keyboard 
-//            value = value.toUpperCase().trim(); //convert to uppercase and trim off leading and trailing blanks
-//            
-//            if ("C".equals(value) || "M".equals(value) || "I".equals(value) || "H".equals(value) || "V".equals(value) || "S".equals(value) || "X".equals(value) ) { //value is blank
-//               break; 
-//            }
-//            else {
-//                 System.out.println("\nInvalid value: Must input C, M, I, H, V, S, or X");
-//            }
-//                    
-//        }
-//        
-//        return value; // return the value entered
-//    }
-
     @Override
     public boolean doAction(String choice) {
         

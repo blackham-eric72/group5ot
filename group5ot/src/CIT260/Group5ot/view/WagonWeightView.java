@@ -7,8 +7,11 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.WagonControl;
 import CIT260.Group5ot.exceptions.WagonControlException;
+import group5ot.Group5ot;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import static java.lang.Integer.parseInt;
-import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,6 +22,8 @@ import java.util.logging.Logger;
  */
 public class WagonWeightView extends View{
     private String displayMessage;
+    protected final BufferedReader keyboard = Group5ot.getInFile();
+    protected final PrintWriter console = Group5ot.getOutFile();
     
         public WagonWeightView() {
     
@@ -55,13 +60,15 @@ public class WagonWeightView extends View{
 
     private void WagonWeightCalc() throws WagonControlException  {
         WagonControl calcWagonCargoWeight = new WagonControl();
-        
-        
-            Scanner numAdults = new Scanner(System.in);
-        
+              
             System.out.println("Enter the number of adults");
             
-            String adultStr = numAdults.nextLine();
+            String adultStr = null;
+        try {
+            adultStr = this.keyboard.readLine();
+        } catch (IOException ex) {
+            Logger.getLogger(WagonWeightView.class.getName()).log(Level.SEVERE, null, ex);
+        }
             int adults = 0;
             try {
                 adults = parseInt(adultStr);
@@ -69,12 +76,14 @@ public class WagonWeightView extends View{
                 System.out.println("Please enter a valid number. Adults must be 1 or 2.");
             }
         
-            
-            //Scanner numChildren = new Scanner(System.in);
-            
             System.out.println("Enter the number of children");
             
-            String childrenStr = numAdults.nextLine();
+            String childrenStr = null;
+        try {
+            childrenStr = keyboard.readLine();
+        } catch (IOException ex) {
+            Logger.getLogger(WagonWeightView.class.getName()).log(Level.SEVERE, null, ex);
+        }
             int children = 0;
             try {
                 children = parseInt(childrenStr);
