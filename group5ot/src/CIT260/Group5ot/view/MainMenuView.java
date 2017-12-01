@@ -7,6 +7,7 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
 import CIT260.Group5ot.control.MapControl;
+import CIT260.Group5ot.exceptions.GameControlException;
 import group5ot.Group5ot;
 import java.util.Scanner;
 import CIT260.Group5ot.model.Character;
@@ -48,7 +49,10 @@ public class MainMenuView extends View {
         
         switch (choice) {
             case "B": // create and start new game
-                this.startNewGame();
+               try{ this.startNewGame();}
+                catch (GameControlException ex){
+                    System.out.println("I guess there was an error");
+                }
                 break;
             case "L": // get and start an existing game
                 this.startExistingGame();
@@ -73,10 +77,10 @@ public class MainMenuView extends View {
                 break;
         }
         
-        return false;
+         return false;
     }    
 
-    private void startNewGame() {
+    private void startNewGame() throws GameControlException {
          
        
         // create a new game
