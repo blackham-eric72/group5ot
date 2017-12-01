@@ -4,7 +4,7 @@ import CIT260.Group5ot.enums.ShoppingListEnum;
 import CIT260.Group5ot.exceptions.ShoppingControlException;
 import CIT260.Group5ot.model.ShoppingList;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 /**
  *
