@@ -24,6 +24,7 @@ public class StartProgramView {
         protected final BufferedReader keyboard = Group5ot.getInFile();
         protected final PrintWriter console = Group5ot.getOutFile();
         
+        
         public StartProgramView(){
             
             this.promptMessage = "\nPlease enter your name: ";
@@ -100,21 +101,6 @@ public class StartProgramView {
 
     private boolean doAction(String playersName) {
         
-        
-        /*
-        if the length of the playersName < 2 then
-            display “Invalid name: The name must be > 1 character”
-            return false
-        
-        create Player with specified name
-        if unsuccessful then
-            display “Invalid name: The name is too short”
-            return false
-        
-        display customized welcome message
-        display mainMenuView
-        return true
-        */
         if  (playersName.length() < 2) {
             this.console.println("\nInvalid players name: "
                     + "The name must be greater than one character in length");

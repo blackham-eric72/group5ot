@@ -13,7 +13,9 @@ import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Player;
 import CIT260.Group5ot.model.Character;
 import java.awt.Point;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
@@ -172,6 +174,19 @@ public class GameControl {
             output.writeObject(game);
         }
         catch(Exception e){
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
+    public static void getSavedGame(String filepath) throws GameControlException {
+        Game game = null;
+        
+        try( FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+            
+        } catch(Exception e) {
             throw new GameControlException(e.getMessage());
         }
     }

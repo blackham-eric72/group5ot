@@ -1,10 +1,11 @@
 package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.ShoppingControl;
-import java.util.Scanner;
+//import java.util.Scanner;
 import CIT260.Group5ot.enums.ShoppingListEnum;
 import CIT260.Group5ot.exceptions.ShoppingControlException;
 import CIT260.Group5ot.model.ShoppingList;
+import java.io.IOException;
 import group5ot.Group5ot;
 import java.io.PrintWriter;
 import static java.lang.Integer.parseInt;
@@ -46,8 +47,12 @@ public class BuySuppliesView extends View {
             switch (choice) {      
                 case "S": {
                 try {
-                    // display buy supplies menu
-                    this.orderTotalCalculation();
+                    try {
+                        // display buy supplies menu
+                        this.orderTotalCalculation();
+                    } catch (IOException ex) {
+                        System.out.println("I dont know what I am doing here");
+                    }
                 } catch (ShoppingControlException ex) {
                     Logger.getLogger(BuySuppliesView.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -65,7 +70,7 @@ public class BuySuppliesView extends View {
      }
         
         
-     public void orderTotalCalculation() throws ShoppingControlException {
+     public void orderTotalCalculation() throws ShoppingControlException, IOException {
         ShoppingControl createListFunction = new ShoppingControl(); 
                 
             //get purchase choices from user
@@ -83,14 +88,15 @@ public class BuySuppliesView extends View {
             ); 
 
         //get food quantity
-        Scanner food = new Scanner(System.in);
+        String food = null;
+         food = this.keyboard.readLine();
 
         this.console.println("Enter desired pounds of food. (0 if no food is needed)");
 
         //create memory location for food ,set to 0, try to create int from input, catch exception.
         int foodQuantity = 0;
         try {
-            foodQuantity = parseInt(food.next());
+            foodQuantity = parseInt(food);
         } catch (NumberFormatException nf) {
             this.console.println("Please enter a valid number."
                     + "\n Try again or enter Q to quit.");
@@ -98,14 +104,16 @@ public class BuySuppliesView extends View {
         
         
         //get Ox quantity
-        Scanner ox = new Scanner(System.in);
+        //Scanner ox = new Scanner(System.in);
+        String ox = null;
+        ox = this.keyboard.readLine();
 
         this.console.println("Enter desired number of oxen. (0 if no oxen are needed)");
 
         //create memory location for ox
         int oxQuantity = 0;
         try {
-            oxQuantity = parseInt(ox.next());
+            oxQuantity = parseInt(ox);
         } catch (NumberFormatException nf) {
             this.console.println("Please enter a valid number."
                     + "\n Try again or enter Q to quit.");
@@ -113,14 +121,17 @@ public class BuySuppliesView extends View {
         
         
         //get Ammo quantity
-        Scanner ammo = new Scanner(System.in);
+        //Scanner ammo = new Scanner(System.in);
+        String ammo = null;
+        ammo = this.keyboard.readLine();
+        
 
         this.console.println("Enter desired number of rounds of ammo. (0 if no ammo is needed)");
 
         //create memory location for ammo
         int ammoQuantity = 0;
         try {
-            ammoQuantity = parseInt(ammo.next());
+            ammoQuantity = parseInt(ammo);
         } catch (NumberFormatException nf) {
             this.console.println("Please enter a valid number."
                     + "\n Try again or enter Q to quit.");
@@ -128,14 +139,16 @@ public class BuySuppliesView extends View {
         
         
         //get medicine quantity
-        Scanner medicine = new Scanner(System.in);
+        //Scanner medicine = new Scanner(System.in);
+        String medicine = null;
+        medicine = this.keyboard.readLine();
 
         this.console.println("Enter desired number of doses of medicine. (0 if no medicine is needed)");
 
         //create memory location for ammo
         int medicineQuantity = 0;
         try {
-            medicineQuantity = parseInt(medicine.next());
+            medicineQuantity = parseInt(medicine);
         } catch (NumberFormatException nf) {
             this.console.println("Please enter a valid number."
                     + "\n Try again or enter Q to quit.");

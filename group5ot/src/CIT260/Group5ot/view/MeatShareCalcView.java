@@ -7,7 +7,9 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.MeatShareControl;
 import CIT260.Group5ot.exceptions.MeatShareException;
-import java.util.Scanner;
+import java.io.IOException;
+import static java.lang.Double.parseDouble;
+//import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,41 +30,48 @@ public class MeatShareCalcView extends View {
 
     }
 
-    public void MeatShareCalculation() throws MeatShareException{
+    public void MeatShareCalculation() throws MeatShareException, IOException{
         //Here I am going to bring in the CalcBarrel Function
         // Declares the variable and assigns a new object.
         MeatShareControl calcWeightShares = new MeatShareControl(); 
         //get weight from user
-        this.console.println(
+        System.out.println(
                           "Weight of meat: 150 lbs."
                         + "\n Number of Children: 3"
                         + "\n Number of Adults: 2"
         );
 
-        this.console.println("Please enter the weight of meat:");
+        System.out.println("Please enter the weight of meat:");
 
-        Scanner inputWeight = new Scanner(System.in);
+        //Scanner inputWeight = new Scanner(System.in);
+        String inputWeight = null;
+        inputWeight = this.keyboard.readLine();
+        
         //store it in a variable called weight
-        double weight = inputWeight.nextDouble();
-        this.console.println("You entered " + weight);
+        double weight = parseDouble(inputWeight);
+        System.out.println("You entered " + weight);
 
         //get number of children from user
-        this.console.println("Please enter the number of children:");
+        System.out.println("Please enter the number of children:");
 
-        Scanner inputChildren = new Scanner(System.in);
-        double children = inputChildren.nextDouble();
+        //Scanner inputChildren = new Scanner(System.in);
+        String inputChildren = null;
+        inputChildren = this.keyboard.readLine();
+        double children = parseDouble(inputChildren);
 
-        this.console.println("You entered " + children +" children.");
+        System.out.println("You entered " + children +" children.");
 
         //get number of adults from user
-        this.console.println("Please enter the number of adults:");
-        Scanner inputAdults = new Scanner(System.in);
-        double adults = inputAdults.nextDouble();
+        System.out.println("Please enter the number of adults:");
+        //Scanner inputAdults = new Scanner(System.in);
+        String inputAdults = null;
+        inputAdults = this.keyboard.readLine();
+        double adults = parseDouble(inputAdults);
 
-        this.console.println("You entered " + adults +" adults.");
+        System.out.println("You entered " + adults +" adults.");
 
         double weightPerShare = calcWeightShares.calcShares(weight, adults, children);
-        this.console.println(
+        System.out.println(
                           "\n||********          Calculate shares of meat           ********||"
                         + "\n|| In order to proceed to the next step, you must first        ||"
                         + "\n|| determine how much a share of meat from your hunt weighs.   ||"
@@ -73,19 +82,21 @@ public class MeatShareCalcView extends View {
                         + "\n|| of adults times 2. Then you will divide the weight by the   ||"
                         + "\n|| the number of shares. Your answer should be to 2 decimal    ||"
                         + "points. Good luck!                                               ||");
-        Scanner userAnswer = new Scanner(System.in);
-        double answer = userAnswer.nextDouble();
+        //Scanner userAnswer = new Scanner(System.in);
+        String userAnswer = null;
+        userAnswer = this.keyboard.readLine();
+        double answer = parseDouble(userAnswer);
 
-        this.console.println("\nYou entered " + answer);
-        this.console.println("\nThe correct answer was " + weightPerShare);
+        System.out.println("\nYou entered " + answer);
+        System.out.println("\nThe correct answer was " + weightPerShare);
 
         if (answer == weightPerShare) {
-            this.console.println("\nThat is Correct, please proceed");
+            System.out.println("\nThat is Correct, please proceed");
             //go back to the checkpoint menu
             this.nextView();
 
         }
-        else{ this.console.println("\nFailure. Please try again");
+        else{ System.out.println("\nFailure. Please try again");
             //player must start again from the beginning
             this.MeatShareCalculation();
         }
@@ -98,20 +109,23 @@ public class MeatShareCalcView extends View {
 
         if ("C".equals(choice)) {
             try {
-                this.MeatShareCalculation();
+                try {
+                    this.MeatShareCalculation();
+                } catch (IOException ex) {
+                 System.out.println("OH SNAP, CRACKLE, AND POPPPPPPP!!!!");
+                }
             } catch (MeatShareException ex) {
-                ErrorView.display(this.getClass().getName(),"Error reading input: " + ex.getMessage());
-
+                System.out.println(ex.getMessage());
             }
         }    
         else{
-            this.console.println("\n*** Invalid selection *** Try again");
+            System.out.println("\n*** Invalid selection *** Try again");
         }
             return false;
     }
 
     private void nextView() {
-        this.console.println("\n*** Chuck Norris has a vacation home on the sun. Brought to you by the NextView().");
+        System.out.println("\n*** Chuck Norris has a vacation home on the sun. Brought to you by the NextView().");
     }
 
 }

@@ -53,7 +53,7 @@ public class Group5ot {
     private static PrintWriter logFile = null;
 
    
-    public void main(String[] args) {
+    public static void main(String[] args) {
         
         try {
         
@@ -72,7 +72,7 @@ public class Group5ot {
             return;
             
         } catch (Throwable te) {
-            ErrorView.display(this.getClass().getName(),"Error reading input: " + te.getMessage());
+            ErrorView.display(te.getClass().getName(),"Error reading input: " + te.getMessage());
 
             te.printStackTrace();
            

@@ -2,10 +2,12 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.BarrelVolumeControl;
 import CIT260.Group5ot.exceptions.BarrelVolumeCalcException;
+import java.io.IOException;
+import static java.lang.Double.parseDouble;
 import group5ot.Group5ot;
 import java.io.PrintWriter;
 import static java.lang.Integer.parseInt;
-import java.util.Scanner;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static jdk.nashorn.internal.objects.NativeMath.round;
@@ -36,7 +38,7 @@ public BarrelVolumeCalcView(){
 
 
 
-public void barrelVolumeCalculation() throws BarrelVolumeCalcException{
+public void barrelVolumeCalculation() throws BarrelVolumeCalcException, IOException{
 //Here I am going to bring in the CalcBarrel Function
 // Declares the variable and assigns a new object.
 BarrelVolumeControl calcBarrelFunction = new BarrelVolumeControl(); 
@@ -55,15 +57,19 @@ this.console.println(
                 + "\n(((((((((((())))))))))))"
 );
 
-this.console.println("please enter the height of the barrel:");
-
-Scanner inputHeight = new Scanner(System.in);
+System.out.println("please enter the height of the barrel:");
+String inputHeight = null;
+        try {
+            inputHeight = this.keyboard.readLine();
+        } catch (IOException ex) {
+            this.console.println("something went wrong");
+        }
 //store it in a variable called height
 double height = 0;
 double radius = 0;
 
  try {
-            height = parseInt(inputHeight.next());
+            height = parseDouble(inputHeight);
         } catch (NumberFormatException nf) {
             this.console.println(
                       "\n************************************************************************"
@@ -76,10 +82,11 @@ double radius = 0;
 
 this.console.println("You entered " + height);
 //get radius from user
-this.console.println("please enter the radius of the barrel:");
-Scanner inputRadius = new Scanner(System.in);
+System.out.println("please enter the radius of the barrel:");
+String inputRadius = null;
+        inputRadius = this.keyboard.readLine();
  try {
-            radius = parseInt(inputRadius.next());
+            radius = parseDouble(inputRadius);
         } catch (NumberFormatException nf) {
             this.console.println(
                       "\n************************************************************************"
@@ -103,8 +110,13 @@ this.console.println(
                 + "\n|| According to the Formula, V = PI * (r*r) * h, what is the   ||"
                 + "\n|| volume of the barrel in inches? (round to 2 decimal places) ||"
                 + "\n|| hint: Assume PI = 3.14                                      ||");
-Scanner userAnswer = new Scanner(System.in);
-double answer = userAnswer.nextDouble();
+
+
+//Scanner userAnswer = new Scanner(System.in);
+String userAnswer = null;
+userAnswer = this.keyboard.readLine();
+      
+double answer = parseDouble(userAnswer);
 
 this.console.println("\nYou entered " + answer);
 this.console.println("\nThe correct answer was " + barrelVolume);
@@ -128,8 +140,12 @@ public boolean doAction(String choice) {
         switch (choice) {
             case "P": {
             try {
-                // Display Map
-                this.barrelVolumeCalculation();
+                try {
+                    // Display Map
+                    this.barrelVolumeCalculation();
+                } catch (IOException ex) {
+                    System.out.println("you done messed up A-Aron");
+                }
             } catch (BarrelVolumeCalcException ex) {
                ErrorView.display(this.getClass().getName(),"Error reading input: " + ex.getMessage());
             }

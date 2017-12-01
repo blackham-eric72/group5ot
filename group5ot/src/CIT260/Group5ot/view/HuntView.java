@@ -6,9 +6,11 @@
 package CIT260.Group5ot.view;
 import CIT260.Group5ot.exceptions.GunControlException;
 import CIT260.Group5ot.control.GunControl;
-import group5ot.Group5ot;
-import java.io.PrintWriter;
-import java.util.Scanner;
+import java.io.IOException;
+import static java.lang.Double.parseDouble;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+//import java.util.Scanner;
 
 /**
  *
@@ -17,7 +19,7 @@ import java.util.Scanner;
  */
 public class HuntView extends View {
 //    private String menu; 
-//    private String promptMessage;    
+//    private String promptMessage;
 
 
     public HuntView(){
@@ -44,34 +46,39 @@ public class HuntView extends View {
         huntSceneView.display();
     }
 
-    public void gunControlTaxCalculation(){
+    public void gunControlTaxCalculation() throws IOException{
         //Here I am going to bring in the gunControl class
         // Declares the variable and assigns a new object.
         GunControl calcGunControl = new GunControl(); 
 
         //get subtotal from user
-        this.console.println(
+        System.out.println(
                               "\nTo shoot, please solve this problem."
                             + "\nHow much were your bullets...before tax?"
         );
-        Scanner inputSubtotal = new Scanner(System.in);
+        //Scanner inputSubtotal = new Scanner(System.in);
+        String inputSubtotal = null;
+        inputSubtotal = this.keyboard.readLine();
 
         //store it in a variable called subtotal
-        double subtotal = inputSubtotal.nextDouble();
-        this.console.println("You entered the cost as: " + subtotal);
+        double subtotal = parseDouble(inputSubtotal);
+        System.out.println("You entered the cost as: " + subtotal);
 
         //get tax from user
-        this.console.println("What was the tax rate, entered as a decimal, when you bought them?, IE: .08 for 8%:");
-        Scanner inputTax = new Scanner(System.in);
-        double tax = inputTax.nextDouble();
+        System.out.println("What was the tax rate, entered as a decimal, when you bought them?, IE: .08 for 8%:");
+        //Scanner inputTax = new Scanner(System.in);
+        String inputTax = null;
+        inputTax = this.keyboard.readLine();
+        
+        double tax = parseDouble(inputTax);
 
-        this.console.println("You entered tax as: " + tax);
+        System.out.println("You entered tax as: " + tax);
 
         try {
             double bulletPrice = calcGunControl.calcTaxProblem(subtotal, tax);
        
         
-            this.console.println(
+            System.out.println(
                               "\n||********   Calculate the price of bullets with tax   ********||"
                             + "\n|| In order to fire the gun, you must first calculate          ||"
                             + "\n|| the price of bullets including tax.                         ||"
@@ -84,25 +91,26 @@ public class HuntView extends View {
                             + "\n\n"
                             + "Now, how much were your bullets plus tax?"
             );
-            Scanner userAnswer = new Scanner(System.in);
-            double answer = userAnswer.nextDouble();
+           // Scanner userAnswer = new Scanner(System.in);
+           String userAnswer = null;
+           userAnswer = this.keyboard.readLine();
+            double answer = parseDouble(userAnswer);
 
-            this.console.println("\nYou entered " + answer);
-            this.console.println("\nThe correct answer was " + bulletPrice);
+            System.out.println("\nYou entered " + answer);
+            System.out.println("\nThe correct answer was " + bulletPrice);
 
             if (answer == bulletPrice) {
-                this.console.println("\nThat is correct, you shot a tatanka!");
+                System.out.println("\nThat is correct, you shot a tatanka!");
                 //go back to the hunting menu
                 this.displayHuntingSceneView();
 
             }
-            else{ this.console.println("\nSorry, please try again");
+            else{ System.out.println("\nSorry, please try again");
                 //player must start again from the beginning
                 this.gunControlTaxCalculation();
             }
         }   catch (GunControlException gc) {
-            ErrorView.display(this.getClass().getName(),"Error reading input: " + gc.getMessage());
-            //this.console.println(gc.getMessage());
+                    System.out.println(gc.getMessage());
         }        
     }
     
@@ -112,14 +120,20 @@ public class HuntView extends View {
             choice = choice.toUpperCase(); // convert choice to upper case
 
             switch (choice) {
-                case "S": // Calculate Tax to shoot gun 
+                case "S": {
+                try {
+                    // Calculate Tax to shoot gun
                     this.gunControlTaxCalculation();
+                } catch (IOException ex) {
+                    System.out.println("I dont know why I am doing this");
+                }
+            }
                     break;
                 case "Q": // return to the previous screen
                     this.displayTestMenu();
                     break;
                 default:
-                    this.console.println("\n*** Invalid selection *** Try again");
+                    System.out.println("\n*** Invalid selection *** Try again");
                     break;
             }
 

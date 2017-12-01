@@ -12,6 +12,7 @@ import group5ot.Group5ot;
 import java.util.Scanner;
 import CIT260.Group5ot.model.Character;
 import CIT260.Group5ot.model.InventoryItem;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +22,8 @@ import java.util.logging.Logger;
  * @author crims
  */
 public class MainMenuView extends View {
+
+    protected final PrintWriter console = Group5ot.getOutFile();
 
     Character ch;
     
@@ -50,14 +53,11 @@ public class MainMenuView extends View {
         choice = choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-            case "B": {
-            try {
-                // create and start new game
-              this.startNewGame();
-            } catch (GameControlException ex) {
-                Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+            case "B": // create and start new game
+               try{ this.startNewGame();}
+                catch (GameControlException ex){
+                    ErrorView.display(ex.getClass().getName(), "Error Reading input: " + ex.getMessage());
+                }
                 break;
             case "L": // get and start an existing game
                 this.startExistingGame();
@@ -82,7 +82,7 @@ public class MainMenuView extends View {
                 break;
         }
         
-        return false;
+         return false;
     }    
 
     private void startNewGame() throws GameControlException {
@@ -99,11 +99,21 @@ public class MainMenuView extends View {
 
         gameControl.createCharacters();
 
-       
     }
 
     private void startExistingGame() {
-        this.console.println("*** startExistingGame() function called ***");
+        this.console.println("\n\nEnter the file path for file where the game"
+                + " is to be saved.");
+        String filePath = this.getInput();
+        
+        try { 
+            GameControl.getSavedGame(filePath);
+        } catch(Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenu() {
