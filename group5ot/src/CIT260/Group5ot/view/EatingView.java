@@ -5,12 +5,15 @@
  */
 package CIT260.Group5ot.view;
 
+import group5ot.Group5ot;
+import java.io.PrintWriter;
+
 /**
  *
  * @author Flores Family
  */
 public class EatingView extends View {
-    
+       
     public EatingView(){
         super ("\n"
                 + "\n|*| ------------------------------------ |*| "       
@@ -36,7 +39,7 @@ public class EatingView extends View {
                 this.displayGameMenuView();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -44,14 +47,14 @@ public class EatingView extends View {
     }
 
     private void eat() {
-        System.out.println("\n"
+        this.console.println("\n"
     + "\nYou ate food. Your supply of food has"
     + "\n decreased and your health has increased.");
         //health control and inventory will change
         }
 
     private void nextView() {
-        System.out.println("\n*** Chuck Norris's bloodtype is AK-47. Brought to you by the NextView().");
+        this.console.println("\n*** Chuck Norris's bloodtype is AK-47. Brought to you by the NextView().");
     }
 
     private void displayGameMenuView() {

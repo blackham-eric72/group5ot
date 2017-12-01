@@ -5,12 +5,19 @@
  */
 package CIT260.Group5ot.view;
 
+import group5ot.Group5ot;
+import java.io.PrintWriter;
+
 /**
  *
  * @author Flores Family
  */
 public class FoodSourceView extends View{
-        public FoodSourceView() {
+    
+    protected final PrintWriter console = Group5ot.getOutFile();    
+
+    
+    public FoodSourceView() {
        super( "\n There might be food you can harvest. "
             + "\n Would you like to stop and look around? "
             + "\n Press Y to look around."
@@ -38,7 +45,7 @@ public class FoodSourceView extends View{
                 this.displayGameMenuView();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -47,7 +54,7 @@ public class FoodSourceView extends View{
 
 
     private void nextView() {
-        System.out.println("\n*** Chuck Norris's tears cure cancer. Too bad he's never cried. Brought to you by the NextView().");
+        this.console.println("\n*** Chuck Norris's tears cure cancer. Too bad he's never cried. Brought to you by the NextView().");
     }
 
     private void displayGameMenuView() {

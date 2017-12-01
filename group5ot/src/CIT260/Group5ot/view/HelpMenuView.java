@@ -7,6 +7,7 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
 import group5ot.Group5ot;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -20,7 +21,7 @@ public class HelpMenuView extends View {
     {*/
      
         private String promptMessage;
-                
+        
 
         public HelpMenuView() {
             super(
@@ -54,7 +55,7 @@ public class HelpMenuView extends View {
                 break;
             
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -63,7 +64,7 @@ public class HelpMenuView extends View {
 
 
     private void displayGameDescription() {
-        System.out.println(
+        this.console.println(
                   "\n|*|------------------------------------------------|*|"
                 + "\n|*| ******         GAME DESCRIPTION           *****|*|"
                 + "\n|*|------------------------------------------------|*|"
@@ -85,7 +86,7 @@ public class HelpMenuView extends View {
     }
 
     private void displayGameRules() {
-        System.out.println(
+        this.console.println(
          "\n|*|-------------------------------------------------|*|"
        + "\n|*| ******         << GAME RULES >>            *****|*|"
        + "\n|*|-------------------------------------------------|*|"

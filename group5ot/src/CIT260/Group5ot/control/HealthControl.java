@@ -8,6 +8,8 @@ package CIT260.Group5ot.control;
 import static CIT260.Group5ot.control.GameControl.createCharacters;
 import CIT260.Group5ot.enums.CharacterType;
 import CIT260.Group5ot.exceptions.HealthControlException;
+import group5ot.Group5ot;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -16,6 +18,8 @@ import java.util.ArrayList;
  */
 public class HealthControl {
     
+    protected final PrintWriter console = Group5ot.getOutFile();    
+
     //calculate the decrease in health
     
     public double calcHealthDecrease(double healthLevel) throws HealthControlException{
@@ -95,10 +99,10 @@ public class HealthControl {
         character.add(4, myrtle);
         character.add(5, traderJoe);
         
-        System.out.println(character.get(0).getHealthLevel());
+        this.console.println(character.get(0).getHealthLevel());
         //Use a for each loop to loop through each character and display their character level        
         for(CIT260.Group5ot.model.Character healthLvl :character){
-         System.out.println( "\nName: " + healthLvl.getName()
+         this.console.println( "\nName: " + healthLvl.getName()
                              + "\n\tHealth Level:" + healthLvl.getHealthLevel());
            }
         
@@ -110,7 +114,7 @@ public class HealthControl {
              sum += healthLvl.getHealthLevel();
            }
          int average = sum / character.size();
-         System.out.println("Average Health Level: " + average);
+         this.console.println("Average Health Level: " + average);
          
         
     }

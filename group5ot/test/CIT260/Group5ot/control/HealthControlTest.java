@@ -6,6 +6,8 @@
 package CIT260.Group5ot.control;
 
 import CIT260.Group5ot.exceptions.HealthControlException;
+import group5ot.Group5ot;
+import java.io.PrintWriter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +19,9 @@ import static org.junit.Assert.*;
  * @author Flores Family
  */
 public class HealthControlTest {
+    
+    protected final PrintWriter console = Group5ot.getOutFile();    
+
     
     public HealthControlTest() {
     }
@@ -40,7 +45,7 @@ public class HealthControlTest {
    
         //Test Case 1
         
-        System.out.println("\t calcHealthDecrease Test case 1");
+        this.console.println("\t calcHealthDecrease Test case 1");
         
         //input variables
         double healthLevel = 55;
@@ -56,7 +61,7 @@ public class HealthControlTest {
         
         //Test Case 2
         
-        System.out.println("\t calcHealthDecrease Test case 2");
+        this.console.println("\t calcHealthDecrease Test case 2");
         
         //input variables
         healthLevel = 101;
@@ -70,7 +75,7 @@ public class HealthControlTest {
         
         //Test Case 3
         
-        System.out.println("\t calcHealthDecrease Test case 3");
+        this.console.println("\t calcHealthDecrease Test case 3");
         
         //input variables
         healthLevel = -5;
@@ -84,7 +89,7 @@ public class HealthControlTest {
         
         //Test Case 4
         
-        System.out.println("\t calcHealthDecrease Test case 4");
+        this.console.println("\t calcHealthDecrease Test case 4");
         
         //input variables
         healthLevel = 100;
@@ -98,7 +103,7 @@ public class HealthControlTest {
         
         //Test Case 5
         
-        System.out.println("\t calcHealthDecrease Test case 5");
+        this.console.println("\t calcHealthDecrease Test case 5");
         
         //input variables
         healthLevel = 1;
@@ -119,7 +124,7 @@ public class HealthControlTest {
     public void testCalcHealthIncrease() throws HealthControlException {
         //Test Case 1
         
-        System.out.println("\t calcHealthIncrease Test case 1");
+        this.console.println("\t calcHealthIncrease Test case 1");
         
         //input variables
         double healthLevel = 55;
@@ -135,7 +140,7 @@ public class HealthControlTest {
         
         //Test Case 2
         
-        System.out.println("\t calcHealthIncrease Test case 2");
+        this.console.println("\t calcHealthIncrease Test case 2");
         
         //input variables
         healthLevel = 101;
@@ -149,7 +154,7 @@ public class HealthControlTest {
         
         //Test Case 3
         
-        System.out.println("\t calcHealthIncrease Test case 3");
+        this.console.println("\t calcHealthIncrease Test case 3");
         
         //input variables
         healthLevel = -5;
@@ -163,7 +168,7 @@ public class HealthControlTest {
         
         //Test Case 4
         
-        System.out.println("\t calcHealthIncrease Test case 4");
+        this.console.println("\t calcHealthIncrease Test case 4");
         
         //input variables
         healthLevel = 100;
@@ -177,7 +182,7 @@ public class HealthControlTest {
         
         //Test Case 5
         
-        System.out.println("\t calcHealthIncrease Test case 5");
+        this.console.println("\t calcHealthIncrease Test case 5");
         
         //input variables
         healthLevel = 1;
@@ -198,7 +203,7 @@ public class HealthControlTest {
         
          //Test Case 1
         
-        System.out.println("\t calcStatus Test case 1");
+        this.console.println("\t calcStatus Test case 1");
         
         double healthLevel = 45;
         
@@ -213,7 +218,7 @@ public class HealthControlTest {
         
          //Test Case 2
         
-        System.out.println("\t calcStatus Test case 2");
+        this.console.println("\t calcStatus Test case 2");
         
         healthLevel = 101;
              
@@ -226,7 +231,7 @@ public class HealthControlTest {
         
         //Test Case 3
         
-        System.out.println("\t calcStatus Test case 3");
+        this.console.println("\t calcStatus Test case 3");
         
         healthLevel = -5;
              
@@ -239,7 +244,7 @@ public class HealthControlTest {
         
         //Test Case 4
         
-        System.out.println("\t calcStatus Test case 4");
+        this.console.println("\t calcStatus Test case 4");
         
         healthLevel = 100;
              
@@ -252,7 +257,7 @@ public class HealthControlTest {
         
         //Test Case 5
         
-        System.out.println("\t calcStatus Test case 5");
+        this.console.println("\t calcStatus Test case 5");
         
         healthLevel = 0;
              
@@ -265,7 +270,7 @@ public class HealthControlTest {
         
         //Test Case 6
         
-        System.out.println("\t calcStatus Test case 5");
+        this.console.println("\t calcStatus Test case 5");
         
         healthLevel = 24;
              

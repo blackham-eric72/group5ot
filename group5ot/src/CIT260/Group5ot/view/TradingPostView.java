@@ -38,7 +38,7 @@ public class TradingPostView extends View{
                 this.displayGameMenuView();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -52,7 +52,7 @@ public class TradingPostView extends View{
     }
 
     private void nextView() {
-        System.out.println("\n*** Chuck Norris has been to Mars. That's why there are no signs of life. Brought to you by the NextView().");
+        this.console.println("\n*** Chuck Norris has been to Mars. That's why there are no signs of life. Brought to you by the NextView().");
     }
 
     private void displayGameMenuView() {

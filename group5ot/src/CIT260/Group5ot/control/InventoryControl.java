@@ -6,14 +6,17 @@
 package CIT260.Group5ot.control;
 import java.util.ArrayList; 
 import CIT260.Group5ot.model.InventoryItem;
+import group5ot.Group5ot;
+import java.io.PrintWriter;
 /**
  *
  * @author erict.blackham
  */
 public class InventoryControl {
     
+    protected final PrintWriter console = Group5ot.getOutFile();    
+    
     public static double addInventoryItem(double itemQuantity){
-        
              
         //make sure there is no negative inventory type:
         if (itemQuantity < 0) {

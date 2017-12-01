@@ -36,7 +36,7 @@ public class HuntingSceneView extends View {
                 this.displayGameMenuView();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -52,7 +52,7 @@ public class HuntingSceneView extends View {
 
 
     private void nextView() {
-        System.out.println("\n*** Chuck Norris doesn't have an esc key on his computer. Brought to you by the NextView().");
+        this.console.println("\n*** Chuck Norris doesn't have an esc key on his computer. Brought to you by the NextView().");
     }
 
     private void displayGameMenuView() {

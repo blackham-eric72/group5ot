@@ -6,7 +6,11 @@
 package CIT260.Group5ot.view;
 import CIT260.Group5ot.exceptions.GunControlException;
 import CIT260.Group5ot.control.GunControl;
-import java.util.Scanner;
+import java.io.IOException;
+import static java.lang.Double.parseDouble;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+//import java.util.Scanner;
 
 /**
  *
@@ -42,7 +46,7 @@ public class HuntView extends View {
         huntSceneView.display();
     }
 
-    public void gunControlTaxCalculation(){
+    public void gunControlTaxCalculation() throws IOException{
         //Here I am going to bring in the gunControl class
         // Declares the variable and assigns a new object.
         GunControl calcGunControl = new GunControl(); 
@@ -52,16 +56,21 @@ public class HuntView extends View {
                               "\nTo shoot, please solve this problem."
                             + "\nHow much were your bullets...before tax?"
         );
-        Scanner inputSubtotal = new Scanner(System.in);
+        //Scanner inputSubtotal = new Scanner(System.in);
+        String inputSubtotal = null;
+        inputSubtotal = this.keyboard.readLine();
 
         //store it in a variable called subtotal
-        double subtotal = inputSubtotal.nextDouble();
+        double subtotal = parseDouble(inputSubtotal);
         System.out.println("You entered the cost as: " + subtotal);
 
         //get tax from user
         System.out.println("What was the tax rate, entered as a decimal, when you bought them?, IE: .08 for 8%:");
-        Scanner inputTax = new Scanner(System.in);
-        double tax = inputTax.nextDouble();
+        //Scanner inputTax = new Scanner(System.in);
+        String inputTax = null;
+        inputTax = this.keyboard.readLine();
+        
+        double tax = parseDouble(inputTax);
 
         System.out.println("You entered tax as: " + tax);
 
@@ -82,8 +91,10 @@ public class HuntView extends View {
                             + "\n\n"
                             + "Now, how much were your bullets plus tax?"
             );
-            Scanner userAnswer = new Scanner(System.in);
-            double answer = userAnswer.nextDouble();
+           // Scanner userAnswer = new Scanner(System.in);
+           String userAnswer = null;
+           userAnswer = this.keyboard.readLine();
+            double answer = parseDouble(userAnswer);
 
             System.out.println("\nYou entered " + answer);
             System.out.println("\nThe correct answer was " + bulletPrice);
@@ -109,8 +120,14 @@ public class HuntView extends View {
             choice = choice.toUpperCase(); // convert choice to upper case
 
             switch (choice) {
-                case "S": // Calculate Tax to shoot gun 
+                case "S": {
+                try {
+                    // Calculate Tax to shoot gun
                     this.gunControlTaxCalculation();
+                } catch (IOException ex) {
+                    System.out.println("I dont know why I am doing this");
+                }
+            }
                     break;
                 case "Q": // return to the previous screen
                     this.displayTestMenu();

@@ -1,6 +1,7 @@
 package CIT260.Group5ot.control;
 
 import CIT260.Group5ot.model.Animal; //Brings in my enum for later array creation.
+import group5ot.Group5ot;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class AnimalHuntedControl {
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
     private static PrintWriter logFile = null;
+    protected final PrintWriter console = Group5ot.getOutFile();
     
     public static ArrayList<Animal> createAnimals(){
         

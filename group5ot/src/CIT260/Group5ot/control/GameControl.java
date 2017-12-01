@@ -1,7 +1,6 @@
 
 package CIT260.Group5ot.control;
 
-import static CIT260.Group5ot.control.MapControl.createMap;
 import CIT260.Group5ot.enums.ItemTypes;
 import CIT260.Group5ot.exceptions.GameControlException;
 import CIT260.Group5ot.model.Barrel;
@@ -14,6 +13,10 @@ import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Player;
 import CIT260.Group5ot.model.Character;
 import java.awt.Point;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
@@ -93,7 +96,7 @@ public class GameControl {
         
        //dgw start
        //dgw not sure why items are passed to createMap???  
-        Map map = createMap(2, 27, items);
+       //Map map = createMap(2, 27, items);
         
 
     }
@@ -163,4 +166,29 @@ public class GameControl {
         
         return inventory;
     } 
+    
+    public static void saveGame(Game game, String filepath) throws GameControlException {
+        try ( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }
+        catch(Exception e){
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
+    public static void getSavedGame(String filepath) throws GameControlException {
+        Game game = null;
+        
+        try( FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+            
+        } catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+    
 }

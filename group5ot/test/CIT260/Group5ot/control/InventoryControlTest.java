@@ -5,6 +5,8 @@
  */
 package CIT260.Group5ot.control;
 
+import group5ot.Group5ot;
+import java.io.PrintWriter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +17,9 @@ import static org.junit.Assert.*;
  * @author erict.blackham
  */
 public class InventoryControlTest {
+    
+    protected final PrintWriter console = Group5ot.getOutFile();    
+
     
     public InventoryControlTest() {
     }
@@ -34,7 +39,7 @@ public class InventoryControlTest {
     public void testAddInventoryItem() {
        //Test Case 1
         
-        System.out.println("\t add inventory test case 1");
+        this.console.println("\t add inventory test case 1");
         
         //input variables
         double itemQuantity =5;
@@ -49,7 +54,7 @@ public class InventoryControlTest {
         
              //Test Case 2
         
-        System.out.println("\t addInventoryItem Test case 2");
+        this.console.println("\t addInventoryItem Test case 2");
         
         //input variables
         itemQuantity = 31;
@@ -62,7 +67,7 @@ public class InventoryControlTest {
         
         //Test Case 3
         
-        System.out.println("\t addInventoryItem Test case 3");
+        this.console.println("\t addInventoryItem Test case 3");
         
         //input variables
         itemQuantity = -16;
@@ -76,7 +81,7 @@ public class InventoryControlTest {
         
     //Test Case 4 (upper boundary)
         
-        System.out.println("\t addInventoryItem Test case 4");
+        this.console.println("\t addInventoryItem Test case 4");
         
         //input variables
         itemQuantity = 29;
@@ -91,7 +96,7 @@ public class InventoryControlTest {
         
         //Test Case 5 (lower boundary)
         
-        System.out.println("\t addInventoryItem Test case 5");
+        this.console.println("\t addInventoryItem Test case 5");
         
         //input variables
         itemQuantity = 0;
@@ -114,7 +119,7 @@ public class InventoryControlTest {
         
         //Test Case 1
         
-        System.out.println("\t decrease inventory test case 1");
+        this.console.println("\t decrease inventory test case 1");
         
         //input variables
         double itemQuantity =5;
@@ -130,7 +135,7 @@ public class InventoryControlTest {
         
              //Test Case 2 (invalid - too high)
         
-        System.out.println("\t decrease inventory Test case 2(invalid)");
+        this.console.println("\t decrease inventory Test case 2(invalid)");
         
         //input variables
         itemQuantity = 38;
@@ -143,7 +148,7 @@ public class InventoryControlTest {
         
         //Test Case 3 invalid - too low
         
-        System.out.println("\t decrease InventoryItem Test case 4 (invalid)");
+        this.console.println("\t decrease InventoryItem Test case 4 (invalid)");
         
         //input variables
         itemQuantity = -30;
@@ -157,7 +162,7 @@ public class InventoryControlTest {
         
     //Test Case 4 (upper boundary)
         
-        System.out.println("\t decrease InventoryItem Test case 4(upper boundary)");
+        this.console.println("\t decrease InventoryItem Test case 4(upper boundary)");
         
         //input variables
         itemQuantity = 30;
@@ -172,7 +177,7 @@ public class InventoryControlTest {
         
         //Test Case 5 (lower boundary)
         
-        System.out.println("\t decrease inventory item Test case 5(lower boundary)");
+        this.console.println("\t decrease inventory item Test case 5(lower boundary)");
         
         //input variables
         itemQuantity = 1;

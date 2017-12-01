@@ -7,16 +7,14 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
 import group5ot.Group5ot;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
  *
  * @author crims
  */
-public class GameMenuView extends View {
-
-    
-    
+public class GameMenuView extends View {  
     /*public class MenuView
     {*/
         private String promptMessage;
@@ -61,7 +59,7 @@ public class GameMenuView extends View {
                 this.displayMainMenuView();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -77,15 +75,15 @@ public class GameMenuView extends View {
     }
 
     private void displayInventoryView() {
-        System.out.println("*** viewInventory() function called ***");    
+        this.console.println("*** viewInventory() function called ***");    
     }
 
     private void displayHealthView() {
-        System.out.println("*** viewHealth() function called ***");    
+        this.console.println("*** viewHealth() function called ***");    
     }
 
     private void saveGameExit() {
-        System.out.println("*** saveGameExit() function called ***");    
+        this.console.println("*** saveGameExit() function called ***");    
     }
 
     private void displayMainMenuView() {
@@ -96,11 +94,11 @@ public class GameMenuView extends View {
     }
 
     void displayMenu() {
-        System.out.println("*** displayMenu() function called ***");    
+        this.console.println("*** displayMenu() function called ***");    
     }
 
     private void returnToGame() {
-        System.out.println("\n*** Chuck Norris' calendar goes straight from March 31st to April 2nd. No one fools Chuck Norris.Brought to you by returnToGame().");
+        this.console.println("\n*** Chuck Norris' calendar goes straight from March 31st to April 2nd. No one fools Chuck Norris.Brought to you by returnToGame().");
     }
 
 }

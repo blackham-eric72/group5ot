@@ -42,14 +42,14 @@ public boolean doAction(String choice) {
                 this.displayPreviousScreen();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
         return false;
  }
  private void displayMap() {
-        System.out.println(// this will become more legit later on in the development process.... hopefully
+        this.console.println(// this will become more legit later on in the development process.... hopefully
                   "                     *** GAME MAP***                    "
                 + "\n|*|-OR-----------------------------------------------|*|"
                 + "\n|*|---ID-------WY---------NB-------------------------|*|"
@@ -58,7 +58,7 @@ public boolean doAction(String choice) {
     }
  
  private void displayPreviousScreen() {
-        System.out.println("Chuck Norris says, 'Welcome back to the test Menu'"); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("Chuck Norris says, 'Welcome back to the test Menu'"); //To change body of generated methods, choose Tools | Templates.
     displayTestMenu();
  }
  private void displayTestMenu(){

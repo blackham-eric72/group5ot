@@ -51,7 +51,7 @@ public class WagonWeightView extends View{
                     this.displayTestMenuView();
                     break;
                 default:
-                   System.out.println("\n*** Invalid selection *** Try Again");
+                   this.console.println("\n*** Invalid selection *** Try Again");
                    break;
         }
             return false;
@@ -61,7 +61,7 @@ public class WagonWeightView extends View{
     private void WagonWeightCalc() throws WagonControlException  {
         WagonControl calcWagonCargoWeight = new WagonControl();
               
-            System.out.println("Enter the number of adults");
+            this.console.println("Enter the number of adults");
             
             String adultStr = null;
         try {
@@ -73,10 +73,10 @@ public class WagonWeightView extends View{
             try {
                 adults = parseInt(adultStr);
             } catch (NumberFormatException nf) {
-                System.out.println("Please enter a valid number. Adults must be 1 or 2.");
+                this.console.println("Please enter a valid number. Adults must be 1 or 2.");
             }
         
-            System.out.println("Enter the number of children");
+            this.console.println("Enter the number of children");
             
             String childrenStr = null;
         try {
@@ -88,7 +88,7 @@ public class WagonWeightView extends View{
             try {
                 children = parseInt(childrenStr);
             } catch (NumberFormatException nf) {
-                System.out.println("Please enter a valid number. Children must be between 1 and 4.");
+                this.console.println("Please enter a valid number. Children must be between 1 and 4.");
             }
         
             double supplyWeight = 382;
@@ -99,7 +99,7 @@ public class WagonWeightView extends View{
     
            
         
-            System.out.println("\n" + "Number of adults: " + adults +" "
+            this.console.println("\n" + "Number of adults: " + adults +" "
                               + "\n" + "Number of children: " + children +" "
                               + "\n" + "Supply weight: " + supplyWeight + " "
                               + "\n" + "Meat weight: " + meatWeight + " "

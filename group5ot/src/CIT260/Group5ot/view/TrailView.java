@@ -36,7 +36,7 @@ public class TrailView extends View {
                 this.displayGameMenuView();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -44,7 +44,7 @@ public class TrailView extends View {
     }    
 
     private void nextView() {
-        System.out.println("\n*** I smell cookies. Brought to you by the NextView().");
+        this.console.println("\n*** I smell cookies. Brought to you by the NextView().");
     }
 
     private void displayGameMenuView() {

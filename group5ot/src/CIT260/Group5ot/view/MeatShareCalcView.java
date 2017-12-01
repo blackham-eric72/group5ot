@@ -7,7 +7,9 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.MeatShareControl;
 import CIT260.Group5ot.exceptions.MeatShareException;
-import java.util.Scanner;
+import java.io.IOException;
+import static java.lang.Double.parseDouble;
+//import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -28,7 +30,7 @@ public class MeatShareCalcView extends View {
 
     }
 
-    public void MeatShareCalculation() throws MeatShareException{
+    public void MeatShareCalculation() throws MeatShareException, IOException{
         //Here I am going to bring in the CalcBarrel Function
         // Declares the variable and assigns a new object.
         MeatShareControl calcWeightShares = new MeatShareControl(); 
@@ -41,23 +43,30 @@ public class MeatShareCalcView extends View {
 
         System.out.println("Please enter the weight of meat:");
 
-        Scanner inputWeight = new Scanner(System.in);
+        //Scanner inputWeight = new Scanner(System.in);
+        String inputWeight = null;
+        inputWeight = this.keyboard.readLine();
+        
         //store it in a variable called weight
-        double weight = inputWeight.nextDouble();
+        double weight = parseDouble(inputWeight);
         System.out.println("You entered " + weight);
 
         //get number of children from user
         System.out.println("Please enter the number of children:");
 
-        Scanner inputChildren = new Scanner(System.in);
-        double children = inputChildren.nextDouble();
+        //Scanner inputChildren = new Scanner(System.in);
+        String inputChildren = null;
+        inputChildren = this.keyboard.readLine();
+        double children = parseDouble(inputChildren);
 
         System.out.println("You entered " + children +" children.");
 
         //get number of adults from user
         System.out.println("Please enter the number of adults:");
-        Scanner inputAdults = new Scanner(System.in);
-        double adults = inputAdults.nextDouble();
+        //Scanner inputAdults = new Scanner(System.in);
+        String inputAdults = null;
+        inputAdults = this.keyboard.readLine();
+        double adults = parseDouble(inputAdults);
 
         System.out.println("You entered " + adults +" adults.");
 
@@ -73,8 +82,10 @@ public class MeatShareCalcView extends View {
                         + "\n|| of adults times 2. Then you will divide the weight by the   ||"
                         + "\n|| the number of shares. Your answer should be to 2 decimal    ||"
                         + "points. Good luck!                                               ||");
-        Scanner userAnswer = new Scanner(System.in);
-        double answer = userAnswer.nextDouble();
+        //Scanner userAnswer = new Scanner(System.in);
+        String userAnswer = null;
+        userAnswer = this.keyboard.readLine();
+        double answer = parseDouble(userAnswer);
 
         System.out.println("\nYou entered " + answer);
         System.out.println("\nThe correct answer was " + weightPerShare);
@@ -98,7 +109,11 @@ public class MeatShareCalcView extends View {
 
         if ("C".equals(choice)) {
             try {
-                this.MeatShareCalculation();
+                try {
+                    this.MeatShareCalculation();
+                } catch (IOException ex) {
+                 System.out.println("OH SNAP, CRACKLE, AND POPPPPPPP!!!!");
+                }
             } catch (MeatShareException ex) {
                 System.out.println(ex.getMessage());
             }
