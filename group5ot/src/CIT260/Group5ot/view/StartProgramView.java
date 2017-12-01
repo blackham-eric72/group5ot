@@ -22,96 +22,71 @@ import java.util.Scanner;
  */
 public class StartProgramView {
          
-        private String promptMessage;
-        protected final BufferedReader keyboard = Group5ot.getInFile();
-        protected final PrintWriter console = Group5ot.getOutFile();
-        
-        
-        public StartProgramView(){
-            
-            this.promptMessage = "\nPlease enter your name: ";
-            // display the banner when view is created
-            this.displayBanner();         
-        }
+    protected final String promptMessage;
+    protected final BufferedReader keyboard = Group5ot.getInFile();
+    protected final PrintWriter console = Group5ot.getOutFile();
 
-        public void displayBanner() {        
-        
-            this.console.println(
-                  "\n|*|------------------------------------------------|*|"
-                + "\n|*|   It is 1848 and you are preparing to set off  |*|"
-                + "\n|*| on a journey along the Oregon trail. The trail |*|"
-                + "\n|*| will be treacherous, but a land of promise and |*|"
-                + "\n|*| opportunity awaits. You must make it to Oregon |*|"
-                + "\n|*| by October 31 or winter weather will overwhelm |*|"
-                + "\n|*| you.                                           |*|"
-                + "\n|*|                                                |*|"
-                + "\n|*|    You are the wagon leader for your team and  |*|"
-                + "\n|*| will betasked with the job of purchasing       |*|"
-                + "\n|*| supplies for yourteam and making decisions     |*|"
-                + "\n|*| aboutyour travels. Throughout the journey you  |*|"
-                + "\n|*| will be set upon by many challenges; some      |*|"
-                + "\n|*| from your team will not make it.               |*|"
-                + "\n|*|------------------------------------------------|*|" 
-            );
-        }
 
-        public void displayStartProgramView() {
-                       
-            boolean done = false;
-            do {
-                // Prompt for and get the input value
-                String playersName = this.getPlayersName();
-                if (playersName.toUpperCase().equals("Q"))
-                    return;
-                
-                done = this.doAction(playersName);
-                
-            } while (!done);
-            
-            
-        }
+    public StartProgramView(){
 
-//    private String getPlayersName() {
-//        
-//        String value = ""; // value to be returned
-//        boolean valid = false; //initilaize to not valid
-//        
-//        while (!valid) { try {
-//            // loop while an invalid value is entered
-//            
-//            value = this.keyboard.readLine(); // get next line typed on keyboard 
-//            } catch (IOException ex) {
-//                Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            value = value.trim(); //trim off leading and trailing blanks
-//            
-//            if (value.length() < 1) { //value is blank
-//                this.console.println("\nInvalid value: value cannot be blank");
-//                continue;
-//            }
-//            
-//            break; //end the loop
-//        }
-//        
-//        return value; // return the value entered
-//    }
-        
-        
-//The code above did not prompt the user for his/her name, so it was removed last minute...it's almost 10pm.         
+        this.promptMessage = "\nPlease enter your name: ";
+        // display the banner when view is created
+        this.displayBanner();         
+    }
+
+    public void displayBanner() {        
+
+        this.console.println(
+              "\n|*|------------------------------------------------|*|"
+            + "\n|*|   It is 1848 and you are preparing to set off  |*|"
+            + "\n|*| on a journey along the Oregon trail. The trail |*|"
+            + "\n|*| will be treacherous, but a land of promise and |*|"
+            + "\n|*| opportunity awaits. You must make it to Oregon |*|"
+            + "\n|*| by October 31 or winter weather will overwhelm |*|"
+            + "\n|*| you.                                           |*|"
+            + "\n|*|                                                |*|"
+            + "\n|*|    You are the wagon leader for your team and  |*|"
+            + "\n|*| will betasked with the job of purchasing       |*|"
+            + "\n|*| supplies for yourteam and making decisions     |*|"
+            + "\n|*| aboutyour travels. Throughout the journey you  |*|"
+            + "\n|*| will be set upon by many challenges; some      |*|"
+            + "\n|*| from your team will not make it.               |*|"
+            + "\n|*|------------------------------------------------|*|" 
+            + "\n" + promptMessage
+        );
+    }
+
+    public void displayStartProgramView() {
+
+        boolean done = false;
+        do {
+            // Prompt for and get the input value
+            String playersName = this.getPlayersName();
+            if (playersName.toUpperCase().equals("Q"))
+                return;
+
+            done = this.doAction(playersName);
+
+        } while (!done);
+
+    }
+
     private String getPlayersName() {
         
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; //initilaize to not valid
         
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
+        while (!valid) { try {
+            // loop while an invalid value is entered
             
-            value = keyboard.nextLine(); // get next line typed on keyboard 
+            value = this.keyboard.readLine(); // get next line typed on keyboard 
+            } catch (IOException ex) {
+                Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim(); //trim off leading and trailing blanks
             
             if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
+                this.console.println("\nInvalid value: value cannot be blank");
                 continue;
             }
             
@@ -119,10 +94,8 @@ public class StartProgramView {
         }
         
         return value; // return the value entered
-    }   
+    }
         
-        
- 
 
     private boolean doAction(String playersName) {
         

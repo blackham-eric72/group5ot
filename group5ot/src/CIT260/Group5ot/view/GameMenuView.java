@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class GameMenuView extends View {  
     /*public class MenuView
     {*/
-        private String promptMessage;
+//        private String promptMessage;
                 
 
         public GameMenuView() {
