@@ -96,7 +96,7 @@ public class TestMenuView extends View {
                 this.displayWagonWeightView();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -104,8 +104,8 @@ public class TestMenuView extends View {
     }    
 
     private void displayAnimalsArrayTest() {
-//        System.out.println("*** displayAnimalsArrayTest() function called ***");
-        System.out.println(AnimalHuntedControl.createAnimals());
+//        this.console.println("*** displayAnimalsArrayTest() function called ***");
+        this.console.println(AnimalHuntedControl.createAnimals());
     }   
 
     private void displayHuntView() {
@@ -122,7 +122,7 @@ public class TestMenuView extends View {
         gameMenuView.display();
     }
     private void saveGame() {
-        System.out.println("*** saveGame() function called ***");
+        this.console.println("*** saveGame() function called ***");
     }
     //go to the map view
     private void displayMapView() {

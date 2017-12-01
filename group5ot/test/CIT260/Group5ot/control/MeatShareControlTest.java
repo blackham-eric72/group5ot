@@ -6,6 +6,8 @@
 package CIT260.Group5ot.control;
 
 import CIT260.Group5ot.exceptions.MeatShareException;
+import group5ot.Group5ot;
+import java.io.PrintWriter;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -15,6 +17,8 @@ import static org.junit.Assert.*;
  */
 public class MeatShareControlTest {
     
+    protected final PrintWriter console = Group5ot.getOutFile();    
+
     public MeatShareControlTest() {
     }
 
@@ -23,7 +27,7 @@ public class MeatShareControlTest {
         
         //Test Case 1
         
-        System.out.println("\tTest case 1");
+        this.console.println("\tTest case 1");
         
         //input variables
         double meatWeight = 150.00;
@@ -41,7 +45,7 @@ public class MeatShareControlTest {
         
         //Test Case 2
                 
-        System.out.println("\tTest case 2");
+        this.console.println("\tTest case 2");
         
         //input variables
         meatWeight = -1.00;
@@ -57,7 +61,7 @@ public class MeatShareControlTest {
         
         //Test Case 3
                 
-        System.out.println("\tTest case 3");
+        this.console.println("\tTest case 3");
         
         //input variables
         meatWeight = 150.00;
@@ -73,7 +77,7 @@ public class MeatShareControlTest {
         
         //Test Case 4
                 
-        System.out.println("\tTest case 4");
+        this.console.println("\tTest case 4");
         
         //input variables
         meatWeight = 150.00;
@@ -89,7 +93,7 @@ public class MeatShareControlTest {
         
         //Test Case 5
                 
-        System.out.println("\tTest case 5");
+        this.console.println("\tTest case 5");
         
         //input variables
         meatWeight = 150.00;
@@ -105,7 +109,7 @@ public class MeatShareControlTest {
                 
         //Test Case 6
                 
-        System.out.println("\tTest case 6");
+        this.console.println("\tTest case 6");
         
         //input variables
         meatWeight = 150.00;
@@ -121,7 +125,7 @@ public class MeatShareControlTest {
                 
         //Test Case 7
                 
-        System.out.println("\tTest case 7");
+        this.console.println("\tTest case 7");
         
         //input variables
         meatWeight = 350.00;
@@ -137,7 +141,7 @@ public class MeatShareControlTest {
                 
         //Test Case 8
                 
-        System.out.println("\tTest case 8");
+        this.console.println("\tTest case 8");
         
         //input variables
         meatWeight = 1.00;
@@ -153,7 +157,7 @@ public class MeatShareControlTest {
         
         //Test Case 9
                 
-        System.out.println("\tTest case 9");
+        this.console.println("\tTest case 9");
         
         //input variables
         meatWeight = 300.00;

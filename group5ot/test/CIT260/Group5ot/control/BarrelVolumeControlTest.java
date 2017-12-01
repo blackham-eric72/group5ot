@@ -5,6 +5,9 @@
  */
 package CIT260.Group5ot.control;
 
+import CIT260.Group5ot.exceptions.BarrelVolumeCalcException;
+import group5ot.Group5ot;
+import java.io.PrintWriter;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +18,9 @@ import static org.junit.Assert.*;
  * @author crims
  */
 public class BarrelVolumeControlTest {
+    
+    protected final PrintWriter console = Group5ot.getOutFile();    
+
     
     public BarrelVolumeControlTest() {
     }
@@ -28,11 +34,11 @@ public class BarrelVolumeControlTest {
     }
 
     @Test
-    public void testCalcBarrelVolume() {
-        System.out.println("calcBarrelVolume");
+    public void testCalcBarrelVolume() throws BarrelVolumeCalcException {
+        this.console.println("calcBarrelVolume");
         
         // ---Test Case 1 ---
-        System.out.println("\tTest case 1");
+        this.console.println("\tTest case 1");
         
         // define the input variables
         double height = 36;
@@ -51,7 +57,7 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 2 ---
-        System.out.println("\tTest case 2");
+        this.console.println("\tTest case 2");
         
         // define the input variables
         height = 36;
@@ -68,7 +74,7 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 3 ---
-        System.out.println("\tTest case 3");
+        this.console.println("\tTest case 3");
         
         // define the input variables
         height = -36;
@@ -84,7 +90,7 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 4 ---
-        System.out.println("\tTest case 4");
+        this.console.println("\tTest case 4");
         
         // define the input variables
         height = 36;
@@ -100,7 +106,7 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 5 ---
-        System.out.println("\tTest case 5");
+        this.console.println("\tTest case 5");
         
         // define the input variables
         height = 0;
@@ -116,7 +122,7 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 6 ---
-        System.out.println("\tTest case 6");
+        this.console.println("\tTest case 6");
         
         // define the input variables
         height = 60;
@@ -132,7 +138,7 @@ public class BarrelVolumeControlTest {
         
         
         // ---Test Case 7 ---
-        System.out.println("\tTest case 7");
+        this.console.println("\tTest case 7");
         
         // define the input variables
         height = 60;

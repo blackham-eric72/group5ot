@@ -78,7 +78,7 @@ public class MainMenuView extends View {
                 System.exit(0);
                 break; 
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -103,7 +103,7 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("*** startExistingGame() function called ***");
+        this.console.println("*** startExistingGame() function called ***");
     }
 
     private void displayHelpMenu() {
@@ -122,7 +122,16 @@ public class MainMenuView extends View {
         gameMenuView.display();
     }
     private void saveGame() {
-        System.out.println("*** saveGame() function called ***");
+        this.console.println("\n\nEnter the file path for file where the game"
+                + " is to be saved.");
+        String filePath = this.getInput();
+        
+        try { 
+            GameControl.saveGame(Group5ot.getCurrentGame(), filePath);
+        } catch(Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+
+        }
     }
     //go to the map view
 //    private void displayMapView() {

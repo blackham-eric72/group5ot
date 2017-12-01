@@ -50,7 +50,7 @@ public class TradingpostMenuView extends View {
                 this.displayGameMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
             
         }
@@ -93,7 +93,7 @@ public class TradingpostMenuView extends View {
     }
 
     private void nextView() {
-        System.out.println("\n*** There is no 'ctrl' button on Chuck Norris's computer. Chuck Norris is always in control. Brought to you by the nextview() function." +
+        this.console.println("\n*** There is no 'ctrl' button on Chuck Norris's computer. Chuck Norris is always in control. Brought to you by the nextview() function." +
 "Brought to you by the NextView().");
     }
     

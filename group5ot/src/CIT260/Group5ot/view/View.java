@@ -52,7 +52,7 @@ public abstract class View implements ViewInterface{
         boolean valid = false; //initilaize to not valid
         
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
             
             try {
                 value = this.keyboard.readLine(); // get next line typed on keyboard 
@@ -62,7 +62,7 @@ public abstract class View implements ViewInterface{
             value = value.trim(); //trim off leading and trailing blanks
             
             if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
+                this.console.println("\nInvalid value: value cannot be blank");
                 continue;
             }
             

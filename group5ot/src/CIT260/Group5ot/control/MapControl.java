@@ -8,6 +8,8 @@ import CIT260.Group5ot.model.Location;
 import CIT260.Group5ot.model.Map;
 import CIT260.Group5ot.model.MeatShare;
 import CIT260.Group5ot.model.Scene;
+import group5ot.Group5ot;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 /**
@@ -15,9 +17,10 @@ import java.util.ArrayList;
  * @author Flores Family
  */
 public class MapControl {
+   
+    protected final PrintWriter console = Group5ot.getOutFile();    
     
-    
-   public static Map createMap(int noOfRows, int noOfColumns, ArrayList<InventoryItem> items){
+   public Map createMap(int noOfRows, int noOfColumns, ArrayList<InventoryItem> items){
      if (noOfRows <0) {
         return null;
      }   
@@ -72,13 +75,12 @@ public class MapControl {
         return locations;
     }
     
-    private static void assignItemsToScenes(ArrayList<InventoryItem> items, Scene[] scenes){
-        System.out.println("Teriyaki sounds good right now. Brought to you by assignItemsToScenes().");
+    private void assignItemsToScenes(ArrayList<InventoryItem> items, Scene[] scenes){
+        this.console.println("Teriyaki sounds good right now. Brought to you by assignItemsToScenes().");
     }
-
     
-    private static void assignScenesToLocations(Location[][] location) {
-        System.out.println("Teriyaki is Japanese, but they have it at Chinese restaurants. Brought to you by assignScenesToLocations() PS- I'm getting hungry");
+    private void assignScenesToLocations(Location[][] location) {
+        this.console.println("Teriyaki is Japanese, but they have it at Chinese restaurants. Brought to you by assignScenesToLocations() PS- I'm getting hungry");
        //dgw start
         
         // Here Scene objects are created, and "assigned" to specific locations in the 2D array

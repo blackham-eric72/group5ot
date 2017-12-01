@@ -6,6 +6,8 @@
 package CIT260.Group5ot.control;
 
 import CIT260.Group5ot.exceptions.WagonControlException;
+import group5ot.Group5ot;
+import java.io.PrintWriter;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -16,6 +18,9 @@ import static org.junit.Assert.*;
  * @author ken
  */
 public class WagonControlTest {
+    
+    protected final PrintWriter console = Group5ot.getOutFile();    
+
     
     public WagonControlTest() {
     }
@@ -34,10 +39,10 @@ public class WagonControlTest {
      */
     @Test
     public void testCalcWagonCargoWeight() throws WagonControlException {
-        System.out.println("calcWagonCargoWeight");
+        this.console.println("calcWagonCargoWeight");
         
         // ---Test Case 1 ---
-        System.out.println("\tTest case 1");
+        this.console.println("\tTest case 1");
         
         // input values for test case 1
         int numAdults = 2;
@@ -60,7 +65,7 @@ public class WagonControlTest {
         
         
         // ---Test Case 2 ---
-        System.out.println("\tTest case 2");
+        this.console.println("\tTest case 2");
         
         // input values for test case 2
         numAdults = 5;
@@ -80,7 +85,7 @@ public class WagonControlTest {
   
         
         // ---Test Case 3 ---
-        System.out.println("\tTest case 3");
+        this.console.println("\tTest case 3");
         
         // input values for test case 3
         numAdults = -7;
@@ -100,7 +105,7 @@ public class WagonControlTest {
   
         
         // ---Test Case 4 ---
-        System.out.println("\tTest case 4");
+        this.console.println("\tTest case 4");
         
         // input values for test case 4
         numAdults = 6;
@@ -120,7 +125,7 @@ public class WagonControlTest {
   
         
         // ---Test Case 5 ---
-        System.out.println("\tTest case 5");
+        this.console.println("\tTest case 5");
         
         // input values for test case 5
         numAdults = 0;
@@ -140,7 +145,7 @@ public class WagonControlTest {
   
         
         // ---Test Case 6 ---
-        System.out.println("\tTest case 6");
+        this.console.println("\tTest case 6");
         
         // input values for test case 6
         numAdults = 4;
@@ -160,7 +165,7 @@ public class WagonControlTest {
   
         
         // ---Test Case 7 ---
-        System.out.println("\tTest case 7");
+        this.console.println("\tTest case 7");
         
         // input values for test case 7
         numAdults = 4;

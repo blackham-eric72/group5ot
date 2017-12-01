@@ -44,18 +44,18 @@ public class RestView extends View{
                     break;
                 
                 default:
-                   System.out.println("\n*** Invalid selection *** Try Again");
+                   this.console.println("\n*** Invalid selection *** Try Again");
                    break;
         }
             return false;
    }
     
     private void dayOfRest() {
-        System.out.println("Chuck Norris says 'day of rest() has been called'");
+        this.console.println("Chuck Norris says 'day of rest() has been called'");
     }
          
     private void nextView() {
-        System.out.println("\n*** When Chuck Norris crosses the street, the cars have to look both ways. Brought to you by the NextView().");
+        this.console.println("\n*** When Chuck Norris crosses the street, the cars have to look both ways. Brought to you by the NextView().");
     }
 
     private void displayGameMenu() {

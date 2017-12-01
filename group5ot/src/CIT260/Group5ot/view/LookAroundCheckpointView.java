@@ -49,7 +49,7 @@ public class LookAroundCheckpointView extends View {
                 this.displayTestMenu();
                 break;                
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -57,11 +57,11 @@ public class LookAroundCheckpointView extends View {
     }
     
     private void sceneSpecificAction() {
-        System.out.println("You are doing something cool now."); 
+        this.console.println("You are doing something cool now."); 
     }
 
     private void displayPreviousScreen() {
-        System.out.println("Chuck Norris says, 'Welcome back to the test Menu'"); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("Chuck Norris says, 'Welcome back to the test Menu'"); //To change body of generated methods, choose Tools | Templates.
         displayTestMenu();
     }
     

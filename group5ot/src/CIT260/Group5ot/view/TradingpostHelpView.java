@@ -62,7 +62,7 @@ public class TradingpostHelpView extends View {
                 this.displayBuySupplies();  // user want to Buy Supplies
             }   
             else{
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
             }    
                 return false;               
          

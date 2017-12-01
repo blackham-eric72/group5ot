@@ -33,7 +33,7 @@ public class StartProgramView {
 
         public void displayBanner() {        
         
-            System.out.println(
+            this.console.println(
                   "\n|*|------------------------------------------------|*|"
                 + "\n|*|   It is 1848 and you are preparing to set off  |*|"
                 + "\n|*| on a journey along the Oregon trail. The trail |*|"
@@ -83,7 +83,7 @@ public class StartProgramView {
             value = value.trim(); //trim off leading and trailing blanks
             
             if (value.length() < 1) { //value is blank
-                System.out.println("\nInvalid value: value cannot be blank");
+                this.console.println("\nInvalid value: value cannot be blank");
                 continue;
             }
             
@@ -116,7 +116,7 @@ public class StartProgramView {
         return true
         */
         if  (playersName.length() < 2) {
-            System.out.println("\nInvalid players name: "
+            this.console.println("\nInvalid players name: "
                     + "The name must be greater than one character in length");
             return false;
         }
@@ -124,7 +124,7 @@ public class StartProgramView {
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null) { //if unsuccessful
-            System.out.println("\nError creating the player.");
+            this.console.println("\nError creating the player.");
             return false;
         }
          
@@ -135,7 +135,7 @@ public class StartProgramView {
     }
 
     private void displayNextView(Player player) {
-        System.out.println(
+        this.console.println(
                               "\n|======================================================|"
                             + "\n| Welcome to the game, "  + player.getName() + ". " + String.format("%-" + (30 - player.getName().length()) + "s", " ") + "|"
                             + "\n| Prepare yourself for the treacherous trek            |" //The string above ensures that the right "|" character lines up

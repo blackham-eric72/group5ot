@@ -33,36 +33,36 @@ public class MeatShareCalcView extends View {
         // Declares the variable and assigns a new object.
         MeatShareControl calcWeightShares = new MeatShareControl(); 
         //get weight from user
-        System.out.println(
+        this.console.println(
                           "Weight of meat: 150 lbs."
                         + "\n Number of Children: 3"
                         + "\n Number of Adults: 2"
         );
 
-        System.out.println("Please enter the weight of meat:");
+        this.console.println("Please enter the weight of meat:");
 
         Scanner inputWeight = new Scanner(System.in);
         //store it in a variable called weight
         double weight = inputWeight.nextDouble();
-        System.out.println("You entered " + weight);
+        this.console.println("You entered " + weight);
 
         //get number of children from user
-        System.out.println("Please enter the number of children:");
+        this.console.println("Please enter the number of children:");
 
         Scanner inputChildren = new Scanner(System.in);
         double children = inputChildren.nextDouble();
 
-        System.out.println("You entered " + children +" children.");
+        this.console.println("You entered " + children +" children.");
 
         //get number of adults from user
-        System.out.println("Please enter the number of adults:");
+        this.console.println("Please enter the number of adults:");
         Scanner inputAdults = new Scanner(System.in);
         double adults = inputAdults.nextDouble();
 
-        System.out.println("You entered " + adults +" adults.");
+        this.console.println("You entered " + adults +" adults.");
 
         double weightPerShare = calcWeightShares.calcShares(weight, adults, children);
-        System.out.println(
+        this.console.println(
                           "\n||********          Calculate shares of meat           ********||"
                         + "\n|| In order to proceed to the next step, you must first        ||"
                         + "\n|| determine how much a share of meat from your hunt weighs.   ||"
@@ -76,16 +76,16 @@ public class MeatShareCalcView extends View {
         Scanner userAnswer = new Scanner(System.in);
         double answer = userAnswer.nextDouble();
 
-        System.out.println("\nYou entered " + answer);
-        System.out.println("\nThe correct answer was " + weightPerShare);
+        this.console.println("\nYou entered " + answer);
+        this.console.println("\nThe correct answer was " + weightPerShare);
 
         if (answer == weightPerShare) {
-            System.out.println("\nThat is Correct, please proceed");
+            this.console.println("\nThat is Correct, please proceed");
             //go back to the checkpoint menu
             this.nextView();
 
         }
-        else{ System.out.println("\nFailure. Please try again");
+        else{ this.console.println("\nFailure. Please try again");
             //player must start again from the beginning
             this.MeatShareCalculation();
         }
@@ -100,17 +100,18 @@ public class MeatShareCalcView extends View {
             try {
                 this.MeatShareCalculation();
             } catch (MeatShareException ex) {
-                System.out.println(ex.getMessage());
+                ErrorView.display(this.getClass().getName(),"Error reading input: " + ex.getMessage());
+
             }
         }    
         else{
-            System.out.println("\n*** Invalid selection *** Try again");
+            this.console.println("\n*** Invalid selection *** Try again");
         }
             return false;
     }
 
     private void nextView() {
-        System.out.println("\n*** Chuck Norris has a vacation home on the sun. Brought to you by the NextView().");
+        this.console.println("\n*** Chuck Norris has a vacation home on the sun. Brought to you by the NextView().");
     }
 
 }

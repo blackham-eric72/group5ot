@@ -28,6 +28,7 @@ import CIT260.Group5ot.model.FoodSource;
 import CIT260.Group5ot.model.Game;
 import CIT260.Group5ot.model.TradingPost;
 import CIT260.Group5ot.model.WaterSource;
+import CIT260.Group5ot.view.ErrorView;
 import CIT260.Group5ot.view.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -52,7 +53,7 @@ public class Group5ot {
     private static PrintWriter logFile = null;
 
    
-    public static void main(String[] args) {
+    public void main(String[] args) {
         
         try {
         
@@ -71,7 +72,8 @@ public class Group5ot {
             return;
             
         } catch (Throwable te) {
-            System.out.println(te.getMessage());
+            ErrorView.display(this.getClass().getName(),"Error reading input: " + te.getMessage());
+
             te.printStackTrace();
            
         }

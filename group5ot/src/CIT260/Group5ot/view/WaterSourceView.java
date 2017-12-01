@@ -38,7 +38,7 @@ public class WaterSourceView extends View{
                 this.displayGameMenuView();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         
@@ -47,7 +47,7 @@ public class WaterSourceView extends View{
 
 
     private void nextView() {
-        System.out.println("\n*** Chuck Norris uses a stunt double for crying scenes. Brought to you by the NextView().");
+        this.console.println("\n*** Chuck Norris uses a stunt double for crying scenes. Brought to you by the NextView().");
     }
 
     private void displayGameMenuView() {
@@ -57,6 +57,6 @@ public class WaterSourceView extends View{
     }
 
     private void goToRiver() {
-        System.out.println("\n*** Chuck Norris got pulled over by a cop once. He let the cop go with a warning. Brought to you by the goToRiverView().");
+        this.console.println("\n*** Chuck Norris got pulled over by a cop once. He let the cop go with a warning. Brought to you by the goToRiverView().");
     }
 }

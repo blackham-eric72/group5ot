@@ -48,7 +48,7 @@ public class LookAroundView extends View {
                 this.returnToTradingPostMenu();
                 break;                 
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
 
@@ -56,19 +56,19 @@ public class LookAroundView extends View {
     }
 
     private void dogBite() {
-        System.out.println("\n That dog was not friendly. You got bitten. Recovering from the dog bite will decrease your health.");
+        this.console.println("\n That dog was not friendly. You got bitten. Recovering from the dog bite will decrease your health.");
         //bring in healthdecrease function
         // Declares the variable and assigns a new object.
         //HealthControl calcHealthDecrease = new HealthControl(); 
     }
 
     private void portal() {
-        System.out.println("\n You were sucked into the portal. GAME OVER!");
+        this.console.println("\n You were sucked into the portal. GAME OVER!");
         System.exit(0);
     }
 
     private void chuckNorris() {
-        System.out.println("\n Chuck Norris's glorious presence imbued you with improved health.");
+        this.console.println("\n Chuck Norris's glorious presence imbued you with improved health.");
         //bring in healthincrease function
         // Declares the variable and assigns a new object.
         //HealthControl calcHealthIncrease = new HealthControl();    
