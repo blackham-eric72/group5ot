@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+//This scanner import not needed once code starting on line 74 is fixed.
+import java.util.Scanner;
 
 /**
  *
@@ -69,22 +71,47 @@ public class StartProgramView {
             
         }
 
+//    private String getPlayersName() {
+//        
+//        String value = ""; // value to be returned
+//        boolean valid = false; //initilaize to not valid
+//        
+//        while (!valid) { try {
+//            // loop while an invalid value is entered
+//            
+//            value = this.keyboard.readLine(); // get next line typed on keyboard 
+//            } catch (IOException ex) {
+//                Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            value = value.trim(); //trim off leading and trailing blanks
+//            
+//            if (value.length() < 1) { //value is blank
+//                this.console.println("\nInvalid value: value cannot be blank");
+//                continue;
+//            }
+//            
+//            break; //end the loop
+//        }
+//        
+//        return value; // return the value entered
+//    }
+        
+        
+//The code above did not prompt the user for his/her name, so it was removed last minute...it's almost 10pm.         
     private String getPlayersName() {
         
+        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; //initilaize to not valid
         
-        while (!valid) { try {
-            // loop while an invalid value is entered
+        while (!valid) { // loop while an invalid value is entered
+            System.out.println("\n" + this.promptMessage);
             
-            value = this.keyboard.readLine(); // get next line typed on keyboard 
-            } catch (IOException ex) {
-                Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            value = keyboard.nextLine(); // get next line typed on keyboard 
             value = value.trim(); //trim off leading and trailing blanks
             
             if (value.length() < 1) { //value is blank
-                this.console.println("\nInvalid value: value cannot be blank");
+                System.out.println("\nInvalid value: value cannot be blank");
                 continue;
             }
             
@@ -92,9 +119,7 @@ public class StartProgramView {
         }
         
         return value; // return the value entered
-    }
-        
-        
+    }   
         
         
  
