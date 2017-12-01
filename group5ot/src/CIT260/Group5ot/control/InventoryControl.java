@@ -48,7 +48,7 @@ public class InventoryControl {
         for (InventoryItem item : inventory) {
 
             // ItemTypes itemTypes = itemTypes.get(i);
-            System.out.println("\n\tItem: " + item.getItemTypes().name() + 
+            this.console.println("\n\tItem: " + item.getItemTypes().name() + 
                                "\n\tQuantity: " + item.getQuantityInStock());
         }
 

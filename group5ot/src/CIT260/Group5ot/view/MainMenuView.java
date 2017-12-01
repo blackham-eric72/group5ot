@@ -13,6 +13,8 @@ import java.util.Scanner;
 import CIT260.Group5ot.model.Character;
 import CIT260.Group5ot.model.InventoryItem;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *

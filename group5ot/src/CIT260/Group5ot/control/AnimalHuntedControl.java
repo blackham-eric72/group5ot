@@ -1,7 +1,11 @@
 package CIT260.Group5ot.control;
 
 import CIT260.Group5ot.model.Animal; //Brings in my enum for later array creation.
-import java.util.ArrayList; //Allows array creation.
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+//Allows array creation.
 //import CIT260.Group5ot.model.InventoryItem;
 
 /**
@@ -19,7 +23,10 @@ public class AnimalHuntedControl {
     //Rabbit = 5 lbs meat
     //Deer = 150 lbs meat
     //Buffalo = 1000 lbs meat
-
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    private static PrintWriter logFile = null;
     
     public static ArrayList<Animal> createAnimals(){
         
@@ -44,7 +51,7 @@ public class AnimalHuntedControl {
     public void findMostMeatyAnimal(ArrayList<Animal> tacoMeat) {
         
         for (int i = 0; i < tacoMeat.size(); i++) {
-            System.out.println(tacoMeat.get(i));  
+            this.console.println(tacoMeat.get(i));  
         }
         
     } 
