@@ -10,8 +10,10 @@ import CIT260.Group5ot.exceptions.HealthControlException;
 import CIT260.Group5ot.model.Health;
 import CIT260.Group5ot.model.Character;
 import CIT260.Group5ot.enums.CharacterType;
+import CIT260.Group5ot.model.Game;
 import group5ot.Group5ot;
 import java.io.Console;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -23,8 +25,7 @@ import java.util.logging.Logger;
  */
 public class HealthView extends View {
     
-        private String promptMessage;
-        private String characterType;
+        private String promptMessage;       
         protected final PrintWriter console = Group5ot.getOutFile();  
     
     public HealthView(){
@@ -61,7 +62,9 @@ public class HealthView extends View {
             case "P": {
                 try {       // print health report
                     try{
-                        this.printHealthReport();
+                        Game game = Group5ot.getCurrentGame();
+                        ArrayList<Character> characterList = game.getCharacters();
+                        this.printHealthReport(characterList);
                     } catch (IOException ex) {
                         this.console.println("Not sure about this either.");
                     }
@@ -86,6 +89,7 @@ public class HealthView extends View {
     public void displayHealthStatus() throws HealthControlException, IOException { 
         HealthControl displayCalcHealthStatus = new HealthControl();
         HealthControl displayCalcAverageHealthFunction = new HealthControl();
+      
         
         this.console.println("\n|| ********  Health Status  ******** ||"
                             +"\n||                                  ||"
@@ -99,23 +103,39 @@ public class HealthView extends View {
         
     
 
-    public void printHealthReport(ArrayList<CharacterType> character, String outputHealthReport)throws HealthControlException, IOException {        
-        try (PrintWriter out = new PrintWriter(outputHealthReport)) {
+    public void printHealthReport(ArrayList<Character> characters)throws HealthControlException, IOException {    
+        
+          
+        PrintWriter outFile = null;
+        
+        String fileLocation = "report.txt";       
+        
+        this.console.println("Enter the file name where you want to store the report:");
+         fileLocation = this.keyboard.readLine();
+        
+        
+        try {
+        outFile = new PrintWriter(fileLocation);
+        
 
-            out.println("\n\n              Health Report                     ");
-            out.printf("%n%-20s%10d%15s", "Name", "Level", "Status");
-            out.printf("%n%-20s%10d%15s", "----", "-----", "------");
+            outFile.println("\n\n              Health Report                     ");
+            outFile.printf("%n%-20s%10s%15s", "Name", "Level", "Status");
+            outFile.printf("%n%-20s%10s%15s", "----", "-----", "------");
 
-            for (CharacterType characterType : character) {
-                out.printf("%n%-20s%10d%15s", character.getDescription()
+            for (Character character : characters) {
+                outFile.printf("%n%-20s%10d%15s", character.getDescription()
                                             , character.getHealthLevel()
                                             , character.getHealthStatus());
             }
         } catch (IOException ex) {
-                    System.out.println("I/O Error: " + ex.getMessage());
+                    this.console.println("I/O Error: " + ex.getMessage());
+        } finally {
+            if (outFile != null) {
+                outFile.close();
+            
+            }
         }
-         
-
+            
 
 
         GameMenuView gameMenuView = new GameMenuView();
