@@ -6,8 +6,12 @@
 package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.AnimalHuntedControl;
+import CIT260.Group5ot.model.Animal;
+import CIT260.Group5ot.control.GameControl;
 import CIT260.Group5ot.control.HealthControl;
+import group5ot.Group5ot;
 import java.util.Scanner;
+//import CIT260.Group5ot.view.ErrorView;
 
 /**
  *
@@ -26,7 +30,8 @@ public class TestMenuView extends View {
                         + "\n|*| -------------------------------- |*|"
                         + "\n|*| GM   - Game Menu                 |*|"
                         + "\n|*| BVC  - Calculate Barrel Volume   |*|"
-                        + "\n|*| A    - Test Animal List          |*|"                       
+                        + "\n|*| AD   - Display Animal List       |*|"  
+//                        + "\n|*| AP   - Print Animal List         |*|"                       
                         + "\n|*| H    - Test Hunt Menu            |*|"                 
                         + "\n|*| S    - Save game                 |*|"
                         + "\n|*| M    - View Map                  |*|"
@@ -56,9 +61,12 @@ public class TestMenuView extends View {
             case "S": // Save game
                 this.saveGame();
                 break;
-            case "A": // display the Animals menu
+            case "AD": // display the Animals menu
                 this.displayAnimalsArrayTest();
-                break;                
+                break;                   
+//            case "AP": // display the Animals menu
+//                this.printAnimalsArrayTest();
+//                break;                
             case "H": // display the HUNT menu
                 this.displayHuntView();
                 break;
@@ -102,12 +110,27 @@ public class TestMenuView extends View {
         
         return false;
     }    
-
+//I could not get this to work.  I'm not sure how to get my Animal array here.
+//    private void printAnimalsArrayTest() {
+//        
+//        this.console.println("\n\nEnter the desired file path for the animal list report.");
+//        String filePath = this.getInput();        
+//        try { 
+//            TestMenuView.printAnimalsArrayTest(AnimalHuntedControl.printAnimalList(animal), filePath);
+//        } catch(Exception ex) {
+//            ErrorView.display("TestMenuView", ex.getMessage());
+//
+//        }        
+//    
+//    }  
+      
+    
     private void displayAnimalsArrayTest() {
 //        this.console.println("*** displayAnimalsArrayTest() function called ***");
         this.console.println(AnimalHuntedControl.createAnimals());
-    }   
+    }  
 
+    
     private void displayHuntView() {
         HuntingSceneView huntSceneView = new HuntingSceneView();
         
