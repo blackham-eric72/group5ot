@@ -2,6 +2,7 @@ package CIT260.Group5ot.control;
 
 import CIT260.Group5ot.model.Animal; //Brings in my enum for later array creation.
 import group5ot.Group5ot;
+import CIT260.Group5ot.view.ErrorView;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -49,11 +50,15 @@ public class AnimalHuntedControl {
         return tacoMeat;
     }
       
-    //Try to use "tacoMeat" array above to get animal with most meat. (could not figure that out...went for displaying "for loop" instead)
-    public void findMostMeatyAnimal(ArrayList<Animal> tacoMeat) {
+    //Display animals in a list...
+    public void listAnimals(ArrayList<Animal> tacoMeat) {
         
-        for (int i = 0; i < tacoMeat.size(); i++) {
-            this.console.println(tacoMeat.get(i));  
+        try {
+            for (int i = 0; i < tacoMeat.size(); i++) {
+                this.console.println(tacoMeat.get(i));                
+            }
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error creating list." + e.getMessage());
         }
         
     } 

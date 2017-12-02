@@ -8,6 +8,7 @@ package CIT260.Group5ot.view;
 import CIT260.Group5ot.control.AnimalHuntedControl;
 import CIT260.Group5ot.control.HealthControl;
 import java.util.Scanner;
+//import CIT260.Group5ot.view.ErrorView;
 
 /**
  *
@@ -26,7 +27,7 @@ public class TestMenuView extends View {
                         + "\n|*| -------------------------------- |*|"
                         + "\n|*| GM   - Game Menu                 |*|"
                         + "\n|*| BVC  - Calculate Barrel Volume   |*|"
-                        + "\n|*| A    - Test Animal List          |*|"                       
+                        + "\n|*| A    - Print Animal List         |*|"                       
                         + "\n|*| H    - Test Hunt Menu            |*|"                 
                         + "\n|*| S    - Save game                 |*|"
                         + "\n|*| M    - View Map                  |*|"
@@ -57,7 +58,7 @@ public class TestMenuView extends View {
                 this.saveGame();
                 break;
             case "A": // display the Animals menu
-                this.displayAnimalsArrayTest();
+                this.printAnimalsArrayTest();
                 break;                
             case "H": // display the HUNT menu
                 this.displayHuntView();
@@ -103,8 +104,7 @@ public class TestMenuView extends View {
         return false;
     }    
 
-    private void displayAnimalsArrayTest() {
-//        this.console.println("*** displayAnimalsArrayTest() function called ***");
+    private void printAnimalsArrayTest() {
         this.console.println(AnimalHuntedControl.createAnimals());
     }   
 
