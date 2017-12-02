@@ -51,10 +51,7 @@ public class GameMenuView extends View {
                 break;
             case "V": // save the current game
                 this.displayHealthView();
-                break;
-            case "P": // print health report
-                this.displayPrintHealth();
-                break;
+                break;            
             case "S": // save the current game
                 this.saveGameExit();
                 break;
@@ -82,13 +79,11 @@ public class GameMenuView extends View {
     }
 
     private void displayHealthView() {
-        this.console.println("*** viewHealth() function called ***");    
+        HealthView healthView = new HealthView();
+        
+        healthView.display();   
     }
     
-     private void displayPrintHealth() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     private void saveGameExit() {
         this.console.println("*** saveGameExit() function called ***");    
     }

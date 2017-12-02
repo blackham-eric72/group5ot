@@ -16,12 +16,12 @@ public class Health implements Serializable{
     
     //class instance variables
     private int healthLevel;
-    private String status;
+    private String healthStatus;
     private Player player;
 
-    public Health() {
-    }     
-
+    public Health() {      
+    } 
+    
     public int getHealthLevel() {
         return healthLevel;
     }
@@ -30,12 +30,12 @@ public class Health implements Serializable{
         this.healthLevel = healthLevel;
     }
 
-    public String getStatus() {
-        return status;
+    public String getHealthStatus() {
+        return healthStatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
     }
 
     public Player getPlayer() {
@@ -52,13 +52,13 @@ public class Health implements Serializable{
     public int hashCode() {
         int hash = 7;
         hash = 71 * hash + this.healthLevel;
-        hash = 71 * hash + Objects.hashCode(this.status);
+        hash = 71 * hash + Objects.hashCode(this.healthStatus);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Health{" + "healthlevel=" + healthLevel + ", status=" + status + '}';
+        return "Health{" + "healthlevel=" + healthLevel + ", healthStatus=" + healthStatus + '}';
     }
     
 
@@ -77,7 +77,7 @@ public class Health implements Serializable{
         if (this.healthLevel != other.healthLevel) {
             return false;
         }
-        if (!Objects.equals(this.status, other.status)) {
+        if (!Objects.equals(this.healthStatus, other.healthStatus)) {
             return false;
         }
         return true;
