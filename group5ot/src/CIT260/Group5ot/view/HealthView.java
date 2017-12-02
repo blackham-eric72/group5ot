@@ -91,12 +91,12 @@ public class HealthView extends View {
         HealthControl displayCalcAverageHealthFunction = new HealthControl();
       
         
-        this.console.println("\n|| ********  Health Status  ******** ||"
-                            +"\n||                                  ||"
-                            +"\n||                                  ||"
-                            +"\n||                                  ||"
-                            +"\n||                                  ||"
-                            +"\n||                                  ||");
+        this.console.println("\n|| ********      Health Status      ******** ||"
+                            +"\n||   Who are you kidding?                    ||"
+                            +"\n||   You haven't been to the gym in months!  ||"
+                            +"\n||   Your health will decline                ||"
+                            +"\n||   Until you finally die                   ||"
+                            +"\n||                                           ||");
                             
         
     }
