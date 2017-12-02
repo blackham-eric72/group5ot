@@ -46,8 +46,9 @@ public class InventoryControl {
         
         return itemQuantity;
         }
-    public void sortInventoryItems(ArrayList<InventoryItem> inventory) {
-
+    public printInventory(ArrayList<InventoryItem> inventory) {
+        
+        Array inventoryList;
         for (InventoryItem item : inventory) {
 
             // ItemTypes itemTypes = itemTypes.get(i);

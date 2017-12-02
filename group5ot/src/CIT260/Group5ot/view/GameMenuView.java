@@ -49,14 +49,9 @@ public class GameMenuView extends View {
             case "H": // display the help menu
                 this.displayHelpMenu();
                 break;
-            case "I": {
-                try {this.printInventory();}
-                catch(InventoryControlException ex){
-                    ErrorView.display(ex.getClass().getName(), "Error Reading input: " + ex.getMessage());
-                }
-                 break;       
-            }
-
+            case "I": 
+                this.printInventory();
+                break;       
             case "V": // save the current game
                 this.displayHealthView();
                 break;
@@ -108,7 +103,7 @@ public class GameMenuView extends View {
         this.console.println("\n*** Chuck Norris's calendar goes straight from March 31st to April 2nd. No one fools Chuck Norris.Brought to you by returnToGame().");
     }
 
-    private void printInventory() {
+    private printInventory() {
         this.console.println("\nThe inventory will print to an external file. "
                             +"\nEnter the file path for the file it will be printed to.");
         String filePath = this.getInput();
@@ -118,7 +113,8 @@ public class GameMenuView extends View {
         } catch(Exception ex) {
             ErrorView.display("GameMenuView", ex.getMessage());
 
-        }    
+        }
+        return console;
     }
 
    
