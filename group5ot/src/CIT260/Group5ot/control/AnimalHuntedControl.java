@@ -1,9 +1,12 @@
 package CIT260.Group5ot.control;
 
+import CIT260.Group5ot.exceptions.AnimalControlException;
 import CIT260.Group5ot.model.Animal; //Brings in my enum for later array creation.
 import group5ot.Group5ot;
 import CIT260.Group5ot.view.ErrorView;
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -62,6 +65,26 @@ public class AnimalHuntedControl {
         }
         
     } 
+    
+//I could not get this to work! - Ken    
+//    public static void printAnimalList(ArrayList<Animal> tacoMeat, String outputLocation) { //throws AnimalControlException {
+//        try (PrintWriter out = new PrintWriter(outputLocation)) {
+//            
+//            // print column headings
+//            out.println("\n\n         Animal List         ");
+//            out.printf("%n%-20s%10s", "Description", "Weight");
+//            
+//            // print animals wtih weight
+//            for (Animals animal : tacoMeat) {
+//                out.printf("%n%-20s%7d", animal.getDescription()
+//                                             , animal.getWeight());
+//            }
+//          
+//        }
+//        catch(IOException ex){
+//            System.out.println("I/O Error: " + ex.getMessage());
+//        }
+//    }    
     
 }
 

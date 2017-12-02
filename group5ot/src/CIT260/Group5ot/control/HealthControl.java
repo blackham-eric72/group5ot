@@ -58,27 +58,27 @@ public class HealthControl {
                 
     }
     
-    public String calcStatus(double healthLevel){
+    public String calcHealthStatus(double healthLevel){
         
-        String status = null;
+        String healthStatus = null;
         
         if(healthLevel == 0){
-            status = "dead";
+            healthStatus = "dead";
         }
         
         if(healthLevel >0 && healthLevel <= 25){
-            status = "dying";
+            healthStatus = "dying";
         }
         
         if (healthLevel > 25 && healthLevel <= 50){
-            status = "weakening";
+            healthStatus = "weakening";
         }
         
         if (healthLevel > 50 && healthLevel <= 100){
-            status = "healthy";
+            healthStatus = "healthy";
         }
         
-        return status;
+        return healthStatus;
     }
     
     public void calcAverageHealth(){

@@ -211,7 +211,7 @@ public class HealthControlTest {
         
         String expResult = "weakening";
         
-        String result = instance.calcStatus(healthLevel);
+        String result = instance.calcHealthStatus(healthLevel);
         
         assertEquals(expResult, result);
         
@@ -224,7 +224,7 @@ public class HealthControlTest {
              
         expResult = "error";
         
-        result = instance.calcStatus(healthLevel);
+        result = instance.calcHealthStatus(healthLevel);
         
         assertEquals(expResult, result);
         
@@ -237,7 +237,7 @@ public class HealthControlTest {
              
         expResult = "error";
         
-        result = instance.calcStatus(healthLevel);
+        result = instance.calcHealthStatus(healthLevel);
         
         assertEquals(expResult, result);
         
@@ -250,7 +250,7 @@ public class HealthControlTest {
              
         expResult = "healthy";
         
-        result = instance.calcStatus(healthLevel);
+        result = instance.calcHealthStatus(healthLevel);
         
         assertEquals(expResult, result);
         
@@ -263,7 +263,7 @@ public class HealthControlTest {
              
         expResult = "dead";
         
-        result = instance.calcStatus(healthLevel);
+        result = instance.calcHealthStatus(healthLevel);
         
         assertEquals(expResult, result);
         
@@ -276,7 +276,7 @@ public class HealthControlTest {
              
         expResult = "dying";
         
-        result = instance.calcStatus(healthLevel);
+        result = instance.calcHealthStatus(healthLevel);
         
         assertEquals(expResult, result);
 
