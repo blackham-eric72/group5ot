@@ -92,12 +92,12 @@ public class HealthControl {
         CIT260.Group5ot.model.Character traderJoe = new CIT260.Group5ot.model.Character("Trader-Joe", "He is the owner of the trading post", 10);
         
         
-        character.add(0, obadiah);
-        character.add(1, lilyAnne);
-        character.add(2, ephraim);
-        character.add(3, gertrude);
-        character.add(4, myrtle);
-        character.add(5, traderJoe);
+        character.add(obadiah);
+        character.add(lilyAnne);
+        character.add(ephraim);
+        character.add(gertrude);
+        character.add(myrtle);
+        character.add(traderJoe);
         
         this.console.println(character.get(0).getHealthLevel());
         //Use a for each loop to loop through each character and display their character level        

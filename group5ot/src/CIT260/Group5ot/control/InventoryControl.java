@@ -47,11 +47,7 @@ public class InventoryControl {
         return itemQuantity;
         }
     
-    
-    public void printInventory(ArrayList<InventoryItem> inventory){
-        
-    }
-    
+     
     public void sortInventory(ArrayList<InventoryItem> inventory) {
         
         for (InventoryItem item : inventory) {
