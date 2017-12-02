@@ -38,7 +38,7 @@ public class AnimalHuntedControl {
         Animal squirrel = new Animal("Squirrel", 1);
         Animal rabbit = new Animal("Rabbit", 5);
         Animal deer = new Animal("Deer", 150);
-        Animal buffalo = new Animal("Buffalo", 100);        
+        Animal buffalo = new Animal("Buffalo", 1000);        
         
         //will fill new array with my animals
         tacoMeat.add(0, squirrel);
