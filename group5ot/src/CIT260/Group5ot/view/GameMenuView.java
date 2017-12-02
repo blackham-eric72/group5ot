@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package CIT260.Group5ot.view;
+package CIT260.Group5ot.view; 
 
 import CIT260.Group5ot.control.GameControl;
 import group5ot.Group5ot;
@@ -52,6 +52,9 @@ public class GameMenuView extends View {
             case "V": // save the current game
                 this.displayHealthView();
                 break;
+            case "P": // print health report
+                this.displayPrintHealth();
+                break;
             case "S": // save the current game
                 this.saveGameExit();
                 break;
@@ -81,6 +84,10 @@ public class GameMenuView extends View {
     private void displayHealthView() {
         this.console.println("*** viewHealth() function called ***");    
     }
+    
+     private void displayPrintHealth() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     private void saveGameExit() {
         this.console.println("*** saveGameExit() function called ***");    
@@ -100,5 +107,7 @@ public class GameMenuView extends View {
     private void returnToGame() {
         this.console.println("\n*** Chuck Norris' calendar goes straight from March 31st to April 2nd. No one fools Chuck Norris.Brought to you by returnToGame().");
     }
+
+   
 
 }

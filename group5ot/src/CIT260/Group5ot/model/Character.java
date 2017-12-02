@@ -15,6 +15,7 @@ public class Character {
     private String name;
     private String description;
     private int healthLevel;
+    private String healthStatus;
    
     
 
@@ -22,6 +23,7 @@ public class Character {
     this.name = name;
     this.description = description;
     this.healthLevel = healthLevel;
+    this.healthStatus = healthStatus;
 
     }  
 
@@ -48,6 +50,16 @@ public class Character {
     public void setHealthLevel(int healthLevel) {
         this.healthLevel = healthLevel;
     }
+
+    public String getHealthStatus() {
+        return healthStatus;
+    }
+
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+    
+    
 
     @Override
     public String toString() {
