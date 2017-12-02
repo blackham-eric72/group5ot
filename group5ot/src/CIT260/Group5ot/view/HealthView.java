@@ -10,8 +10,11 @@ import CIT260.Group5ot.exceptions.HealthControlException;
 import CIT260.Group5ot.model.Health;
 import CIT260.Group5ot.model.Character;
 import CIT260.Group5ot.enums.CharacterType;
+import group5ot.Group5ot;
 import java.io.Console;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
@@ -22,6 +25,7 @@ public class HealthView extends View {
     
         private String promptMessage;
         private String characterType;
+        protected final PrintWriter console = Group5ot.getOutFile();  
     
     public HealthView(){
         
@@ -36,8 +40,7 @@ public class HealthView extends View {
     
     @Override
     public boolean doAction(String choice) {
-        //Console console = System.console();
-    
+        //Console console = System.console();    
         
         choice = choice.toUpperCase();
         
@@ -52,17 +55,22 @@ public class HealthView extends View {
                 } catch (HealthControlException ex) {
                     ErrorView.display(this.getClass().getName(),"Error reading input: " + ex.getMessage());
                 }
+            }
+                break;
                 
-            case "P":  {
+            case "P": {
                 try {       // print health report
                     try{
                         this.printHealthReport();
                     } catch (IOException ex) {
                         this.console.println("Not sure about this either.");
+                    }
                 } catch (HealthControlException ex) {
-                    ErrorView.display(this.getClass().getName(), "Error reading input: " +ex.getMessage()):
+                    ErrorView.display(this.getClass().getName(), "Error reading input: " +ex.getMessage());
                 }
-            
+            }
+                break;
+                
             case "G":  //return to Game Menu
                 this.displayGameMenuView();
                 break;
@@ -74,15 +82,22 @@ public class HealthView extends View {
         return false;
     }
 
-    public void displayHealthStatus() throws HealthControlException, IOException {
+
+    public void displayHealthStatus() throws HealthControlException, IOException { 
+        HealthControl displayCalcHealthStatus = new HealthControl();
+        HealthControl displayCalcAverageHealthFunction = new HealthControl();
         
-        HealthControl displayHealthStatusFunction = new HealthControl();
-        
-        
+        this.console.println("\n|| ********  Health Status  ******** ||"
+                            +"\n||                                  ||"
+                            +"\n||                                  ||"
+                            +"\n||                                  ||"
+                            +"\n||                                  ||"
+                            +"\n||                                  ||");
+                            
         
     }
         
-    }
+    
 
     public void printHealthReport(ArrayList<CharacterType> character, String outputHealthReport)throws HealthControlException, IOException {        
         try (PrintWriter out = new PrintWriter(outputHealthReport)) {
@@ -91,7 +106,7 @@ public class HealthView extends View {
             out.printf("%n%-20s%10d%15s", "Name", "Level", "Status");
             out.printf("%n%-20s%10d%15s", "----", "-----", "------");
 
-            for (Character character : characterType) {
+            for (CharacterType characterType : character) {
                 out.printf("%n%-20s%10d%15s", character.getDescription()
                                             , character.getHealthLevel()
                                             , character.getHealthStatus());
@@ -99,7 +114,7 @@ public class HealthView extends View {
         } catch (IOException ex) {
                     System.out.println("I/O Error: " + ex.getMessage());
         }
-    }
+         
 
 
 
@@ -115,5 +130,4 @@ public class HealthView extends View {
         
         gameMenuView.display();
     }
-}
 }

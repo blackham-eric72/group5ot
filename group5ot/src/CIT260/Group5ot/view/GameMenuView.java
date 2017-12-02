@@ -104,12 +104,15 @@ public class GameMenuView extends View {
     }
 
     private printInventory() {
+        Print
+        
         this.console.println("\nThe inventory will print to an external file. "
                             +"\nEnter the file path for the file it will be printed to.");
         String filePath = this.getInput();
         
         try { 
-            InventoryControl.printInventory(InventoryControl.sortInventoryItems(), filePath);
+            
+            InventoryControl.sortInventory(ArrayList<InventoryItem> inventory);
         } catch(Exception ex) {
             ErrorView.display("GameMenuView", ex.getMessage());
 
