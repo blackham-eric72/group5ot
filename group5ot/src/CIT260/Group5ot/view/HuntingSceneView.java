@@ -38,13 +38,14 @@ public class HuntingSceneView extends View {
                 try {       // print animal list report
                     try{
                        this.printAnimalList(AnimalHuntedControl.createAnimals());
+                       this.console.println("You printed a file!"); //Success message? not working...
                     } catch (IOException ex) {
                         this.console.println("Not sure about this either.");
                     }
                 } catch (AnimalControlException ex) {
                     ErrorView.display(this.getClass().getName(), "Error reading input: " +ex.getMessage());
                 }
-            }
+            } 
                 break;
                 
             case "H": {
@@ -109,6 +110,7 @@ public class HuntingSceneView extends View {
         } finally {
             if (outFile != null) {
                 outFile.close();
+                this.console.println("Yay! You printed to a file!");//Success Message
             
             }
         }
