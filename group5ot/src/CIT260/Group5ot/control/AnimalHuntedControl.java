@@ -1,7 +1,6 @@
 package CIT260.Group5ot.control;
 
-//import CIT260.Group5ot.exceptions.AnimalControlException;
-import CIT260.Group5ot.exceptions.HealthControlException;
+import CIT260.Group5ot.exceptions.AnimalControlException;
 import CIT260.Group5ot.model.Animal; //Brings in my enum for later array creation.
 import group5ot.Group5ot;
 import CIT260.Group5ot.view.ErrorView;
@@ -37,7 +36,7 @@ public class AnimalHuntedControl {
     private static PrintWriter logFile = null;
     protected final PrintWriter console = Group5ot.getOutFile();
     
-    public static ArrayList<Animal> createAnimals(){
+    public static ArrayList<Animal> createAnimals() throws AnimalControlException, IOException {
         
         ArrayList<Animal> tacoMeat = new ArrayList<>();
         
@@ -68,67 +67,7 @@ public class AnimalHuntedControl {
         }
         
     } 
-    
-//I could not get this to work! - Ken    
-//    public static void printAnimalList(ArrayList<Animal> tacoMeat, String outputLocation) { //throws AnimalControlException {
-//        try (PrintWriter out = new PrintWriter(outputLocation)) {
-//            
-//            // print column headings
-//            out.println("\n\n         Animal List         ");
-//            out.printf("%n%-20s%10s", "Description", "Weight");
-//            
-//            // print animals wtih weight
-//            for (Animals animal : tacoMeat) {
-//                out.printf("%n%-20s%7d", animal.getDescription()
-//                                             , animal.getWeight());
-//            }
-//          
-//        }
-//        catch(IOException ex){
-//            System.out.println("I/O Error: " + ex.getMessage());
-//        }
-//    }    
-    public void printHealthReport(ArrayList<CIT260.Group5ot.model.Character> characters)throws HealthControlException, IOException {    
-        
-          
-        PrintWriter outFile = null;
-        
-        String fileLocation = "report.txt";       
-        
-        this.console.println("Enter the file name where you want to store the report:");
-         fileLocation = this.keyboard.readLine();
-        
-        
-        try {
-        outFile = new PrintWriter(fileLocation);
-        
 
-            outFile.println("\n\n              Health Report                     ");
-            outFile.printf("%n%-20s%10s%15s", "Name", "Level", "Status");
-            outFile.printf("%n%-20s%10s%15s", "----", "-----", "------");
-
-            for (CIT260.Group5ot.model.Character character : characters) {
-                outFile.printf("%n%-20s%10d%15s", character.getDescription()
-                                            , character.getHealthLevel()
-                                            , character.getHealthStatus());
-            }
-        } catch (IOException ex) {
-            this.console.println("I/O Error: " + ex.getMessage());
-        } finally {
-            if (outFile != null) {
-                outFile.close();
-            
-            }
-        }
-            
-
-
-        GameMenuView gameMenuView = new GameMenuView();
-        
-        gameMenuView.display();
-
-    
-    }    
 }
 
 

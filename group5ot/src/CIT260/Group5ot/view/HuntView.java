@@ -121,13 +121,13 @@ public class HuntView extends View {
 
             switch (choice) {
                 case "S": {
-                try {
-                    // Calculate Tax to shoot gun
-                    this.gunControlTaxCalculation();
-                } catch (IOException ex) {
-                    System.out.println("I dont know why I am doing this");
+                    try {
+                        // Calculate Tax to shoot gun
+                        this.gunControlTaxCalculation();
+                    } catch (IOException ex) {
+                        System.out.println("I dont know why I am doing this");
+                    }
                 }
-            }
                     break;
                 case "Q": // return to the previous screen
                     this.displayTestMenu();
