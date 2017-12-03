@@ -25,7 +25,8 @@ import java.util.logging.Logger;
  */
 public class HealthView extends View {
     
-        private String promptMessage;       
+        private String promptMessage;
+        private String characterType;
         protected final PrintWriter console = Group5ot.getOutFile();  
     
     public HealthView(){
@@ -128,7 +129,7 @@ public class HealthView extends View {
                                             , character.getHealthStatus());
             }
         } catch (IOException ex) {
-                    this.console.println("I/O Error: " + ex.getMessage());
+            this.console.println("I/O Error: " + ex.getMessage());
         } finally {
             if (outFile != null) {
                 outFile.close();
