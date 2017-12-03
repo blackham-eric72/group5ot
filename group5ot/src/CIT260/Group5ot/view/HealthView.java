@@ -25,8 +25,8 @@ import java.util.logging.Logger;
  */
 public class HealthView extends View {
     
-        private String promptMessage;
-        private String characterType;
+//        private String promptMessage;
+//        private String characterType;
         protected final PrintWriter console = Group5ot.getOutFile();  
     
     public HealthView(){

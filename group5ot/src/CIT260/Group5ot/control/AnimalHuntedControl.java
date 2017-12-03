@@ -1,11 +1,14 @@
 package CIT260.Group5ot.control;
 
 //import CIT260.Group5ot.exceptions.AnimalControlException;
+import CIT260.Group5ot.exceptions.HealthControlException;
 import CIT260.Group5ot.model.Animal; //Brings in my enum for later array creation.
 import group5ot.Group5ot;
 import CIT260.Group5ot.view.ErrorView;
+import CIT260.Group5ot.view.GameMenuView;
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -85,7 +88,47 @@ public class AnimalHuntedControl {
 //            System.out.println("I/O Error: " + ex.getMessage());
 //        }
 //    }    
+    public void printHealthReport(ArrayList<CIT260.Group5ot.model.Character> characters)throws HealthControlException, IOException {    
+        
+          
+        PrintWriter outFile = null;
+        
+        String fileLocation = "report.txt";       
+        
+        this.console.println("Enter the file name where you want to store the report:");
+         fileLocation = this.keyboard.readLine();
+        
+        
+        try {
+        outFile = new PrintWriter(fileLocation);
+        
+
+            outFile.println("\n\n              Health Report                     ");
+            outFile.printf("%n%-20s%10s%15s", "Name", "Level", "Status");
+            outFile.printf("%n%-20s%10s%15s", "----", "-----", "------");
+
+            for (CIT260.Group5ot.model.Character character : characters) {
+                outFile.printf("%n%-20s%10d%15s", character.getDescription()
+                                            , character.getHealthLevel()
+                                            , character.getHealthStatus());
+            }
+        } catch (IOException ex) {
+            this.console.println("I/O Error: " + ex.getMessage());
+        } finally {
+            if (outFile != null) {
+                outFile.close();
+            
+            }
+        }
+            
+
+
+        GameMenuView gameMenuView = new GameMenuView();
+        
+        gameMenuView.display();
+
     
+    }    
 }
 
 
