@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author crims
  */
-public class GameMenuView extends View {  
+public class GameMenuView extends View {   
     /*public class MenuView
     {*/
 //        private String promptMessage;
@@ -49,10 +49,10 @@ public class GameMenuView extends View {
             case "H": // display the help menu
                 this.displayHelpMenu();
                 break;
-            case "I": {
-                this.printInventory();
-                 break;       
-            }
+//            case "I": {
+//                this.printInventory();
+//                 break;       
+//            }
 
             case "V": // save the current game
                 this.displayHealthView();
