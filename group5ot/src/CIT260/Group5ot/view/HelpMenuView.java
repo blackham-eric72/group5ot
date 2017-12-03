@@ -6,8 +6,12 @@
 package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
+import CIT260.Group5ot.exceptions.HealthControlException;
+import CIT260.Group5ot.model.Game;
 import group5ot.Group5ot;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -28,9 +32,10 @@ public class HelpMenuView extends View {
                           "\n|*| ------------------------------------ |*|"
                         + "\n|*| *******       Help Menu      ******* |*|"
                         + "\n|*| ------------------------------------ |*|"
-                        + "\n|*| D - Display Game Description         |*|"
-                        + "\n|*| R - Display Game rules               |*|"
-                        + "\n|*| Q - Return to Main Menu              |*|"                 
+                        + "\n|*| D  - Display Game Description        |*|"
+                        + "\n|*| R  - Display Game rules              |*|"
+                        + "\n|*| PC - Print a list of Characters      |*|" 
+                        + "\n|*| Q  - Return to Main Menu             |*|" 
                         + "\n|*| ------------------------------------ |*|");
         }
    
@@ -53,7 +58,20 @@ public class HelpMenuView extends View {
             case "Q": // quits, or returns to main menu
                 this.displayMainMenu();
                 break;
+                case "PC": // prints a list of characters with their descriptions
+                try {       // print health report
+                    try{
+                        Game game = Group5ot.getCurrentGame();
+                        ArrayList<CIT260.Group5ot.model.Character> characterList = game.getCharacters();
+                        this.printCharacterList(characterList);
+                    } catch (IOException ex) {
+                        this.console.println("Not sure about this either.");
+                    }
+                } catch (HealthControlException ex) {
+                    ErrorView.display(this.getClass().getName(), "Error reading input: " +ex.getMessage());
+                }
             
+    
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
@@ -109,4 +127,54 @@ public class HelpMenuView extends View {
         
         mainMenu.display();
     }
+    
+       public void printCharacterList(ArrayList<CIT260.Group5ot.model.Character> characters)throws HealthControlException, IOException {    
+        
+          
+        PrintWriter outFile = null;
+        
+        String fileLocation = "aNewReport.txt";       
+        
+        this.console.println("Enter the file name where you want to store the report:");
+         fileLocation = this.keyboard.readLine();
+        
+        
+        try {
+        outFile = new PrintWriter(fileLocation);
+        
+
+            outFile.println("\n\n              Character List                     ");
+            outFile.printf("%n%-20s%10s", "Name", "Description");
+            outFile.printf("%n%-20s%10s", "----", "-----");
+
+            for (CIT260.Group5ot.model.Character character : characters) {
+                outFile.printf("%n%-20s%10s", character.getName()
+                                            , character.getDescription());
+            }
+        } catch (IOException ex) {
+            this.console.println("I/O Error: " + ex.getMessage());
+        } finally {
+            if (outFile != null) {
+                outFile.close();
+            
+            }
+        }
+            
+
+
+        HelpMenuView helpMenuView = new HelpMenuView();
+        
+        helpMenuView.display();
+
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
