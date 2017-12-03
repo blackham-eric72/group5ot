@@ -95,7 +95,9 @@ public class GameMenuView extends View {
     }
 
     private void displayHealthView() {
-        this.console.println("*** viewHealth() function called ***");    
+        HealthView healthView = new HealthView(); 
+        
+        healthView.display();
     }
     
      private void displayPrintHealth() {
