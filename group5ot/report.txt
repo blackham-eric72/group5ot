@@ -1,12 +1,12 @@
 
 
-              Health Report                     
+              Character List                     
 
-Name                     Level         Status
-----                     -----         ------
-He is the leader of the family        10           null
-She is the mother(real leader) of the family        10           null
-First born son              10           null
-First born daughter, who has a fiesty attitude        10           null
-Last born child - only a baby        10           null
-He is the owner of the trading post        10           null
+Name                Description
+----                     -----
+Obadiah             He is the leader of the family
+LilyAnne            She is the mother(real leader) of the family
+Ephraim             First born son
+Gertrude            First born daughter, who has a fiesty attitude
+Myrtle              Last born child - only a baby
+Trader-Joe          He is the owner of the trading post

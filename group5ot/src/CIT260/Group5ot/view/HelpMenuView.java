@@ -63,7 +63,7 @@ public class HelpMenuView extends View {
                     try{
                         Game game = Group5ot.getCurrentGame();
                         ArrayList<CIT260.Group5ot.model.Character> characterList = game.getCharacters();
-                        this.printHealthReport(characterList);
+                        this.printCharacterList(characterList);
                     } catch (IOException ex) {
                         this.console.println("Not sure about this either.");
                     }
@@ -128,12 +128,12 @@ public class HelpMenuView extends View {
         mainMenu.display();
     }
     
-       public void printHealthReport(ArrayList<CIT260.Group5ot.model.Character> characters)throws HealthControlException, IOException {    
+       public void printCharacterList(ArrayList<CIT260.Group5ot.model.Character> characters)throws HealthControlException, IOException {    
         
           
         PrintWriter outFile = null;
         
-        String fileLocation = "report.txt";       
+        String fileLocation = "aNewReport.txt";       
         
         this.console.println("Enter the file name where you want to store the report:");
          fileLocation = this.keyboard.readLine();
