@@ -9,8 +9,12 @@ import CIT260.Group5ot.control.AnimalHuntedControl;
 import CIT260.Group5ot.model.Animal;
 import CIT260.Group5ot.control.GameControl;
 import CIT260.Group5ot.control.HealthControl;
+import CIT260.Group5ot.exceptions.AnimalControlException;
 import group5ot.Group5ot;
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 //import CIT260.Group5ot.view.ErrorView;
 
 /**
@@ -61,9 +65,17 @@ public class TestMenuView extends View {
             case "S": // Save game
                 this.saveGame();
                 break;
-            case "AD": // display the Animals menu
+            case "AD": {
+            try {
+                // display the Animals menu
                 this.displayAnimalsArrayTest();
-                break;                   
+            } catch (AnimalControlException ex) {
+                System.out.println("I dont know why this is here.");
+            } catch (IOException ex) {
+                System.out.println("I dont know why this is here.");
+            }
+        }
+                break;                                      
 //            case "AP": // display the Animals menu
 //                this.printAnimalsArrayTest();
 //                break;                
@@ -125,7 +137,7 @@ public class TestMenuView extends View {
 //    }  
       
     
-    private void displayAnimalsArrayTest() {
+    private void displayAnimalsArrayTest() throws AnimalControlException, IOException {
 //        this.console.println("*** displayAnimalsArrayTest() function called ***");
         this.console.println(AnimalHuntedControl.createAnimals());
     }  
