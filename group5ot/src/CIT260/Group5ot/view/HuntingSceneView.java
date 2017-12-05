@@ -102,7 +102,7 @@ public class HuntingSceneView extends View {
             outFile.printf("%n%-20s%10s", "----", "------");
 
             for (CIT260.Group5ot.model.Animal animal : animals) {
-                outFile.printf("%n%-20s%10f", animal.getName()
+                outFile.printf("%n%-20s%10.2f", animal.getName()
                                             , animal.getWeight());
             }
         } catch (IOException ex) {
