@@ -76,110 +76,138 @@ public class MapControl {
                     location.setVisited(false);
                     location.setRow(i);
                     location.setColumn(j);
-                    //THE FOLLOWING IF STATEMENTS SET THE LOCATIONS i.e 0,0 = location one, etc.
+                    //THE FOLLOWING IF STATEMENTS SET THE LOCATIONS i.e 0,0 = location one
+                    //They also assign a city-name to the location. 
                     //1
                     if( i == 0 && j == 0) {
-                        location.setLocationNumber("One");
+                        location.setLocationNumber("1");
                         location.setLocationName("Independence, Missouri");
                        }
                     //2
                     else if( i == 0 && j == 1) {
-                        location.setLocationNumber("two");
+                        location.setLocationNumber("2");
                         location.setLocationName("Kansas City, Missouri");
                     }
                     //3
                     else if( i == 0 && j == 2) {
-                        location.setLocationNumber("three");
-                        location.setLocationName("Kansas City, Missouri");
+                        location.setLocationNumber("3");
+                        location.setLocationName("Fort LeavenWorth, Nebraska");
                     }
                      //4
                     else if( i == 0 && j == 3) {
-                        location.setLocationNumber("four");
+                        location.setLocationNumber("4");
+                        location.setLocationName("Little Blue River, Nebraska");
                     }                    
                      //5
-                    if( i == 1 && j == 3) {
-                        location.setLocationNumber("five");
+                    else if( i == 0 && j == 4) {
+                        location.setLocationNumber("5");
+                        location.setLocationName("Grand Island, Nebraska");
                     }
                     //6
-                    if( i == 2 && j == 3) {
-                        location.setLocationNumber("six");
+                    else if( i == 0 && j == 5) {
+                        location.setLocationNumber("6");
+                        location.setLocationName("Fort Kearny, Nebraska");
                     }
                     
                      //7
-                    if( i == 2 && j == 4) {
+                    else if( i == 0 && j == 6) {
                         location.setLocationNumber("7");
+                        location.setLocationName("Lexington, Nebraska");
                     }
                      //1
-                    if( i == 0 && j == 4) {
+                    else if( i == 0 && j == 7) {
                         location.setLocationNumber("8");
+                        location.setLocationName("Gothenberg, Nebraska");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 0 && j == 8) {
+                        location.setLocationNumber("9");
+                        location.setLocationName("Bayard, Nebraska");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 0 && j == 9) {
+                        location.setLocationNumber("10");
+                        location.setLocationName("Scott's Bluff, Wyoming");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 0 && j == 10) {
+                        location.setLocationNumber("11");
+                         location.setLocationName("Torrington, Wyoming");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 0 && j == 11) {
+                        location.setLocationNumber("12");
+                         location.setLocationName("Fort Laramie, Wyoming");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                   else  if( i == 1 && j == 0) {
+                        location.setLocationNumber("13");
+                         location.setLocationName("Independence Rock, Wyoming");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 1) {
+                        location.setLocationNumber("14");
+                        location.setLocationName("Devil's Gate, Wyoming");
+                        
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 2) {
+                        location.setLocationNumber("15");
+                        location.setLocationName("Fort Bridger,  Idaho");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 3) {
+                        location.setLocationNumber("16");
+                        location.setLocationName("Soda Springs, Idaho");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 4) {
+                        location.setLocationNumber("17");
+                        location.setLocationName("Fort Hall, Idaho");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 5) {
+                        location.setLocationNumber("18");
+                        location.setLocationName("Independence Rock, Idaho");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 6) {
+                        location.setLocationNumber("19");
+                        location.setLocationName("American Falls, Idaho");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 7) {
+                        location.setLocationNumber("20");
+                        location.setLocationName("Twin Falls, Idaho");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 8) {
+                        location.setLocationNumber("21");
+                        location.setLocationName("Fort Boise, Idaho");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 9) {
+                        location.setLocationNumber("22");
+                        location.setLocationName("Vale, Oregon");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 10) {
+                        location.setLocationNumber("23");
+                        location.setLocationName("Huntington, Oregon");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 1 && j == 11) {
+                        location.setLocationNumber("24");
+                        location.setLocationName("Baker City, Oregon");
                     }
                      //1
-                    if( i == 0 && j == 0) {
-                        location.setLocationNumber("one");
+                    else if( i == 2 && j == 0) {
+                        location.setLocationNumber("25");
+                        location.setLocationName("Oregon City, Oregon");
+                    }
+                    else {
+                        location.setLocationNumber("*********");
+                        location.setLocationName("************");
                     }
                     
                     
