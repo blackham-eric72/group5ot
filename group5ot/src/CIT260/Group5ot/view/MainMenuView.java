@@ -70,10 +70,7 @@ public class MainMenuView extends View {
                 break;
             case "S": // save the current game
                 this.saveGame();
-                break;
-            case "T": // display the map view
-                this.displayTestMenu();
-                break;  
+                break; 
             case "Q": // end the game
                 System.exit(0);
                 break; 
@@ -86,18 +83,12 @@ public class MainMenuView extends View {
     }    
 
     private void startNewGame() throws GameControlException {
-         
-       
-        // create a new game
-        GameControl.createNewGame(Group5ot.getPlayer());
-
-        // create items
-        GameControl gameControl = new GameControl();
-        gameControl.createItems();
         
-        //create characters
-
-        gameControl.createCharacters();
+        //Create BeginGameView object
+        BeginGameView beginGameView = new BeginGameView();
+                
+        // Display the BeginGameView
+        beginGameView.displayBeginGameView();
 
     }
 
@@ -158,12 +149,5 @@ public class MainMenuView extends View {
                 
         // Display the map view
         calcBarrel.display();
-    }
-    
-    //display the test menu
-   private void displayTestMenu(){
-       TestMenuView testMenuView = new TestMenuView();
-       
-       testMenuView.display();
-   }
+    }  
 }

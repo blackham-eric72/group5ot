@@ -21,67 +21,65 @@ import java.util.Scanner;
  * @author Flores Family
  */
 public class StartProgramView {
-         
-    protected final String promptMessage;
+    
     protected final BufferedReader keyboard = Group5ot.getInFile();
     protected final PrintWriter console = Group5ot.getOutFile();
-
+    protected String displayMessage;
 
     public StartProgramView(){
+        this.displayMessage = "Press C to continue.";
 
-        this.promptMessage = "\nPlease enter your name: ";
         // display the banner when view is created
-        this.displayBanner();         
+        this.displayBanner(); 
     }
-
-    public void displayBanner() {        
-
-        this.console.println(
-              "\n|*|------------------------------------------------|*|"
-            + "\n|*|   It is 1848 and you are preparing to set off  |*|"
-            + "\n|*| on a journey along the Oregon trail. The trail |*|"
-            + "\n|*| will be treacherous, but a land of promise and |*|"
-            + "\n|*| opportunity awaits. You must make it to Oregon |*|"
-            + "\n|*| by October 31 or winter weather will overwhelm |*|"
-            + "\n|*| you.                                           |*|"
-            + "\n|*|                                                |*|"
-            + "\n|*|    You are the wagon leader for your team and  |*|"
-            + "\n|*| will betasked with the job of purchasing       |*|"
-            + "\n|*| supplies for yourteam and making decisions     |*|"
-            + "\n|*| aboutyour travels. Throughout the journey you  |*|"
-            + "\n|*| will be set upon by many challenges; some      |*|"
-            + "\n|*| from your team will not make it.               |*|"
-            + "\n|*|------------------------------------------------|*|" 
-            + "\n" + promptMessage
-        );
+    
+    public void displayBanner() {
+        this.console.println( 
+          "\n|*|------------------------------------------------|*|"
+        + "\n|*|   It is 1848 and you are preparing to set off  |*|"
+        + "\n|*| on a journey along the Oregon trail. The trail |*|"
+        + "\n|*| will be treacherous, but a land of promise and |*|"
+        + "\n|*| opportunity awaits. You must make it to Oregon |*|"
+        + "\n|*| by October 31 or winter weather will overwhelm |*|"
+        + "\n|*| you.                                           |*|"
+        + "\n|*|                                                |*|"
+        + "\n|*|    You are the wagon leader for your team and  |*|"
+        + "\n|*| will betasked with the job of purchasing       |*|"
+        + "\n|*| supplies for yourteam and making decisions     |*|"
+        + "\n|*| aboutyour travels. Throughout the journey you  |*|"
+        + "\n|*| will be set upon by many challenges; some      |*|"
+        + "\n|*| from your team will not make it.               |*|"                     
+        + "\n|*|------------------------------------------------|*|"  );
     }
-
-    public void displayStartProgramView() {
-
-        boolean done = false;
+    
+    public void displayStartProgramView() { 
+        
+        boolean done = false; // set flag to not done
         do {
-            // Prompt for and get the input value
-            String playersName = this.getPlayersName();
-            if (playersName.toUpperCase().equals("Q"))
-                return;
+            // prompt for and get players name
+            String value = this.getInput();
+            if (value.toUpperCase().equals("X")) // user wants to quit
+                return; // go back to previous view
 
-            done = this.doAction(playersName);
+            // do the requested action and display the next view
+            done = this.doAction(value);
 
         } while (!done);
-
+        
     }
 
-    private String getPlayersName() {
-        
+    public String getInput() {
+         //get infile for keyboard
         String value = ""; // value to be returned
         boolean valid = false; //initilaize to not valid
         
-        while (!valid) { try {
-            // loop while an invalid value is entered
+        while (!valid) { // loop while an invalid value is entered
+            this.console.println("\n" + this.displayMessage);
             
-            value = this.keyboard.readLine(); // get next line typed on keyboard 
+            try {
+                value = this.keyboard.readLine(); // get next line typed on keyboard 
             } catch (IOException ex) {
-                Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
             }
             value = value.trim(); //trim off leading and trailing blanks
             
@@ -95,47 +93,31 @@ public class StartProgramView {
         
         return value; // return the value entered
     }
-        
 
-    private boolean doAction(String playersName) {
+    public boolean doAction(String choice) {
         
-        if  (playersName.length() < 2) {
-            this.console.println("\nInvalid players name: "
-                    + "The name must be greater than one character in length");
-            return false;
+        choice = choice.toUpperCase(); // convert choice to upper case
+        
+        switch (choice) {
+            case "C":
+                this.displayMainMenuView();
+                break;
+            default:
+                this.console.println("\n*** Invalid selection *** Try again");
+                break;
         }
         
-        Player player = GameControl.createPlayer(playersName);
-        
-        if (player == null) { //if unsuccessful
-            this.console.println("\nError creating the player.");
-            return false;
-        }
-         
-        // display next view
-        this.displayNextView(player);
-        
-        return true;  //success!
+        return false;
     }
 
-    private void displayNextView(Player player) {
-        this.console.println(
-                              "\n|======================================================|"
-                            + "\n| Welcome to the game, "  + player.getName() + ". " + String.format("%-" + (30 - player.getName().length()) + "s", " ") + "|"
-                            + "\n| Prepare yourself for the treacherous trek            |" //The string above ensures that the right "|" character lines up
-                            + "\n| to the west - to a land of Opportunity,              |" //regardless of the length of the users's name.
-                            + "\n| Gold, and Glory.                                     | "
-                            + "\n| Will you Survive the journey?                        |"
-                            + "\n| Let’s find out...                                    |" 
-                            + "\n|======================================================|"
-                            );
-        
+    private void displayMainMenuView() {
         //Create MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
                 
         // Display the main menu view
-        mainMenuView.display();
+        mainMenuView.display();    
     }
+    
 
     
 }
