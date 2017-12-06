@@ -37,12 +37,6 @@ import java.util.ArrayList;
       return character;
     }
 */
-
-   
-        
-
-
-
 /**
  *
  * @author crims
@@ -53,7 +47,6 @@ public class GameControl {
 
     public GameControl() {
     }
-    
 
     public static Player createPlayer(String name) {
     
@@ -67,8 +60,7 @@ public class GameControl {
         Group5ot.setPlayer(player); // save the player
         
         return player;
-        
-        
+         
     }
 
     public static void createNewGame(Player player) throws GameControlException {

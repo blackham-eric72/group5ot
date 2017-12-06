@@ -27,12 +27,12 @@ public class BarrelVolumeCalcView extends View {
 
 public BarrelVolumeCalcView(){
 
-                    super("\n|*| ------------------------------------ |*|"
-                        + "\n|*| ***  Barrel Volume Calculation  **** |*|"
-                        + "\n|*| ------------------------------------ |*|"
-                        + "\n|*| P - Caclulate volume                 |*|"
-                        + "\n|*| Q - Return to game/main menu         |*|"                 
-                        + "\n|*| ------------------------------------ |*|");
+    super("\n|*| ------------------------------------ |*|"
+        + "\n|*| ***  Barrel Volume Calculation  **** |*|"
+        + "\n|*| ------------------------------------ |*|"
+        + "\n|*| P - Caclulate volume                 |*|"
+        + "\n|*| Q - Return to game/main menu         |*|"                 
+        + "\n|*| ------------------------------------ |*|");
 
 }
 
