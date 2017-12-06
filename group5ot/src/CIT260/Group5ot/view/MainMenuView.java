@@ -58,7 +58,7 @@ public class MainMenuView extends View {
                 catch (GameControlException ex){
                     ErrorView.display(ex.getClass().getName(), "Error Reading input: " + ex.getMessage());
                 }
-               this.displayFirstView();
+              // this.displayFirstView();
                
                 break;
             case "L": // get and start an existing game
@@ -72,10 +72,7 @@ public class MainMenuView extends View {
                 break;
             case "S": // save the current game
                 this.saveGame();
-                break;
-            case "T": // display the map view
-                this.displayTestMenu();
-                break;  
+                break; 
             case "Q": // end the game
                 System.exit(0);
                 break; 
@@ -88,6 +85,7 @@ public class MainMenuView extends View {
     }    
 
     private void startNewGame() throws GameControlException {
+
          
        
         // create a new game
@@ -101,12 +99,21 @@ public class MainMenuView extends View {
         MapControl theMap = new MapControl();
         
         theMap.createMap(3, 12);
+
+        
+        //Create BeginGameView object
+        BeginGameView beginGameView = new BeginGameView();
+                
+        // Display the BeginGameView
+        beginGameView.displayBeginGameView();
+
+
     }
 
-    private void displayFirstView() {
-        FirstView firstView = new FirstView();
-        firstView.display();
-    }
+//    private void displayFirstView() {
+//        FirstView firstView = new FirstView();
+//        firstView.display();
+//    }
     private void startExistingGame() {
         this.console.println("\n\nEnter the file path for file where the game"
                 + " is to be saved.");
@@ -164,12 +171,5 @@ public class MainMenuView extends View {
                 
         // Display the map view
         calcBarrel.display();
-    }
-    
-    //display the test menu
-   private void displayTestMenu(){
-       TestMenuView testMenuView = new TestMenuView();
-       
-       testMenuView.display();
-   }
+    }  
 }
