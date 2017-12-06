@@ -16,15 +16,15 @@ public class FirstView extends View {
 
         public FirstView() {
             super( "\n|| -------------------------------------------- ||"
-                 + "\n|| Welcome to the Trail, adventurer!            ||"
-                 + "\n|| You are now at Kansas City, Missouri.        ||"
+                 + "\n||                                              ||"
+                 + "\n|| You are now at Independence, Missouri.       ||"
                  + "\n|| This is the starting location of the game!   ||"
                  + "\n|| Before you get started on your journey,      ||"
-                 + "\n|| you'll want to get some supplies.            ||"
-                 + "\n|| Once you are all set there - Bon Voyage      ||"
-                 + "\n|| as the French like to say!                   ||"
+                 + "\n|| you'll want to get some supplies at the      ||"
+                 + "\n|| trading postOnce you are all set there - Bon ||"
+                 + "\n|| Voyage - as the French like to say!          ||"
                  + "\n|| ******************************************** ||"
-                 + "\n|| Press C to keep moving forward.              ||"
+                 + "\n|| Press C to continue on to the trading post.  ||"
                  + "\n|| Press G to display the Game Menu.            ||"
                  + "\n|| -------------------------------------------- ||");
 
