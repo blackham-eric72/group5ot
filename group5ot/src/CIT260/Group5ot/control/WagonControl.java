@@ -46,6 +46,18 @@ public class WagonControl {
     double calcWagonCargoWeight(long numAdults, long numChildren, double foodWeight, double meatWeight, double waterWeight) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-						
+			
+    
+    
+    //I think we need a way to move the wagon, this is my (Eric's) attempt
+   
+//    public static void moveWagon(){
+//        public int currentRow = 
+//        
+//    }
+    
+    
+    
+    
 						
 }

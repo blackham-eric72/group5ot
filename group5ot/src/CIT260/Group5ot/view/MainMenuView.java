@@ -58,6 +58,8 @@ public class MainMenuView extends View {
                 catch (GameControlException ex){
                     ErrorView.display(ex.getClass().getName(), "Error Reading input: " + ex.getMessage());
                 }
+               this.displayFirstView();
+               
                 break;
             case "L": // get and start an existing game
                 this.startExistingGame();
@@ -90,17 +92,21 @@ public class MainMenuView extends View {
        
         // create a new game
         GameControl.createNewGame(Group5ot.getPlayer());
-
         // create items
         GameControl gameControl = new GameControl();
         gameControl.createItems();
-        
         //create characters
-
         gameControl.createCharacters();
-
+        //create the map
+        MapControl theMap = new MapControl();
+        
+        theMap.createMap(3, 12);
     }
 
+    private void displayFirstView() {
+        FirstView firstView = new FirstView();
+        firstView.display();
+    }
     private void startExistingGame() {
         this.console.println("\n\nEnter the file path for file where the game"
                 + " is to be saved.");

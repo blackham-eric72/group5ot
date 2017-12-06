@@ -15,19 +15,14 @@ import java.util.Objects;
 public class Location implements Serializable {
     
     //class instance variables
-//    private int row;
-//    private int column;
+    private int row;
+    private int column;
     private boolean visited;
     private Scene scene = null;
+    private String locationName = null;
+    private String locationNumber = null;
 
-    public Scene getScene() {
-        return scene;
-    }
-
-   public void setScene(Scene scene) {
-        this.scene = scene;
-    }
-    
+ 
     
    // private int amountRemaining;
    
@@ -36,22 +31,49 @@ public class Location implements Serializable {
     public Location() {
     }
 
-    //getters and setters
-//    public int getRow() {
-//        return row;
-//    }
-//
-//    public void setRow(int row) {
-//        this.row = row;
-//    }
-//
-//    public int getColumn() {
-//        return column;
-//    }
-//
-//    public void setColumn(int column) {
-//        this.column = column;
-//    }
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+
+    public String getLocationNumber() {
+        return locationNumber;
+    }
+
+    public void setLocationNumber(String locationNumber) {
+        this.locationNumber = locationNumber;
+    }
+
+
+    
+    
+       public Scene getScene() {
+        return scene;
+    }
+
+   public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+    
+//    getters and setters
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
 
     public boolean isVisited() {
         return visited;
@@ -108,13 +130,17 @@ public class Location implements Serializable {
         }
         return true;
     }
-    
+
     @Override
     public String toString() {
-        return "Location{" + "visited=" + visited + ", scene=" + scene + '}';
+        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", scene=" + scene + ", locationName=" + locationName + ", locationNumber=" + locationNumber + '}';
     }
 
+   
+
+  
     
+   
     
     
     

@@ -10,6 +10,7 @@ package CIT260.Group5ot.enums;
  * @author Flores Family
  */
 public enum SceneType{
+    FirstScene,
     TradingPost,
     HuntingScene,
     Trail,
