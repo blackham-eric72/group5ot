@@ -22,41 +22,61 @@ public class HuntView extends View {
 //    private String menu; 
 //    private String promptMessage;
 
-
+//I will randomize the animal hopefully (with Tutor's help).
+    
 //    public HuntView(){
 //
-//        super(    "\n                     (____)    "
-//                + "\n                      (oo)    "
-//                + "\n               /-------\\/     "
-//                + "\n              / |     ||      "
-//                + "\n             *  ||----||      "
-//                + "\n                ~~    ~~      "         
-//                + "\n                              "
+//        super(    "\n                  {_}                      "
+//                + "\n                 '-=\                      "
+//                + "\n                    \\____(                "
+//                + "\n                   _|/---\\_               "
+//                + "\n                   \        \              "       
+//                + "\n                                           "
 //                
 //                + "\n|*| ------------------------------------ |*|"
-//                + "\n|*| ****      KILL THE BEAST!       **** |*|"
+//                + "\n|*| ****         YUMMY DEER!        **** |*|"
 //                + "\n|*| ------------------------------------ |*|"
 //                + "\n|*| S - Shoot                            |*|"
 //                + "\n|*| Q - Return to game/main menu         |*|"                 
 //                + "\n|*| ------------------------------------ |*|");
 //
 //    }
+    
 
+//    public HuntView(){
+//
+//        super(    "\n                    \\     "
+//                + "\n                     \\_   "
+//                + "\n                  .---(')  "
+//                + "\n                o( )_-\\_  "
+//                + "\n|*| ------------------------------------ |*|"
+//                + "\n|*| ***  WOULD YOU EAT THIS RABBIT?  *** |*|"
+//                + "\n|*| ------------------------------------ |*|"
+//                + "\n|*| S - Shoot                            |*|"
+//                + "\n|*| Q - Return to game/main menu         |*|"                 
+//                + "\n|*| ------------------------------------ |*|");
+//
+//    }    
+    
     public HuntView(){
 
-        super(    "\n             \\     "
-                + "\n              \\_   "
-                + "\n           .---(')  "
-                + "\n         o( )_-\\_  "
+        super(    "\n                   |\\=.                    "
+                + "\n                  /  6',                    "
+                + "\n           .--.   \\  .-'                   "
+                + "\n         /_   \\   /  (_()                 "
+                + "\n           )   | / `;--'                   "
+                + "\n          /   / /   (                "
+                + "\n         (    `\"    _)_             "
+                + "\n           `-==-'`\"\"\"\"\"\"`       "
                 + "\n|*| ------------------------------------ |*|"
-                + "\n|*| ****      KILL THE BEAST!       **** |*|"
+                + "\n|*| ****      SQUIRREL...YUCK!      **** |*|"
                 + "\n|*| ------------------------------------ |*|"
                 + "\n|*| S - Shoot                            |*|"
                 + "\n|*| Q - Return to game/main menu         |*|"                 
                 + "\n|*| ------------------------------------ |*|");
 
-    }    
-    
+    }        
+
     public void displayHuntingSceneView() {
         HuntingSceneView huntSceneView = new HuntingSceneView();
         huntSceneView.display();
