@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class HuntingSceneView extends View {
     public HuntingSceneView() {
         super( "\n There is good hunting here. "
-             + "\n Press P to print a list of local animals."
+             + "\n Press A to see a list of local animals."
              + "\n Press H to hunt."
              + "\n Press C to keep moving forward."
              + "\n Press G to display the Game Menu.");
@@ -102,7 +102,7 @@ public class HuntingSceneView extends View {
             outFile.printf("%n%-20s%10s", "----", "------");
 
             for (CIT260.Group5ot.model.Animal animal : animals) {
-                outFile.printf("%n%-20s%10f", animal.getName()
+                outFile.printf("%n%-20s%10.2f", animal.getName()
                                             , animal.getWeight());
             }
         } catch (IOException ex) {

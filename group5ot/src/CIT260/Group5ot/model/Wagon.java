@@ -20,9 +20,18 @@ public class Wagon implements Serializable{
     private Player player;
     private Location location;
 
+    
+
     public Wagon() {
     }
     
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
    
     public double getTotalWeight() {
         return totalWeight;
@@ -60,10 +69,8 @@ public class Wagon implements Serializable{
 
     @Override
     public String toString() {
-        return "Wagon{" + "totalWeight=" + totalWeight + ", supplyItem=" + supplyItem + '}';
+        return "Wagon{" + "totalWeight=" + totalWeight + ", supplyItem=" + supplyItem + ", player=" + player + ", location=" + location + '}';
     }
-    
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -83,8 +90,20 @@ public class Wagon implements Serializable{
         if (!Objects.equals(this.supplyItem, other.supplyItem)) {
             return false;
         }
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
         return true;
     }
+
+    
+    
+    
+
+  
     
     
     

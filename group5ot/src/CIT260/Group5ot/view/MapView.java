@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.view;
 import CIT260.Group5ot.control.GameControl;
+import CIT260.Group5ot.control.MapControl;
 import group5ot.Group5ot;
 import java.util.Scanner;
 
@@ -14,9 +15,7 @@ import java.util.Scanner;
  */
 public class MapView extends View {
     
-    
-        private String promptMessage;
-
+ 
 
 public MapView(){
 

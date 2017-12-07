@@ -19,7 +19,4 @@ public enum CharacterType implements Serializable {
    Myrtle,
    TraderJoe;
 
-    public String getCharacterType() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

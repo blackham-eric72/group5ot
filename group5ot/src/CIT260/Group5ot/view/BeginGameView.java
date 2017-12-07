@@ -6,6 +6,7 @@
 package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
+import CIT260.Group5ot.control.MapControl;
 import CIT260.Group5ot.exceptions.GameControlException;
 import CIT260.Group5ot.model.Player;
 import group5ot.Group5ot;
@@ -108,10 +109,8 @@ public class BeginGameView {
           + "\n| Gold, and Glory.                                     |"
           + "\n| Will you survive the journey?                        |"
           + "\n| Let’s find out...                                    |"
-          + "\n| You will first go to a trading post to stock         |"
-          + "\n| up for the journey.                                  |" 
           + "\n|======================================================|");
-        
+  // I commented this out, because I'm not sure that it's necessary, these functions should be called by beginning a new game from the main menu.       
         // create a new game
         GameControl.createNewGame(Group5ot.getPlayer());
 
@@ -123,10 +122,19 @@ public class BeginGameView {
         gameControl.createCharacters();
         
         
-        //Create MainMenuView object
-        TradingPostView tradingPostView = new TradingPostView();
-                
-        // Display the main menu view
-        tradingPostView.display();
+//        //Create MainMenuView object
+//        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
+//                
+//        // Display the main menu view
+//        tradingpostMenuView.display();
+        //create the map
+        MapControl theMap = new MapControl();
+        //pass in the number of rows (3) and columns (12) to create the map locations array.
+        theMap.createMap(3, 12);
+        
+        FirstView firstView = new FirstView();
+        firstView.display();
+              
+
     }
 }

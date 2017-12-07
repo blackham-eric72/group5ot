@@ -10,6 +10,7 @@ import java.io.IOException;
 import static java.lang.Double.parseDouble;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.Random;
 //import java.util.Scanner;
 
 /**
@@ -21,25 +22,60 @@ public class HuntView extends View {
 //    private String menu; 
 //    private String promptMessage;
 
+//I will randomize the animal hopefully (with Tutor's help).
+    
+//    public HuntView(){
+//
+//        super(    "\n                  {_}                      "
+//                + "\n                 '-=\                      "
+//                + "\n                    \\____(                "
+//                + "\n                   _|/---\\_               "
+//                + "\n                   \        \              "       
+//                + "\n                                           "
+//                
+//                + "\n|*| ------------------------------------ |*|"
+//                + "\n|*| ****         YUMMY DEER!        **** |*|"
+//                + "\n|*| ------------------------------------ |*|"
+//                + "\n|*| S - Shoot                            |*|"
+//                + "\n|*| Q - Return to game/main menu         |*|"                 
+//                + "\n|*| ------------------------------------ |*|");
+//
+//    }
+    
 
+//    public HuntView(){
+//
+//        super(    "\n                    \\     "
+//                + "\n                     \\_   "
+//                + "\n                  .---(')  "
+//                + "\n                o( )_-\\_  "
+//                + "\n|*| ------------------------------------ |*|"
+//                + "\n|*| ***  WOULD YOU EAT THIS RABBIT?  *** |*|"
+//                + "\n|*| ------------------------------------ |*|"
+//                + "\n|*| S - Shoot                            |*|"
+//                + "\n|*| Q - Return to game/main menu         |*|"                 
+//                + "\n|*| ------------------------------------ |*|");
+//
+//    }    
+    
     public HuntView(){
 
-        super(    "\n                     (____)    "
-                + "\n                      (oo)    "
-                + "\n               /-------\\/     "
-                + "\n              / |     ||      "
-                + "\n             *  ||----||      "
-                + "\n                ~~    ~~      "         
-                + "\n                              "
-                
+        super(    "\n                   |\\=.                    "
+                + "\n                  /  6',                    "
+                + "\n           .--.   \\  .-'                   "
+                + "\n         /_   \\   /  (_()                 "
+                + "\n           )   | / `;--'                   "
+                + "\n          /   / /   (                "
+                + "\n         (    `\"    _)_             "
+                + "\n           `-==-'`\"\"\"\"\"\"`       "
                 + "\n|*| ------------------------------------ |*|"
-                + "\n|*| ****      KILL THE BEAST!       **** |*|"
+                + "\n|*| ****      SQUIRREL...YUCK!      **** |*|"
                 + "\n|*| ------------------------------------ |*|"
                 + "\n|*| S - Shoot                            |*|"
                 + "\n|*| Q - Return to game/main menu         |*|"                 
                 + "\n|*| ------------------------------------ |*|");
 
-    }
+    }        
 
     public void displayHuntingSceneView() {
         HuntingSceneView huntSceneView = new HuntingSceneView();
@@ -125,7 +161,7 @@ public class HuntView extends View {
                         // Calculate Tax to shoot gun
                         this.gunControlTaxCalculation();
                     } catch (IOException ex) {
-                        System.out.println("I dont know why I am doing this");
+                        System.out.println("Error in calculation.  Try again.");
                     }
                 }
                     break;

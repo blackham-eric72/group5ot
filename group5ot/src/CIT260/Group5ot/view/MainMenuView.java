@@ -71,6 +71,9 @@ public class MainMenuView extends View {
             case "S": // save the current game
                 this.saveGame();
                 break; 
+            case "T": // end the game
+                this.displayTestMenu();
+                break; 
             case "Q": // end the game
                 System.exit(0);
                 break; 
@@ -122,6 +125,15 @@ public class MainMenuView extends View {
         // Display the Game menu view
         gameMenuView.display();
     }
+    
+    
+    //display the test menu
+   private void displayTestMenu(){
+       TestMenuView testMenuView = new TestMenuView();
+       
+       testMenuView.display();
+   }
+    
     private void saveGame() {
         this.console.println("\n\nEnter the file path for file where the game"
                 + " is to be saved.");
