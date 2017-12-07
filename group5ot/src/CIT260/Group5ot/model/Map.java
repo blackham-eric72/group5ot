@@ -19,7 +19,7 @@ public class Map implements Serializable {
     private String description;
     private int ROWCOUNT = 3;
     private int COLUMNCOUNT = 20;
-    private ArrayList<Game> games = new ArrayList<Game>();
+    private ArrayList<Game> games = new ArrayList<>();
     private Location[][] locations = new Location[ROWCOUNT][COLUMNCOUNT];
 
     //default constructor
