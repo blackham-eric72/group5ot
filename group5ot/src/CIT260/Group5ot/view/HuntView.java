@@ -10,6 +10,7 @@ import java.io.IOException;
 import static java.lang.Double.parseDouble;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.Random;
 //import java.util.Scanner;
 
 /**
@@ -22,16 +23,31 @@ public class HuntView extends View {
 //    private String promptMessage;
 
 
+//    public HuntView(){
+//
+//        super(    "\n                     (____)    "
+//                + "\n                      (oo)    "
+//                + "\n               /-------\\/     "
+//                + "\n              / |     ||      "
+//                + "\n             *  ||----||      "
+//                + "\n                ~~    ~~      "         
+//                + "\n                              "
+//                
+//                + "\n|*| ------------------------------------ |*|"
+//                + "\n|*| ****      KILL THE BEAST!       **** |*|"
+//                + "\n|*| ------------------------------------ |*|"
+//                + "\n|*| S - Shoot                            |*|"
+//                + "\n|*| Q - Return to game/main menu         |*|"                 
+//                + "\n|*| ------------------------------------ |*|");
+//
+//    }
+
     public HuntView(){
 
-        super(    "\n                     (____)    "
-                + "\n                      (oo)    "
-                + "\n               /-------\\/     "
-                + "\n              / |     ||      "
-                + "\n             *  ||----||      "
-                + "\n                ~~    ~~      "         
-                + "\n                              "
-                
+        super(    "\n             \\     "
+                + "\n              \\_   "
+                + "\n           .---(')  "
+                + "\n         o( )_-\\_  "
                 + "\n|*| ------------------------------------ |*|"
                 + "\n|*| ****      KILL THE BEAST!       **** |*|"
                 + "\n|*| ------------------------------------ |*|"
@@ -39,8 +55,8 @@ public class HuntView extends View {
                 + "\n|*| Q - Return to game/main menu         |*|"                 
                 + "\n|*| ------------------------------------ |*|");
 
-    }
-
+    }    
+    
     public void displayHuntingSceneView() {
         HuntingSceneView huntSceneView = new HuntingSceneView();
         huntSceneView.display();
@@ -125,7 +141,7 @@ public class HuntView extends View {
                         // Calculate Tax to shoot gun
                         this.gunControlTaxCalculation();
                     } catch (IOException ex) {
-                        System.out.println("I dont know why I am doing this");
+                        System.out.println("Error in calculation.  Try again.");
                     }
                 }
                     break;
