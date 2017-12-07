@@ -36,7 +36,7 @@ public class FoodSourceView extends View{
         
         switch (choice) {
             case "Y":
-                this.displayLookAroundCheckpointView();
+                this.getFood();
                 break;
             case "C":
                 this.nextView();
@@ -63,10 +63,8 @@ public class FoodSourceView extends View{
         gameMenuView.display();    
     }
 
-    private void displayLookAroundCheckpointView() {
-        LookAroundCheckpointView lookAroundCheckpointView  = new LookAroundCheckpointView ();
-       
-        lookAroundCheckpointView.display();    
+    private void getFood() {
+        this.console.println("\n*** When Chuck Norris throws exceptions, it's across the room. Brought to you by getFood().");
     }
 }
 

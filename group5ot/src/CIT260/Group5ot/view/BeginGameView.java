@@ -124,9 +124,9 @@ public class BeginGameView {
         
         
         //Create MainMenuView object
-        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
+        TradingPostView tradingPostView = new TradingPostView();
                 
         // Display the main menu view
-        tradingpostMenuView.display();
+        tradingPostView.display();
     }
 }

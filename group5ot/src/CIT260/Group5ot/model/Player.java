@@ -19,7 +19,6 @@ public class Player implements Serializable {
     private String name;
     private double bestTime;
     private ArrayList<Game> games = new ArrayList<Game>();
-    private Health health;
     private Wagon wagon;
     private InventoryItem inventoryItem;
     private Menu menu;
@@ -59,14 +58,6 @@ public class Player implements Serializable {
         this.games = games;
     }
 
-    public Health getHealth() {
-        return health;
-    }
-
-    public void setHealth(Health health) {
-        this.health = health;
-    }
-
     public Wagon getWagon() {
         return wagon;
     }
@@ -97,7 +88,7 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", bestTime=" + bestTime + ", games=" + games + ", health=" + health + ", wagon=" + wagon + ", inventoryItem=" + inventoryItem + ", menu=" + menu + '}';
+        return "Player{" + "name=" + name + ", bestTime=" + bestTime + ", games=" + games + ", wagon=" + wagon + ", inventoryItem=" + inventoryItem + ", menu=" + menu + '}';
     }
 
     @Override

@@ -48,9 +48,8 @@ public class EatingView extends View {
 
     private void eat() {
         this.console.println("\n"
-    + "\nYou ate food. Your supply of food has"
-    + "\n decreased and your health has increased.");
-        //health control and inventory will change
+    + "\nYou ate food. Your supply of food has decreased.");
+        //inventory will change
         }
 
     private void nextView() {

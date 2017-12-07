@@ -13,18 +13,11 @@ public class Character {
 
     
     private String name;
-    private String description;
-    private int healthLevel;
-    private String healthStatus;
-   
-    
+    private String description; 
 
-  public Character(String name, String description, int healthLevel) {
+  public Character(String name, String description) {
     this.name = name;
     this.description = description;
-    this.healthLevel = healthLevel;
-    this.healthStatus = healthStatus;
-
     }  
 
     public String getName() {
@@ -42,28 +35,11 @@ public class Character {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public int getHealthLevel() {
-        return healthLevel;
-    }
-
-    public void setHealthLevel(int healthLevel) {
-        this.healthLevel = healthLevel;
-    }
-
-    public String getHealthStatus() {
-        return healthStatus;
-    }
-
-    public void setHealthStatus(String healthStatus) {
-        this.healthStatus = healthStatus;
-    }
-    
     
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", description=" + description + ", healthLevel=" + healthLevel + '}';
+        return "Character{" + "name=" + name + ", description=" + description + '}';
     }
 
     
