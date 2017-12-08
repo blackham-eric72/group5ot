@@ -37,7 +37,7 @@ public class HuntView extends View {
 //                + "\n|*| ****         YUMMY DEER!        **** |*|"
 //                + "\n|*| ------------------------------------ |*|"
 //                + "\n|*| S - Shoot                            |*|"
-//                + "\n|*| Q - Return to game/main menu         |*|"                 
+//                + "\n|*| Q - Return to game menu              |*|"                  
 //                + "\n|*| ------------------------------------ |*|");
 //
 //    }
@@ -53,7 +53,7 @@ public class HuntView extends View {
 //                + "\n|*| ***  WOULD YOU EAT THIS RABBIT?  *** |*|"
 //                + "\n|*| ------------------------------------ |*|"
 //                + "\n|*| S - Shoot                            |*|"
-//                + "\n|*| Q - Return to game/main menu         |*|"                 
+//                + "\n|*| Q - Return to game menu              |*|"                  
 //                + "\n|*| ------------------------------------ |*|");
 //
 //    }    
@@ -72,7 +72,7 @@ public class HuntView extends View {
                 + "\n|*| ****      SQUIRREL...YUCK!      **** |*|"
                 + "\n|*| ------------------------------------ |*|"
                 + "\n|*| S - Shoot                            |*|"
-                + "\n|*| Q - Return to game/main menu         |*|"                 
+                + "\n|*| Q - Return to game menu              |*|"                 
                 + "\n|*| ------------------------------------ |*|");
 
     }        

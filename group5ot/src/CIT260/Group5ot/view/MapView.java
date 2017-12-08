@@ -19,7 +19,7 @@ public class MapView extends View {
 
 public MapView(){
 
-        super( "\n|| *******      MAP MENU      ******* ||"
+        super(    "\n|| *******      MAP MENU      ******* ||"
                 + "\n|| Would you like to:                 ||"
                 + "\n|| A - See a map of the trail         ||"
                 + "\n|| R - Go to the test menu            ||"

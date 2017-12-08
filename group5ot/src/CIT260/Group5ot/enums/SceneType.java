@@ -15,7 +15,6 @@ public enum SceneType{
     HuntingScene,
     Trail,
     Eating,
-    RestScene,
     WaterSource,
     FoodSource
 }

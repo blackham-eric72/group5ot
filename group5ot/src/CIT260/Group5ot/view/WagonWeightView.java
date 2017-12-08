@@ -27,7 +27,8 @@ public class WagonWeightView extends View{
     
         public WagonWeightView() {
     
-            super("\n|  W - Calculate Wagon Cargo Weight      |"
+            super("\n|----------------------------------------|"
+                + "\n|  W - Calculate Wagon Cargo Weight      |"
                 + "\n|  Q - Return                            |"
                 + "\n|----------------------------------------|");
         }
