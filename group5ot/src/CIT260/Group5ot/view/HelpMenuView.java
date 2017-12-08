@@ -34,7 +34,8 @@ public class HelpMenuView extends View {
                         + "\n|*| ------------------------------------ |*|"
                         + "\n|*| D  - Display Game Description        |*|"
                         + "\n|*| R  - Display Game rules              |*|"
-                        + "\n|*| PC - Print a list of Characters      |*|" 
+                        + "\n|*| PC - Print a list of Characters      |*|"
+                        + "\n|*| M  -  Display the Game Map           |*|" 
                         + "\n|*| Q  - Return to Main Menu             |*|" 
                         + "\n|*| ------------------------------------ |*|");
         }
@@ -54,6 +55,9 @@ public class HelpMenuView extends View {
                 break;
             case "R": // display game rules
                 this.displayGameRules();
+                break;
+            case "M": // display game rules
+                this.displayMap();
                 break;
             case "Q": // quits, or returns to main menu
                 this.displayMainMenu();
@@ -80,7 +84,11 @@ public class HelpMenuView extends View {
         return false;
     }    
 
-
+    private void displayMap(){
+        MapView map = new MapView();
+        map.display();
+        
+    }
     private void displayGameDescription() {
         this.console.println(
                   "\n|*|------------------------------------------------|*|"

@@ -20,7 +20,8 @@ public class Location implements Serializable {
     private boolean visited;
     private Scene scene = null;
     private String locationName = null;
-    private String locationNumber = null;
+    private int locationNumber;
+    
 
  
     
@@ -39,13 +40,14 @@ public class Location implements Serializable {
         this.locationName = locationName;
     }
 
-    public String getLocationNumber() {
+    public int getLocationNumber() {
         return locationNumber;
     }
 
-    public void setLocationNumber(String locationNumber) {
+    public void setLocationNumber(int locationNumber) {
         this.locationNumber = locationNumber;
     }
+
 
 
     
@@ -133,7 +135,7 @@ public class Location implements Serializable {
 
     @Override
     public String toString() {
-        return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + ", scene=" + scene + ", locationName=" + locationName + ", locationNumber=" + locationNumber + '}';
+        return locationNumber + ": " + locationName + "  " ;
     }
 
    

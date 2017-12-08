@@ -8,7 +8,9 @@ package CIT260.Group5ot.view;
 import CIT260.Group5ot.control.GameControl;
 import CIT260.Group5ot.control.MapControl;
 import CIT260.Group5ot.exceptions.GameControlException;
+import CIT260.Group5ot.model.Map;
 import CIT260.Group5ot.model.Player;
+import CIT260.Group5ot.model.Wagon;
 import group5ot.Group5ot;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -110,7 +112,7 @@ public class BeginGameView {
           + "\n| Will you survive the journey?                        |"
           + "\n| Let’s find out...                                    |"
           + "\n|======================================================|");
-  // I commented this out, because I'm not sure that it's necessary, these functions should be called by beginning a new game from the main menu.       
+     
         // create a new game
         GameControl.createNewGame(Group5ot.getPlayer());
 
@@ -127,13 +129,26 @@ public class BeginGameView {
 //                
 //        // Display the main menu view
 //        tradingpostMenuView.display();
+
+
         //create the map
         MapControl theMap = new MapControl();
-        //pass in the number of rows (3) and columns (12) to create the map locations array.
-        theMap.createMap(3, 12);
+        
+        Map ourMap = theMap.createMap(10, 25);
+        //Now that the map is created, this stores the map in the game. 
+        Group5ot.getCurrentGame().setMap(ourMap);
+        
+        Wagon wagon = new Wagon();
+        Group5ot.getCurrentGame().setWagon(wagon);
+        //String locationId = "3";
+        
+        theMap.displayMap();
+
         
         FirstView firstView = new FirstView();
         firstView.display();
+        
+        
               
 
     }

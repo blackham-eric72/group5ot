@@ -17,20 +17,23 @@ public class Map implements Serializable {
     
     //class instance variables
     private String description;
-    private int ROWCOUNT = 3;
-    private int COLUMNCOUNT = 20;
     private ArrayList<Game> games = new ArrayList<>();
-    private Location[][] locations = new Location[ROWCOUNT][COLUMNCOUNT];
+    private Location[][] location;
+    
 
     //default constructor
     public Map() {
     }
-    
-    public Map(int noOfRows, int noOfColumns) {
-        
-        this.ROWCOUNT = noOfRows;
-        this.COLUMNCOUNT = noOfColumns;
+
+    public Location[][] getLocation() {
+        return location;
     }
+
+    public void setLocation(Location[][] location) {
+        this.location = location;
+    }
+    
+    
     
     //getters and setters
     public String getDescription() {
@@ -41,22 +44,7 @@ public class Map implements Serializable {
         this.description = description;
     }
 
-    public int getROWCOUNT() {
-        return ROWCOUNT;
-    }
-    //Is this needed?  We have a static value.
-    public void setROWCOUNT(int ROWCOUNT) {
-        this.ROWCOUNT = ROWCOUNT;
-    }
-
-    public int getCOLUMNCOUNT() {
-        return COLUMNCOUNT;
-    }
-    //Is this needed?  We have a static value.
-    public void setCOLUMNCOUNT(int COLUMNCOUNT) {
-        this.COLUMNCOUNT = COLUMNCOUNT;
-    }
-
+    
 
     public ArrayList<Game> getGames() {
         return games;
@@ -72,8 +60,7 @@ public class Map implements Serializable {
     public int hashCode() {
         int hash = 3;
         hash = 89 * hash + Objects.hashCode(this.description);
-        hash = 89 * hash + this.ROWCOUNT;
-        hash = 89 * hash + this.COLUMNCOUNT;
+       
         return hash;
     }
 
@@ -89,12 +76,7 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (this.ROWCOUNT != other.ROWCOUNT) {
-            return false;
-        }
-        if (this.COLUMNCOUNT != other.COLUMNCOUNT) {
-            return false;
-        }
+       
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
@@ -103,7 +85,7 @@ public class Map implements Serializable {
 
     @Override
     public String toString() {
-        return "Map{" + "description=" + description + ", ROWCOUNT=" + ROWCOUNT + ", COLUMNCOUNT=" + COLUMNCOUNT + '}';
+        return "Map{" + "description=" + description +  '}';
     }
     
     

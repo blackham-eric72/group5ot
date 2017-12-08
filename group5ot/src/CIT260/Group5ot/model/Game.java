@@ -28,6 +28,15 @@ public class Game implements Serializable  {
    private ArrayList<Character> characters;
    private ArrayList<InventoryItem> items;
    private ArrayList<Barrel> barrels;
+   private Wagon wagon;
+
+   
+
+    public void setWagon(Wagon wagon) {
+        this.wagon = wagon;
+    }
+   
+   
 
     public ArrayList<Barrel> getBarrels() {
         return barrels;
@@ -172,6 +181,10 @@ public class Game implements Serializable  {
 
     public void setInventory(InventoryItem[] inventory) {
         this.inventory = inventory;
+    }
+
+    public Wagon getWagon() {
+        return wagon;
     }
     
    

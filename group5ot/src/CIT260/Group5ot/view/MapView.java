@@ -15,14 +15,16 @@ import java.util.Scanner;
  */
 public class MapView extends View {
     
- 
+MapControl mapControl = new MapControl();
+
+
 
 public MapView(){
 
         super( "\n|| *******      MAP MENU      ******* ||"
                 + "\n|| Would you like to:                 ||"
                 + "\n|| A - See a map of the trail         ||"
-                + "\n|| R - Go to the test menu            ||"
+                + "\n|| Q - Go to the main menu            ||"
                 + "\n|| ********************************** ||");
 
 }
@@ -37,7 +39,7 @@ public boolean doAction(String choice) {
             case "A": // Display Map 
                 this.displayMap();
                 break;
-            case "R": // return to the previous screen
+            case "Q": // return to the previous screen
                 this.displayPreviousScreen();
                 break;
             default:
@@ -48,22 +50,17 @@ public boolean doAction(String choice) {
         return false;
  }
  private void displayMap() {
-        this.console.println(// this will become more legit later on in the development process.... hopefully
-                  "                     *** GAME MAP***                    "
-                + "\n|*|-OR-----------------------------------------------|*|"
-                + "\n|*|---ID-------WY---------NB-------------------------|*|"
-                + "\n|*|--------------------------------KS----MO----------|*|"
-        ); //To change body of generated methods, choose Tools | Templates.
-    }
- 
+        mapControl.displayMap();
+                 
+                }
  private void displayPreviousScreen() {
         this.console.println("Chuck Norris says, 'Welcome back to the test Menu'"); //To change body of generated methods, choose Tools | Templates.
-    displayTestMenu();
+    displayMainMenu();
  }
- private void displayTestMenu(){
-       TestMenuView testMenuView = new TestMenuView();
+ private void displayMainMenu(){
+       MainMenuView MenuView = new MainMenuView();
        
-       testMenuView.display();
+       MenuView.display();
    }
 
 }

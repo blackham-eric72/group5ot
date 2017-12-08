@@ -52,7 +52,12 @@ public class TradingPostView extends View{
     }
 
     private void nextView() {
-        this.console.println("\n*** Chuck Norris has been to Mars. That's why there are no signs of life. Brought to you by the NextView().");
+        //get the current location from the wagon, 
+        //increment the location by 1
+        //set the location in the wagon
+        
+        //Go to the location in the map, 
+        //
     }
 
     private void displayGameMenuView() {
