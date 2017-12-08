@@ -24,6 +24,7 @@ public class HuntingSceneView extends View {
     public HuntingSceneView() {
         super( "\n|*| --------------------------------------- |*|"
              + "\n|*| There is good hunting here.             |*|"
+             + "\n|*| ======================================  |*|"
              + "\n|*| Press A to see a list of local animals. |*|"
              + "\n|*| Press H to hunt                         |*|"
              + "\n|*| Press C to keep moving forward.         |*|"
