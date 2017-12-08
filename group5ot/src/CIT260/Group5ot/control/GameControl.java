@@ -115,12 +115,12 @@ public class GameControl {
          
         ArrayList<Character> character = new ArrayList<>(); 
                
-        Character obadiah = new Character("Obadiah", "He is the leader of the family", 10);
-        Character lilyAnne = new Character("LilyAnne", "She is the mother(real leader) of the family", 10);
-        Character ephraim = new Character("Ephraim", "First born son", 10);
-        Character gertrude = new Character("Gertrude", "First born daughter, who has a fiesty attitude", 10);
-        Character myrtle = new Character("Myrtle", "Last born child - only a baby", 10);
-        Character traderJoe = new Character("Trader-Joe", "He is the owner of the trading post", 10);
+        Character obadiah = new Character("Obadiah", "He is the leader of the family");
+        Character lilyAnne = new Character("LilyAnne", "She is the mother(real leader) of the family");
+        Character ephraim = new Character("Ephraim", "First born son");
+        Character gertrude = new Character("Gertrude", "First born daughter, who has a fiesty attitude");
+        Character myrtle = new Character("Myrtle", "Last born child - only a baby");
+        Character traderJoe = new Character("Trader-Joe", "He is the owner of the trading post");
         
         
         character.add(0, obadiah);

@@ -109,8 +109,7 @@ public class BeginGameView {
           + "\n| Gold, and Glory.                                     |"
           + "\n| Will you survive the journey?                        |"
           + "\n| Let’s find out...                                    |"
-          + "\n|======================================================|");
-  // I commented this out, because I'm not sure that it's necessary, these functions should be called by beginning a new game from the main menu.       
+          + "\n|========================================= =============|");
         // create a new game
         GameControl.createNewGame(Group5ot.getPlayer());
 
@@ -119,14 +118,8 @@ public class BeginGameView {
         gameControl.createItems();
         
         //create characters
-        gameControl.createCharacters();
-        
-        
-//        //Create MainMenuView object
-//        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
-//                
-//        // Display the main menu view
-//        tradingpostMenuView.display();
+        gameControl.createCharacters();      
+
         //create the map
         MapControl theMap = new MapControl();
         //pass in the number of rows (3) and columns (12) to create the map locations array.

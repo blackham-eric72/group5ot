@@ -12,7 +12,7 @@ package CIT260.Group5ot.view;
 public class TradingPostView extends View{
     
     public TradingPostView() {
-       super( "\n You see a trading post. "
+       super( "\nYou see a trading post. "
             + "\nPress T to go inside."
             + "\nPress C to keep moving forward."
             + "\nPress G to display the Game Menu.");
@@ -29,7 +29,7 @@ public class TradingPostView extends View{
         
         switch (choice) {
             case "T":
-                this.displayTradingPostMenuView();
+                this.displayBuySuppliesView();
                 break;
             case "C":
                 this.nextView();
@@ -45,10 +45,10 @@ public class TradingPostView extends View{
         return false;
     }    
 
-    private void displayTradingPostMenuView() {
-        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
+    private void displayBuySuppliesView() {
+        BuySuppliesView buySuppliesView = new BuySuppliesView();
        
-        tradingpostMenuView.display();    
+        buySuppliesView.display();    
     }
 
     private void nextView() {

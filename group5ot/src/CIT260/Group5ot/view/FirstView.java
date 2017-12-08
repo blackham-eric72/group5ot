@@ -55,8 +55,8 @@ public class FirstView extends View {
     
     //This will take them to the trading post view. 
     private void nextView() {
-        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
-        tradingpostMenuView.display();    
+        TradingPostView tradingPostView = new TradingPostView();
+        tradingPostView.display();    
     
     }
 

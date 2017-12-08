@@ -32,10 +32,12 @@ public class BuySuppliesView extends View {
                     //display a welcome message and instructions and menu
             super( "\nWelcome to the Trading Post. "
                   + "\n|---------------------------------------|"
-                  + "\n|              Buy Supplies             |"
+                  + "\n|          Trading Post Menu            |"
                   + "\n|-------------------------------------- |"
-                  + "\n|  S - Shop                             |"
-                  + "\n|  Q - Return                           |"
+                  + "\n|  S - Buy supplies                     |"
+                  + "\n|  H - Trading Post help                |"
+                  + "\n|  G - Game menu                        |"
+                  + "\n|  Q - Continue moving forward          |"
                   + "\n|---------------------------------------|");
         }
         
@@ -44,31 +46,35 @@ public class BuySuppliesView extends View {
          
             choice = choice.toUpperCase(); // convert to upper case
             
-            switch (choice) {      
+            switch (choice) {
                 case "S": {
-                try {
                     try {
-                        // display buy supplies menu
-                        this.orderTotalCalculation();
-                    } catch (IOException ex) {
-                        System.out.println("I dont know what I am doing here");
+                        try {
+                            // display buy supplies menu
+                            this.orderTotalCalculation();
+                        } catch (IOException ex) {
+                            System.out.println("I dont know what I am doing here");
+                        }
+                    } catch (ShoppingControlException ex) {
+                        Logger.getLogger(BuySuppliesView.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                } catch (ShoppingControlException ex) {
-                    Logger.getLogger(BuySuppliesView.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }
                     break;
                 case "Q": // return to previous screen
-                    this.displayTradingpostMenuView();
+                    this.backToTrail();
+                    break;
+                case "H":  //continue moving forward
+                    this.displayTradingpostHelp();
+                    break;
+                case "G": // game menu
+                    this.displayGameMenu();
                     break;
                 default:
                    this.console.println("\n*** Invalid selection *** Try Again");
                    break;
         }
             return false;
-            
      }
-        
         
      public void orderTotalCalculation() throws ShoppingControlException, IOException {
         ShoppingControl createListFunction = new ShoppingControl(); 
@@ -85,13 +91,11 @@ public class BuySuppliesView extends View {
                 + "\n|         Ammo                       $0.05/round       |" 
                 + "\n|         Medicine                   $0.05/dose        |"
                 + "\n|------------------------------------------------------|"
-            ); 
+                + "\n\n Enter desired pounds of food. (0 if no food is needed)"); 
 
         //get food quantity
         String food = null;
-         food = this.keyboard.readLine();
-
-        this.console.println("Enter desired pounds of food. (0 if no food is needed)");
+        food = this.keyboard.readLine();
 
         //create memory location for food ,set to 0, try to create int from input, catch exception.
         int foodQuantity = 0;
@@ -101,7 +105,6 @@ public class BuySuppliesView extends View {
             this.console.println("Please enter a valid number."
                     + "\n Try again or enter Q to quit.");
         }
-        
         
         //get Ox quantity
         //Scanner ox = new Scanner(System.in);
@@ -119,13 +122,10 @@ public class BuySuppliesView extends View {
                     + "\n Try again or enter Q to quit.");
         }
         
-        
         //get Ammo quantity
-        //Scanner ammo = new Scanner(System.in);
         String ammo = null;
         ammo = this.keyboard.readLine();
         
-
         this.console.println("Enter desired number of rounds of ammo. (0 if no ammo is needed)");
 
         //create memory location for ammo
@@ -139,7 +139,6 @@ public class BuySuppliesView extends View {
         
         
         //get medicine quantity
-        //Scanner medicine = new Scanner(System.in);
         String medicine = null;
         medicine = this.keyboard.readLine();
 
@@ -172,7 +171,7 @@ public class BuySuppliesView extends View {
 		double totalCost = createListFunction.calculateTotalCost(myList);           
      
                               
-                this.console.println(   "\n--------------------------------------------------"
+                this.console.println( "\n--------------------------------------------------"
                                     + "\n                Trading Post Receipt              "
                                     + "\n--------------------------------------------------"
                                     + "\n" + "Food Quantity:  " + foodQuantity + ""            
@@ -184,16 +183,29 @@ public class BuySuppliesView extends View {
                                     + "\n Thank you for shopping at TrailMart. Come Again! "       
                                     + "\n--------------------------------------------------");
         
-        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
+        TradingPostView tradingPostView = new TradingPostView();
        
-        tradingpostMenuView.display();  
+        tradingPostView.display();  
      } 
-            
-     private void displayTradingpostMenuView() {
-        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
+
+    private void backToTrail() {
+        TradingPostView tradingPostView = new TradingPostView();
        
-        tradingpostMenuView.display();
-    }
+        tradingPostView.display();    }
+
+    private void displayTradingpostHelp() {
+        //Create Tradingpost Help object
+        TradingpostHelpView tradingpostHelpView = new TradingpostHelpView();
+        
+        // Display the tradingpost help view
+        tradingpostHelpView.display();    }
+
+    private void displayGameMenu() {
+        //Create Game menu object
+        GameMenuView gameMenuView = new GameMenuView();
+                
+        // Display the Game menu view
+        gameMenuView.display();    }
 }
 
 
