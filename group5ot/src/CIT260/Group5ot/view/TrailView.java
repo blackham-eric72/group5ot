@@ -14,10 +14,12 @@ public class TrailView extends View {
                 
 
         public TrailView() {
-            super( "\n You are traveling merrily along the trail. "
-                 + "\nPress C to keep moving forward."
-                 + "\nPress G to display the Game Menu.");
-
+            super( "\n|*| ------------------------------------------ |*|"
+                 + "\n|*| You are traveling merrily along the trail. |*|"
+                 + "\n|*| Press C to keep moving forward.            |*|"
+                 + "\n|*| Press G to display the Game Menu.          |*|"
+                 + "\n|*| ------------------------------------------ |*|"
+            );
         }
    
 

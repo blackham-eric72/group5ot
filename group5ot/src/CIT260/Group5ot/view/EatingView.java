@@ -15,12 +15,13 @@ import java.io.PrintWriter;
 public class EatingView extends View {
        
     public EatingView(){
-        super ("\n"
-                + "\n|*| ------------------------------------ |*| "       
+        super (
+                  "\n|*| ------------------------------------ |*| "       
                 + "\n|*|  Would you like to stop and eat?     |*| "
                 + "\n|*|  Y - Yes                             |*| "
                 + "\n|*|  N - No I'd like to conserve my food.|*| "
-                + "\n|*|  G - Display Game Menu               |*| " );
+                + "\n|*|  G - Display Game Menu               |*| " 
+                + "\n|*| ------------------------------------ |*| ");
     }
 
     @Override

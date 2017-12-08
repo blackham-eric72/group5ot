@@ -11,16 +11,14 @@ package CIT260.Group5ot.view;
  */
 public class WaterSourceView extends View{
     public WaterSourceView() {
-       super( "\n There is a river. "
-            + "\n Would you like to stop and replenish your water supply? "
-            + "\n Press Y to get water."
-            + "\n Press C to keep moving forward."
-            + "\n Press G to display the Game Menu.");
-
+       super( "\n|*|----------------------------------------|*|"
+            + "\n|*| There is a river. Would you like to    |*|"
+            + "\n|*|  stop and replenish your water supply? |*|"
+            + "\n|*| Press Y to get water.                  |*|"
+            + "\n|*| Press C to keep moving forward.        |*|"
+            + "\n|*| Press G to display the Game Menu.      |*|"
+            + "\n|*|----------------------------------------|*|");
    }
-   
-
-//    }
 
     @Override
     public boolean doAction(String choice) {
@@ -44,7 +42,6 @@ public class WaterSourceView extends View{
         
         return false;
     }    
-
 
     private void nextView() {
         this.console.println("\n*** Chuck Norris uses a stunt double for crying scenes. Brought to you by the NextView().");
