@@ -7,6 +7,7 @@ package CIT260.Group5ot.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import CIT260.Group5ot.enums.ShoppingListEnum;
 
 /**
  *
@@ -19,6 +20,7 @@ public class Wagon implements Serializable{
     private String supplyItem;
     private Player player;
     private Location location;
+    private int[] supplies = new int[4];
 
     
 
@@ -57,7 +59,17 @@ public class Wagon implements Serializable{
         this.player = player;
     }
     
+    public void addSupplies(ShoppingListEnum supplyType, int quantity) {
+        this.supplies[supplyType.ordinal()] += quantity;
+    }
     
+    public void subtractSupplies(ShoppingListEnum supplyType, int quantity) {
+        this.supplies[supplyType.ordinal()] -= quantity;
+    }
+    
+    public int[] getAllSupplies(){
+        return supplies;
+    }
 
     @Override
     public int hashCode() {

@@ -33,8 +33,8 @@ public class GameMenuView extends View {
                     + "\nR - Return To Game "
                     + "\nH - Display Help Menu"                 
                     + "\nI - View Inventory"
-                    + "\nS - Save game and return to main menu"
-                    + "\nQ - Quit Game and return to main menu"
+                    + "\nM - Main menu"
+                    + "\nQ - Quit Game"
                     + "\n-------------------------------------");
         }
    
@@ -65,11 +65,11 @@ public class GameMenuView extends View {
                 }
             }
                 break;       
-            case "S": // save the current game
-                this.saveGameExit();
+            case "M": // save the current game
+                this.displayMainMenuView();
                 break;
             case "Q": // return to main menu
-                this.displayMainMenuView();
+                System.exit(0);
                 break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
@@ -86,10 +86,7 @@ public class GameMenuView extends View {
         // Display the main menu view
         helpMenuView.display();
     }  
-     
-    private void saveGameExit() {
-        this.console.println("*** saveGameExit() function called ***");    
-    }
+    
 
     private void displayMainMenuView() {
         MainMenuView mainMenuView = new MainMenuView();
