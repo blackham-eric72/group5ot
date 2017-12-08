@@ -27,8 +27,8 @@ public class HelpMenuView extends View {
         
 
         public HelpMenuView() {
-            super(
-                          "\n|*| ------------------------------------ |*|"
+            super(        "\n************ Enter a menu option **********"
+                        + "\n|*| ------------------------------------ |*|"
                         + "\n|*| *******       Help Menu      ******* |*|"
                         + "\n|*| ------------------------------------ |*|"
                         + "\n|*| D  - Display Game Description        |*|"

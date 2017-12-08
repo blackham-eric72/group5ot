@@ -22,12 +22,13 @@ import java.util.Comparator;
  */
 public class HuntingSceneView extends View {
     public HuntingSceneView() {
-        super( "\n There is good hunting here. "
-             + "\n =========================== "
-             + "\n Press A to see a list of local animals."
-             + "\n Press H to hunt."
-             + "\n Press C to keep moving forward."
-             + "\n Press G to display the Game Menu.");
+        super( "\n|*| --------------------------------------- |*|"
+             + "\n|*| There is good hunting here.             |*|"
+             + "\n|*| Press A to see a list of local animals. |*|"
+             + "\n|*| Press H to hunt                         |*|"
+             + "\n|*| Press C to keep moving forward.         |*|"
+             + "\n|*| Press G to display the Game Menu.       |*|"
+             + "\n|*| --------------------------------------- |*|");
 
     }
    

@@ -26,16 +26,16 @@ public class GameMenuView extends View {
                 
 
         public GameMenuView() {
-            super   ("\n************ Enter a menu option ************"
-                    + "\n------------------------------------"
-                    + "\n|            Game Menu             |"
-                    + "\n------------------------------------"
-                    + "\nR - Return To Game "
-                    + "\nH - Display Help Menu"                 
-                    + "\nI - View Inventory"
-                    + "\nS - Save game and return to main menu"
-                    + "\nQ - Quit Game and return to main menu"
-                    + "\n-------------------------------------");
+            super   ( "\n********** Enter a menu option **********"
+                    + "\n*---------------------------------------*"
+                    + "\n|               Game Menu               |"
+                    + "\n|---------------------------------------|"
+                    + "\n| R - Return To Game                    |"
+                    + "\n| H - Display Help Menu                 |"                 
+                    + "\n| I - View Inventory                    |"      
+                    + "\n| S - Save game and return to main menu |"
+                    + "\n| Q - Quit Game and return to main menu |"
+                    + "\n*---------------------------------------*");
         }
    
     @Override

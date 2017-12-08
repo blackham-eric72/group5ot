@@ -33,7 +33,7 @@ public class TestMenuView extends View {
                         + "\n|*| -------------------------------- |*|"
                         + "\n|*| GM   - Game Menu                 |*|"
                         + "\n|*| BVC  - Calculate Barrel Volume   |*|"
-                        + "\n|*| AD   - Display Animal List       |*|"  
+                        + "\n|*| H    - Hunting View              |*|"  
 //                        + "\n|*| AP   - Print Animal List         |*|"                                       
                         + "\n|*| S    - Save game                 |*|"
                         + "\n|*| M    - View Map                  |*|"
@@ -42,7 +42,6 @@ public class TestMenuView extends View {
                         + "\n|*| MEAT - Test Calculate MeatShares |*|"
                         + "\n|*| T    - Trading Post Menu         |*|"
                         + "\n|*| E    - Eating View               |*|"
-                        + "\n|*| R    - Rest View                 |*|"
                         + "\n|*| W    - Test Wagon Cargo Weight   |*|"
                         + "\n|*| Q    - Quit to Main Menu         |*|"
                         + "\n|*| -----------------------------------");
@@ -92,9 +91,6 @@ public class TestMenuView extends View {
                 break;
             case "E": // return to the main menu
                 this.displayEatingView();
-                break;
-            case "R": // rest view
-                this.displayRestView();
                 break;
             case "W":  // test calcWagonCargoWeight()
                 this.displayWagonWeightView();
@@ -179,13 +175,6 @@ public class TestMenuView extends View {
         eatingView.display();    
     }
     
-        private void displayRestView() {
-        RestView restView = new RestView();
-                
-        // Display the rest menu
-        restView.display();    
-    }
-
     private void displayWagonWeightView() {
         WagonWeightView wagonWeight = new WagonWeightView();
         

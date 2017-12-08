@@ -18,11 +18,13 @@ public class FoodSourceView extends View{
 
     
     public FoodSourceView() {
-       super( "\n There might be food you can harvest. "
-            + "\n Would you like to stop and look around? "
-            + "\n Press Y to look around."
-            + "\n Press C to keep moving forward."
-            + "\n Press G to display the Game Menu.");
+       super(   "\n|*| --------------------------------------- |*|"
+              + "\n|*| There might be food you can harvest.    |*|"
+              + "\n|*| Would you like to stop and look around? |*|"
+              + "\n|*| Press Y to look around.                 |*|"
+              + "\n|*| Press C to keep moving forward.         |*|"
+              + "\n|*| Press G to display the Game Menu.       |*|"
+              + "\n|*| --------------------------------------- |*|");
 
    }
    

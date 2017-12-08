@@ -253,6 +253,7 @@ public class MapControl {
 //        location[0][1].setScene(trailScene);
 //        location[1][1].setScene(trailScene); 
 //        location[1][2].setScene(trailScene);
+//        location[2][2].setScene(trailScene);
 //        location[1][4].setScene(trailScene);
 //        location[0][5].setScene(trailScene);
 //        location[1][6].setScene(trailScene);
@@ -262,8 +263,10 @@ public class MapControl {
 //        location[0][11].setScene(trailScene);
 //        location[1][11].setScene(trailScene);
 //        location[2][11].setScene(trailScene);
+//        location[2][12].setScene(trailScene);
 //        location[1][13].setScene(trailScene);
 //        location[1][16].setScene(trailScene);
+//        location[0][17].setScene(trailScene);
 //        location[1][17].setScene(trailScene);
 //        location[1][18].setScene(trailScene);
 //        
@@ -274,15 +277,9 @@ public class MapControl {
 //        location[1][10].setScene(eatingScene);
 //        location[1][15].setScene(eatingScene);
 //        
-//        Scene restScene = new Scene(SceneType.RestScene);
-//        eatingScene.setSymbol("R");
-//        location[2][2].setScene(restScene);
-//        location[1][7].setScene(restScene);
-//        location[2][12].setScene(restScene);
-//        location[0][17].setScene(restScene);
-//        
 //        Scene waterScene = new Scene(SceneType.WaterSource);
 //        eatingScene.setSymbol("W");
+//        location[1][7].setScene(waterScene);
 //        location[2][3].setScene(waterScene);
 //        location[2][10].setScene(waterScene);
 //        location[0][16].setScene(waterScene);

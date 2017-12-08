@@ -12,15 +12,13 @@ package CIT260.Group5ot.view;
 public class TradingPostView extends View{
     
     public TradingPostView() {
-       super( "\nYou see a trading post. "
-            + "\nPress T to go inside."
-            + "\nPress C to keep moving forward."
-            + "\nPress G to display the Game Menu.");
-
+       super("\n|*| --------------------------------------- |*|"
+            +"\n|*| You see a trading post.                 |*|"
+            +"\n|*| Press T to go inside.                   |*|"
+            +"\n|*| Press C to keep moving forward.         |*|"
+            +"\n|*| Press G to display the Game Menu.       |*|"
+            +"\n|*| --------------------------------------- |*|");
    }
-   
-
-//    }
 
     @Override
     public boolean doAction(String choice) {

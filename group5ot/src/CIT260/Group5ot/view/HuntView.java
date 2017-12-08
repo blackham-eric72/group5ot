@@ -17,7 +17,7 @@ import static java.lang.Double.parseDouble;
 
 
 public class HuntView extends View {
-      
+
     public HuntView(){
         
         double random = Math.random() * 100;
@@ -36,7 +36,7 @@ public class HuntView extends View {
                 + "\n|*| ****      SQUIRREL...YUCK!      **** |*|"
                 + "\n|*| ------------------------------------ |*|"
                 + "\n|*| S - Shoot                            |*|"
-                + "\n|*| Q - Return to game/main menu         |*|"                 
+                + "\n|*| Q - Return to game menu              |*|"                 
                 + "\n|*| ------------------------------------ |*|");
         
         }  else if (random > 25 && random <=50) {
