@@ -33,7 +33,7 @@ public class TestMenuView extends View {
                         + "\n|*| -------------------------------- |*|"
                         + "\n|*| GM   - Game Menu                 |*|"
                         + "\n|*| BVC  - Calculate Barrel Volume   |*|"
-                        + "\n|*| AD   - Display Animal List       |*|"  
+                        + "\n|*| H    - Hunting View              |*|"  
 //                        + "\n|*| AP   - Print Animal List         |*|"                                       
                         + "\n|*| S    - Save game                 |*|"
                         + "\n|*| M    - View Map                  |*|"

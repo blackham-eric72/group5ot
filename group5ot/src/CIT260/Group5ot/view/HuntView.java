@@ -8,79 +8,87 @@ import CIT260.Group5ot.exceptions.GunControlException;
 import CIT260.Group5ot.control.GunControl;
 import java.io.IOException;
 import static java.lang.Double.parseDouble;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.Random;
-//import java.util.Scanner;
 
 /**
  *
  * @author ken
  * 
  */
+
+
 public class HuntView extends View {
-//    private String menu; 
-//    private String promptMessage;
 
-//I will randomize the animal hopefully (with Tutor's help).
-    
-//    public HuntView(){
-//
-//        super(    "\n                  {_}                      "
-//                + "\n                 '-=\                      "
-//                + "\n                    \\____(                "
-//                + "\n                   _|/---\\_               "
-//                + "\n                   \        \              "       
-//                + "\n                                           "
-//                
-//                + "\n|*| ------------------------------------ |*|"
-//                + "\n|*| ****         YUMMY DEER!        **** |*|"
-//                + "\n|*| ------------------------------------ |*|"
-//                + "\n|*| S - Shoot                            |*|"
-//                + "\n|*| Q - Return to game menu              |*|"                  
-//                + "\n|*| ------------------------------------ |*|");
-//
-//    }
-    
-
-//    public HuntView(){
-//
-//        super(    "\n                    \\     "
-//                + "\n                     \\_   "
-//                + "\n                  .---(')  "
-//                + "\n                o( )_-\\_  "
-//                + "\n|*| ------------------------------------ |*|"
-//                + "\n|*| ***  WOULD YOU EAT THIS RABBIT?  *** |*|"
-//                + "\n|*| ------------------------------------ |*|"
-//                + "\n|*| S - Shoot                            |*|"
-//                + "\n|*| Q - Return to game menu              |*|"                  
-//                + "\n|*| ------------------------------------ |*|");
-//
-//    }    
-    
     public HuntView(){
+        
+        double random = Math.random() * 100;
 
-        super(    "\n                   |\\=.                    "
+        if (random <= 25) {
+            System.out.println(    
+                  "\n                   |\\=.                    "
                 + "\n                  /  6',                    "
-                + "\n           .--.   \\  .-'                   "
-                + "\n         /_   \\   /  (_()                 "
-                + "\n           )   | / `;--'                   "
-                + "\n          /   / /   (                "
-                + "\n         (    `\"    _)_             "
-                + "\n           `-==-'`\"\"\"\"\"\"`       "
+                + "\n          .--.    \\  .-'                   "
+                + "\n         /_   \\   /  (_()                  "
+                + "\n           )   | / `;--'                    "
+                + "\n          /   / /   (                       "
+                + "\n         (    `\"    _)_                    "
+                + "\n          `-==-'`\"\"\"\"\"\"`              "
                 + "\n|*| ------------------------------------ |*|"
                 + "\n|*| ****      SQUIRREL...YUCK!      **** |*|"
                 + "\n|*| ------------------------------------ |*|"
                 + "\n|*| S - Shoot                            |*|"
                 + "\n|*| Q - Return to game menu              |*|"                 
                 + "\n|*| ------------------------------------ |*|");
+        
+        }  else if (random > 25 && random <=50) {
+            System.out.println(    
+                  "\n                    \\     "
+                + "\n                     \\_   "
+                + "\n                  .---(')  "
+                + "\n                o( )_-\\_  "
+                + "\n|*| ------------------------------------ |*|"
+                + "\n|*| ***  WOULD YOU EAT THIS RABBIT?  *** |*|"
+                + "\n|*| ------------------------------------ |*|"
+                + "\n|*| S - Shoot                            |*|"
+                + "\n|*| Q - Return to game/main menu         |*|"                 
+                + "\n|*| ------------------------------------ |*|");
+       
+        } else if (random > 50 && random <=75) {
 
+            System.out.println(
+                  "\n                  {_}                       "
+                + "\n                 '-=\\                      "
+                + "\n                    \\____(                 "
+                + "\n                   _|/---\\_                "
+                + "\n                   \\        \\             "       
+                + "\n                                            "
+                + "\n|*| ------------------------------------ |*|"
+                + "\n|*| ****         YUMMY DEER!        **** |*|"
+                + "\n|*| ------------------------------------ |*|"
+                + "\n|*| S - Shoot                            |*|"
+                + "\n|*| Q - Return to game/main menu         |*|"                 
+                + "\n|*| ------------------------------------ |*|");            
+            
+        } else if (random > 75 && random <= 100) {
+            
+            System.out.println(    
+                  "\n                     (____)                 "
+                + "\n                      (oo)                  "
+                + "\n               /-------\\/                  "
+                + "\n              / |     ||                    "
+                + "\n             *  ||----||                    "
+                + "\n                ~~    ~~                    "         
+                + "\n                                            "
+                + "\n|*| ------------------------------------ |*|"
+                + "\n|*| ****      KILL THE BEAST!       **** |*|"
+                + "\n|*| ------------------------------------ |*|"
+                + "\n|*| S - Shoot                            |*|"
+                + "\n|*| Q - Return to game/main menu         |*|"                 
+                + "\n|*| ------------------------------------ |*|");            
+            
+        }
+        
     }        
 
-    public void displayHuntingSceneView() {
-        HuntingSceneView huntSceneView = new HuntingSceneView();
-        huntSceneView.display();
-    }
 
     public void gunControlTaxCalculation() throws IOException{
         //Here I am going to bring in the gunControl class
@@ -127,16 +135,16 @@ public class HuntView extends View {
                             + "\n\n"
                             + "Now, how much were your bullets plus tax?"
             );
-           // Scanner userAnswer = new Scanner(System.in);
-           String userAnswer = null;
-           userAnswer = this.keyboard.readLine();
+            // Scanner userAnswer = new Scanner(System.in);
+            String userAnswer = null;
+            userAnswer = this.keyboard.readLine();
             double answer = parseDouble(userAnswer);
 
             System.out.println("\nYou entered " + answer);
             System.out.println("\nThe correct answer was " + bulletPrice);
 
             if (answer == bulletPrice) {
-                System.out.println("\nThat is correct, you shot a tatanka!");
+                System.out.println("\nThat is correct, you got your target!");
                 //go back to the hunting menu
                 this.displayHuntingSceneView();
 
@@ -174,11 +182,16 @@ public class HuntView extends View {
             }
 
             return false;
-     }
+    }
     
-     private void displayTestMenu(){
+    public void displayHuntingSceneView() {
+        HuntingSceneView huntSceneView = new HuntingSceneView();
+        huntSceneView.display();
+    }    
+    
+    private void displayTestMenu(){
         TestMenuView testMenuView = new TestMenuView();
         testMenuView.display();
-     }
+    }
 
 }
