@@ -8,6 +8,7 @@ package CIT260.Group5ot.model;
 import java.io.Serializable;
 import java.util.Objects;
 import CIT260.Group5ot.enums.ShoppingListEnum;
+import java.util.Arrays;
 
 /**
  *
@@ -16,42 +17,58 @@ import CIT260.Group5ot.enums.ShoppingListEnum;
 public class Wagon implements Serializable{
     
     //class instance variabels
-    private double totalWeight;
+    
     private String supplyItem;
     private Player player;
     private int[] supplies = new int[4];
     private int locationNumber = 3;
-
-    public int getLocationNumber() {
-        return locationNumber;
-    }
-
-    public void setLocationNumber(int locationNumber) {
-        this.locationNumber = locationNumber;
-    }
+//    private String ox;
+//    private String food;
+//    private String ammo;
+//    private String medicine;
+    private int numOfOx;
+    private int numOfFood;
+    private int numOfAmmo;
+    private int numOfMedicine;
     
-
-    
+  
 
     public Wagon() {
     }
+
+    public int getNumOfOx() {
+        return numOfOx;
+    }
+
+    public void setNumOfOx(int numOfOx) {
+        this.numOfOx = numOfOx;
+    }
+
+    public int getNumOfFood() {
+        return numOfFood;
+    }
+
+    public void setNumOfFood(int numOfFood) {
+        this.numOfFood = numOfFood;
+    }
+
+    public int getNumOfAmmo() {
+        return numOfAmmo;
+    }
+
+    public void setNumOfAmmo(int numOfAmmo) {
+        this.numOfAmmo = numOfAmmo;
+    }
+
+    public int getNumOfMedicine() {
+        return numOfMedicine;
+    }
+
+    public void setNumOfMedicine(int numOfMedicine) {
+        this.numOfMedicine = numOfMedicine;
+    }
+
     
-//    public Location getLocation() {
-//        return location;
-//    }
-//
-//    public void setLocation(Location location) {
-//        this.location = location;
-//    }
-   
-    public double getTotalWeight() {
-        return totalWeight;
-    }
-
-    public void setTotalWeight(double totalWeight) {
-        this.totalWeight = totalWeight;
-    }
-
     public String getSupplyItem() {
         return supplyItem;
     }
@@ -67,30 +84,43 @@ public class Wagon implements Serializable{
     public void setPlayer(Player player) {
         this.player = player;
     }
-    
-    public void addSupplies(ShoppingListEnum supplyType, int quantity) {
-        this.supplies[supplyType.ordinal()] += quantity;
-    }
-    
-    public void subtractSupplies(ShoppingListEnum supplyType, int quantity) {
-        this.supplies[supplyType.ordinal()] -= quantity;
-    }
-    
-    public int[] getAllSupplies(){
+
+    public int[] getSupplies() {
         return supplies;
     }
+
+    public void setSupplies(int[] supplies) {
+        this.supplies = supplies;
+    }
+
+    public int getLocationNumber() {
+        return locationNumber;
+    }
+
+    public void setLocationNumber(int locationNumber) {
+        this.locationNumber = locationNumber;
+    }
+    
+//    public void addSupplies(ShoppingListEnum supplyType, int quantity) {
+//       this.supplies[supplyType.ordinal()] += quantity;
+//   }
+   
+   public void subtractSupplies(ShoppingListEnum supplyType, int quantity) {
+       this.supplies[supplyType.ordinal()] -= quantity;
+   }
+   
+   public int[] getAllSupplies(){
+       return supplies;
+   }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.totalWeight) ^ (Double.doubleToLongBits(this.totalWeight) >>> 32));
-        hash = 59 * hash + Objects.hashCode(this.supplyItem);
+        hash = 89 * hash + Objects.hashCode(this.supplyItem);
+        hash = 89 * hash + Objects.hashCode(this.player);
+        hash = 89 * hash + Arrays.hashCode(this.supplies);
+        hash = 89 * hash + this.locationNumber;
         return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Wagon{" + "totalWeight=" + totalWeight + ", supplyItem=" + supplyItem + ", player=" + player + ", location=" +  '}';
     }
 
     @Override
@@ -105,7 +135,7 @@ public class Wagon implements Serializable{
             return false;
         }
         final Wagon other = (Wagon) obj;
-        if (Double.doubleToLongBits(this.totalWeight) != Double.doubleToLongBits(other.totalWeight)) {
+        if (this.locationNumber != other.locationNumber) {
             return false;
         }
         if (!Objects.equals(this.supplyItem, other.supplyItem)) {
@@ -114,18 +144,23 @@ public class Wagon implements Serializable{
         if (!Objects.equals(this.player, other.player)) {
             return false;
         }
-        
+        if (!Arrays.equals(this.supplies, other.supplies)) {
+            return false;
+        }
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Wagon{" + "supplyItem=" + supplyItem + ", player=" + player + ", supplies=" + supplies + ", locationNumber=" + locationNumber + ", numOfOx=" + numOfOx + ", numOfFood=" + numOfFood + ", numOfAmmo=" + numOfAmmo + ", numOfMedicine=" + numOfMedicine + '}';
+    }
     
-    
-    
+    public String toInventoryString() {
+        return "Number of Ox(en) = " + numOfOx + "\nAmount of Food = " + numOfFood + "\n Amount of Ammo = " + numOfAmmo + "\nAmount of Medicine = " + numOfMedicine ;
+    }
 
-  
-    
-    
-    
-    
     
 }
+
+    
+

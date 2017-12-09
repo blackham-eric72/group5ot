@@ -42,7 +42,6 @@ public class TestMenuView extends View {
                         + "\n|*| MEAT - Test Calculate MeatShares |*|"
                         + "\n|*| T    - Trading Post Menu         |*|"
                         + "\n|*| E    - Eating View               |*|"
-                        + "\n|*| W    - Test Wagon Cargo Weight   |*|"
                         + "\n|*| Q    - Quit to Main Menu         |*|"
                         + "\n|*| -----------------------------------");
         }
@@ -91,9 +90,6 @@ public class TestMenuView extends View {
                 break;
             case "E": // return to the main menu
                 this.displayEatingView();
-                break;
-            case "W":  // test calcWagonCargoWeight()
-                this.displayWagonWeightView();
                 break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
@@ -173,12 +169,6 @@ public class TestMenuView extends View {
         EatingView eatingView = new EatingView();
         
         eatingView.display();    
-    }
-    
-    private void displayWagonWeightView() {
-        WagonWeightView wagonWeight = new WagonWeightView();
-        
-        wagonWeight.display();
     }
     
 }

@@ -12,6 +12,8 @@ import group5ot.Group5ot;
 import CIT260.Group5ot.model.InventoryItem;
 import CIT260.Group5ot.model.Player;
 import CIT260.Group5ot.model.Character;
+import CIT260.Group5ot.model.Wagon;
+import CIT260.Group5ot.model.WaterSource;
 import java.awt.Point;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -20,23 +22,6 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
-
-   /* public static Character createNewCharacter(Character character){
-      //String characters[] = {Father.getName(), Father.getDescription(),};
-        //Character obadiah = Character.valueOf("Father");     
-        ArrayList<Character> actors = new ArrayList<>();
-        actors.add(Father);
-        actors.add(Mother);
-        actors.add(Son1);
-        actors.add(Daughter1);
-        actors.add(Daughter2);
-        actors.add(Trader);
-        
-        character = actors;
-      
-      return character;
-    }
-*/
 /**
  *
  * @author crims
@@ -85,6 +70,10 @@ public class GameControl {
        
        ArrayList<Barrel> barrels = createBarrels();
        currentGame.setBarrels(barrels);
+       
+       Wagon wagon = new Wagon();
+       currentGame.setWagon(wagon);
+       
         
        //dgw start
        //dgw not sure why items are passed to createMap???  

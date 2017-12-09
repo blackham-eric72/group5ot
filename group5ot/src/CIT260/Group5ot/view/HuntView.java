@@ -174,7 +174,7 @@ public class HuntView extends View {
                 }
                     break;
                 case "Q": // return to the previous screen
-                    this.displayTestMenu();
+                    this.displayHuntingSceneView();
                     break;
                 default:
                     System.out.println("\n*** Invalid selection *** Try again");

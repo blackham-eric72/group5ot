@@ -30,12 +30,10 @@ public class Game implements Serializable  {
    private ArrayList<Barrel> barrels;
    private Wagon wagon;
 
+    
    
 
-    public void setWagon(Wagon wagon) {
-        this.wagon = wagon;
-    }
-   
+     
    
 
     public ArrayList<Barrel> getBarrels() {
@@ -66,6 +64,8 @@ public class Game implements Serializable  {
    
     public Game() {
     }
+    
+    
 
     @Override
     public int hashCode() {
@@ -186,6 +186,12 @@ public class Game implements Serializable  {
     public Wagon getWagon() {
         return wagon;
     }
+
+
+    public void setWagon(Wagon wagon) {
+        this.wagon = wagon;
+    }
+
     
    
     

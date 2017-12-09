@@ -5,11 +5,14 @@ import CIT260.Group5ot.control.ShoppingControl;
 import CIT260.Group5ot.enums.ShoppingListEnum;
 import CIT260.Group5ot.exceptions.ShoppingControlException;
 import CIT260.Group5ot.model.ShoppingList;
+import CIT260.Group5ot.control.WagonControl;
+import CIT260.Group5ot.model.Wagon;
 import java.io.IOException;
 import group5ot.Group5ot;
 import java.io.PrintWriter;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -177,12 +180,21 @@ public class BuySuppliesView extends View {
                                     + "\n" + "Food Quantity:  " + foodQuantity + ""            
                                     + "\n" + "Ox Quantity:  " + oxQuantity +     "" 
                                     + "\n" + "Ammo Quantity:  " + ammoQuantity + ""
-                                    + "\n" + "Medicine Quantity:  " + oxQuantity + "" 
+                                    + "\n" + "Medicine Quantity:  " + medicineQuantity + "" 
                                     + "\nTotal = $" + totalCost + "                        " 
                                     + "\n                                                  "        
                                     + "\n Thank you for shopping at TrailMart. Come Again! "       
                                     + "\n--------------------------------------------------");
         
+                WagonControl wagonControl = new WagonControl();
+               // wagonControl.addShoppingList(myList);
+        
+        wagonControl.addShoppingItemsToWagon(foodQuantity, oxQuantity, ammoQuantity, medicineQuantity);
+        Wagon wagon = Group5ot.getCurrentGame().getWagon();
+        
+                this.console.println("\n PRINTING THE WAGON INVENTORY" + 
+                        "\n" + wagon.toInventoryString());
+    
         TradingPostView tradingPostView = new TradingPostView();
        
         tradingPostView.display();  
@@ -206,12 +218,8 @@ public class BuySuppliesView extends View {
                 
         // Display the Game menu view
         gameMenuView.display();    }
-}
-
-
-
            
-
+}
     
 
 

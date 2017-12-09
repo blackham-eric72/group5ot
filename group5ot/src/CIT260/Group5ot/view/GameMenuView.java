@@ -10,6 +10,7 @@ import CIT260.Group5ot.control.InventoryControl;
 import CIT260.Group5ot.exceptions.InventoryControlException;
 import CIT260.Group5ot.model.Game;
 import CIT260.Group5ot.model.InventoryItem;
+import CIT260.Group5ot.model.Wagon;
 import group5ot.Group5ot;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -34,6 +35,7 @@ public class GameMenuView extends View {
                     + "\nH - Display Help Menu"                 
                     + "\nI - View Inventory"
                     + "\nM - Main menu"
+                    + "\nPW - Print Wagon"
                     + "\nQ - Quit Game"
                     + "\n-------------------------------------");
         }
@@ -68,6 +70,9 @@ public class GameMenuView extends View {
             case "M": // save the current game
                 this.displayMainMenuView();
                 break;
+            case "PW": // save the current game
+                this.printWagonContents();
+                break;
             case "Q": // return to main menu
                 System.exit(0);
                 break;
@@ -87,7 +92,6 @@ public class GameMenuView extends View {
         helpMenuView.display();
     }  
     
-
     private void displayMainMenuView() {
         MainMenuView mainMenuView = new MainMenuView();
                 
@@ -113,11 +117,11 @@ public class GameMenuView extends View {
             outFile = new PrintWriter(filePath);
             
             outFile.println("\n\n         Inventory Report            ");
-            outFile.printf("%n%-20s%10s%15s", "Item", "Quantity");
-            outFile.printf("%n%-20s%10s%15s", "----", "-----");
+            outFile.printf("%n%-20s%10s", "Item", "Quantity");
+            outFile.printf("%n%-20s%10s", "----", "-----");
             
             for (InventoryItem item : inventory) {
-                outFile.printf("%n%-20s%10d%15s", item.getItemTypes()
+                outFile.printf("%n%-20s%10d", item.getItemTypes()
                                                 , item.getQuantityInStock());
             }
         } catch(IOException ex) {
@@ -130,6 +134,11 @@ public class GameMenuView extends View {
             }
     }
 
+    }
+    
+    public void printWagonContents(){
+        Wagon wagon = Group5ot.getCurrentGame().getWagon();
+        this.console.println(wagon.toString());
     }
 
 }
