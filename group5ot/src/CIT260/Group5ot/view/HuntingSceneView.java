@@ -49,7 +49,7 @@ public class HuntingSceneView extends View {
                                @Override
                                public int compare(Animal animal2, Animal animal1)
                                 {
-                                    return animal1.getName().compareTo(animal2.getName());
+                                    return animal2.getName().compareTo(animal1.getName());
                                 }
                        });
                        this.printAnimalList(sortableAnimals); //Not sure how to actually use the sorted list.
