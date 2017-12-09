@@ -5,6 +5,7 @@ import CIT260.Group5ot.control.ShoppingControl;
 import CIT260.Group5ot.enums.ShoppingListEnum;
 import CIT260.Group5ot.exceptions.ShoppingControlException;
 import CIT260.Group5ot.model.ShoppingList;
+import CIT260.Group5ot.control.WagonControl;
 import java.io.IOException;
 import group5ot.Group5ot;
 import java.io.PrintWriter;
@@ -183,6 +184,10 @@ public class BuySuppliesView extends View {
                                     + "\n Thank you for shopping at TrailMart. Come Again! "       
                                     + "\n--------------------------------------------------");
         
+                WagonControl wagonControl = new WagonControl();
+                wagonControl.addSupplies(myList);
+                
+    
         TradingPostView tradingPostView = new TradingPostView();
        
         tradingPostView.display();  

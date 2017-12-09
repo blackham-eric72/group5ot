@@ -6,9 +6,10 @@
 package CIT260.Group5ot.control;
 import CIT260.Group5ot.exceptions.WagonControlException;
 import CIT260.Group5ot.model.Wagon;
-import CIT260.Group5ot.enums.ShoppingListEnum;
-import CIT260.Group5ot.control.ShoppingControl;
-import CIT260.Group5ot.control.InventoryControl;
+import CIT260.Group5ot.model.ShoppingList;
+import group5ot.Group5ot;
+import CIT260.Group5ot.model.Game;
+import CIT260.Group5ot.view.BuySuppliesView;
 import java.util.ArrayList;
 
 /**
@@ -64,22 +65,26 @@ public class WagonControl {
     
     Wagon wagon = null;
     
-    WagonControl(){       
+   public
+         
+           WagonControl(){       
     }
     
     public void setWagon(Wagon wagon) {
-        this.wagon = wagon;
+        this.wagon = wagon; 
     }
 	
     public Wagon getWagon() {
         return this.wagon;
     }
     
-    public void addShoppingList(ArrayList<ShoppingListEnum>shoppingList) {
+    public void addShoppingList(ArrayList<ShoppingList>shoppingList) {
+        this.wagon = Group5ot.getCurrentGame().getWagon();
         for (int i=0; i < shoppingList.size(); i++) {
             wagon.addSupplies(shoppingList.get(i).getItem(), shoppingList.get(i).getQuantity());
-            double cost = shoppingList.getQuantity()*shoppingList.get(i).getPrice();
         }
     }
+    
+    
 }
 
