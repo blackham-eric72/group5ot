@@ -8,6 +8,7 @@ package CIT260.Group5ot.model;
 import java.io.Serializable;
 import java.util.Objects;
 import CIT260.Group5ot.enums.ShoppingListEnum;
+import java.util.Arrays;
 
 /**
  *
@@ -16,12 +17,11 @@ import CIT260.Group5ot.enums.ShoppingListEnum;
 public class Wagon implements Serializable{
     
     //class instance variabels
-    private double totalWeight;
     private String supplyItem;
     private Player player;
     private Location location;
     private int[] supplies = new int[4];
-    
+     
     public Wagon() {
     }
     
@@ -33,14 +33,6 @@ public class Wagon implements Serializable{
         this.location = location;
     }
    
-    public double getTotalWeight() {
-        return totalWeight;
-    }
-
-    public void setTotalWeight(double totalWeight) {
-        this.totalWeight = totalWeight;
-    }
-
     public String getSupplyItem() {
         return supplyItem;
     }
@@ -72,14 +64,11 @@ public class Wagon implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 59 * hash + (int) (Double.doubleToLongBits(this.totalWeight) ^ (Double.doubleToLongBits(this.totalWeight) >>> 32));
-        hash = 59 * hash + Objects.hashCode(this.supplyItem);
+        hash = 79 * hash + Objects.hashCode(this.supplyItem);
+        hash = 79 * hash + Objects.hashCode(this.player);
+        hash = 79 * hash + Objects.hashCode(this.location);
+        hash = 79 * hash + Arrays.hashCode(this.supplies);
         return hash;
-    }
-
-    @Override
-    public String toString() {
-        return "Wagon{" + "totalWeight=" + totalWeight + ", supplyItem=" + supplyItem + ", player=" + player + ", location=" + location + '}';
     }
 
     @Override
@@ -94,9 +83,6 @@ public class Wagon implements Serializable{
             return false;
         }
         final Wagon other = (Wagon) obj;
-        if (Double.doubleToLongBits(this.totalWeight) != Double.doubleToLongBits(other.totalWeight)) {
-            return false;
-        }
         if (!Objects.equals(this.supplyItem, other.supplyItem)) {
             return false;
         }
@@ -106,17 +92,15 @@ public class Wagon implements Serializable{
         if (!Objects.equals(this.location, other.location)) {
             return false;
         }
+        if (!Arrays.equals(this.supplies, other.supplies)) {
+            return false;
+        }
         return true;
     }
 
-    
-    
-    
-
-  
-    
-    
-    
-    
+    @Override
+    public String toString() {
+        return "Wagon{" + "supplyItem=" + supplyItem + ", player=" + player + ", location=" + location + ", supplies=" + supplies + '}';
+    }  
     
 }

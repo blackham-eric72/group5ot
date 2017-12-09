@@ -185,7 +185,7 @@ public class BuySuppliesView extends View {
                                     + "\n--------------------------------------------------");
         
                 WagonControl wagonControl = new WagonControl();
-                wagonControl.addSupplies(myList);
+                wagonControl.addShoppingList(myList);
                 
     
         TradingPostView tradingPostView = new TradingPostView();

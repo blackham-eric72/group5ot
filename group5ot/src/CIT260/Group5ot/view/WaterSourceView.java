@@ -54,6 +54,6 @@ public class WaterSourceView extends View{
     }
 
     private void goToRiver() {
-        this.console.println("\n*** Chuck Norris got pulled over by a cop once. He let the cop go with a warning. Brought to you by the goToRiverView().");
+        this.console.println("\n You collected water. Your supply of water has increased.");
     }
 }

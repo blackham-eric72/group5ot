@@ -22,23 +22,6 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
-
-   /* public static Character createNewCharacter(Character character){
-      //String characters[] = {Father.getName(), Father.getDescription(),};
-        //Character obadiah = Character.valueOf("Father");     
-        ArrayList<Character> actors = new ArrayList<>();
-        actors.add(Father);
-        actors.add(Mother);
-        actors.add(Son1);
-        actors.add(Daughter1);
-        actors.add(Daughter2);
-        actors.add(Trader);
-        
-        character = actors;
-      
-      return character;
-    }
-*/
 /**
  *
  * @author crims
