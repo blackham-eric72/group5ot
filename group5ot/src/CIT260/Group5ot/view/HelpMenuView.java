@@ -60,7 +60,12 @@ public class HelpMenuView extends View {
                 break;
             case "Q": // quits, or returns to main menu
                 this.displayGameMenu();
-                break;          
+                break;
+            case "PC": // quits, or returns to main menu
+                Game game = Group5ot.getCurrentGame();
+                ArrayList<CIT260.Group5ot.model.Character> characters = game.getCharacters();
+                    this.printCharacters(characters);
+                break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
@@ -118,6 +123,16 @@ public class HelpMenuView extends View {
     private void displayGameMenu() {
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
+    }
+
+    private void printCharacters(ArrayList<CIT260.Group5ot.model.Character> characters) {
+        System.out.println("\n\n       Character List                     ");
+        System.out.printf("%n%-12s%50s", "Name", "Description");
+        System.out.printf("%n%-12s%50s", "----", "-----------");
+        
+        for (CIT260.Group5ot.model.Character character : characters) {
+                System.out.printf("%n%-12s%50s", character.getName() , character.getDescription());
+            }
     }
       
 }
