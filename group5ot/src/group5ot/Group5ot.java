@@ -8,7 +8,6 @@ package group5ot;
 import CIT260.Group5ot.model.Barrel;
 import CIT260.Group5ot.model.Player;
 import CIT260.Group5ot.model.Character;
-import CIT260.Group5ot.model.Health;
 import CIT260.Group5ot.model.InventoryItem;
 
 

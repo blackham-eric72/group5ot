@@ -21,7 +21,7 @@ public class FirstView extends View {
                  + "\n|| This is the starting location of the game!   ||"
                  + "\n|| Before you get started on your journey,      ||"
                  + "\n|| you'll want to get some supplies at the      ||"
-                 + "\n|| trading postOnce you are all set there - Bon ||"
+                 + "\n|| trading post Once you are all set there-Bon  ||"
                  + "\n|| Voyage - as the French like to say!          ||"
                  + "\n|| ******************************************** ||"
                  + "\n|| Press C to continue on to the trading post.  ||"
@@ -55,8 +55,8 @@ public class FirstView extends View {
     
     //This will take them to the trading post view. 
     private void nextView() {
-        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
-        tradingpostMenuView.display();    
+        TradingPostView tradingPostView = new TradingPostView();
+        tradingPostView.display();    
     
     }
 

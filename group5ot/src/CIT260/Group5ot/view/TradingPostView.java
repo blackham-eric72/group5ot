@@ -12,15 +12,13 @@ package CIT260.Group5ot.view;
 public class TradingPostView extends View{
     
     public TradingPostView() {
-       super( "\n You see a trading post. "
-            + "\nPress T to go inside."
-            + "\nPress C to keep moving forward."
-            + "\nPress G to display the Game Menu.");
-
+       super("\n|*| --------------------------------------- |*|"
+            +"\n|*| You see a trading post.                 |*|"
+            +"\n|*| Press T to go inside.                   |*|"
+            +"\n|*| Press C to keep moving forward.         |*|"
+            +"\n|*| Press G to display the Game Menu.       |*|"
+            +"\n|*| --------------------------------------- |*|");
    }
-   
-
-//    }
 
     @Override
     public boolean doAction(String choice) {
@@ -29,7 +27,7 @@ public class TradingPostView extends View{
         
         switch (choice) {
             case "T":
-                this.displayTradingPostMenuView();
+                this.displayBuySuppliesView();
                 break;
             case "C":
                 this.nextView();
@@ -45,19 +43,14 @@ public class TradingPostView extends View{
         return false;
     }    
 
-    private void displayTradingPostMenuView() {
-        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
+    private void displayBuySuppliesView() {
+        BuySuppliesView buySuppliesView = new BuySuppliesView();
        
-        tradingpostMenuView.display();    
+        buySuppliesView.display();    
     }
 
     private void nextView() {
-        //get the current location from the wagon, 
-        //increment the location by 1
-        //set the location in the wagon
-        
-        //Go to the location in the map, 
-        //
+        this.console.println("\n*** Chuck Norris has been to Mars. That's why there are no signs of life. Brought to you by the NextView().");
     }
 
     private void displayGameMenuView() {

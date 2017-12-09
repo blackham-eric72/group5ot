@@ -111,8 +111,7 @@ public class BeginGameView {
           + "\n| Gold, and Glory.                                     |"
           + "\n| Will you survive the journey?                        |"
           + "\n| Let’s find out...                                    |"
-          + "\n|======================================================|");
-     
+          + "\n|========================================= =============|");
         // create a new game
         GameControl.createNewGame(Group5ot.getPlayer());
 
@@ -121,15 +120,7 @@ public class BeginGameView {
         gameControl.createItems();
         
         //create characters
-        gameControl.createCharacters();
-        
-        
-//        //Create MainMenuView object
-//        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
-//                
-//        // Display the main menu view
-//        tradingpostMenuView.display();
-
+        gameControl.createCharacters();      
 
         //create the map
         MapControl theMap = new MapControl();

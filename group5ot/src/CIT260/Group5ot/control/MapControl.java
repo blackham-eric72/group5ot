@@ -244,7 +244,7 @@ public class MapControl {
      *
      */
      
-    private void assignScenesToLocations(Location[][] location) {
+  //  private void assignScenesToLocations(Location[][] location) {
 ////        this.console.println("Teriyaki is Japanese, but they have it at Chinese restaurants. Brought to you by assignScenesToLocations() PS- I'm getting hungry");
 ////       //dgw start
 //        
@@ -253,68 +253,65 @@ public class MapControl {
 //        
 //        //Eric add this to show up after some one begins a game
 //        //if it doesn't work, feel free to take it out.        
-        Scene firstScene = new Scene(SceneType.FirstScene);
-        firstScene.setSymbol("FS");
-        location[0][0].setScene(firstScene);
-        
-        
-        Scene tradingPostScene = new Scene(SceneType.TradingPost);
-        tradingPostScene.setSymbol("TP");
-        location[0][0].setScene(tradingPostScene);
-        location[2][7].setScene(tradingPostScene);
-        location[1][14].setScene(tradingPostScene);
-        
-        Scene trailScene = new Scene(SceneType.Trail);
-        trailScene.setSymbol("T");
-        location[0][1].setScene(trailScene);
-        location[1][1].setScene(trailScene); 
-        location[1][2].setScene(trailScene);
-        location[1][4].setScene(trailScene);
-        location[0][5].setScene(trailScene);
-        location[1][6].setScene(trailScene);
-        location[2][6].setScene(trailScene);
-        location[2][8].setScene(trailScene);
-        location[2][9].setScene(trailScene);
-        location[0][11].setScene(trailScene);
-        location[1][11].setScene(trailScene);
-        location[2][11].setScene(trailScene);
-        location[1][13].setScene(trailScene);
-        location[1][16].setScene(trailScene);
-        location[1][17].setScene(trailScene);
-        location[1][18].setScene(trailScene);
-        
-        Scene eatingScene = new Scene(SceneType.Eating);
-        eatingScene.setSymbol("E");
-        location[2][1].setScene(eatingScene);
-        location[1][5].setScene(eatingScene);
-        location[1][10].setScene(eatingScene);
-        location[1][15].setScene(eatingScene);
-        
-        Scene restScene = new Scene(SceneType.RestScene);
-        eatingScene.setSymbol("R");
-        location[2][2].setScene(restScene);
-        location[1][7].setScene(restScene);
-        location[2][12].setScene(restScene);
-        location[0][17].setScene(restScene);
-        
-        Scene waterScene = new Scene(SceneType.WaterSource);
-        eatingScene.setSymbol("W");
-        location[2][3].setScene(waterScene);
-        location[2][10].setScene(waterScene);
-        location[0][16].setScene(waterScene);
-      
-        Scene huntingScene = new Scene(SceneType.HuntingScene);
-        huntingScene.setSymbol("H");
-        location[0][4].setScene(huntingScene);
-        location[0][10].setScene(huntingScene);
-        
-        Scene foodScene = new Scene(SceneType.FoodSource);
-        foodScene.setSymbol("F");
-        location[2][5].setScene(foodScene);
-        location[1][12].setScene(foodScene);
-
-        System.out.println("********* SCENES HAVE BEEN ASSIGNED TO LOCATIONS *******");
-    }
+//        Scene firstScene = new Scene(SceneType.FirstScene);
+//        firstScene.setSymbol("FS");
+//        location[0][0].setScene(firstScene);
+//        
+//        
+//        Scene tradingPostScene = new Scene(SceneType.TradingPost);
+//        tradingPostScene.setSymbol("TP");
+//        location[0][0].setScene(tradingPostScene);
+//        location[2][7].setScene(tradingPostScene);
+//        location[1][14].setScene(tradingPostScene);
+//        
+//        Scene trailScene = new Scene(SceneType.Trail);
+//        trailScene.setSymbol("T");
+//        location[0][1].setScene(trailScene);
+//        location[1][1].setScene(trailScene); 
+//        location[1][2].setScene(trailScene);
+//        location[2][2].setScene(trailScene);
+//        location[1][4].setScene(trailScene);
+//        location[0][5].setScene(trailScene);
+//        location[1][6].setScene(trailScene);
+//        location[2][6].setScene(trailScene);
+//        location[2][8].setScene(trailScene);
+//        location[2][9].setScene(trailScene);
+//        location[0][11].setScene(trailScene);
+//        location[1][11].setScene(trailScene);
+//        location[2][11].setScene(trailScene);
+//        location[2][12].setScene(trailScene);
+//        location[1][13].setScene(trailScene);
+//        location[1][16].setScene(trailScene);
+//        location[0][17].setScene(trailScene);
+//        location[1][17].setScene(trailScene);
+//        location[1][18].setScene(trailScene);
+//        
+//        Scene eatingScene = new Scene(SceneType.Eating);
+//        eatingScene.setSymbol("E");
+//        location[2][1].setScene(eatingScene);
+//        location[1][5].setScene(eatingScene);
+//        location[1][10].setScene(eatingScene);
+//        location[1][15].setScene(eatingScene);
+//        
+//        Scene waterScene = new Scene(SceneType.WaterSource);
+//        eatingScene.setSymbol("W");
+//        location[1][7].setScene(waterScene);
+//        location[2][3].setScene(waterScene);
+//        location[2][10].setScene(waterScene);
+//        location[0][16].setScene(waterScene);
+//      
+//        Scene huntingScene = new Scene(SceneType.HuntingScene);
+//        huntingScene.setSymbol("H");
+//        location[0][4].setScene(huntingScene);
+//        location[0][10].setScene(huntingScene);
+//        
+//        Scene foodScene = new Scene(SceneType.FoodSource);
+//        foodScene.setSymbol("F");
+//        location[2][5].setScene(foodScene);
+//        location[1][12].setScene(foodScene);
+//
+//        System.out.println("********* SCENES HAVE BEEN ASSIGNED TO LOCATIONS *******");
+//    }
     
     
 //    public static int moveWagonToLocation(Character character, Point coordinates) {

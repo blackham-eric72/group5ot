@@ -13,6 +13,8 @@ import CIT260.Group5ot.exceptions.AnimalControlException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  *
@@ -20,13 +22,16 @@ import java.util.ArrayList;
  */
 public class HuntingSceneView extends View {
     public HuntingSceneView() {
-        super( "\n There is good hunting here. "
-             + "\n Press P to print a list of local animals."
-             + "\n Press H to hunt."
-             + "\n Press C to keep moving forward."
-             + "\n Press G to display the Game Menu.");
+        super( "\n|*| --------------------------------------- |*|"
+             + "\n|*| There is good hunting here.             |*|"
+             + "\n|*| ======================================  |*|"
+             + "\n|*| Press A to see a list of local animals. |*|"
+             + "\n|*| Press H to hunt                         |*|"
+             + "\n|*| Press C to keep moving forward.         |*|"
+             + "\n|*| Press G to display the Game Menu.       |*|"
+             + "\n|*| --------------------------------------- |*|");
 
-        }
+    }
    
     @Override
     public boolean doAction(String choice) {
@@ -34,18 +39,31 @@ public class HuntingSceneView extends View {
         choice = choice.toUpperCase(); // convert choice to upper case
         
         switch (choice) {
-            case "P": {
-                try {       // print animal list report
+            case "A": {
+                try {       // display animal list report
                     try{
-                       this.printAnimalList(AnimalHuntedControl.createAnimals());
-                       this.console.println("You printed a file!"); //Success message? not working...
+                        
+  //////////////////////////////////////////////////////////////////////////////////////////////////                      
+                       ArrayList<Animal> sortableAnimals = AnimalHuntedControl.createAnimals();
+                       Collections.sort(sortableAnimals, new Comparator<Animal>() {
+                               @Override
+                               public int compare(Animal animal2, Animal animal1)
+                                {
+                                    return animal1.getName().compareTo(animal2.getName());
+                                }
+                       });
+                       this.printAnimalList(sortableAnimals); //Not sure how to actually use the sorted list.
+ //////////////////////////////////////////////////////////////////////////////////////////////////                   
+                    
                     } catch (IOException ex) {
-                        this.console.println("Not sure about this either.");
+                        this.console.println("Sorry, you did something wrong.");
                     }
                 } catch (AnimalControlException ex) {
-                    ErrorView.display(this.getClass().getName(), "Error reading input: " +ex.getMessage());
+                    ErrorView.display(this.getClass().getName(), "Error reading input: " + ex.getMessage());
                 }
-            } 
+                this.displayHuntingSceneView();
+            }
+             
                 break;
                 
             case "H": {
@@ -84,44 +102,30 @@ public class HuntingSceneView extends View {
     
     public void printAnimalList(ArrayList<CIT260.Group5ot.model.Animal> animals)throws AnimalControlException, IOException {    
         
-          
-        PrintWriter outFile = null;
-        
-        String fileLocation = "report.txt";       
-        
-        this.console.println("Enter the file name where you want to store the report:");
-         fileLocation = this.keyboard.readLine();
-        
+
         
         try {
-        outFile = new PrintWriter(fileLocation);
-        
+    
 
-            outFile.println("\n\n             Animal List                     ");
-            outFile.printf("%n%-20s%10s", "Name", "Weight");
-            outFile.printf("%n%-20s%10s", "----", "------");
+            System.out.println("\n\n       Animal List                     ");
+            System.out.printf("%n%-20s%10s", "Name", "Weight");
+            System.out.printf("%n%-20s%10s", "----", "------");
 
             for (CIT260.Group5ot.model.Animal animal : animals) {
-                outFile.printf("%n%-20s%10f", animal.getName()
+                System.out.printf("%n%-20s%10.2f", animal.getName()
                                             , animal.getWeight());
             }
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             this.console.println("I/O Error: " + ex.getMessage());
-        } finally {
-            if (outFile != null) {
-                outFile.close();
-                this.console.println("Yay! You printed to a file!");//Success Message
-            
-            }
-        }
-            
-
-
-        GameMenuView gameMenuView = new GameMenuView();
-        
-        gameMenuView.display();
-
+        } 
     
+            
+
+
+        HuntingSceneView returnMenuView = new HuntingSceneView();
+        
+        returnMenuView.display();
+
     }       
 
 
@@ -134,6 +138,12 @@ public class HuntingSceneView extends View {
        
         gameMenuView.display();    
     }
+    
+    private void displayHuntingSceneView() {
+        HuntingSceneView huntSceneView = new HuntingSceneView();
+        
+        huntSceneView.display();
+    }    
 }  
     
     

@@ -21,7 +21,7 @@ MapControl mapControl = new MapControl();
 
 public MapView(){
 
-        super( "\n|| *******      MAP MENU      ******* ||"
+        super(    "\n|| *******      MAP MENU      ******* ||"
                 + "\n|| Would you like to:                 ||"
                 + "\n|| A - See a map of the trail         ||"
                 + "\n|| Q - Go to the main menu            ||"

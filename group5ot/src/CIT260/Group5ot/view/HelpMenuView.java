@@ -6,7 +6,6 @@
 package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
-import CIT260.Group5ot.exceptions.HealthControlException;
 import CIT260.Group5ot.model.Game;
 import group5ot.Group5ot;
 import java.io.IOException;
@@ -28,8 +27,8 @@ public class HelpMenuView extends View {
         
 
         public HelpMenuView() {
-            super(
-                          "\n|*| ------------------------------------ |*|"
+            super(        "\n************ Enter a menu option **********"
+                        + "\n|*| ------------------------------------ |*|"
                         + "\n|*| *******       Help Menu      ******* |*|"
                         + "\n|*| ------------------------------------ |*|"
                         + "\n|*| D  - Display Game Description        |*|"
@@ -60,22 +59,8 @@ public class HelpMenuView extends View {
                 this.displayMap();
                 break;
             case "Q": // quits, or returns to main menu
-                this.displayMainMenu();
-                break;
-                case "PC": // prints a list of characters with their descriptions
-                try {       // print health report
-                    try{
-                        Game game = Group5ot.getCurrentGame();
-                        ArrayList<CIT260.Group5ot.model.Character> characterList = game.getCharacters();
-                        this.printCharacterList(characterList);
-                    } catch (IOException ex) {
-                        this.console.println("Not sure about this either.");
-                    }
-                } catch (HealthControlException ex) {
-                    ErrorView.display(this.getClass().getName(), "Error reading input: " +ex.getMessage());
-                }
-            
-    
+                this.displayGameMenu();
+                break;          
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
@@ -109,6 +94,9 @@ public class HelpMenuView extends View {
                 + "\n|*| from your team will not make it.               |*|"
                 + "\n|*|------------------------------------------------|*|" 
         );
+        
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
     }
 
     private void displayGameRules() {
@@ -116,73 +104,20 @@ public class HelpMenuView extends View {
          "\n|*|-------------------------------------------------|*|"
        + "\n|*| ******         << GAME RULES >>            *****|*|"
        + "\n|*|-------------------------------------------------|*|"
-       + "\n|*| Press enter to move forward along the trail.    |*|"
-       + "\n|*| At each checkpoint you will be allowed to       |*|"
-       + "\n|*| rest or look around. You may also have the      |*|"
+       + "\n|*| Press C to move forward along the trail.        |*|"
+       + "\n|*| At each location you might find a water supply  |*|"
+       + "\n|*| or food source. You may also have the           |*|"
        + "\n|*| opportunity to hunt or purchase supplies.       |*|"
-       + "\n|*| Resting will improve health but also cost       |*|"
-       + "\n|*| you precious time. Going too long without       |*|"
-       + "\n|*| food or getting sick will decrease health       |*|"
-       + "\n|*| levels. Medicine will boost your health levels. |*|"
-       + "\n|*| You must get to Oregon in time!                 |*|"
-       + "\n|*|                                                 |*|"
-       + "\n|*| Press space to return to the game/main menu     |*|"
-       + "\n|*|-------------------------------------------------|*|"); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void displayMainMenu() {
-        MainMenuView mainMenu = new MainMenuView();
+       + "\n|*|-------------------------------------------------|*|");
         
-        mainMenu.display();
-    }
-    
-       public void printCharacterList(ArrayList<CIT260.Group5ot.model.Character> characters)throws HealthControlException, IOException {    
-        
-          
-        PrintWriter outFile = null;
-        
-        String fileLocation = "aNewReport.txt";       
-        
-        this.console.println("Enter the file name where you want to store the report:");
-         fileLocation = this.keyboard.readLine();
-        
-        
-        try {
-        outFile = new PrintWriter(fileLocation);
-        
-
-            outFile.println("\n\n              Character List                     ");
-            outFile.printf("%n%-20s%10s", "Name", "Description");
-            outFile.printf("%n%-20s%10s", "----", "-----");
-
-            for (CIT260.Group5ot.model.Character character : characters) {
-                outFile.printf("%n%-20s%10s", character.getName()
-                                            , character.getDescription());
-            }
-        } catch (IOException ex) {
-            this.console.println("I/O Error: " + ex.getMessage());
-        } finally {
-            if (outFile != null) {
-                outFile.close();
-            
-            }
-        }
-            
-
-
         HelpMenuView helpMenuView = new HelpMenuView();
-        
         helpMenuView.display();
-
-    
+        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    private void displayGameMenu() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
+    }
+      
 }

@@ -8,7 +8,6 @@ package CIT260.Group5ot.view;
 import CIT260.Group5ot.control.AnimalHuntedControl;
 import CIT260.Group5ot.model.Animal;
 import CIT260.Group5ot.control.GameControl;
-import CIT260.Group5ot.control.HealthControl;
 import CIT260.Group5ot.exceptions.AnimalControlException;
 import group5ot.Group5ot;
 import java.io.IOException;
@@ -34,19 +33,15 @@ public class TestMenuView extends View {
                         + "\n|*| -------------------------------- |*|"
                         + "\n|*| GM   - Game Menu                 |*|"
                         + "\n|*| BVC  - Calculate Barrel Volume   |*|"
-                        + "\n|*| AD   - Display Animal List       |*|"  
-//                        + "\n|*| AP   - Print Animal List         |*|"                       
-                        + "\n|*| H    - Test Hunt Menu            |*|"                 
+                        + "\n|*| H    - Hunting View              |*|"  
+//                        + "\n|*| AP   - Print Animal List         |*|"                                       
                         + "\n|*| S    - Save game                 |*|"
                         + "\n|*| M    - View Map                  |*|"
                         + "\n|*| L    - Look Around               |*|"                    
                         + "\n|*| C    - Test Checkpoint Menu      |*|"
                         + "\n|*| MEAT - Test Calculate MeatShares |*|"
                         + "\n|*| T    - Trading Post Menu         |*|"
-                        + "\n|*| TP   - Look around Trading Post  |*|"
                         + "\n|*| E    - Eating View               |*|"
-                        + "\n|*| R    - Rest View                 |*|"
-                        + "\n|*| CH   - calculate health          |*|"
                         + "\n|*| W    - Test Wagon Cargo Weight   |*|"
                         + "\n|*| Q    - Quit to Main Menu         |*|"
                         + "\n|*| -----------------------------------");
@@ -82,15 +77,9 @@ public class TestMenuView extends View {
             case "H": // display the HUNT menu
                 this.displayHuntView();
                 break;
-            case "T": // trading post view
-                this.displayTradingpostMenuView();
-                break;
             case "M": // display the map view
                 this.displayMapView();
-                break;
-            case "L": // display the map view
-                this.displayLookAroundView();
-                break;                
+                break;          
             case "BVC": // display calc barrel volume view
                 this.displayBarrelVolumeCalcView();
                 break;
@@ -100,17 +89,8 @@ public class TestMenuView extends View {
             case "MEAT": // return to the main menu
                 this.displayMeatSharesCalcView();
                 break;
-            case "TP": // return to the main menu
-                this.displayLookAroundTradingPost();
-                break;
             case "E": // return to the main menu
                 this.displayEatingView();
-                break;
-            case "R": // rest view
-                this.displayRestView();
-                break;
-                case "CH": // rest view
-                this.displayCalculateHealth();
                 break;
             case "W":  // test calcWagonCargoWeight()
                 this.displayWagonWeightView();
@@ -167,14 +147,7 @@ public class TestMenuView extends View {
         // Display the map view
         mapView.display();
     }
-    //go to the look around view
-    private void displayLookAroundView() {
-        //Create map view object
-        LookAroundView lookAroundView = new LookAroundView();
-                
-        // Display the map view
-        lookAroundView.display();
-    }    
+    
     //display the barrelvolumecalcview
     private void displayBarrelVolumeCalcView() {
         //Create map view object
@@ -183,13 +156,7 @@ public class TestMenuView extends View {
         // Display the map view
         calcBarrel.display();
     }
-    
-   private void displayTradingpostMenuView() {
-        TradingpostMenuView tradingpostMenuView = new TradingpostMenuView();
-        
-        tradingpostMenuView.display();
-    }
-    
+      
     private void displayMainMenu(){
         MainMenuView mainMenuView = new MainMenuView();
         
@@ -202,30 +169,12 @@ public class TestMenuView extends View {
         meatShareCalcView.display();    
     }
 
-    private void displayLookAroundTradingPost() {
-        LookAroundView lookAroundView = new LookAroundView();
-        
-        lookAroundView.display();    
-    }
-
     private void displayEatingView() {
         EatingView eatingView = new EatingView();
         
         eatingView.display();    
     }
     
-        private void displayRestView() {
-        RestView restView = new RestView();
-                
-        // Display the rest menu
-        restView.display();    
-    }
-    private void displayCalculateHealth(){
-        HealthControl health = new HealthControl();
-        
-        health.calcAverageHealth();
-    }
-
     private void displayWagonWeightView() {
         WagonWeightView wagonWeight = new WagonWeightView();
         
