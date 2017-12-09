@@ -192,9 +192,7 @@ public class BuySuppliesView extends View {
         wagonControl.addShoppingItemsToWagon(foodQuantity, oxQuantity, ammoQuantity, medicineQuantity);
         Wagon wagon = Group5ot.getCurrentGame().getWagon();
         
-                this.console.println("\n PRINTING THE WAGON INVENTORY" + 
-                        "\n" + wagon.toInventoryString());
-    
+                    
         TradingPostView tradingPostView = new TradingPostView();
        
         tradingPostView.display();  
