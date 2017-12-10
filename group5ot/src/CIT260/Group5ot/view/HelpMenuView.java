@@ -35,7 +35,7 @@ public class HelpMenuView extends View {
                         + "\n|*| R  - Display Game rules              |*|"
                         + "\n|*| PC - Print a list of Characters      |*|"
                         + "\n|*| M  -  Display the Game Map           |*|" 
-                        + "\n|*| Q  - Return to Main Menu             |*|" 
+                        + "\n|*| Q  - Return to Game Menu             |*|" 
                         + "\n|*| ------------------------------------ |*|");
         }
    

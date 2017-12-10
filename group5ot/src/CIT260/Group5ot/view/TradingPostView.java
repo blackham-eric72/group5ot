@@ -5,6 +5,8 @@
  */
 package CIT260.Group5ot.view;
 
+import CIT260.Group5ot.control.LocationControl;
+
 /**
  *
  * @author Flores Family
@@ -50,7 +52,7 @@ public class TradingPostView extends View{
     }
 
     private void nextView() {
-        this.console.println("\n*** Chuck Norris has been to Mars. That's why there are no signs of life. Brought to you by the NextView().");
+        LocationControl.nextView();
     }
 
     private void displayGameMenuView() {

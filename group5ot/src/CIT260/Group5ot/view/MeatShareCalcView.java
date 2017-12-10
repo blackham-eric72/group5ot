@@ -5,6 +5,7 @@
  */
 package CIT260.Group5ot.view;
 
+import CIT260.Group5ot.control.LocationControl;
 import CIT260.Group5ot.control.MeatShareControl;
 import CIT260.Group5ot.exceptions.MeatShareException;
 import java.io.IOException;
@@ -93,7 +94,7 @@ public class MeatShareCalcView extends View {
         if (answer == weightPerShare) {
             System.out.println("\nThat is Correct, please proceed");
             //go back to the checkpoint menu
-            this.nextView();
+            LocationControl.nextView();
 
         }
         else{ System.out.println("\nFailure. Please try again");

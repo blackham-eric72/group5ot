@@ -21,7 +21,7 @@ public class Wagon implements Serializable{
     private String supplyItem;
     private Player player;
     private int[] supplies = new int[4];
-    private int locationNumber = 3;
+    private int locationNumber = 1;
 //    private String ox;
 //    private String food;
 //    private String ammo;

@@ -8,6 +8,7 @@
 package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.AnimalHuntedControl;
+import CIT260.Group5ot.control.LocationControl;
 import CIT260.Group5ot.model.Animal; 
 import CIT260.Group5ot.exceptions.AnimalControlException;
 import java.io.IOException;
@@ -130,7 +131,7 @@ public class HuntingSceneView extends View {
 
 
     private void nextView() {
-        this.console.println("\n*** Chuck Norris doesn't have an esc key on his computer. Brought to you by the NextView().");
+        LocationControl.nextView();
     }
 
     private void displayGameMenuView() {

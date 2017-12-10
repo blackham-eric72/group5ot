@@ -5,6 +5,8 @@
  */
 package CIT260.Group5ot.view;
 
+import CIT260.Group5ot.control.LocationControl;
+
 /**
  *
  * @author Flores Family
@@ -44,7 +46,7 @@ public class WaterSourceView extends View{
     }    
 
     private void nextView() {
-        this.console.println("\n*** Chuck Norris uses a stunt double for crying scenes. Brought to you by the NextView().");
+       LocationControl.nextView();
     }
 
     private void displayGameMenuView() {
@@ -54,6 +56,7 @@ public class WaterSourceView extends View{
     }
 
     private void goToRiver() {
-        this.console.println("\n You collected water. Your supply of water has increased.");
+        this.console.println("\n You collected water deliciously fresh water, you feel rejuvinated and continue on your journey! Your supply of water has increased.");
+        LocationControl.nextView();
     }
 }

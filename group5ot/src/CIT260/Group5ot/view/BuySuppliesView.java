@@ -1,5 +1,6 @@
 package CIT260.Group5ot.view;
 
+import CIT260.Group5ot.control.LocationControl;
 import CIT260.Group5ot.control.ShoppingControl;
 //import java.util.Scanner;
 import CIT260.Group5ot.enums.ShoppingListEnum;
@@ -40,7 +41,7 @@ public class BuySuppliesView extends View {
                   + "\n|  S - Buy supplies                     |"
                   + "\n|  H - Trading Post help                |"
                   + "\n|  G - Game menu                        |"
-                  + "\n|  Q - Continue moving forward          |"
+                  + "\n|  C - Continue moving forward          |"
                   + "\n|---------------------------------------|");
         }
         
@@ -63,8 +64,8 @@ public class BuySuppliesView extends View {
                     }
                 }
                     break;
-                case "Q": // return to previous screen
-                    this.backToTrail();
+                case "C": // return to previous screen
+                    this.nextView();
                     break;
                 case "H":  //continue moving forward
                     this.displayTradingpostHelp();
@@ -200,10 +201,10 @@ public class BuySuppliesView extends View {
         tradingPostView.display();  
      } 
 
-    private void backToTrail() {
-        TradingPostView tradingPostView = new TradingPostView();
-       
-        tradingPostView.display();    }
+    private void nextView() {
+        
+        LocationControl.nextView();
+            }
 
     private void displayTradingpostHelp() {
         //Create Tradingpost Help object

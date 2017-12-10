@@ -31,7 +31,7 @@ public BarrelVolumeCalcView(){
         + "\n|*| ***  Barrel Volume Calculation  **** |*|"
         + "\n|*| ------------------------------------ |*|"
         + "\n|*| P - Caclulate volume                 |*|"
-        + "\n|*| Q - Return to game/main menu         |*|"                 
+        + "\n|*| Q - Return to game menu         |*|"                 
         + "\n|*| ------------------------------------ |*|");
 
 }
@@ -124,7 +124,9 @@ this.console.println("\nThe correct answer was " + barrelVolume);
 if (answer == barrelVolume) {
     displaySuccessMessage();
     //go back to the barrel menu
-    this.display();
+    TradingPostView tp = new TradingPostView();
+    tp.display();
+//    this.display();
     
 }
 else {displayFailMessage();
@@ -173,6 +175,7 @@ public boolean doAction(String choice) {
         this.console.println(
                   "***************************************************************"
                  +"\nSUCCESS!! Yoda Says 'Much Wisdom you have, for one so young!'"
+                 +"\nContinue, you may, to the Trading Post young padawan.        "
                  +"\n*************************************************************"); //To change body of generated methods, choose Tools | Templates.
  displayTestMenu();   
  }

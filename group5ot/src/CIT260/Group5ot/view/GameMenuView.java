@@ -7,6 +7,7 @@ package CIT260.Group5ot.view;
 
 import CIT260.Group5ot.control.GameControl;
 import CIT260.Group5ot.control.InventoryControl;
+import CIT260.Group5ot.control.LocationControl;
 import CIT260.Group5ot.exceptions.InventoryControlException;
 import CIT260.Group5ot.model.Game;
 import CIT260.Group5ot.model.InventoryItem;
@@ -32,7 +33,7 @@ public class GameMenuView extends View {
                     + "\n|            Game Menu             |"
                     + "\n------------------------------------"
                     + "\nR - Return To Game "
-                    + "\nH - Display Help Menu"                 
+                    + "\nH - Help Menu"                 
                     + "\nI - View Inventory"
                     + "\nM - Main menu"
                     + "\nPW - Print Wagon"
@@ -100,7 +101,7 @@ public class GameMenuView extends View {
     }
 
     private void returnToGame() {
-        this.console.println("\n*** Chuck Norris's calendar goes straight from March 31st to April 2nd. No one fools Chuck Norris.Brought to you by returnToGame().");
+        LocationControl.previousView();
     }
 
     public void printInventory(ArrayList<InventoryItem> inventory) throws InventoryControlException, IOException {

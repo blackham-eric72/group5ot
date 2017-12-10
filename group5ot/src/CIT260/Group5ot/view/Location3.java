@@ -4,25 +4,19 @@
  * and open the template in the editor.
  */
 package CIT260.Group5ot.view;
-import CIT260.Group5ot.model.Player;
+
 /**
  *
  * @author erict.blackham
  */
-public class FirstView extends View {
-    
-   
-              
-
-        public FirstView() {
+public class Location3 extends View {
+     public Location3() {
             super( "\n|| -------------------------------------------- ||"
                  + "\n||                                              ||"
-                 + "\n|| You are now at Independence, Missouri.       ||"
-                 + "\n|| This is the starting location of the game!   ||"
-                 + "\n|| Before you get started on your journey,      ||"
-                 + "\n|| you'll want to get some supplies at the      ||"
-                 + "\n|| trading post. Once you are all set there, Bon||"
-                 + "\n|| Voyage - as the French like to say!          ||"
+                 + "\n|| You are now at Fort Leaven-Worth, Nebraska.  ||"
+                 + "\n|| You are enjoying the crisp air and trail!    ||"
+                 + "\n|| Here you have the opportunity to hunt!       ||"
+                
                  + "\n|| ******************************************** ||"
                  + "\n|| Press C to continue                          ||"
                  + "\n|| Press G to display the Game Menu.            ||"
@@ -56,8 +50,11 @@ public class FirstView extends View {
     //This will take them to the trading post view. 
     private void nextView() {
         
-        TradingPostView tradingPostView = new TradingPostView();
-        tradingPostView.display();    
+        HuntingSceneView hsv = new HuntingSceneView();
+        hsv.display();
+           
+//        EatingView eat = new EatingView();
+//        eat.display();    
     
     }
 
@@ -70,3 +67,4 @@ public class FirstView extends View {
 
     
 }
+

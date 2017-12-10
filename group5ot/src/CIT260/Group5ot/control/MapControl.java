@@ -37,21 +37,112 @@ public class MapControl {
         //When the wagon is found, 
         Wagon wagon = Group5ot.getCurrentGame().getWagon();
         Location[][] location = Group5ot.getCurrentGame().getMap().getLocation();
-        this.console.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+        String mapBoundaries = "\n|-----------------------------------------------------------------------------------|";
+        this.console.println(
+                            "\n ------------- MAP OF THE GAME ------------- "
+                          + mapBoundaries);
         
         
         for (Location[] location1 : location) {
             for (Location location2 : location1) {
+                if (location2.getLocationNumber() == 1  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 2  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                  if (location2.getLocationNumber() == 3  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                   if (location2.getLocationNumber() == 4  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                    if (location2.getLocationNumber() == 5  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                     if (location2.getLocationNumber() == 6  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                      if (location2.getLocationNumber() == 7  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 8  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 9  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 10  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 11  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 12  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 13  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 14  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 15  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 16  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 17  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 18  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 19  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 20  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 21  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 22  ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 23 ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                 if (location2.getLocationNumber() == 24 ){
+                    this.console.print(location2.getLocationNumber());
+                }
+                if (location2.getLocationNumber() == 25 ){
+                    this.console.print(location2.getLocationNumber());
+                }
                 if (location2.getLocationNumber() == wagon.getLocationNumber()) {
-                    this.console.print("|W|");
+                    this.console.print("<--*U*R*HERE**||");
                      }
                 else{
-                    this.console.print("|*|");
+                    this.console.print("|-");
                 }
-                this.console.print("|");
+                //this.console.print("|");
             }
-            this.console.println("\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+");
+            this.console.println("\n|-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+-+-+-+-|");
         }
+        this.console.println(mapBoundaries);
+        this.console.println(
+                "\n--------- LEGEND -------------"
+                + "\n1 - Independence, Missouri              2 - Kansas City, Missouri      3 - Fort LeavenWorth, Nebraska\n" +
+"4 - Little Blue River, Nebraska          5 - Grand Island, Nebraska   6 - Fort Kearny, Nebraska\n" +
+"7 - Lexington, Nebraska                   8 - Gothenberg, Nebraska    9 - Bayard, Nebraska\n" +
+"10 - Scott's Bluff, Wyoming             11 - Torrington, Wyoming     12  - Fort Laramie, Wyoming\n" +
+"13 - Independence Rock, Wyoming 14 - Devil's Gate, Wyoming   15 - Fort Bridger,  Idaho\n" +
+"16 - Soda Springs, Idaho                  17 - Fort Hall, Idaho               18 - Independence Rock, Idaho\n" +
+"19 - American Falls, Idaho                 20 - Twin Falls, Idaho             21 - Fort Boise, Idaho\n" +
+"22 - Vale, Oregon                               23 - Huntington, Oregon      24 - Baker City, Oregon \n" +
+"25 - Oregon City, Oregon"
+        );
     }
     
    public Map createMap(int noOfRows, int noOfColumns){
@@ -222,10 +313,7 @@ public class MapControl {
                         location.setLocationNumber(25);
                         location.setLocationName("**Oregon City, Oregon**");
                     }
-                    else {
-                        location.setLocationName("---------------------");
-                    }
-                    
+                                     
                     
                     locations[i][j] = location;
                 }     
@@ -233,6 +321,14 @@ public class MapControl {
             System.out.println("Locations have been created");
         return locations;
     }
+     //this function moves the wagon along the path, and should be called 
+     public void incrementWagonLocation(){
+         Wagon wagon = Group5ot.getCurrentGame().getWagon();
+        
+         int currentLocation = wagon.getLocationNumber();
+         
+         wagon.setLocationNumber(currentLocation++);
+     }
     
 //    private void assignItemsToScenes(ArrayList<InventoryItem> items, Scene[] scenes){
 //   this.console.println("Teriyaki sounds good right now. Brought to you by assignItemsToScenes().");

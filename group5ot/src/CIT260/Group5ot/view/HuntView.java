@@ -6,6 +6,7 @@
 package CIT260.Group5ot.view;
 import CIT260.Group5ot.exceptions.GunControlException;
 import CIT260.Group5ot.control.GunControl;
+import CIT260.Group5ot.control.LocationControl;
 import java.io.IOException;
 import static java.lang.Double.parseDouble;
 
@@ -146,7 +147,9 @@ public class HuntView extends View {
             if (answer == bulletPrice) {
                 System.out.println("\nThat is correct, you got your target!");
                 //go back to the hunting menu
-                this.displayHuntingSceneView();
+                MeatShareCalcView mscv = new MeatShareCalcView();
+                mscv.display();
+//                this.displayHuntingSceneView();
 
             }
             else{ System.out.println("\nSorry, please try again");

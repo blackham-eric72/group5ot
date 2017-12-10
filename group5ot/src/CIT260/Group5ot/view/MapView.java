@@ -24,7 +24,7 @@ public MapView(){
         super(    "\n|| *******      MAP MENU      ******* ||"
                 + "\n|| Would you like to:                 ||"
                 + "\n|| A - See a map of the trail         ||"
-                + "\n|| Q - Go to the main menu            ||"
+                + "\n|| Q - Go back to help menu           ||"
                 + "\n|| ********************************** ||");
 
 }
@@ -54,14 +54,9 @@ public boolean doAction(String choice) {
                  
                 }
  private void displayPreviousScreen() {
-        this.console.println("Chuck Norris says, 'Welcome back to the test Menu'"); //To change body of generated methods, choose Tools | Templates.
-    displayMainMenu();
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
  }
- private void displayMainMenu(){
-       MainMenuView MenuView = new MainMenuView();
-       
-       MenuView.display();
-   }
 
 }
 
