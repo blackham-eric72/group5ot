@@ -139,7 +139,7 @@ public class GameMenuView extends View {
     
     public void printWagonContents(){
         Wagon wagon = Group5ot.getCurrentGame().getWagon();
-        this.console.println(wagon.toString());
+        this.console.println(wagon.toInventoryString());
     }
 
 }

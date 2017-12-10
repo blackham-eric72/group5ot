@@ -101,9 +101,9 @@ public class Wagon implements Serializable{
         this.locationNumber = locationNumber;
     }
     
-//    public void addSupplies(ShoppingListEnum supplyType, int quantity) {
-//       this.supplies[supplyType.ordinal()] += quantity;
-//   }
+    public void addSupplies(ShoppingListEnum supplyType, int quantity) {
+       this.supplies[supplyType.ordinal()] += quantity;
+   }
    
    public void subtractSupplies(ShoppingListEnum supplyType, int quantity) {
        this.supplies[supplyType.ordinal()] -= quantity;
