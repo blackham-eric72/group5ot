@@ -51,7 +51,7 @@ public class EatingView extends View {
     private void eat() {
         this.console.println("\n"
     + "\nYou ate food. Your supply of food has decreased.");
-        //inventory will change someday
+        LocationControl.nextView();
         }
 
     private void nextView() {

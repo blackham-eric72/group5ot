@@ -37,7 +37,7 @@ public class GameMenuView extends View {
                     + "\nI - View Inventory"
                     + "\nM - Main menu"
                     + "\nPW - Print Wagon"
-                    + "\nQ - Quit Game"
+                    
                     + "\n-------------------------------------");
         }
    
@@ -74,9 +74,7 @@ public class GameMenuView extends View {
             case "PW": // save the current game
                 this.printWagonContents();
                 break;
-            case "Q": // return to main menu
-                System.exit(0);
-                break;
+            
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
