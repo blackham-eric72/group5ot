@@ -154,7 +154,7 @@ public boolean doAction(String choice) {
             }
                 break;
             case "Q": // return to the previous screen
-                this.displayTestMenu();
+                this.displayGameMenu();
                 break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
@@ -182,8 +182,8 @@ public boolean doAction(String choice) {
  }
  
  
- private void displayTestMenu(){
-       TestMenuView testMenuView = new TestMenuView();
+ private void displayGameMenu(){
+       GameMenuView testMenuView = new GameMenuView();
        
        testMenuView.display();
    }
