@@ -42,7 +42,7 @@ public class MainMenuView extends View {
                         + "\n|*| H - Help Menu             |*|"                 
                         + "\n|*| G - Game Menu             |*|"
                         + "\n|*| S - Save game             |*|"
-                        + "\n|*| T - Test Menu             |*|"
+//                        + "\n|*| T - Test Menu             |*|"
                         + "\n|*| Q - Quit                  |*|"
                         + "\n|*| ------------------------- |*|");
         }
@@ -71,7 +71,7 @@ public class MainMenuView extends View {
             case "S": // save the current game
                 this.saveGame();
                 break; 
-            case "T": // end the game
+            case "T": // test the game features
                 this.displayTestMenu();
                 break; 
             case "Q": // end the game
