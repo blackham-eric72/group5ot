@@ -177,7 +177,8 @@ public boolean doAction(String choice) {
                  +"\nSUCCESS!! Yoda Says 'Much Wisdom you have, for one so young!'"
                  +"\nContinue, you may, to the Trading Post young padawan.        "
                  +"\n*************************************************************"); //To change body of generated methods, choose Tools | Templates.
- displayTestMenu();   
+  TradingPostView tp = new TradingPostView();
+    tp.display();   
  }
  
  
